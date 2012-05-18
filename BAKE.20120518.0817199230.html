@@ -787,7 +787,7 @@ typedef union pscMsg
 ## 共通部分にｽﾚｰﾌﾞNo.を渡すところが値渡しになっている。 → 参照渡しに変更出来ないか？&lt;br&gt;cmnLib::getSioMutex(myUseNum, mySlaveNum);&lt;br&gt;cmnLib::inSerial(myUseNum, mySlaveNum, pRecvBuf);&lt;br&gt;int sendingResult = cmnLib::outSerial(myUseNum, mySlaveNum, pSendBuf, sendSize);&lt;br&gt;↑上記三つの関数を呼び出す間にｽﾚｰﾌﾞが切り替っている。
 </pre>
 </div>
-<div title="2012年5月18日" creator="nagase" modifier="nagase" created="201205172346" modified="201205180607" tags="ジャーナル bake" changecount="24">
+<div title="2012年5月18日" creator="nagase" modifier="nagase" created="201205172346" modified="201205180600" tags="ジャーナル bake" changecount="23">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [X] ﾒｯｾｰｼﾞの桁数を確認する
@@ -809,7 +809,6 @@ typedef union pscMsg
 !!!@@color(RoyalBlue): 温調未完了ALMの発報 @@
 * BAD受信→設定温度が範囲内ではない→範囲内になったを実現する
 * ﾒｲﾝ側で温調未完了のALMが出るべきときにでなくなった！！
-* 範囲内に無い場合、chkHeaterTempCode[HTCN] = 0x03;して、その後の処理をとめておく？つもりだったけど、だめなんやろうか。
 </pre>
 </div>
 <div title="2012年5月1日" creator="nagase" modifier="nagase" created="201204302350" modified="201205010250" tags="ジャーナル bake" changecount="4">
