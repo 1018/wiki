@@ -507,7 +507,7 @@ Also see [[AdvancedOptions]]</pre>
 </div>
 <!--POST-SHADOWAREA-->
 <div id="storeArea">
-<div title="&quot;BAKEめも書き&quot;について" creator="nagase" modifier="nagase" created="201204200708" modified="201205220716" changecount="5">
+<div title="&quot;BAKEめも書き&quot;について" creator="nagase" modifier="nagase" created="201204200708" modified="201204200711" tags="bake" changecount="4">
 <pre>&lt;html&gt;
 &lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
 &lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
@@ -847,16 +847,16 @@ BIT 1:ﾕﾆｯﾄ処理後停止が抜けてた。
 * --温調未完了ALMでない。　→　なんで？前はでてたのに。。。--
 * --ﾒｲﾝ側のBAKE温調未完了のポップアップでない。　→　なんで？玉置さんはPSC送信してからの返信が何とかかんとかだって。--&lt;br&gt;→　ﾚｼﾋﾟを他のに変えたら出た。</pre>
 </div>
-<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220742" tags="ジャーナル bake" changecount="28">
+<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220539" tags="ジャーナル bake" changecount="24">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [X] BADの補正値の符号の取り扱いがおかしい
 [X] 温調未完了ALMの発報
-[X] g変数をﾒﾝﾊﾞ変数へ　→　完全ではない。
+[_] g変数をﾒﾝﾊﾞ変数へ
 
 !!!@@color(RoyalBlue): 報告内容 @@
 * BADの補正値の符号の取り扱いがおかしい&lt;br&gt; →　修正済み
-* 温調未完了ALMの発報&lt;br&gt; →  修正済み。但し、getHpTemp( );の中で処理しているので、ｼﾐｭﾚｰﾀ上では収束に時間がかかる。&lt;br&gt;現状は自動処理は関係なく、BAD受信→温調が設定範囲外なら温調未完了ALM発報し、範囲内になれば収束するようにしています。
+* 温調未完了ALMの発報&lt;br&gt; →  修正済み。収束に時間がかかる。
 
 !!!@@color(RoyalBlue): BADの補正値の符号の取り扱いがおかしい @@
 * void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)；の中がおかしい
@@ -1666,7 +1666,7 @@ config.macros.checkbox = {
 }
 //}}}</pre>
 </div>
-<div title="Clock2" creator="nagase" modifier="nagase" created="201205160401" modified="201205220712" tags="systemConfig Plugins systemConfigForce" changecount="3">
+<div title="Clock2" creator="nagase" modifier="nagase" created="201205160401" tags="systemConfig Plugins WhatsNew systemConfigForce" changecount="2">
 <pre>/***
 | Name:|Clock2|
 | Author:|Simon Baird|
@@ -2830,15 +2830,17 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205220721" tags="myEmpty" changecount="34">
+<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205220527" tags="myEmpty" changecount="27">
 <pre>[[TranslatedGettingStarted]]
 
 &lt;&lt;calendar thismonth&gt;&gt;
-&lt;&lt;clock2 chunkySwiss 60&gt;&gt;
+&lt;&lt;clock2 chunkySwiss&gt;&gt;
 &lt;&lt;newTiddler text:{{store.getTiddlerText(&quot;new journal&quot;)}}&gt;&gt;
 &lt;&lt;saveMyEmpty&gt;&gt;
 SiteMap
 &lt;&lt;themeSelect style 'Select theme'&gt;&gt; 
+
+
 ^^~TiddlyWiki version &lt;&lt;version&gt;&gt;
 (c) 2010 [[UnaMesa|http://www.unamesa.org/]]^^</pre>
 </div>
@@ -3582,9 +3584,9 @@ setStylesheet(config.macros.showClock.styles,&quot;showClockStyles&quot;);
 //}}}
 </pre>
 </div>
-<div title="SiteMap" creator="nagase" modifier="nagase" created="201205212325" modified="201205220723" tags="myEmpty" changecount="17">
+<div title="SiteMap" creator="nagase" modifier="nagase" created="201205212325" modified="201205220341" tags="myEmpty" changecount="3">
 <pre>(See also SliderSiteMap)
-|&lt;&lt;siteMap bake&gt;&gt;|&lt;&lt;siteMap systemConfig&gt;&gt;|
+|&lt;&lt;siteMap WhatsNew&gt;&gt;&lt;&lt;siteMap FunStuff&gt;&gt;&lt;&lt;siteMap Todo . . . . Done&gt;&gt;|&lt;&lt;siteMap TagglyTagging&gt;&gt;&lt;&lt;siteMap More... 2&gt;&gt;|&lt;&lt;siteMap Plugins 2&gt;&gt;|
 |noBorder threeCol|k
 </pre>
 </div>
@@ -3729,10 +3731,10 @@ config.macros.siteMap = {
 //}}}
 </pre>
 </div>
-<div title="SiteSubtitle" creator="nagase" modifier="nagase" created="201204200027" modified="201205220714" changecount="5">
+<div title="SiteSubtitle" creator="nagase" modifier="nagase" created="201204200027" modified="201205170012" tags="bake" changecount="4">
 <pre>for 80B-EX</pre>
 </div>
-<div title="SiteTitle" creator="nagase" modifier="nagase" created="201204200027" modified="201205220714" changecount="3">
+<div title="SiteTitle" creator="nagase" modifier="nagase" created="201204200027" modified="201204200537" tags="bake" changecount="2">
 <pre>BAKEめも書き</pre>
 </div>
 <div title="SliderSiteMap" creator="nagase" modifier="nagase" created="201205212326" modified="201205220341" tags="myEmpty" changecount="2">
@@ -4161,6 +4163,23 @@ config.shadowTiddlers.TiddlyLightBoxStyles=&quot;/*{{{*/\n#lightBoxOverlay {\n p
 //}}}
 </pre>
 </div>
+<div title="TiddlyTimeJournal" creator="nagase" modifier="nagase" created="201205220525" modified="201205220525" tags="systemConfig" changecount="2">
+<pre>&lt;&lt;clock2 chunkySwiss&gt;&gt; &lt;html&gt;&lt;font size=4&gt;&lt;b&gt;W&lt;/b&gt;&lt;/font&gt;&lt;/html&gt;elcome.  Ever heard the saying ''//You can't manage what you can't measure//''?
+
+Managing your __time__ (actually managing //yourself//) matters because, as [[Randy Pausch|http://en.wikipedia.org/wiki/Randy_Pausch]] put it: 
+
+&gt;''//Managing your time well makes you successful.//'' You don't become successful, //then// find time manage to your time well.
+But how?
+&lt;&lt;&lt;
+//...all effective people work on their time management perpetually.  They... ''keep a continuing log and analyze it periodically''...// Peter Drucker.
+&lt;&lt;&lt;
+Do you log your time now? Do you ''know'' where it goes (or do you just //think// you do)? If you haven't done so, you should keep a @@time journal@@, at least for a while; then you will __know__. ''~TiddlyTimeJournal'' (TTJ) is a small, intentionally simple but adequate, application to help you do this. It's contained in a single HTML document and is an example of a ''[[TiddlyWiki|http://www.tiddlywiki.com]]'' -- a file you can conveniently keep on a USB memory stick on your key ring. All you need to run this application is a web browser. You are welcome to copy it and share it.
+
+Start here: [[GettingStarted]], [[Instructions]] and, //fyi//, [[Background]]. 
+
+
+----</pre>
+</div>
 <div title="berry2" creator="nagase" modifier="nagase" created="201205170102" modified="201205170103" tags="StyleSheet" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
@@ -4181,7 +4200,7 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="new journal" creator="nagase" modifier="nagase" created="201205160038" modified="201205220714" tags="template myEmpty" changecount="8">
+<div title="new journal" creator="nagase" modifier="nagase" created="201205160038" modified="201205180203" tags="template myEmpty bake" changecount="7">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [_] TODO1
@@ -4198,6 +4217,9 @@ This is a link to a [[StyleSheet]] tiddler.
 *
 *
 </pre>
+</div>
+<div title="test" creator="nagase" modifier="nagase" created="201205162324" tags="sample" changecount="1">
+<pre>&lt;&lt;tiddlerbox &quot;tiddlerをLightBox表示&quot; &quot;SiteTitle&quot; &quot;「SiteTitle」という名前のtiddlerを表示&quot;&gt;&gt;</pre>
 </div>
 <div title="温調との通信いろいろ" creator="nagase" modifier="nagase" created="201204200205" modified="201205140219" tags="bake" changecount="60">
 <pre>!!!@@color(RoyalBlue): スレーブを二つ以上起動すると、通信エラーとなる@@

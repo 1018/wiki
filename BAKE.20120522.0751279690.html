@@ -847,7 +847,7 @@ BIT 1:ﾕﾆｯﾄ処理後停止が抜けてた。
 * --温調未完了ALMでない。　→　なんで？前はでてたのに。。。--
 * --ﾒｲﾝ側のBAKE温調未完了のポップアップでない。　→　なんで？玉置さんはPSC送信してからの返信が何とかかんとかだって。--&lt;br&gt;→　ﾚｼﾋﾟを他のに変えたら出た。</pre>
 </div>
-<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220742" tags="ジャーナル bake" changecount="28">
+<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220719" tags="ジャーナル bake" changecount="27">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [X] BADの補正値の符号の取り扱いがおかしい
@@ -856,7 +856,7 @@ BIT 1:ﾕﾆｯﾄ処理後停止が抜けてた。
 
 !!!@@color(RoyalBlue): 報告内容 @@
 * BADの補正値の符号の取り扱いがおかしい&lt;br&gt; →　修正済み
-* 温調未完了ALMの発報&lt;br&gt; →  修正済み。但し、getHpTemp( );の中で処理しているので、ｼﾐｭﾚｰﾀ上では収束に時間がかかる。&lt;br&gt;現状は自動処理は関係なく、BAD受信→温調が設定範囲外なら温調未完了ALM発報し、範囲内になれば収束するようにしています。
+* 温調未完了ALMの発報&lt;br&gt; →  修正済み。但し、getHpTemp( );の中で処理しているので、ｼﾐｭﾚｰﾀ上では収束に時間がかかる。
 
 !!!@@color(RoyalBlue): BADの補正値の符号の取り扱いがおかしい @@
 * void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)；の中がおかしい

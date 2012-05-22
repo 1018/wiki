@@ -507,7 +507,7 @@ Also see [[AdvancedOptions]]</pre>
 </div>
 <!--POST-SHADOWAREA-->
 <div id="storeArea">
-<div title="&quot;BAKEめも書き&quot;について" creator="nagase" modifier="nagase" created="201204200708" modified="201205220716" changecount="5">
+<div title="&quot;BAKEめも書き&quot;について" creator="nagase" modifier="nagase" created="201204200708" modified="201204200711" tags="bake" changecount="4">
 <pre>&lt;html&gt;
 &lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
 &lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
@@ -847,16 +847,15 @@ BIT 1:ﾕﾆｯﾄ処理後停止が抜けてた。
 * --温調未完了ALMでない。　→　なんで？前はでてたのに。。。--
 * --ﾒｲﾝ側のBAKE温調未完了のポップアップでない。　→　なんで？玉置さんはPSC送信してからの返信が何とかかんとかだって。--&lt;br&gt;→　ﾚｼﾋﾟを他のに変えたら出た。</pre>
 </div>
-<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220742" tags="ジャーナル bake" changecount="28">
+<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220227" tags="ジャーナル bake" changecount="14">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [X] BADの補正値の符号の取り扱いがおかしい
-[X] 温調未完了ALMの発報
-[X] g変数をﾒﾝﾊﾞ変数へ　→　完全ではない。
+[_] 温調未完了ALMの発報
 
 !!!@@color(RoyalBlue): 報告内容 @@
 * BADの補正値の符号の取り扱いがおかしい&lt;br&gt; →　修正済み
-* 温調未完了ALMの発報&lt;br&gt; →  修正済み。但し、getHpTemp( );の中で処理しているので、ｼﾐｭﾚｰﾀ上では収束に時間がかかる。&lt;br&gt;現状は自動処理は関係なく、BAD受信→温調が設定範囲外なら温調未完了ALM発報し、範囲内になれば収束するようにしています。
+* 温調未完了ALMの発報&lt;br&gt; →
 
 !!!@@color(RoyalBlue): BADの補正値の符号の取り扱いがおかしい @@
 * void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)；の中がおかしい
@@ -882,8 +881,8 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 
 }
 !!!@@color(RoyalBlue): 温調未完了ALMの発報 @@
-*　getCoolerTemp();/getHeaterTemp();で温度が測定範囲内かどうかっていうのがおかしい気がする&lt;br&gt;checkValue = afterTemp + lowerReseption - bakeTemp;　　　　{{{//}}}変更前&lt;br&gt;　　　　　↓&lt;br&gt;checkValue = bakeTemp - lowerReseption - afterTemp;　　　　{{{//}}}変更後&lt;br&gt;とりあえず、HPを自分が変更したやつにして、CPは追記はしたけど、ｺﾒﾝﾄｱｳﾄで変更前のをいかしてある。
-* オーバーヒート検出ってなんだ？&lt;br&gt;&gt;&gt;温度ヒューズ断 ハードＩ／Ｏで入ってくる&lt;br&gt;&gt;&gt;通常ＯＮ&lt;br&gt;&gt;&gt;ヒューズ切れたらＯＦＦ&lt;br&gt;オーバーヒートを検出したら、温度が設定範囲内に入っても、温調未完了ALMを収束したらだめ？&lt;br&gt;&gt;&gt;よいと思う&lt;br&gt;&gt;&gt;温度ヒューズ断のほうが重篤なアラーム温度範囲内でもヒューズだけ切れてしまうトラブルもあると想定されるただ温度ヒューズ断で温長期の電源切るんじゃなかったかな
+*
+* オーバーヒート検出ってなんだ？&lt;br&gt;温度ヒューズ断 ハードＩ／Ｏで入ってくる&lt;br&gt;通常ＯＮ&lt;br&gt;ヒューズ切れたらＯＦＦ&lt;br&gt;オーバーヒートを検出したら、温度が設定範囲内に入っても、温調未完了ALMを収束したらだめ？&lt;br&gt;よいと思う&lt;br&gt;温度ヒューズ断のほうが重篤なアラーム温度範囲内でもヒューズだけ切れてしまうトラブルもあると想定されるただ温度ヒューズ断で温長期の電源切るんじゃなかったかな
 </pre>
 </div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="ジャーナル bake" changecount="20">
@@ -1666,7 +1665,7 @@ config.macros.checkbox = {
 }
 //}}}</pre>
 </div>
-<div title="Clock2" creator="nagase" modifier="nagase" created="201205160401" modified="201205220712" tags="systemConfig Plugins systemConfigForce" changecount="3">
+<div title="Clock2" creator="nagase" modifier="nagase" created="201205160401" tags="systemConfig Plugins WhatsNew systemConfigForce" changecount="2">
 <pre>/***
 | Name:|Clock2|
 | Author:|Simon Baird|
@@ -2830,11 +2829,11 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205220721" tags="myEmpty" changecount="34">
+<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205210815" tags="myEmpty" changecount="25">
 <pre>[[TranslatedGettingStarted]]
 
 &lt;&lt;calendar thismonth&gt;&gt;
-&lt;&lt;clock2 chunkySwiss 60&gt;&gt;
+&lt;&lt;clock2 chunkySwiss&gt;&gt;
 &lt;&lt;newTiddler text:{{store.getTiddlerText(&quot;new journal&quot;)}}&gt;&gt;
 &lt;&lt;saveMyEmpty&gt;&gt;
 SiteMap
@@ -3582,9 +3581,9 @@ setStylesheet(config.macros.showClock.styles,&quot;showClockStyles&quot;);
 //}}}
 </pre>
 </div>
-<div title="SiteMap" creator="nagase" modifier="nagase" created="201205212325" modified="201205220723" tags="myEmpty" changecount="17">
+<div title="SiteMap" creator="nagase" modifier="nagase" created="201205212325" modified="201205212327" changecount="2">
 <pre>(See also SliderSiteMap)
-|&lt;&lt;siteMap bake&gt;&gt;|&lt;&lt;siteMap systemConfig&gt;&gt;|
+|&lt;&lt;siteMap WhatsNew&gt;&gt;&lt;&lt;siteMap FunStuff&gt;&gt;&lt;&lt;siteMap Todo . . . . Done&gt;&gt;|&lt;&lt;siteMap TagglyTagging&gt;&gt;&lt;&lt;siteMap More... 2&gt;&gt;|&lt;&lt;siteMap Plugins 2&gt;&gt;|
 |noBorder threeCol|k
 </pre>
 </div>
@@ -3729,19 +3728,19 @@ config.macros.siteMap = {
 //}}}
 </pre>
 </div>
-<div title="SiteSubtitle" creator="nagase" modifier="nagase" created="201204200027" modified="201205220714" changecount="5">
+<div title="SiteSubtitle" creator="nagase" modifier="nagase" created="201204200027" modified="201205170012" tags="bake" changecount="4">
 <pre>for 80B-EX</pre>
 </div>
-<div title="SiteTitle" creator="nagase" modifier="nagase" created="201204200027" modified="201205220714" changecount="3">
+<div title="SiteTitle" creator="nagase" modifier="nagase" created="201204200027" modified="201204200537" tags="bake" changecount="2">
 <pre>BAKEめも書き</pre>
 </div>
-<div title="SliderSiteMap" creator="nagase" modifier="nagase" created="201205212326" modified="201205220341" tags="myEmpty" changecount="2">
+<div title="SliderSiteMap" creator="nagase" modifier="nagase" created="201205212326" changecount="1">
 <pre>Demo of slider formatting in SiteMapMacro
 |!sliders|!openSliders|!popups|
 |{{{&lt;&lt;siteMap TagglyTagging . sliders&gt;&gt;}}}|{{{&lt;&lt;siteMap TagglyTagging . openSliders&gt;&gt;}}}|{{{&lt;&lt;siteMap TagglyTagging . popups&gt;&gt;}}}|
 |&lt;&lt;siteMap TagglyTagging . sliders&gt;&gt;|&lt;&lt;siteMap TagglyTagging . openSliders&gt;&gt;|&lt;&lt;siteMap TagglyTagging . popups&gt;&gt;|</pre>
 </div>
-<div title="StyleSheet" creator="nagase" modifier="nagase" created="201205170112" modified="201205220342" tags="StyleSheet myEmpty" changecount="2">
+<div title="StyleSheet" creator="nagase" modifier="nagase" created="201205170112" tags="StyleSheet" changecount="1">
 <pre></pre>
 </div>
 <div title="TagCloudPlugin" creator="nagase" modifier="nagase" created="201205160348" tags="NavigationPackage systemConfig DiscoveryPackage" changecount="1">
@@ -3946,13 +3945,6 @@ config.macros.cloud = {
 	}
 };
 //}}}</pre>
-</div>
-<div title="TiddlerListMacro" creator="nagase" modifier="nagase" created="201205220344" modified="201205220505" changecount="10">
-<pre>&lt;&lt;tabs txtPluginsTa
-'bake' &quot;Plugins I've created&quot; Mine
-'3rd Party' &quot;Plugins by others&quot; '3rd Party'
-&gt;&gt;
-</pre>
 </div>
 <div title="TiddlyLightBoxPlugin" creator="氏名" modifier="氏名" created="201205162323" tags="TiddlyLightBox lewcidExtension systemConfig" changecount="1">
 <pre>/***
@@ -4181,7 +4173,7 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="new journal" creator="nagase" modifier="nagase" created="201205160038" modified="201205220714" tags="template myEmpty" changecount="8">
+<div title="new journal" creator="nagase" modifier="nagase" created="201205160038" modified="201205180203" tags="template myEmpty bake" changecount="7">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [_] TODO1
@@ -4198,6 +4190,9 @@ This is a link to a [[StyleSheet]] tiddler.
 *
 *
 </pre>
+</div>
+<div title="test" creator="nagase" modifier="nagase" created="201205162324" tags="sample" changecount="1">
+<pre>&lt;&lt;tiddlerbox &quot;tiddlerをLightBox表示&quot; &quot;SiteTitle&quot; &quot;「SiteTitle」という名前のtiddlerを表示&quot;&gt;&gt;</pre>
 </div>
 <div title="温調との通信いろいろ" creator="nagase" modifier="nagase" created="201204200205" modified="201205140219" tags="bake" changecount="60">
 <pre>!!!@@color(RoyalBlue): スレーブを二つ以上起動すると、通信エラーとなる@@

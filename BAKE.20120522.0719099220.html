@@ -847,16 +847,16 @@ BIT 1:ﾕﾆｯﾄ処理後停止が抜けてた。
 * --温調未完了ALMでない。　→　なんで？前はでてたのに。。。--
 * --ﾒｲﾝ側のBAKE温調未完了のポップアップでない。　→　なんで？玉置さんはPSC送信してからの返信が何とかかんとかだって。--&lt;br&gt;→　ﾚｼﾋﾟを他のに変えたら出た。</pre>
 </div>
-<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220742" tags="ジャーナル bake" changecount="28">
+<div title="2012年5月22日" creator="nagase" modifier="nagase" created="201205212341" modified="201205220700" tags="ジャーナル bake" changecount="26">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [X] BADの補正値の符号の取り扱いがおかしい
 [X] 温調未完了ALMの発報
-[X] g変数をﾒﾝﾊﾞ変数へ　→　完全ではない。
+[_] g変数をﾒﾝﾊﾞ変数へ
 
 !!!@@color(RoyalBlue): 報告内容 @@
 * BADの補正値の符号の取り扱いがおかしい&lt;br&gt; →　修正済み
-* 温調未完了ALMの発報&lt;br&gt; →  修正済み。但し、getHpTemp( );の中で処理しているので、ｼﾐｭﾚｰﾀ上では収束に時間がかかる。&lt;br&gt;現状は自動処理は関係なく、BAD受信→温調が設定範囲外なら温調未完了ALM発報し、範囲内になれば収束するようにしています。
+* 温調未完了ALMの発報&lt;br&gt; →  修正済み。但し、getHpTemp( );の中で処理しているので、ｼﾐｭﾚｰﾀ上では収束に時間がかかる。
 
 !!!@@color(RoyalBlue): BADの補正値の符号の取り扱いがおかしい @@
 * void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)；の中がおかしい
@@ -2830,7 +2830,7 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205220721" tags="myEmpty" changecount="34">
+<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205220708" tags="myEmpty" changecount="32">
 <pre>[[TranslatedGettingStarted]]
 
 &lt;&lt;calendar thismonth&gt;&gt;
@@ -2839,6 +2839,8 @@ This is a link to a [[StyleSheet]] tiddler.
 &lt;&lt;saveMyEmpty&gt;&gt;
 SiteMap
 &lt;&lt;themeSelect style 'Select theme'&gt;&gt; 
+
+
 ^^~TiddlyWiki version &lt;&lt;version&gt;&gt;
 (c) 2010 [[UnaMesa|http://www.unamesa.org/]]^^</pre>
 </div>
@@ -3582,9 +3584,9 @@ setStylesheet(config.macros.showClock.styles,&quot;showClockStyles&quot;);
 //}}}
 </pre>
 </div>
-<div title="SiteMap" creator="nagase" modifier="nagase" created="201205212325" modified="201205220723" tags="myEmpty" changecount="17">
+<div title="SiteMap" creator="nagase" modifier="氏名" created="201205212325" modified="201205220717" tags="myEmpty" changecount="11">
 <pre>(See also SliderSiteMap)
-|&lt;&lt;siteMap bake&gt;&gt;|&lt;&lt;siteMap systemConfig&gt;&gt;|
+|&lt;&lt;siteMap bake&gt;&gt;|
 |noBorder threeCol|k
 </pre>
 </div>
@@ -4198,6 +4200,9 @@ This is a link to a [[StyleSheet]] tiddler.
 *
 *
 </pre>
+</div>
+<div title="test" creator="nagase" modifier="nagase" created="201205162324" tags="sample" changecount="1">
+<pre>&lt;&lt;tiddlerbox &quot;tiddlerをLightBox表示&quot; &quot;SiteTitle&quot; &quot;「SiteTitle」という名前のtiddlerを表示&quot;&gt;&gt;</pre>
 </div>
 <div title="温調との通信いろいろ" creator="nagase" modifier="nagase" created="201204200205" modified="201205140219" tags="bake" changecount="60">
 <pre>!!!@@color(RoyalBlue): スレーブを二つ以上起動すると、通信エラーとなる@@
