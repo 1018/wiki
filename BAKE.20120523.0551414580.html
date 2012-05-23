@@ -886,11 +886,11 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 * オーバーヒート検出ってなんだ？&lt;br&gt;&gt;&gt;温度ヒューズ断 ハードＩ／Ｏで入ってくる&lt;br&gt;&gt;&gt;通常ＯＮ&lt;br&gt;&gt;&gt;ヒューズ切れたらＯＦＦ&lt;br&gt;オーバーヒートを検出したら、温度が設定範囲内に入っても、温調未完了ALMを収束したらだめ？&lt;br&gt;&gt;&gt;よいと思う&lt;br&gt;&gt;&gt;温度ヒューズ断のほうが重篤なアラーム温度範囲内でもヒューズだけ切れてしまうトラブルもあると想定されるただ温度ヒューズ断で温長期の電源切るんじゃなかったかな
 </pre>
 </div>
-<div title="2012年5月23日" creator="nagase" modifier="nagase" created="201205222340" modified="201205230802" tags="ジャーナル bake" changecount="3">
+<div title="2012年5月23日" creator="nagase" modifier="nagase" created="201205222340" modified="201205230111" tags="ジャーナル bake" changecount="2">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 * 玉置さんお休みです。。。
 [_] g変数をﾒﾝﾊﾞ変数へ
-[_] テスト用メッセージ及びﾂｰﾙの作成
+[_] TODO2
 
 !!!@@color(RoyalBlue): 報告内容 @@
 * TODO1&lt;br&gt; →
@@ -900,8 +900,8 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 *
 *
 !!!@@color(RoyalBlue): TODO2 @@
-* BAD_test002のCPのBAKE01がまだ。
-* 明日、作ったデータが正しいか検証する
+*
+*
 </pre>
 </div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="ジャーナル bake" changecount="20">
@@ -4558,429 +4558,6 @@ h1 {font-size:18px;}
 h2 {font-size:16px;}
 h3 {font-size: 14px;}</pre>
 </div>
-<div title="MptwBlack" modifier="nagase" created="201205230545" tags="systemPalette myEmpty" changecount="1">
-<pre>Name: MptwBlack
-Background: #000
-Foreground: #fff
-PrimaryPale: #333
-PrimaryLight: #555
-PrimaryMid: #888
-PrimaryDark: #aaa
-SecondaryPale: #111
-SecondaryLight: #222
-SecondaryMid: #555
-SecondaryDark: #888
-TertiaryPale: #222
-TertiaryLight: #666
-TertiaryMid: #888
-TertiaryDark: #aaa
-Error: #300
-
-</pre>
-</div>
-<div title="MptwBlue" modifier="nagase" created="201205230548" tags="systemPalette myEmpty" changecount="1">
-<pre>Name: MptwBlue
-Background: #fff
-Foreground: #000
-PrimaryPale: #cdf
-PrimaryLight: #57c
-PrimaryMid: #114
-PrimaryDark: #012
-SecondaryPale: #ffc
-SecondaryLight: #fe8
-SecondaryMid: #db4
-SecondaryDark: #841
-TertiaryPale: #eee
-TertiaryLight: #ccc
-TertiaryMid: #999
-TertiaryDark: #666
-Error: #f88
-
-</pre>
-</div>
-<div title="MptwGreen" modifier="nagase" created="201205230544" tags="systemPalette myEmpty" changecount="1">
-<pre>Name: MptwGreen
-Background: #fff
-Foreground: #000
-PrimaryPale: #9b9
-PrimaryLight: #385
-PrimaryMid: #031
-PrimaryDark: #020
-SecondaryPale: #ffc
-SecondaryLight: #fe8
-SecondaryMid: #db4
-SecondaryDark: #841
-TertiaryPale: #eee
-TertiaryLight: #ccc
-TertiaryMid: #999
-TertiaryDark: #666
-Error: #f88
-
-</pre>
-</div>
-<div title="MptwRoundTheme" modifier="nagase" created="201205230550" tags="systemTheme myEmpty" changecount="1">
-<pre>|Name|MptwRounded|
-|Description|Mptw Theme with some rounded corners (Firefox only)|
-|ViewTemplate|MptwTheme##ViewTemplate|
-|EditTemplate|MptwTheme##EditTemplate|
-|PageTemplate|MptwTheme##PageTemplate|
-|StyleSheet|##StyleSheet|
-
-!StyleSheet
-/*{{{*/
-
-[[MptwTheme##StyleSheet]]
-
-.tiddler,
-.sliderPanel,
-.button,
-.tiddlyLink,
-.tabContents
-{ -moz-border-radius: 1em; }
-
-.tab {
-	-moz-border-radius-topleft: 0.5em;
-	-moz-border-radius-topright: 0.5em;
-}
-#topMenu {
-	-moz-border-radius-bottomleft: 2em;
-	-moz-border-radius-bottomright: 2em;
-}
-
-/*}}}*/
-
-</pre>
-</div>
-<div title="MptwSmoke" modifier="nagase" created="201205230545" tags="systemPalette myEmpty" changecount="1">
-<pre>Name: MptwSmoke
-Background: #fff
-Foreground: #000
-PrimaryPale: #aaa
-PrimaryLight: #777
-PrimaryMid: #111
-PrimaryDark: #000
-SecondaryPale: #ffc
-SecondaryLight: #fe8
-SecondaryMid: #db4
-SecondaryDark: #841
-TertiaryPale: #eee
-TertiaryLight: #ccc
-TertiaryMid: #999
-TertiaryDark: #666
-Error: #f88
-
-</pre>
-</div>
-<div title="MptwTeal" modifier="nagase" created="201205230547" tags="systemPalette myEmpty" changecount="1">
-<pre>Name: MptwTeal
-Background: #fff
-Foreground: #000
-PrimaryPale: #B5D1DF
-PrimaryLight: #618FA9
-PrimaryMid: #1a3844
-PrimaryDark: #000
-SecondaryPale: #ffc
-SecondaryLight: #fe8
-SecondaryMid: #db4
-SecondaryDark: #841
-TertiaryPale: #f8f8f8
-TertiaryLight: #bbb
-TertiaryMid: #999
-TertiaryDark: #888
-Error: #f88
-</pre>
-</div>
-<div title="MptwTheme" modifier="nagase" created="201205230551" tags="systemTheme myEmpty" changecount="1">
-<pre>|Name|MptwTheme|
-|Description|Mptw Theme including custom PageLayout|
-|PageTemplate|##PageTemplate|
-|ViewTemplate|##ViewTemplate|
-|EditTemplate|##EditTemplate|
-|StyleSheet|##StyleSheet|
-
-http://mptw.tiddlyspot.com/#MptwTheme ($Rev: 1829 $)
-
-!PageTemplate
-&lt;!--{{{--&gt;
-&lt;div class='header' macro='gradient vert [[ColorPalette::PrimaryLight]] [[ColorPalette::PrimaryMid]]'&gt;
-	&lt;div class='headerShadow'&gt;
-		&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
-		&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
-	&lt;/div&gt;
-	&lt;div class='headerForeground'&gt;
-		&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
-		&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- horizontal MainMenu --&gt;
-&lt;div id='topMenu' refresh='content' tiddler='MainMenu'&gt;&lt;/div&gt;
-&lt;!-- original MainMenu menu --&gt;
-&lt;!-- &lt;div id='mainMenu' refresh='content' tiddler='MainMenu'&gt;&lt;/div&gt; --&gt;
-&lt;div id='sidebar'&gt;
-	&lt;div id='sidebarOptions' refresh='content' tiddler='SideBarOptions'&gt;&lt;/div&gt;
-	&lt;div id='sidebarTabs' refresh='content' force='true' tiddler='SideBarTabs'&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id='displayArea'&gt;
-	&lt;div id='messageArea'&gt;&lt;/div&gt;
-	&lt;div id='tiddlerDisplay'&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;!--}}}--&gt;
-
-!ViewTemplate
-&lt;!--{{{--&gt;
-&lt;div class=&quot;uncollapsedView&quot;&gt;
-[[MptwTheme##ViewTemplateToolbar]]
-
-&lt;div class=&quot;tagglyTagged&quot; macro=&quot;tags&quot;&gt;&lt;/div&gt;
-
-&lt;div class='titleContainer'&gt;
-	&lt;span class='title' macro='view title'&gt;&lt;/span&gt;
-	&lt;span macro=&quot;miniTag&quot;&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div class='subtitle'&gt;
-	(updated &lt;span macro='view modified date {{config.mptwDateFormat?config.mptwDateFormat:&quot;MM/0DD/YY&quot;}}'&gt;&lt;/span&gt;
-	by &lt;span macro='view modifier link'&gt;&lt;/span&gt;)
-	&lt;!--
-	(&lt;span macro='message views.wikified.createdPrompt'&gt;&lt;/span&gt;
-	&lt;span macro='view created date {{config.mptwDateFormat?config.mptwDateFormat:&quot;MM/0DD/YY&quot;}}'&gt;&lt;/span&gt;)
-	--&gt;
-&lt;/div&gt;
-
-&lt;div macro=&quot;showWhen tiddler.tags.containsAny(['css','html','pre','systemConfig']) &amp;&amp; !tiddler.text.match('{{'+'{')&quot;&gt;
-	&lt;div class='viewer'&gt;&lt;pre macro='view text'&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div macro=&quot;else&quot;&gt;
-	&lt;div class='viewer' macro='view text wikified'&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;tagglyTagging&quot; macro=&quot;tagglyTagging&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;collapsedView&quot;&gt;
-	&lt;span class='toolbar'&gt;
-		&lt;span macro='toolbar closeTiddler'&gt;&lt;/span&gt;
-		&lt;span macro='mptwCollapse +'&gt;&lt;/span&gt;
-	&lt;/span&gt;
-	&lt;span class='title' macro='view title'&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;!--}}}--&gt;
-
-!ViewTemplateToolbar
-&lt;!--{{{--&gt;
-&lt;div class='toolbar'&gt;
-	&lt;span macro=&quot;showWhenTagged systemConfig&quot;&gt;
-		&lt;span macro=&quot;toggleTag systemConfigDisable . '[[disable|systemConfigDisable]]'&quot;&gt;&lt;/span&gt;
-	&lt;/span&gt;
-	&lt;span macro=&quot;showWhenTagged systemTheme&quot;&gt;&lt;span macro=&quot;applyTheme&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-	&lt;span macro=&quot;showWhenTagged systemPalette&quot;&gt;&lt;span macro=&quot;applyPalette&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-	&lt;span macro=&quot;showWhen tiddler.tags.contains('css') || tiddler.title == 'StyleSheet'&quot;&gt;&lt;span macro=&quot;refreshAll&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-	&lt;span style=&quot;padding:1em;&quot;&gt;&lt;/span&gt;
-	&lt;span macro='toolbar closeTiddler closeOthers +editTiddler deleteTiddler &gt; fields syncing permalink references jump'&gt;&lt;/span&gt; &lt;span macro='newHere label:&quot;new here&quot;'&gt;&lt;/span&gt;
-	&lt;span macro='newJournalHere {{config.mptwJournalFormat?config.mptwJournalFormat:&quot;MM/0DD/YY&quot;}}'&gt;&lt;/span&gt;
-	&lt;!--span macro='mptwCollapse -'&gt;&lt;/span--&gt;
-&lt;/div&gt;
-&lt;!--}}}--&gt;
-
-!EditTemplate
-&lt;!--{{{--&gt;
-&lt;div class=&quot;toolbar&quot; macro=&quot;toolbar +saveTiddler saveCloseTiddler closeOthers -cancelTiddler cancelCloseTiddler deleteTiddler&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;title&quot; macro=&quot;view title&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;editLabel&quot;&gt;Title&lt;/div&gt;&lt;div class=&quot;editor&quot; macro=&quot;edit title&quot;&gt;&lt;/div&gt;
-&lt;div macro='annotations'&gt;&lt;/div&gt;
-&lt;div class=&quot;editLabel&quot;&gt;Content&lt;/div&gt;&lt;div class=&quot;editor&quot; macro=&quot;edit text&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;editLabel&quot;&gt;Tags&lt;/div&gt;&lt;div class=&quot;editor&quot; macro=&quot;edit tags&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;editorFooter&quot;&gt;&lt;span macro=&quot;message views.editor.tagPrompt&quot;&gt;&lt;/span&gt;&lt;span macro=&quot;tagChooser&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;!--}}}--&gt;
-
-!StyleSheet
-/*{{{*/
-
-/* a contrasting background so I can see where one tiddler ends and the other begins */
-body {
-	background: [[ColorPalette::TertiaryLight]];
-}
-
-/* sexy colours and font for the header */
-.headerForeground {
-	color: [[ColorPalette::PrimaryPale]];
-}
-.headerShadow, .headerShadow a {
-	color: [[ColorPalette::PrimaryMid]];
-}
-
-/* separate the top menu parts */
-.headerForeground, .headerShadow {
-	padding: 1em 1em 0;
-}
-
-.headerForeground, .headerShadow {
-	font-family: 'Trebuchet MS', sans-serif;
-	font-weight:bold;
-}
-.headerForeground .siteSubtitle {
-	color: [[ColorPalette::PrimaryLight]];
-}
-.headerShadow .siteSubtitle {
-	color: [[ColorPalette::PrimaryMid]];
-}
-
-/* make shadow go and down right instead of up and left */
-.headerShadow {
-	left: 1px;
-	top: 1px;
-}
-
-/* prefer monospace for editing */
-.editor textarea, .editor input {
-	font-family: 'Consolas', monospace;
-	background-color:[[ColorPalette::TertiaryPale]];
-}
-
-
-/* sexy tiddler titles */
-.title {
-	font-size: 250%;
-	color: [[ColorPalette::PrimaryLight]];
-	font-family: 'Trebuchet MS', sans-serif;
-}
-
-/* more subtle tiddler subtitle */
-.subtitle {
-	padding:0px;
-	margin:0px;
-	padding-left:1em;
-	font-size: 90%;
-	color: [[ColorPalette::TertiaryMid]];
-}
-.subtitle .tiddlyLink {
-	color: [[ColorPalette::TertiaryMid]];
-}
-
-/* a little bit of extra whitespace */
-.viewer {
-	padding-bottom:3px;
-}
-
-/* don't want any background color for headings */
-h1,h2,h3,h4,h5,h6 {
-	background-color: transparent;
-	color: [[ColorPalette::Foreground]];
-}
-
-/* give tiddlers 3d style border and explicit background */
-.tiddler {
-	background: [[ColorPalette::Background]];
-	border-right: 2px [[ColorPalette::TertiaryMid]] solid;
-	border-bottom: 2px [[ColorPalette::TertiaryMid]] solid;
-	margin-bottom: 1em;
-	padding:1em 2em 2em 1.5em;
-}
-
-/* make options slider look nicer */
-#sidebarOptions .sliderPanel {
-	border:solid 1px [[ColorPalette::PrimaryLight]];
-}
-
-/* the borders look wrong with the body background */
-#sidebar .button {
-	border-style: none;
-}
-
-/* this means you can put line breaks in SidebarOptions for readability */
-#sidebarOptions br {
-	display:none;
-}
-/* undo the above in OptionsPanel */
-#sidebarOptions .sliderPanel br {
-	display:inline;
-}
-
-/* horizontal main menu stuff */
-#displayArea {
-	margin: 1em 15.7em 0em 1em; /* use the freed up space */
-}
-#topMenu br {
-	display: none;
-}
-#topMenu {
-	background: [[ColorPalette::PrimaryMid]];
-	color:[[ColorPalette::PrimaryPale]];
-}
-#topMenu {
-	padding:2px;
-}
-#topMenu .button, #topMenu .tiddlyLink, #topMenu a {
-	margin-left: 0.5em;
-	margin-right: 0.5em;
-	padding-left: 3px;
-	padding-right: 3px;
-	color: [[ColorPalette::PrimaryPale]];
-	font-size: 115%;
-}
-#topMenu .button:hover, #topMenu .tiddlyLink:hover {
-	background: [[ColorPalette::PrimaryDark]];
-}
-
-/* make 2.2 act like 2.1 with the invisible buttons */
-.toolbar {
-	visibility:hidden;
-}
-.selected .toolbar {
-	visibility:visible;
-}
-
-/* experimental. this is a little borked in IE7 with the button 
- * borders but worth it I think for the extra screen realestate */
-.toolbar { float:right; }
-
-/* fix for TaggerPlugin. from sb56637. improved by FND */
-.popup li .tagger a {
-   display:inline;
-}
-
-/* makes theme selector look a little better */
-#sidebarOptions .sliderPanel .select .button {
-  padding:0.5em;
-  display:block;
-}
-#sidebarOptions .sliderPanel .select br {
-	display:none;
-}
-
-/* make it print a little cleaner */
-@media print {
-	#topMenu {
-		display: none ! important;
-	}
-	/* not sure if we need all the importants */
-	.tiddler {
-		border-style: none ! important;
-		margin:0px ! important;
-		padding:0px ! important;
-		padding-bottom:2em ! important;
-	}
-	.tagglyTagging .button, .tagglyTagging .hidebutton {
-		display: none ! important;
-	}
-	.headerShadow {
-		visibility: hidden ! important;
-	}
-	.tagglyTagged .quickopentag, .tagged .quickopentag {
-		border-style: none ! important;
-	}
-	.quickopentag a.button, .miniTag {
-		display: none ! important;
-	}
-}
-
-/* get user styles specified in StyleSheet */
-[[StyleSheet]]
-
-/*}}}*/
-
-</pre>
-</div>
 <div title="Rin" creator="nagase" modifier="nagase" created="201205170107" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
@@ -7066,10 +6643,10 @@ BADのパワーオンレシピが受信できるようになったので、ス�
 * 温調機の温度がBADで受信した値の範囲内であればALMはでない。
 * とDのﾃﾞｰﾀ桁数を4桁→7桁(符号、小数点なし)に変更</pre>
 </div>
-<div title="覚書など" creator="氏名" modifier="nagase" created="201204300230" modified="201205230605" tags="bake" changecount="17">
+<div title="覚書など" creator="氏名" modifier="nagase" created="201204300230" modified="201205210800" tags="bake" changecount="13">
 <pre>!!@@color(RoyalBlue): 備忘録 @@
 [ｽﾚｰﾌﾞ二つ以上起動すると通信ｴﾗｰ]
-共通部分が占有権の取得を待つタイマが50msecで、BAKEのスレーブ切り替えのタイマが10msecだったのでおかしかった。&lt;br&gt;共通部分はそのままで、BAKE側のタイマを200msecに変更してとりあえず対処。&lt;br&gt;→　g変数をﾒﾝﾊﾞ変数にして対処。とりあえずは動いているように見える。
+共通部分が占有権の取得を待つタイマが50msecで、BAKEのスレーブ切り替えのタイマが10msecだったのでおかしかった。&lt;br&gt;共通部分はそのままで、BAKE側のタイマを200msecに変更してとりあえず対処。
 
 [CPの比例帯温度幅(P)がWBとRBで値が異なっている]
 ﾒｲﾝ画面で入力した値 == 11.00
@@ -7084,10 +6661,7 @@ RBで温調機から帰ってくる値 == 1100
 
 [温調への送信ﾒｯｾｰｼﾞ桁数について]
 実機ではﾁｬﾈﾙごとではなく、4CH一気にﾒｯｾｰｼﾞを送信しているらしい。
-なので、--玉置さんのｺｰﾄﾞと自分のでは桁数が異なっている。--
-
-[BADの符号の取り扱い]
-BADのﾏｲﾅｽ記号は1にしてﾒｲﾝから飛んでくるらしい。
+なので、玉置さんのｺｰﾄﾞと自分のでは桁数が異なっている。
 !!@@color(RoyalBlue): 用語集 TODO@@
 ソレノイドバルブ
 I/Oの出力でエアのON/OFFする
@@ -7098,12 +6672,14 @@ I/Oの出力でエアのON/OFFする
 ﾋﾟﾝ上昇中に[STP]投げても、ﾋﾟﾝ上昇は途中では止まらない。
 エア駆動だから。出力はOFFになる。
 
+[BADの符号の取り扱い]
+BADのﾏｲﾅｽ記号は1にしてﾒｲﾝから飛んでくるらしい。
+
 !!@@color(RoyalBlue): QA集 @@
 * ｱﾝﾀﾞｰﾋｰﾄとは？　→ 温度が下限以下になった状態
 
 | 更新日 | 更新内容 |
-| 2012/05/10 |改訂 |
-| 2012/05/23 | 桁数と温調との通信のとこを改訂 |</pre>
+| 2012/05/10 | 改訂 |</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->

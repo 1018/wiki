@@ -886,11 +886,11 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 * オーバーヒート検出ってなんだ？&lt;br&gt;&gt;&gt;温度ヒューズ断 ハードＩ／Ｏで入ってくる&lt;br&gt;&gt;&gt;通常ＯＮ&lt;br&gt;&gt;&gt;ヒューズ切れたらＯＦＦ&lt;br&gt;オーバーヒートを検出したら、温度が設定範囲内に入っても、温調未完了ALMを収束したらだめ？&lt;br&gt;&gt;&gt;よいと思う&lt;br&gt;&gt;&gt;温度ヒューズ断のほうが重篤なアラーム温度範囲内でもヒューズだけ切れてしまうトラブルもあると想定されるただ温度ヒューズ断で温長期の電源切るんじゃなかったかな
 </pre>
 </div>
-<div title="2012年5月23日" creator="nagase" modifier="nagase" created="201205222340" modified="201205230802" tags="ジャーナル bake" changecount="3">
+<div title="2012年5月23日" creator="nagase" modifier="nagase" created="201205222340" modified="201205230111" tags="ジャーナル bake" changecount="2">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 * 玉置さんお休みです。。。
 [_] g変数をﾒﾝﾊﾞ変数へ
-[_] テスト用メッセージ及びﾂｰﾙの作成
+[_] TODO2
 
 !!!@@color(RoyalBlue): 報告内容 @@
 * TODO1&lt;br&gt; →
@@ -900,8 +900,8 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 *
 *
 !!!@@color(RoyalBlue): TODO2 @@
-* BAD_test002のCPのBAKE01がまだ。
-* 明日、作ったデータが正しいか検証する
+*
+*
 </pre>
 </div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="ジャーナル bake" changecount="20">
@@ -7066,10 +7066,10 @@ BADのパワーオンレシピが受信できるようになったので、ス�
 * 温調機の温度がBADで受信した値の範囲内であればALMはでない。
 * とDのﾃﾞｰﾀ桁数を4桁→7桁(符号、小数点なし)に変更</pre>
 </div>
-<div title="覚書など" creator="氏名" modifier="nagase" created="201204300230" modified="201205230605" tags="bake" changecount="17">
+<div title="覚書など" creator="氏名" modifier="nagase" created="201204300230" modified="201205210800" tags="bake" changecount="13">
 <pre>!!@@color(RoyalBlue): 備忘録 @@
 [ｽﾚｰﾌﾞ二つ以上起動すると通信ｴﾗｰ]
-共通部分が占有権の取得を待つタイマが50msecで、BAKEのスレーブ切り替えのタイマが10msecだったのでおかしかった。&lt;br&gt;共通部分はそのままで、BAKE側のタイマを200msecに変更してとりあえず対処。&lt;br&gt;→　g変数をﾒﾝﾊﾞ変数にして対処。とりあえずは動いているように見える。
+共通部分が占有権の取得を待つタイマが50msecで、BAKEのスレーブ切り替えのタイマが10msecだったのでおかしかった。&lt;br&gt;共通部分はそのままで、BAKE側のタイマを200msecに変更してとりあえず対処。
 
 [CPの比例帯温度幅(P)がWBとRBで値が異なっている]
 ﾒｲﾝ画面で入力した値 == 11.00
@@ -7084,10 +7084,7 @@ RBで温調機から帰ってくる値 == 1100
 
 [温調への送信ﾒｯｾｰｼﾞ桁数について]
 実機ではﾁｬﾈﾙごとではなく、4CH一気にﾒｯｾｰｼﾞを送信しているらしい。
-なので、--玉置さんのｺｰﾄﾞと自分のでは桁数が異なっている。--
-
-[BADの符号の取り扱い]
-BADのﾏｲﾅｽ記号は1にしてﾒｲﾝから飛んでくるらしい。
+なので、玉置さんのｺｰﾄﾞと自分のでは桁数が異なっている。
 !!@@color(RoyalBlue): 用語集 TODO@@
 ソレノイドバルブ
 I/Oの出力でエアのON/OFFする
@@ -7098,12 +7095,14 @@ I/Oの出力でエアのON/OFFする
 ﾋﾟﾝ上昇中に[STP]投げても、ﾋﾟﾝ上昇は途中では止まらない。
 エア駆動だから。出力はOFFになる。
 
+[BADの符号の取り扱い]
+BADのﾏｲﾅｽ記号は1にしてﾒｲﾝから飛んでくるらしい。
+
 !!@@color(RoyalBlue): QA集 @@
 * ｱﾝﾀﾞｰﾋｰﾄとは？　→ 温度が下限以下になった状態
 
 | 更新日 | 更新内容 |
-| 2012/05/10 |改訂 |
-| 2012/05/23 | 桁数と温調との通信のとこを改訂 |</pre>
+| 2012/05/10 | 改訂 |</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
