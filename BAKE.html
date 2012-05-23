@@ -886,6 +886,24 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 * オーバーヒート検出ってなんだ？&lt;br&gt;&gt;&gt;温度ヒューズ断 ハードＩ／Ｏで入ってくる&lt;br&gt;&gt;&gt;通常ＯＮ&lt;br&gt;&gt;&gt;ヒューズ切れたらＯＦＦ&lt;br&gt;オーバーヒートを検出したら、温度が設定範囲内に入っても、温調未完了ALMを収束したらだめ？&lt;br&gt;&gt;&gt;よいと思う&lt;br&gt;&gt;&gt;温度ヒューズ断のほうが重篤なアラーム温度範囲内でもヒューズだけ切れてしまうトラブルもあると想定されるただ温度ヒューズ断で温長期の電源切るんじゃなかったかな
 </pre>
 </div>
+<div title="2012年5月23日" creator="nagase" modifier="nagase" created="201205222340" tags="ジャーナル bake" changecount="1">
+<pre>!!!@@color(RoyalBlue): 本日のTODO @@
+* 玉置さんお休みです。。。
+[_] TODO1
+[_] TODO2
+
+!!!@@color(RoyalBlue): 報告内容 @@
+* TODO1&lt;br&gt; →
+* TODO2&lt;br&gt; →
+
+!!!@@color(RoyalBlue): TODO1 @@
+*
+*
+!!!@@color(RoyalBlue): TODO2 @@
+*
+*
+</pre>
+</div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="ジャーナル bake" changecount="20">
 <pre>!!!@@color(RoyalBlue): TODO@@
 # 玉置さんソースとのマージ
@@ -934,7 +952,182 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 * CVPのﾛｸﾞｲﾝの概念が違ってた。即時停止ﾌｧｲﾙの部分を書き換える
 * BAKEﾃﾞｨﾚｸﾄﾘの.bakﾌｧｲﾙを削除</pre>
 </div>
-<div title="BigThemePack" creator="nagase" modifier="nagase" created="201205170043" tags="systemConfig" changecount="1">
+<div title="About TimeJournal" creator="nagase" modifier="nagase" created="201205222350" tags="TimeJournal myEmpty" changecount="1">
+<pre>|Name|~TiddlyTimeJournal|
+| Description|A simple tool to help you keep a journal of where your time goes|
+| Version|0.9 beta|
+| Date|&lt;&lt;today&gt;&gt;|
+| Source|http://ttj.wombatdiet.net|
+| Author|Eats Wombats|
+| Email|eatswombats (at) wombatdiet (dot) net|
+| License|[img[Creative Commons Attribution-ShareAlike 3.0 License|http://creativecommons.org/images/public/somerights20][http://creativecommons.org/licenses/by-sa/3.0/]]|
+
+~TiddlyTimeJournal is based upon ~TiddlyWiki &lt;&lt;version&gt;&gt;, written by Jeremy Ruston, &amp;copy;2005 Osmosoft Limited, published under a BSD open source license. Redistribution and Use in source and binary forms, with or without Modification are granted, unless otherwise noted, subject to the terms and conditions of the license (click on the image above for details).
+
+''Core:'' Tiddlywiki &lt;&lt;version&gt;&gt; http://www.tiddlywiki.com
+
+''Plugins''
+
+TaskTimerPlugin 1.3.0 by Eric Shulman
+[[Clock2]] 1.06 by Simon Baird
+BetterTimelineMacro 0.5b by Saq Imtiaz; requires DeprecatedFunctionsPlugin with TW 2.4.1
+DeprecatedFunctionsPlugin
+InstantTimestamp 1.0.4 by Simon Baird
+LessBackupsPlugin 3.0.1 by Simon Baird
+LinkToMeMacro by Simon Baird
+SaveOnExitPlugin 2.0 by Eric Shulman
+ForEachTiddlerPlugin 1.0.8 by Udo Borkowski
+ForEachTiddlerMacro 1.0.8 by Udo Borkowski; 
+ToggleSideBarMacro 1.0 by Saq Imtiaz
+
+''Customizations You May Wish To Make''
+*To adjust the number of backups made when you save changes: click here: LessBackupsPlugin, and edit as required. 
+*Likewise, the date format for timestamps can be changed by editing the InstantTimestamp plugin. Date format information [[here|http://tiddlywiki.com/#DateFormatString]].
+!Version History
+
+0.9 beta 1; TW 2.4.1 {{ds{2008-08-18}}}
+</pre>
+</div>
+<div title="ActivityReport" creator="nagase" modifier="nagase" created="201205222352" tags="TimeJournal myEmpty log task" changecount="1">
+<pre>|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|
+|2008-08-18|First|02:47:04|02:47:10|00:00:06|
+/%tasktimer%/
+</pre>
+</div>
+<div title="Background" creator="nagase" modifier="nagase" created="201205222353" modified="201205230058" tags="TimeJournal myEmpty hide" changecount="2">
+<pre>I created TTJ because I couldn't find, quickly, a //simple, elegant and free// application to help me keep a time journal. At first, I wanted something that would run in Vista's taskbar, or, better, a Yahoo desktop or an Opera browser widget.
+
+There are countless time recording and activity logging applications out there whose focus is on invoicing -- on the attribution of billable hours. Many are expensive. Some are large (e.g., [[TimeStation|http://www.timestation.dataflower.net]]). Most are old Windows applications of uncertain origin and security. A lot are simply unattractive for the price. There may be some freely available gems, but who can find them amidst the dross?
+
+What if you are a student or someone whose time isn't billed? What if your concern is not ''billable hours'' but simply monitoring your ''focus'', managing your attention and being aware of, and hopefully minimising, the impact of interruptions of various kinds? What if you work on more than one kind of computer? 
+
+&lt;html&gt;&lt;font size=4&gt;&lt;b&gt;With TiddlyTimeJournal you can&lt;/b&gt;&lt;/font&gt;&lt;/html&gt;
+* Quickly and easily record time expended on various activities //and interruptions// with a minimum of keystrokes
+* Rapidly record date &amp; time stamped events and milestones in an event log
+* Create date &amp; time stamped notes instantly (click ''new journal'' on the right menu bar)
+It runs on @@any@@ computer that runs Firefox. ~TiddlyTimeJournal uses a clock animation that is not compatible with Internet Explorer, but this doesn't affect the rest of its functionality.
+
+Click here for some [[Tips]]. You're welcome to send me yours, especially if you find a better mousetrap.
+
+</pre>
+</div>
+<div title="BetterTimelineMacro" creator="nagase" modifier="nagase" created="201205230019" tags="Plugins excludeLists hide lewcidExtension systemConfig TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name|BetterTimelineMacro|
+|Created by|SaqImtiaz|
+|Location|http://tw.lewcid.org/#BetterTimelineMacro|
+|Version|0.5 beta|
+|Requires|~TW2.x|
+!!!Description:
+A replacement for the core timeline macro that offers more features:
+*list tiddlers with only specfic tag
+*exclude tiddlers with a particular tag
+*limit entries to any number of days, for example one week
+*specify a start date for the timeline, only tiddlers after that date will be listed.
+
+!!!Installation:
+Copy the contents of this tiddler to your TW, tag with systemConfig, save and reload your TW.
+Edit the ViewTemplate to add the fullscreen command to the toolbar. 
+
+(Ignore last instruction. Not needed. Depends on another Lewcid extension and this was not indicated -- EW)
+
+!!!Syntax:
+{{{&lt;&lt;timeline better:true&gt;&gt;}}}
+''the param better:true enables the advanced features, without it you will get the old timeline behaviour.''
+
+additonal params:
+(use only the ones you want)
+{{{&lt;&lt;timeline better:true  onlyTag:Tag1 excludeTag:Tag2 sortBy:modified/created firstDay:YYYYMMDD maxDays:7 maxEntries:30&gt;&gt;}}}
+
+Note: Use this to replace the contents of the ShadowTiddler TabTimeline -- EW
+
+''explanation of syntax:''
+onlyTag: only tiddlers with this tag will be listed. Default is to list all tiddlers.
+excludeTag: tiddlers with this tag will not be listed.
+sortBy: sort tiddlers by date modified or date created. Possible values are modified or created.
+firstDay: useful for starting timeline from a specific date. Example: 20060701 for 1st of July, 2006
+maxDays: limits timeline to include only tiddlers from the specified number of days. If you use a value of 7 for example, only tiddlers from the last 7 days will be listed.
+maxEntries: limit the total number of entries in the timeline.
+
+
+!!!History:
+*28-07-06: ver 0.5 beta, first release
+
+!!!Code
+***/
+//{{{
+// Return the tiddlers as a sorted array
+TiddlyWiki.prototype.getTiddlers = function(field,excludeTag,includeTag)
+{
+          var results = [];
+          this.forEachTiddler(function(title,tiddler)
+          {
+          if(excludeTag == undefined || tiddler.tags.find(excludeTag) == null)
+                        if(includeTag == undefined || tiddler.tags.find(includeTag)!=null)
+                                      results.push(tiddler);
+          });
+          if(field)
+                   results.sort(function (a,b) {if(a[field] == b[field]) return(0); else return (a[field] &lt; b[field]) ? -1 : +1; });
+          return results;
+}
+
+
+
+//this function by Udo
+function getParam(params, name, defaultValue)
+{
+          if (!params)
+          return defaultValue;
+          var p = params[0][name];
+          return p ? p[0] : defaultValue;
+}
+
+window.old_timeline_handler= config.macros.timeline.handler;
+config.macros.timeline.handler = function(place,macroName,params,wikifier,paramString,tiddler)
+{
+          var args = paramString.parseParams(&quot;list&quot;,null,true);
+          var betterMode = getParam(args, &quot;better&quot;, &quot;false&quot;);
+          if (betterMode == 'true')
+          {
+          var sortBy = getParam(args,&quot;sortBy&quot;,&quot;modified&quot;);
+          var excludeTag = getParam(args,&quot;excludeTag&quot;,undefined);
+          var includeTag = getParam(args,&quot;onlyTag&quot;,undefined);
+          var tiddlers = store.getTiddlers(sortBy,excludeTag,includeTag);
+          var firstDayParam = getParam(args,&quot;firstDay&quot;,undefined);
+          var firstDay = (firstDayParam!=undefined)? firstDayParam: &quot;00010101&quot;;
+          var lastDay = &quot;&quot;;
+          var field= sortBy;
+          var maxDaysParam = getParam(args,&quot;maxDays&quot;,undefined);
+          var maxDays = (maxDaysParam!=undefined)? maxDaysParam*24*60*60*1000: (new Date()).getTime() ;
+          var maxEntries = getParam(args,&quot;maxEntries&quot;,undefined);
+          var last = (maxEntries!=undefined) ? tiddlers.length-Math.min(tiddlers.length,parseInt(maxEntries)) : 0;
+          for(var t=tiddlers.length-1; t&gt;=last; t--)
+                  {
+                  var tiddler = tiddlers[t];
+                  var theDay = tiddler[field].convertToLocalYYYYMMDDHHMM().substr(0,8);
+                  if ((theDay&gt;=firstDay)&amp;&amp; (tiddler[field].getTime()&gt; (new Date()).getTime() - maxDays))
+                     {
+                     if(theDay != lastDay)
+                               {
+                               var theDateList = document.createElement(&quot;ul&quot;);
+                               place.appendChild(theDateList);
+                               createTiddlyElement(theDateList,&quot;li&quot;,null,&quot;listTitle&quot;,tiddler[field].formatString(this.dateFormat));
+                               lastDay = theDay;
+                               }
+                  var theDateListItem = createTiddlyElement(theDateList,&quot;li&quot;,null,&quot;listLink&quot;,null);
+                  theDateListItem.appendChild(createTiddlyLink(place,tiddler.title,true));
+                  }
+                  }
+          }
+
+          else
+              {
+              window.old_timeline_handler.apply(this,arguments);
+              }
+}
+//}}}</pre>
+</div>
+<div title="BigThemePack" creator="nagase" modifier="nagase" created="201205170043" modified="201205230054" tags="systemConfig hide" changecount="2">
 <pre>/***
 |Name|BigThemePack|
 |Created by|SimonBaird &amp; SaqImtiaz|
@@ -1056,7 +1249,7 @@ config.themes.push(&quot;GTDd3&quot;);
 
 </pre>
 </div>
-<div title="Bleach" creator="nagase" modifier="nagase" created="201205170106" tags="StyleSheet" changecount="1">
+<div title="Bleach" creator="nagase" modifier="nagase" created="201205170106" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
@@ -1076,7 +1269,7 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="CalendarPlugin" creator="氏名" modifier="nagase" created="201205160007" modified="201205160104" tags="systemConfig myEmpty" changecount="4">
+<div title="CalendarPlugin" creator="氏名" modifier="nagase" created="201205160007" modified="201205230056" tags="systemConfig myEmpty hide" changecount="5">
 <pre>/***
 |Name|CalendarPlugin|
 |Source|http://www.TiddlyTools.com/#CalendarPlugin|
@@ -1474,7 +1667,7 @@ function createCalendarDayRowsSingle(cal, year, mon)
 setStylesheet('.calendar, .calendar table, .calendar th, .calendar tr, .calendar td { text-align:center; } .calendar, .calendar a { margin:0px !important; padding:0px !important; }', 'calendarStyles');
 //}}}</pre>
 </div>
-<div title="CheckboxPlugin" creator="nagase" modifier="nagase" created="201205160001" modified="201205160336" tags="MediaPackage TaskPackage systemConfig InputPackage myEmpty" changecount="3">
+<div title="CheckboxPlugin" creator="nagase" modifier="nagase" created="201205160001" modified="201205230055" tags="MediaPackage TaskPackage systemConfig InputPackage myEmpty hide" changecount="4">
 <pre>/***
 |Name|CheckboxPlugin|
 |Source|http://www.TiddlyTools.com/#CheckboxPlugin|
@@ -1666,7 +1859,7 @@ config.macros.checkbox = {
 }
 //}}}</pre>
 </div>
-<div title="Clock2" creator="nagase" modifier="nagase" created="201205160401" modified="201205220712" tags="systemConfig Plugins systemConfigForce" changecount="3">
+<div title="Clock2" creator="nagase" modifier="nagase" created="201205160401" modified="201205230052" tags="systemConfig Plugins systemConfigForce hide" changecount="4">
 <pre>/***
 | Name:|Clock2|
 | Author:|Simon Baird|
@@ -1896,7 +2089,7 @@ config.macros.clock2 = {
 //}}}
 </pre>
 </div>
-<div title="D3Gtd" creator="nagase" modifier="nagase" created="201205170104" tags="StyleSheet" changecount="1">
+<div title="D3Gtd" creator="nagase" modifier="nagase" created="201205170104" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
@@ -1916,7 +2109,7 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="DatePlugin" creator="氏名" modifier="nagase" created="201205160010" modified="201205160104" tags="systemConfig myEmpty" changecount="4">
+<div title="DatePlugin" creator="氏名" modifier="nagase" created="201205160010" modified="201205230056" tags="systemConfig myEmpty hide" changecount="5">
 <pre>/***
 |Name|[[DatePlugin]]|
 |Source|http://www.TiddlyTools.com/#DatePlugin|
@@ -2261,7 +2454,914 @@ function addRemindersToPopup(p,when,format)
 <div title="DefaultTiddlers" creator="nagase" modifier="nagase" created="201204200711" changecount="1">
 <pre>&quot;BAKEめも書き&quot;について</pre>
 </div>
-<div title="Haemoglobin" creator="nagase" modifier="nagase" created="201205170106" tags="StyleSheet" changecount="1">
+<div title="EventLog" creator="nagase" modifier="nagase" created="201205222355" tags="TimeJournal myEmpty task" changecount="1">
+<pre>{{ts{2008-08-18 10:13}}} First event
+</pre>
+</div>
+<div title="ForEachTiddlerMacro" creator="nagase" modifier="nagase" created="201205230020" tags="ForEachTiddlerMacro Macro excludeLists hide TimeJournal myEmpty" changecount="1">
+<pre>//~~(Part of the [[ForEachTiddlerPlugin]])~~//
+
+Create customizable lists, tables etc. for your selections of tiddlers. Specify the tiddlers to include and their order through a powerful language.
+
+''Syntax:'' 
+|&gt;|{{{&lt;&lt;}}}''forEachTiddler'' [''in'' //tiddlyWikiPath//] [''where'' //whereCondition//] [''sortBy'' //sortExpression// [''ascending'' //or// ''descending'']] [''script'' //scriptText//] [//action// [//actionParameters//]]{{{&gt;&gt;}}}|
+|//tiddlyWikiPath//|The filepath to the TiddlyWiki the macro should work on. When missing the current TiddlyWiki is used.|
+|//whereCondition//|(quoted) JavaScript boolean expression. May refer to the build-in variables {{{tiddler}}} and {{{context}}}.|
+|//sortExpression//|(quoted) JavaScript expression returning &quot;comparable&quot; objects (using '{{{&lt;}}}','{{{&gt;}}}','{{{==}}}'. May refer to the build-in variables {{{tiddler}}} and {{{context}}}.|
+|//scriptText//|(quoted) JavaScript text. Typically defines JavaScript functions that are called by the various JavaScript expressions (whereClause, sortClause, action arguments,...)|
+|//action//|The action that should be performed on every selected tiddler, in the given order. By default the actions [[addToList|AddToListAction]] and [[write|WriteAction]] are supported. When no action is specified [[addToList|AddToListAction]] is used.|
+|//actionParameters//|(action specific) parameters the action may refer while processing the tiddlers (see action descriptions for details). &lt;&lt;tiddler [[JavaScript in actionParameters]]&gt;&gt;|
+|&gt;|~~Syntax : Keywords in ''bold'', optional parts in [...]. 'or' means that exactly one of the two alternatives must exist.~~|
+
+
+''Using JavaScript''
+
+To give you a lot of flexibility the [[ForEachTiddlerMacro]] uses JavaScript in its arguments. Even if you are not that familiar with JavaScript you may find forEachTiddler useful. Just have a look at the various ready-to-use [[ForEachTiddlerExamples|http://tiddlywiki.abego-software.de/#ForEachTiddlerExamples]] and adapt them to your needs.
+
+''The Elements of the Macro''
+
+The arguments of the ForEachTiddlerMacro consist of multiple parts, each of them being optional.
+
+&lt;&lt;slider chkFETInClause [[inClause]] &quot;inClause&quot; &quot;inClause&quot;&gt;&gt;
+&lt;&lt;slider chkFETWhereClause [[whereClause]] &quot;whereClause&quot; &quot;whereClause&quot;&gt;&gt;
+&lt;&lt;slider chkFETSortClause [[sortClause]] &quot;sortClause&quot; &quot;sortClause&quot;&gt;&gt;
+&lt;&lt;slider chkFETScriptClause [[scriptClause]] &quot;scriptClause&quot; &quot;scriptClause&quot;&gt;&gt;
+&lt;&lt;slider chkFETActions [[Action Specification]] &quot;Action Specification&quot; &quot;Action Specification&quot;&gt;&gt;
+
+''Using Macros and &quot;&gt;&quot; inside the forEachTiddler Macro''
+
+You may use other macro calls into the expression, especially in the actionParameters. To avoid that the {{{&gt;&gt;}}} of such a macro call is misinterpreted as the end of the {{{&lt;&lt;forEachTiddler...&gt;&gt;}}} macro you must escape the {{{&gt;&gt;}}} of the inner macro with {{{$))}}} E.g. if you want to use {{{&lt;&lt;tiddler ...&gt;&gt;}}} inside the {{{forEachTiddler}}} macro you have to write {{{&lt;&lt;tiddler ...$))}}}.
+
+In addition it is necessary to escape single {{{&gt;}}} with the text {{{$)}}}.
+
+''Using {{{&lt;&lt;tiddler ... with: ...&gt;&gt;}}} to re-use ForEachTiddler definitions''
+
+Sometimes you may want to use a certain ForEachTiddler definition in slight variations. E.g. you may want to list either the tiddlers tagged with &quot;ToDo&quot; and in the other case with &quot;Done&quot;. To do so you may use &quot;Tiddler parameters&quot;. Here an example:
+
+Replace the variable part of the ForEachTiddler definition with $1 ($2,... $9 are supported). E.g. you may create the tiddler &quot;ListTaggedTiddlers&quot; like this
+{{{
+&lt;&lt;forEachTiddler 
+ where 
+ 'tiddler.tags.contains(&quot;$1&quot;)'
+&gt;&gt;
+}}}
+
+Now you can use the ListTaggedTiddlers for various specific tags, using the {{{&lt;&lt;tiddler ...&gt;&gt;}}} macro:
+{{{
+&lt;&lt;tiddler ListTaggedTiddlers with: &quot;systemConfig&quot;&gt;&gt;
+}}}
+{{{
+&lt;&lt;tiddler ListTaggedTiddlers with: &quot;Plugin&quot;&gt;&gt;
+}}}
+
+
+See also [[ForEachTiddlerExamples|http://tiddlywiki.abego-software.de/#ForEachTiddlerExamples]].</pre>
+</div>
+<div title="ForEachTiddlerPlugin" creator="nagase" modifier="nagase" created="201205230023" tags="Plugins excludeLists hide systemConfig TimeJournal myEmpty" changecount="1">
+<pre>/***
+|''Name:''|ForEachTiddlerPlugin|
+|''Version:''|1.0.8 (2007-04-12)|
+|''Source:''|http://tiddlywiki.abego-software.de/#ForEachTiddlerPlugin|
+|''Author:''|UdoBorkowski (ub [at] abego-software [dot] de)|
+|''Licence:''|[[BSD open source license (abego Software)|http://www.abego-software.de/legal/apl-v10.html]]|
+|''Copyright:''|&amp;copy; 2005-2007 [[abego Software|http://www.abego-software.de]]|
+|''TiddlyWiki:''|1.2.38+, 2.0|
+|''Browser:''|Firefox 1.0.4+; Firefox 1.5; InternetExplorer 6.0|
+!Description
+
+Create customizable lists, tables etc. for your selections of tiddlers. Specify the tiddlers to include and their order through a powerful language.
+
+''Syntax:'' 
+|&gt;|{{{&lt;&lt;}}}''forEachTiddler'' [''in'' //tiddlyWikiPath//] [''where'' //whereCondition//] [''sortBy'' //sortExpression// [''ascending'' //or// ''descending'']] [''script'' //scriptText//] [//action// [//actionParameters//]]{{{&gt;&gt;}}}|
+|//tiddlyWikiPath//|The filepath to the TiddlyWiki the macro should work on. When missing the current TiddlyWiki is used.|
+|//whereCondition//|(quoted) JavaScript boolean expression. May refer to the build-in variables {{{tiddler}}} and  {{{context}}}.|
+|//sortExpression//|(quoted) JavaScript expression returning &quot;comparable&quot; objects (using '{{{&lt;}}}','{{{&gt;}}}','{{{==}}}'. May refer to the build-in variables {{{tiddler}}} and  {{{context}}}.|
+|//scriptText//|(quoted) JavaScript text. Typically defines JavaScript functions that are called by the various JavaScript expressions (whereClause, sortClause, action arguments,...)|
+|//action//|The action that should be performed on every selected tiddler, in the given order. By default the actions [[addToList|AddToListAction]] and [[write|WriteAction]] are supported. When no action is specified [[addToList|AddToListAction]]  is used.|
+|//actionParameters//|(action specific) parameters the action may refer while processing the tiddlers (see action descriptions for details). &lt;&lt;tiddler [[JavaScript in actionParameters]]&gt;&gt;|
+|&gt;|~~Syntax : Keywords in ''bold'', optional parts in [...]. 'or' means that exactly one of the two alternatives must exist.~~|
+
+See details see [[ForEachTiddlerMacro]] and [[ForEachTiddlerExamples|http://tiddlywiki.abego-software.de/#ForEachTiddlerExamples]].
+
+!Revision history
+* v1.0.8 (2007-04-12)
+** Adapted to latest TiddlyWiki 2.2 Beta importTiddlyWiki API (introduced with changeset 2004). TiddlyWiki 2.2 Beta builds prior to changeset 2004 are no longer supported (but TiddlyWiki 2.1 and earlier, of cause)
+* v1.0.7 (2007-03-28)
+** Also support &quot;pre&quot; formatted TiddlyWikis (introduced with TW 2.2) (when using &quot;in&quot; clause to work on external tiddlers)
+* v1.0.6 (2006-09-16)
+** Context provides &quot;viewerTiddler&quot;, i.e. the tiddler used to view the macro. Most times this is equal to the &quot;inTiddler&quot;, but when using the &quot;tiddler&quot; macro both may be different.
+** Support &quot;begin&quot;, &quot;end&quot; and &quot;none&quot; expressions in &quot;write&quot; action
+* v1.0.5 (2006-02-05)
+** Pass tiddler containing the macro with wikify, context object also holds reference to tiddler containing the macro (&quot;inTiddler&quot;). Thanks to SimonBaird.
+** Support Firefox 1.5.0.1
+** Internal
+*** Make &quot;JSLint&quot; conform
+*** &quot;Only install once&quot;
+* v1.0.4 (2006-01-06)
+** Support TiddlyWiki 2.0
+* v1.0.3 (2005-12-22)
+** Features: 
+*** Write output to a file supports multi-byte environments (Thanks to Bram Chen) 
+*** Provide API to access the forEachTiddler functionality directly through JavaScript (see getTiddlers and performMacro)
+** Enhancements:
+*** Improved error messages on InternetExplorer.
+* v1.0.2 (2005-12-10)
+** Features: 
+*** context object also holds reference to store (TiddlyWiki)
+** Fixed Bugs: 
+*** ForEachTiddler 1.0.1 has broken support on win32 Opera 8.51 (Thanks to BrunoSabin for reporting)
+* v1.0.1 (2005-12-08)
+** Features: 
+*** Access tiddlers stored in separated TiddlyWikis through the &quot;in&quot; option. I.e. you are no longer limited to only work on the &quot;current TiddlyWiki&quot;.
+*** Write output to an external file using the &quot;toFile&quot; option of the &quot;write&quot; action. With this option you may write your customized tiddler exports.
+*** Use the &quot;script&quot; section to define &quot;helper&quot; JavaScript functions etc. to be used in the various JavaScript expressions (whereClause, sortClause, action arguments,...).
+*** Access and store context information for the current forEachTiddler invocation (through the build-in &quot;context&quot; object) .
+*** Improved script evaluation (for where/sort clause and write scripts).
+* v1.0.0 (2005-11-20)
+** initial version
+
+!Code
+***/
+//{{{
+
+	
+//============================================================================
+//============================================================================
+//		   ForEachTiddlerPlugin
+//============================================================================
+//============================================================================
+
+// Only install once
+if (!version.extensions.ForEachTiddlerPlugin) {
+
+if (!window.abego) window.abego = {};
+
+version.extensions.ForEachTiddlerPlugin = {
+	major: 1, minor: 0, revision: 8, 
+	date: new Date(2007,3,12), 
+	source: &quot;http://tiddlywiki.abego-software.de/#ForEachTiddlerPlugin&quot;,
+	licence: &quot;[[BSD open source license (abego Software)|http://www.abego-software.de/legal/apl-v10.html]]&quot;,
+	copyright: &quot;Copyright (c) abego Software GmbH, 2005-2007 (www.abego-software.de)&quot;
+};
+
+// For backward compatibility with TW 1.2.x
+//
+if (!TiddlyWiki.prototype.forEachTiddler) {
+	TiddlyWiki.prototype.forEachTiddler = function(callback) {
+		for(var t in this.tiddlers) {
+			callback.call(this,t,this.tiddlers[t]);
+		}
+	};
+}
+
+//============================================================================
+// forEachTiddler Macro
+//============================================================================
+
+version.extensions.forEachTiddler = {
+	major: 1, minor: 0, revision: 8, date: new Date(2007,3,12), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+
+// ---------------------------------------------------------------------------
+// Configurations and constants 
+// ---------------------------------------------------------------------------
+
+config.macros.forEachTiddler = {
+	 // Standard Properties
+	 label: &quot;forEachTiddler&quot;,
+	 prompt: &quot;Perform actions on a (sorted) selection of tiddlers&quot;,
+
+	 // actions
+	 actions: {
+		 addToList: {},
+		 write: {}
+	 }
+};
+
+// ---------------------------------------------------------------------------
+//  The forEachTiddler Macro Handler 
+// ---------------------------------------------------------------------------
+
+config.macros.forEachTiddler.getContainingTiddler = function(e) {
+	while(e &amp;&amp; !hasClass(e,&quot;tiddler&quot;))
+		e = e.parentNode;
+	var title = e ? e.getAttribute(&quot;tiddler&quot;) : null; 
+	return title ? store.getTiddler(title) : null;
+};
+
+config.macros.forEachTiddler.handler = function(place,macroName,params,wikifier,paramString,tiddler) {
+	// config.macros.forEachTiddler.traceMacroCall(place,macroName,params,wikifier,paramString,tiddler);
+
+	if (!tiddler) tiddler = config.macros.forEachTiddler.getContainingTiddler(place);
+	// --- Parsing ------------------------------------------
+
+	var i = 0; // index running over the params
+	// Parse the &quot;in&quot; clause
+	var tiddlyWikiPath = undefined;
+	if ((i &lt; params.length) &amp;&amp; params[i] == &quot;in&quot;) {
+		i++;
+		if (i &gt;= params.length) {
+			this.handleError(place, &quot;TiddlyWiki path expected behind 'in'.&quot;);
+			return;
+		}
+		tiddlyWikiPath = this.paramEncode((i &lt; params.length) ? params[i] : &quot;&quot;);
+		i++;
+	}
+
+	// Parse the where clause
+	var whereClause =&quot;true&quot;;
+	if ((i &lt; params.length) &amp;&amp; params[i] == &quot;where&quot;) {
+		i++;
+		whereClause = this.paramEncode((i &lt; params.length) ? params[i] : &quot;&quot;);
+		i++;
+	}
+
+	// Parse the sort stuff
+	var sortClause = null;
+	var sortAscending = true; 
+	if ((i &lt; params.length) &amp;&amp; params[i] == &quot;sortBy&quot;) {
+		i++;
+		if (i &gt;= params.length) {
+			this.handleError(place, &quot;sortClause missing behind 'sortBy'.&quot;);
+			return;
+		}
+		sortClause = this.paramEncode(params[i]);
+		i++;
+
+		if ((i &lt; params.length) &amp;&amp; (params[i] == &quot;ascending&quot; || params[i] == &quot;descending&quot;)) {
+			 sortAscending = params[i] == &quot;ascending&quot;;
+			 i++;
+		}
+	}
+
+	// Parse the script
+	var scriptText = null;
+	if ((i &lt; params.length) &amp;&amp; params[i] == &quot;script&quot;) {
+		i++;
+		scriptText = this.paramEncode((i &lt; params.length) ? params[i] : &quot;&quot;);
+		i++;
+	}
+
+	// Parse the action. 
+	// When we are already at the end use the default action
+	var actionName = &quot;addToList&quot;;
+	if (i &lt; params.length) {
+	   if (!config.macros.forEachTiddler.actions[params[i]]) {
+			this.handleError(place, &quot;Unknown action '&quot;+params[i]+&quot;'.&quot;);
+			return;
+		} else {
+			actionName = params[i]; 
+			i++;
+		}
+	} 
+	
+	// Get the action parameter
+	// (the parsing is done inside the individual action implementation.)
+	var actionParameter = params.slice(i);
+
+
+	// --- Processing ------------------------------------------
+	try {
+		this.performMacro({
+				place: place, 
+				inTiddler: tiddler,
+				whereClause: whereClause, 
+				sortClause: sortClause, 
+				sortAscending: sortAscending, 
+				actionName: actionName, 
+				actionParameter: actionParameter, 
+				scriptText: scriptText, 
+				tiddlyWikiPath: tiddlyWikiPath});
+
+	} catch (e) {
+		this.handleError(place, e);
+	}
+};
+
+// Returns an object with properties &quot;tiddlers&quot; and &quot;context&quot;.
+// tiddlers holds the (sorted) tiddlers selected by the parameter,
+// context the context of the execution of the macro.
+//
+// The action is not yet performed.
+//
+// @parameter see performMacro
+//
+config.macros.forEachTiddler.getTiddlersAndContext = function(parameter) {
+
+	var context = config.macros.forEachTiddler.createContext(parameter.place, parameter.whereClause, parameter.sortClause, parameter.sortAscending, parameter.actionName, parameter.actionParameter, parameter.scriptText, parameter.tiddlyWikiPath, parameter.inTiddler);
+
+	var tiddlyWiki = parameter.tiddlyWikiPath ? this.loadTiddlyWiki(parameter.tiddlyWikiPath) : store;
+	context[&quot;tiddlyWiki&quot;] = tiddlyWiki;
+	
+	// Get the tiddlers, as defined by the whereClause
+	var tiddlers = this.findTiddlers(parameter.whereClause, context, tiddlyWiki);
+	context[&quot;tiddlers&quot;] = tiddlers;
+
+	// Sort the tiddlers, when sorting is required.
+	if (parameter.sortClause) {
+		this.sortTiddlers(tiddlers, parameter.sortClause, parameter.sortAscending, context);
+	}
+
+	return {tiddlers: tiddlers, context: context};
+};
+
+// Returns the (sorted) tiddlers selected by the parameter.
+//
+// The action is not yet performed.
+//
+// @parameter see performMacro
+//
+config.macros.forEachTiddler.getTiddlers = function(parameter) {
+	return this.getTiddlersAndContext(parameter).tiddlers;
+};
+
+// Performs the macros with the given parameter.
+//
+// @param parameter holds the parameter of the macro as separate properties.
+//				  The following properties are supported:
+//
+//						place
+//						whereClause
+//						sortClause
+//						sortAscending
+//						actionName
+//						actionParameter
+//						scriptText
+//						tiddlyWikiPath
+//
+//					All properties are optional. 
+//					For most actions the place property must be defined.
+//
+config.macros.forEachTiddler.performMacro = function(parameter) {
+	var tiddlersAndContext = this.getTiddlersAndContext(parameter);
+
+	// Perform the action
+	var actionName = parameter.actionName ? parameter.actionName : &quot;addToList&quot;;
+	var action = config.macros.forEachTiddler.actions[actionName];
+	if (!action) {
+		this.handleError(parameter.place, &quot;Unknown action '&quot;+actionName+&quot;'.&quot;);
+		return;
+	}
+
+	var actionHandler = action.handler;
+	actionHandler(parameter.place, tiddlersAndContext.tiddlers, parameter.actionParameter, tiddlersAndContext.context);
+};
+
+// ---------------------------------------------------------------------------
+//  The actions 
+// ---------------------------------------------------------------------------
+
+// Internal.
+//
+// --- The addToList Action -----------------------------------------------
+//
+config.macros.forEachTiddler.actions.addToList.handler = function(place, tiddlers, parameter, context) {
+	// Parse the parameter
+	var p = 0;
+
+	// Check for extra parameters
+	if (parameter.length &gt; p) {
+		config.macros.forEachTiddler.createExtraParameterErrorElement(place, &quot;addToList&quot;, parameter, p);
+		return;
+	}
+
+	// Perform the action.
+	var list = document.createElement(&quot;ul&quot;);
+	place.appendChild(list);
+	for (var i = 0; i &lt; tiddlers.length; i++) {
+		var tiddler = tiddlers[i];
+		var listItem = document.createElement(&quot;li&quot;);
+		list.appendChild(listItem);
+		createTiddlyLink(listItem, tiddler.title, true);
+	}
+};
+
+abego.parseNamedParameter = function(name, parameter, i) {
+	var beginExpression = null;
+	if ((i &lt; parameter.length) &amp;&amp; parameter[i] == name) {
+		i++;
+		if (i &gt;= parameter.length) {
+			throw &quot;Missing text behind '%0'&quot;.format([name]);
+		}
+		
+		return config.macros.forEachTiddler.paramEncode(parameter[i]);
+	}
+	return null;
+}
+
+// Internal.
+//
+// --- The write Action ---------------------------------------------------
+//
+config.macros.forEachTiddler.actions.write.handler = function(place, tiddlers, parameter, context) {
+	// Parse the parameter
+	var p = 0;
+	if (p &gt;= parameter.length) {
+		this.handleError(place, &quot;Missing expression behind 'write'.&quot;);
+		return;
+	}
+
+	var textExpression = config.macros.forEachTiddler.paramEncode(parameter[p]);
+	p++;
+
+	// Parse the &quot;begin&quot; option
+	var beginExpression = abego.parseNamedParameter(&quot;begin&quot;, parameter, p);
+	if (beginExpression !== null) 
+		p += 2;
+	var endExpression = abego.parseNamedParameter(&quot;end&quot;, parameter, p);
+	if (endExpression !== null) 
+		p += 2;
+	var noneExpression = abego.parseNamedParameter(&quot;none&quot;, parameter, p);
+	if (noneExpression !== null) 
+		p += 2;
+
+	// Parse the &quot;toFile&quot; option
+	var filename = null;
+	var lineSeparator = undefined;
+	if ((p &lt; parameter.length) &amp;&amp; parameter[p] == &quot;toFile&quot;) {
+		p++;
+		if (p &gt;= parameter.length) {
+			this.handleError(place, &quot;Filename expected behind 'toFile' of 'write' action.&quot;);
+			return;
+		}
+		
+		filename = config.macros.forEachTiddler.getLocalPath(config.macros.forEachTiddler.paramEncode(parameter[p]));
+		p++;
+		if ((p &lt; parameter.length) &amp;&amp; parameter[p] == &quot;withLineSeparator&quot;) {
+			p++;
+			if (p &gt;= parameter.length) {
+				this.handleError(place, &quot;Line separator text expected behind 'withLineSeparator' of 'write' action.&quot;);
+				return;
+			}
+			lineSeparator = config.macros.forEachTiddler.paramEncode(parameter[p]);
+			p++;
+		}
+	}
+	
+	// Check for extra parameters
+	if (parameter.length &gt; p) {
+		config.macros.forEachTiddler.createExtraParameterErrorElement(place, &quot;write&quot;, parameter, p);
+		return;
+	}
+
+	// Perform the action.
+	var func = config.macros.forEachTiddler.getEvalTiddlerFunction(textExpression, context);
+	var count = tiddlers.length;
+	var text = &quot;&quot;;
+	if (count &gt; 0 &amp;&amp; beginExpression)
+		text += config.macros.forEachTiddler.getEvalTiddlerFunction(beginExpression, context)(undefined, context, count, undefined);
+	
+	for (var i = 0; i &lt; count; i++) {
+		var tiddler = tiddlers[i];
+		text += func(tiddler, context, count, i);
+	}
+	
+	if (count &gt; 0 &amp;&amp; endExpression)
+		text += config.macros.forEachTiddler.getEvalTiddlerFunction(endExpression, context)(undefined, context, count, undefined);
+
+	if (count == 0 &amp;&amp; noneExpression) 
+		text += config.macros.forEachTiddler.getEvalTiddlerFunction(noneExpression, context)(undefined, context, count, undefined);
+		
+
+	if (filename) {
+		if (lineSeparator !== undefined) {
+			lineSeparator = lineSeparator.replace(/\\n/mg, &quot;\n&quot;).replace(/\\r/mg, &quot;\r&quot;);
+			text = text.replace(/\n/mg,lineSeparator);
+		}
+		saveFile(filename, convertUnicodeToUTF8(text));
+	} else {
+		var wrapper = createTiddlyElement(place, &quot;span&quot;);
+		wikify(text, wrapper, null/* highlightRegExp */, context.inTiddler);
+	}
+};
+
+
+// ---------------------------------------------------------------------------
+//  Helpers
+// ---------------------------------------------------------------------------
+
+// Internal.
+//
+config.macros.forEachTiddler.createContext = function(placeParam, whereClauseParam, sortClauseParam, sortAscendingParam, actionNameParam, actionParameterParam, scriptText, tiddlyWikiPathParam, inTiddlerParam) {
+	return {
+		place : placeParam, 
+		whereClause : whereClauseParam, 
+		sortClause : sortClauseParam, 
+		sortAscending : sortAscendingParam, 
+		script : scriptText,
+		actionName : actionNameParam, 
+		actionParameter : actionParameterParam,
+		tiddlyWikiPath : tiddlyWikiPathParam,
+		inTiddler : inTiddlerParam, // the tiddler containing the &lt;&lt;forEachTiddler ...&gt;&gt; macro call.
+		viewerTiddler : config.macros.forEachTiddler.getContainingTiddler(placeParam) // the tiddler showing the forEachTiddler result
+	};
+};
+
+// Internal.
+//
+// Returns a TiddlyWiki with the tiddlers loaded from the TiddlyWiki of 
+// the given path.
+//
+config.macros.forEachTiddler.loadTiddlyWiki = function(path, idPrefix) {
+	if (!idPrefix) {
+		idPrefix = &quot;store&quot;;
+	}
+	var lenPrefix = idPrefix.length;
+	
+	// Read the content of the given file
+	var content = loadFile(this.getLocalPath(path));
+	if(content === null) {
+		throw &quot;TiddlyWiki '&quot;+path+&quot;' not found.&quot;;
+	}
+	
+	var tiddlyWiki = new TiddlyWiki();
+
+	// Starting with TW 2.2 there is a helper function to import the tiddlers
+	if (tiddlyWiki.importTiddlyWiki) {
+		if (!tiddlyWiki.importTiddlyWiki(content))
+			throw &quot;File '&quot;+path+&quot;' is not a TiddlyWiki.&quot;;
+		tiddlyWiki.dirty = false;
+		return tiddlyWiki;
+	}
+	
+	// The legacy code, for TW &lt; 2.2
+	
+	// Locate the storeArea div's
+	var posOpeningDiv = content.indexOf(startSaveArea);
+	var posClosingDiv = content.lastIndexOf(endSaveArea);
+	if((posOpeningDiv == -1) || (posClosingDiv == -1)) {
+		throw &quot;File '&quot;+path+&quot;' is not a TiddlyWiki.&quot;;
+	}
+	var storageText = content.substr(posOpeningDiv + startSaveArea.length, posClosingDiv);
+	
+	// Create a &quot;div&quot; element that contains the storage text
+	var myStorageDiv = document.createElement(&quot;div&quot;);
+	myStorageDiv.innerHTML = storageText;
+	myStorageDiv.normalize();
+	
+	// Create all tiddlers in a new TiddlyWiki
+	// (following code is modified copy of TiddlyWiki.prototype.loadFromDiv)
+	var store = myStorageDiv.childNodes;
+	for(var t = 0; t &lt; store.length; t++) {
+		var e = store[t];
+		var title = null;
+		if(e.getAttribute)
+			title = e.getAttribute(&quot;tiddler&quot;);
+		if(!title &amp;&amp; e.id &amp;&amp; e.id.substr(0,lenPrefix) == idPrefix)
+			title = e.id.substr(lenPrefix);
+		if(title &amp;&amp; title !== &quot;&quot;) {
+			var tiddler = tiddlyWiki.createTiddler(title);
+			tiddler.loadFromDiv(e,title);
+		}
+	}
+	tiddlyWiki.dirty = false;
+
+	return tiddlyWiki;
+};
+
+
+	
+// Internal.
+//
+// Returns a function that has a function body returning the given javaScriptExpression.
+// The function has the parameters:
+// 
+//	 (tiddler, context, count, index)
+//
+config.macros.forEachTiddler.getEvalTiddlerFunction = function (javaScriptExpression, context) {
+	var script = context[&quot;script&quot;];
+	var functionText = &quot;var theFunction = function(tiddler, context, count, index) { return &quot;+javaScriptExpression+&quot;}&quot;;
+	var fullText = (script ? script+&quot;;&quot; : &quot;&quot;)+functionText+&quot;;theFunction;&quot;;
+	return eval(fullText);
+};
+
+// Internal.
+//
+config.macros.forEachTiddler.findTiddlers = function(whereClause, context, tiddlyWiki) {
+	var result = [];
+	var func = config.macros.forEachTiddler.getEvalTiddlerFunction(whereClause, context);
+	tiddlyWiki.forEachTiddler(function(title,tiddler) {
+		if (func(tiddler, context, undefined, undefined)) {
+			result.push(tiddler);
+		}
+	});
+	return result;
+};
+
+// Internal.
+//
+config.macros.forEachTiddler.createExtraParameterErrorElement = function(place, actionName, parameter, firstUnusedIndex) {
+	var message = &quot;Extra parameter behind '&quot;+actionName+&quot;':&quot;;
+	for (var i = firstUnusedIndex; i &lt; parameter.length; i++) {
+		message += &quot; &quot;+parameter[i];
+	}
+	this.handleError(place, message);
+};
+
+// Internal.
+//
+config.macros.forEachTiddler.sortAscending = function(tiddlerA, tiddlerB) {
+	var result = 
+		(tiddlerA.forEachTiddlerSortValue == tiddlerB.forEachTiddlerSortValue) 
+			? 0
+			: (tiddlerA.forEachTiddlerSortValue &lt; tiddlerB.forEachTiddlerSortValue)
+			   ? -1 
+			   : +1; 
+	return result;
+};
+
+// Internal.
+//
+config.macros.forEachTiddler.sortDescending = function(tiddlerA, tiddlerB) {
+	var result = 
+		(tiddlerA.forEachTiddlerSortValue == tiddlerB.forEachTiddlerSortValue) 
+			? 0
+			: (tiddlerA.forEachTiddlerSortValue &lt; tiddlerB.forEachTiddlerSortValue)
+			   ? +1 
+			   : -1; 
+	return result;
+};
+
+// Internal.
+//
+config.macros.forEachTiddler.sortTiddlers = function(tiddlers, sortClause, ascending, context) {
+	// To avoid evaluating the sortClause whenever two items are compared 
+	// we pre-calculate the sortValue for every item in the array and store it in a 
+	// temporary property (&quot;forEachTiddlerSortValue&quot;) of the tiddlers.
+	var func = config.macros.forEachTiddler.getEvalTiddlerFunction(sortClause, context);
+	var count = tiddlers.length;
+	var i;
+	for (i = 0; i &lt; count; i++) {
+		var tiddler = tiddlers[i];
+		tiddler.forEachTiddlerSortValue = func(tiddler,context, undefined, undefined);
+	}
+
+	// Do the sorting
+	tiddlers.sort(ascending ? this.sortAscending : this.sortDescending);
+
+	// Delete the temporary property that holds the sortValue.	
+	for (i = 0; i &lt; tiddlers.length; i++) {
+		delete tiddlers[i].forEachTiddlerSortValue;
+	}
+};
+
+
+// Internal.
+//
+config.macros.forEachTiddler.trace = function(message) {
+	displayMessage(message);
+};
+
+// Internal.
+//
+config.macros.forEachTiddler.traceMacroCall = function(place,macroName,params) {
+	var message =&quot;&lt;&lt;&quot;+macroName;
+	for (var i = 0; i &lt; params.length; i++) {
+		message += &quot; &quot;+params[i];
+	}
+	message += &quot;&gt;&gt;&quot;;
+	displayMessage(message);
+};
+
+
+// Internal.
+//
+// Creates an element that holds an error message
+// 
+config.macros.forEachTiddler.createErrorElement = function(place, exception) {
+	var message = (exception.description) ? exception.description : exception.toString();
+	return createTiddlyElement(place,&quot;span&quot;,null,&quot;forEachTiddlerError&quot;,&quot;&lt;&lt;forEachTiddler ...&gt;&gt;: &quot;+message);
+};
+
+// Internal.
+//
+// @param place [may be null]
+//
+config.macros.forEachTiddler.handleError = function(place, exception) {
+	if (place) {
+		this.createErrorElement(place, exception);
+	} else {
+		throw exception;
+	}
+};
+
+// Internal.
+//
+// Encodes the given string.
+//
+// Replaces 
+//	 &quot;$))&quot; to &quot;&gt;&gt;&quot;
+//	 &quot;$)&quot; to &quot;&gt;&quot;
+//
+config.macros.forEachTiddler.paramEncode = function(s) {
+	var reGTGT = new RegExp(&quot;\\$\\)\\)&quot;,&quot;mg&quot;);
+	var reGT = new RegExp(&quot;\\$\\)&quot;,&quot;mg&quot;);
+	return s.replace(reGTGT, &quot;&gt;&gt;&quot;).replace(reGT, &quot;&gt;&quot;);
+};
+
+// Internal.
+//
+// Returns the given original path (that is a file path, starting with &quot;file:&quot;)
+// as a path to a local file, in the systems native file format.
+//
+// Location information in the originalPath (i.e. the &quot;#&quot; and stuff following)
+// is stripped.
+// 
+config.macros.forEachTiddler.getLocalPath = function(originalPath) {
+	// Remove any location part of the URL
+	var hashPos = originalPath.indexOf(&quot;#&quot;);
+	if(hashPos != -1)
+		originalPath = originalPath.substr(0,hashPos);
+	// Convert to a native file format assuming
+	// &quot;file:///x:/path/path/path...&quot; - pc local file --&gt; &quot;x:\path\path\path...&quot;
+	// &quot;file://///server/share/path/path/path...&quot; - FireFox pc network file --&gt; &quot;\\server\share\path\path\path...&quot;
+	// &quot;file:///path/path/path...&quot; - mac/unix local file --&gt; &quot;/path/path/path...&quot;
+	// &quot;file://server/share/path/path/path...&quot; - pc network file --&gt; &quot;\\server\share\path\path\path...&quot;
+	var localPath;
+	if(originalPath.charAt(9) == &quot;:&quot;) // pc local file
+		localPath = unescape(originalPath.substr(8)).replace(new RegExp(&quot;/&quot;,&quot;g&quot;),&quot;\\&quot;);
+	else if(originalPath.indexOf(&quot;file://///&quot;) === 0) // FireFox pc network file
+		localPath = &quot;\\\\&quot; + unescape(originalPath.substr(10)).replace(new RegExp(&quot;/&quot;,&quot;g&quot;),&quot;\\&quot;);
+	else if(originalPath.indexOf(&quot;file:///&quot;) === 0) // mac/unix local file
+		localPath = unescape(originalPath.substr(7));
+	else if(originalPath.indexOf(&quot;file:/&quot;) === 0) // mac/unix local file
+		localPath = unescape(originalPath.substr(5));
+	else // pc network file
+		localPath = &quot;\\\\&quot; + unescape(originalPath.substr(7)).replace(new RegExp(&quot;/&quot;,&quot;g&quot;),&quot;\\&quot;);	
+	return localPath;
+};
+
+// ---------------------------------------------------------------------------
+// Stylesheet Extensions (may be overridden by local StyleSheet)
+// ---------------------------------------------------------------------------
+//
+setStylesheet(
+	&quot;.forEachTiddlerError{color: #ffffff;background-color: #880000;}&quot;,
+	&quot;forEachTiddler&quot;);
+
+//============================================================================
+// End of forEachTiddler Macro
+//============================================================================
+
+
+//============================================================================
+// String.startsWith Function
+//============================================================================
+//
+// Returns true if the string starts with the given prefix, false otherwise.
+//
+version.extensions[&quot;String.startsWith&quot;] = {major: 1, minor: 0, revision: 0, date: new Date(2005,11,20), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+//
+String.prototype.startsWith = function(prefix) {
+	var n =  prefix.length;
+	return (this.length &gt;= n) &amp;&amp; (this.slice(0, n) == prefix);
+};
+
+
+
+//============================================================================
+// String.endsWith Function
+//============================================================================
+//
+// Returns true if the string ends with the given suffix, false otherwise.
+//
+version.extensions[&quot;String.endsWith&quot;] = {major: 1, minor: 0, revision: 0, date: new Date(2005,11,20), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+//
+String.prototype.endsWith = function(suffix) {
+	var n = suffix.length;
+	return (this.length &gt;= n) &amp;&amp; (this.right(n) == suffix);
+};
+
+
+//============================================================================
+// String.contains Function
+//============================================================================
+//
+// Returns true when the string contains the given substring, false otherwise.
+//
+version.extensions[&quot;String.contains&quot;] = {major: 1, minor: 0, revision: 0, date: new Date(2005,11,20), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+//
+String.prototype.contains = function(substring) {
+	return this.indexOf(substring) &gt;= 0;
+};
+
+//============================================================================
+// Array.indexOf Function
+//============================================================================
+//
+// Returns the index of the first occurance of the given item in the array or 
+// -1 when no such item exists.
+//
+// @param item [may be null]
+//
+version.extensions[&quot;Array.indexOf&quot;] = {major: 1, minor: 0, revision: 0, date: new Date(2005,11,20), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+//
+Array.prototype.indexOf = function(item) {
+	for (var i = 0; i &lt; this.length; i++) {
+		if (this[i] == item) {
+			return i;
+		}
+	}
+	return -1;
+};
+
+//============================================================================
+// Array.contains Function
+//============================================================================
+//
+// Returns true when the array contains the given item, otherwise false. 
+//
+// @param item [may be null]
+//
+version.extensions[&quot;Array.contains&quot;] = {major: 1, minor: 0, revision: 0, date: new Date(2005,11,20), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+//
+Array.prototype.contains = function(item) {
+	return (this.indexOf(item) &gt;= 0);
+};
+
+//============================================================================
+// Array.containsAny Function
+//============================================================================
+//
+// Returns true when the array contains at least one of the elements 
+// of the item. Otherwise (or when items contains no elements) false is returned.
+//
+version.extensions[&quot;Array.containsAny&quot;] = {major: 1, minor: 0, revision: 0, date: new Date(2005,11,20), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+//
+Array.prototype.containsAny = function(items) {
+	for(var i = 0; i &lt; items.length; i++) {
+		if (this.contains(items[i])) {
+			return true;
+		}
+	}
+	return false;
+};
+
+
+//============================================================================
+// Array.containsAll Function
+//============================================================================
+//
+// Returns true when the array contains all the items, otherwise false.
+// 
+// When items is null false is returned (even if the array contains a null).
+//
+// @param items [may be null] 
+//
+version.extensions[&quot;Array.containsAll&quot;] = {major: 1, minor: 0, revision: 0, date: new Date(2005,11,20), provider: &quot;http://tiddlywiki.abego-software.de&quot;};
+//
+Array.prototype.containsAll = function(items) {
+	for(var i = 0; i &lt; items.length; i++) {
+		if (!this.contains(items[i])) {
+			return false;
+		}
+	}
+	return true;
+};
+
+
+} // of &quot;install only once&quot;
+
+// Used Globals (for JSLint) ==============
+// ... DOM
+/*global 	document */
+// ... TiddlyWiki Core
+/*global 	convertUnicodeToUTF8, createTiddlyElement, createTiddlyLink, 
+			displayMessage, endSaveArea, hasClass, loadFile, saveFile, 
+			startSaveArea, store, wikify */
+//}}}
+
+
+/***
+!Licence and Copyright
+Copyright (c) abego Software ~GmbH, 2005 ([[www.abego-software.de|http://www.abego-software.de]])
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+
+Neither the name of abego Software nor the names of its contributors may be
+used to endorse or promote products derived from this software without specific
+prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.
+***/</pre>
+</div>
+<div title="Haemoglobin" creator="nagase" modifier="nagase" created="201205170106" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
@@ -2280,6 +3380,127 @@ This is a link to a [[StyleSheet]] tiddler.
 |row2| row2 |row2|
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
+</div>
+<div title="InstantTimestamp" creator="nagase" modifier="nagase" created="201205222356" tags="TimeJournal myEmpty systemConfig hide" changecount="1">
+<pre>/***
+|Name:|InstantTimestampPlugin|
+|Description:|A handy way to insert timestamps in your tiddler content|
+|Version:|1.0.10a ($Rev: 3646 $)|
+|Date:|$Date: 2008-02-27 02:34:38 +1000 (Wed, 27 Feb 2008) $|
+|Source:|http://mptw.tiddlyspot.com/#InstantTimestampPlugin|
+|Author:|Simon Baird &lt;simon.baird@gmail.com&gt;|
+|License:|http://mptw.tiddlyspot.com/#TheBSDLicense|
+!!Usage
+If you enter {ts} in your tiddler content (without the spaces) it will be replaced with a timestamp when you save the tiddler. Full list of formats:
+* {ts} or {t} -&gt; timestamp
+* {ds} or {d} -&gt; datestamp
+* !ts or !t at start of line -&gt; !!timestamp
+* !ds or !d at start of line -&gt; !!datestamp
+(I added the extra ! since that's how I like it. Remove it from translations below if required)
+!!Notes
+* Change the timeFormat and dateFormat below to suit your preference. (done EW: version adjusted 1.0.10a)
+* See also http://mptw2.tiddlyspot.com/#AutoCorrectPlugin
+* You could invent other translations and add them to the translations array below.
+***/
+//{{{
+
+config.InstantTimestamp = {
+
+	// adjust to suit
+	timeFormat: 'YYYY-0MM-DD 0hh:0mm',
+	dateFormat: 'YYYY-0MM-DD',
+
+	translations: [
+		[/^!ts?$/img,  &quot;'!!{{ts{'+now.formatString(config.InstantTimestamp.timeFormat)+'}}}'&quot;],
+		[/^!ds?$/img,  &quot;'!!{{ds{'+now.formatString(config.InstantTimestamp.dateFormat)+'}}}'&quot;],
+
+		// thanks Adapted Cat
+		[/\{ts?\}(?!\}\})/ig,&quot;'{{ts{'+now.formatString(config.InstantTimestamp.timeFormat)+'}}}'&quot;],
+		[/\{ds?\}(?!\}\})/ig,&quot;'{{ds{'+now.formatString(config.InstantTimestamp.dateFormat)+'}}}'&quot;]
+		
+	],
+
+	excludeTags: [
+		&quot;noAutoCorrect&quot;,
+		&quot;noTimestamp&quot;,
+		&quot;html&quot;,
+		&quot;CSS&quot;,
+		&quot;css&quot;,
+		&quot;systemConfig&quot;,
+		&quot;systemConfigDisabled&quot;,
+		&quot;zsystemConfig&quot;,
+		&quot;Plugins&quot;,
+		&quot;Plugin&quot;,
+		&quot;plugins&quot;,
+		&quot;plugin&quot;,
+		&quot;javascript&quot;,
+		&quot;code&quot;,
+		&quot;systemTheme&quot;,
+		&quot;systemPalette&quot;
+	],
+
+	excludeTiddlers: [
+		&quot;StyleSheet&quot;,
+		&quot;StyleSheetLayout&quot;,
+		&quot;StyleSheetColors&quot;,
+		&quot;StyleSheetPrint&quot;
+		// more?
+	]
+
+}; 
+
+TiddlyWiki.prototype.saveTiddler_mptw_instanttimestamp = TiddlyWiki.prototype.saveTiddler;
+TiddlyWiki.prototype.saveTiddler = function(title,newTitle,newBody,modifier,modified,tags,fields,clearChangeCount,created) {
+
+	tags = tags ? tags : []; // just in case tags is null
+	tags = (typeof(tags) == &quot;string&quot;) ? tags.readBracketedList() : tags;
+	var conf = config.InstantTimestamp;
+
+	if ( !tags.containsAny(conf.excludeTags) &amp;&amp; !conf.excludeTiddlers.contains(newTitle) ) {
+
+		var now = new Date();
+		var trans = conf.translations;
+		for (var i=0;i&lt;trans.length;i++) {
+			newBody = newBody.replace(trans[i][0], eval(trans[i][1]));
+		}
+	}
+
+	// TODO: use apply() instead of naming all args?
+	return this.saveTiddler_mptw_instanttimestamp(title,newTitle,newBody,modifier,modified,tags,fields,clearChangeCount,created);
+}
+
+// you can override these in StyleSheet 
+setStylesheet(&quot;.ts,.ds { font-style:italic; }&quot;,&quot;instantTimestampStyles&quot;);
+
+//}}}
+
+</pre>
+</div>
+<div title="Instructions" creator="nagase" modifier="nagase" created="201205222357" tags="TimeJournal myEmpty" changecount="1">
+<pre>&lt;html&gt;&lt;font size=4&gt;&lt;b&gt;B&lt;/b&gt;&lt;/font&gt;&lt;/html&gt;efore you begin using ''~TiddlyTimeJournal'' make a note (//in writing//) of how you think your time is spent: surfing the web, on the phone, answering email, meeting visitors //etc.//
+!Next
+If you haven't done so already, click [[GettingStarted]] enter your name in the box provided for your //username//. You may also change the SiteTitle and SiteSubtitle shown above.
+
+Now, practise logging some activities by starting and stopping the timers. When you are ready, delete the ActivityReport, [[Interruptions]] and EventLog tiddlers and that for [[18 August 2008]] and create your own.
+
+Bookmark ''~TiddlyTimeJournal'' in your browser. Keep it open in a tab and use it for a few days. Then compare how your time is actually spent with what you thought before you began. Continue logging //ad lib.//
+!To begin 
+Just click on the timer of your choice: the
+* ''~ActivityReport'' timer (under the clock) for any activity you wish to record in the ~ActivityReport log (multiple activities in the same log).
+* ''Other'' timer for activities you wish to record separately. You will be prompted for the log (&quot;tiddler&quot;) to use. You might wish to record some activities by project, client, country, class etc.
+Everything else is considered an interruption and each may be recorded with the appropriate timer. Four kinds have been defined: phone calls, visits, breaks, and &quot;other&quot; kinds which you will be prompted to describe individually. You may add to or edit this list of defined interrupts by editing the main menu (click [[menu|MainMenu]] on the left). Interruptions may also be logged in the ActivityReport or to individually named reports, at your discretion, using the first and second timers respectively.
+
+You can export and delete or rename the ActivityReport and [[Interruptions]] and other logs (~TiddlyWiki &quot;tiddlers&quot;) whenever you're ready to start new ones.
+
+To review your activities at any time, including how much time has been lost to interruptions, just click on TimeJournal above the clock.
+!Note
+You may keep a simple manual record of events, milestones //etc.// by editing a tiddler (''new tiddler'' on the menu on the right) and entering ''{/%%/ds}'' or ''&amp;#123;ts&amp;#125;'' to record a date or timestamp when the tiddler is saved. See EventLog, //e.g.//, and InstantTimestamp for date formatting options. To have it included in your TimeJournal report just tag it with the word ''task''.</pre>
+</div>
+<div title="Interruptions" creator="nagase" modifier="nagase" created="201205222357" tags="TimeJournal myEmpty" changecount="1">
+<pre>|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|
+|2008-08-17|Phone CSL|18:39:46|18:40:17|00:00:30|
+/%tasktimer%/
+</pre>
 </div>
 <div title="JapaneseTranslationPlugin" creator="nagase" modifier="nagase" created="201204200033" modified="201205160104" tags="systemConfig myEmpty" changecount="2">
 <pre>/***
@@ -2790,7 +4011,7 @@ merge(config.annotations,{
 	});
 //}}}</pre>
 </div>
-<div title="Kubrick" creator="nagase" modifier="nagase" created="201205170108" tags="StyleSheet" changecount="1">
+<div title="Kubrick" creator="nagase" modifier="nagase" created="201205170108" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
@@ -2810,7 +4031,100 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="LewcidOrangeBlog" creator="nagase" modifier="nagase" created="201205170105" tags="StyleSheet" changecount="1">
+<div title="LessBackupsPlugin" creator="nagase" modifier="nagase" created="201205222358" tags="systemConfig hide TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name:|LessBackupsPlugin|
+|Description:|Intelligently limit the number of backup files you create|
+|Version:|3.0.1 ($Rev: 2320 $)|
+|Date:|$Date: 2007-06-18 22:37:46 +1000 (Mon, 18 Jun 2007) $|
+|Source:|http://mptw.tiddlyspot.com/#LessBackupsPlugin|
+|Author:|Simon Baird|
+|Email:|simon.baird@gmail.com|
+|License:|http://mptw.tiddlyspot.com/#TheBSDLicense|
+!!Description
+You end up with just backup one per year, per month, per weekday, per hour, minute, and second.  So total number won't exceed about 200 or so. Can be reduced by commenting out the seconds/minutes/hours line from modes array
+!!Notes
+Works in IE and Firefox only.  Algorithm by Daniel Baird. IE specific code by by Saq Imtiaz.
+***/
+//{{{
+
+var MINS  = 60 * 1000;
+var HOURS = 60 * MINS;
+var DAYS  = 24 * HOURS;
+
+if (!config.lessBackups) {
+	config.lessBackups = {
+		// comment out the ones you don't want or set config.lessBackups.modes in your 'tweaks' plugin
+		modes: [
+			[&quot;YYYY&quot;,  365*DAYS], // one per year for ever
+			[&quot;MMM&quot;,   31*DAYS],  // one per month
+			[&quot;ddd&quot;,   7*DAYS],   // one per weekday
+			//[&quot;d0DD&quot;,  1*DAYS],   // one per day of month
+			[&quot;h0hh&quot;,  24*HOURS], // one per hour
+			[&quot;m0mm&quot;,  1*HOURS],  // one per minute
+			[&quot;s0ss&quot;,  1*MINS],   // one per second
+			[&quot;latest&quot;,0]         // always keep last version. (leave this).
+		]
+	};
+}
+
+window.getSpecialBackupPath = function(backupPath) {
+
+	var now = new Date();
+
+	var modes = config.lessBackups.modes;
+
+	for (var i=0;i&lt;modes.length;i++) {
+
+		// the filename we will try
+		var specialBackupPath = backupPath.replace(/(\.)([0-9]+\.[0-9]+)(\.html)$/,
+				'$1'+now.formatString(modes[i][0]).toLowerCase()+'$3')
+
+		// open the file
+		try {
+			if (config.browser.isIE) {
+				var fsobject = new ActiveXObject(&quot;Scripting.FileSystemObject&quot;)
+				var fileExists  = fsobject.FileExists(specialBackupPath);
+				if (fileExists) {
+					var fileObject = fsobject.GetFile(specialBackupPath);
+					var modDate = new Date(fileObject.DateLastModified).valueOf();
+				}
+			}
+			else {
+				netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalXPConnect&quot;);
+				var file = Components.classes[&quot;@mozilla.org/file/local;1&quot;].createInstance(Components.interfaces.nsILocalFile);
+				file.initWithPath(specialBackupPath);
+				var fileExists = file.exists();
+				if (fileExists) {
+					var modDate = file.lastModifiedTime;
+				}
+			}
+		}
+		catch(e) {
+			// give up
+			return backupPath;
+		}
+
+		// expiry is used to tell if it's an 'old' one. Eg, if the month is June and there is a
+		// June file on disk that's more than an month old then it must be stale so overwrite
+		// note that &quot;latest&quot; should be always written because the expiration period is zero (see above)
+		var expiry = new Date(modDate + modes[i][1]);
+		if (!fileExists || now &gt; expiry)
+			return specialBackupPath;
+	}
+}
+
+// hijack the core function
+window.getBackupPath_mptw_orig = window.getBackupPath;
+window.getBackupPath = function(localPath) {
+	return getSpecialBackupPath(getBackupPath_mptw_orig(localPath));
+}
+
+//}}}
+
+</pre>
+</div>
+<div title="LewcidOrangeBlog" creator="nagase" modifier="nagase" created="201205170105" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
@@ -2830,19 +4144,54 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205220721" tags="myEmpty" changecount="34">
+<div title="LinkToMeMacro" creator="nagase" modifier="nagase" created="201205222358" modified="201205230010" tags="systemConfig hide TimeJournal myEmpty" changecount="2">
+<pre>/***
+|Author:|Simon Baird|
+|URL:|http://linktomemacro.tiddlyspot.com/|
+As suggested by Peter Lindsay on 17-Nov-2006. Example usage:
+{{{&lt;&lt;linkToMe&gt;&gt;, &lt;&lt;linkToMe 'right click here to download'&gt;&gt;}}}
+&lt;&lt;linkToMe&gt;&gt;, &lt;&lt;linkToMe 'right click here to download'&gt;&gt;
+***/
+//{{{
+merge(config.macros,{
+	linkToMe: { handler: function(place,macroName,params,wikifier,paramString,tiddler) {
+		wikify('&lt;html&gt;&lt;a href=&quot;'+window.location.href+'&quot;&gt;'+(params[0]?params[0]:window.location.href)+'&lt;/a&gt;&lt;/html&gt;',place,null,tiddler);
+	}}
+});
+//}}}</pre>
+</div>
+<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205230105" tags="myEmpty" changecount="42">
 <pre>[[TranslatedGettingStarted]]
 
 &lt;&lt;calendar thismonth&gt;&gt;
-&lt;&lt;clock2 chunkySwiss 60&gt;&gt;
+&lt;html&gt;&lt;font size=4&gt;&lt;b&gt;Main Activities&lt;/b&gt;&lt;/font&gt;&lt;/html&gt;
+[[TimeJournal]]
+&lt;&lt;clock2 chunkySwiss 40&gt;&gt;
+&lt;&lt;taskTimer &quot;ActivityReport&quot; &quot;|%4|%0|%1|%2|%3|\n&quot; &quot;Activity description&quot; &quot;&quot;&gt;&gt; 
+''Log to:'' ActivityReport
+&lt;&lt;taskTimer ask &quot;|%4|%0|%1|%2|%3|\n&quot; &quot;Activity description&quot; &quot;&quot;&gt;&gt; 
+''Log to:'' Other
+----
+&lt;html&gt;&lt;font size=4&gt;&lt;b&gt;Interrupts&lt;/b&gt;&lt;/font&gt;&lt;/html&gt;
+''Phone'' &lt;&lt;taskTimer &quot;Interruptions&quot; &quot;|%4|%0|%1|%2|%3|\n&quot; &quot;Phone call with: &quot; &quot;Phone: &quot;&gt;&gt; 
+''Visit'' &lt;&lt;taskTimer &quot;Interruptions&quot; &quot;|%4|%0|%1|%2|%3|\n&quot; &quot;Visited with:  &quot; &quot;Visit: &quot;&gt;&gt; 
+''Break'' &lt;&lt;taskTimer &quot;Interruptions&quot; &quot;|%4|%0|%1|%2|%3|\n&quot; &quot;Break for: &quot; &quot;&quot;&gt;&gt; 
+''Other'' &lt;&lt;taskTimer &quot;Interruptions&quot; &quot;|%4|%0|%1|%2|%3|\n&quot; &quot;Interrupt for: &quot; &quot;&quot;&gt;&gt;
+''Log to:'' [[Interruptions]]
+----
+Edit this [[menu|MainMenu]].
+&lt;&lt;toggleSideBar Sidebar &quot;Show / Hide Sidebar&quot; show&gt;&gt;
 &lt;&lt;newTiddler text:{{store.getTiddlerText(&quot;new journal&quot;)}}&gt;&gt;
 &lt;&lt;saveMyEmpty&gt;&gt;
 SiteMap
 &lt;&lt;themeSelect style 'Select theme'&gt;&gt; 
+
 ^^~TiddlyWiki version &lt;&lt;version&gt;&gt;
-(c) 2010 [[UnaMesa|http://www.unamesa.org/]]^^</pre>
+(c) 2010 [[UnaMesa|http://www.unamesa.org/]]^^
+
+</pre>
 </div>
-<div title="Monkymind" creator="nagase" modifier="nagase" created="201205170100" modified="201205170102" tags="StyleSheet" changecount="3">
+<div title="Monkymind" creator="nagase" modifier="nagase" created="201205170100" modified="201205230054" tags="StyleSheet hide" changecount="4">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
@@ -2862,7 +4211,7 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="MonochromeTheme" creator="氏名" modifier="nagase" created="201205170010" modified="201205170101" tags="StyleSheet" changecount="2">
+<div title="MonochromeTheme" creator="氏名" modifier="nagase" created="201205170010" modified="201205230054" tags="StyleSheet hide" changecount="3">
 <pre>/*{{{*/
 /*Monochrome Theme for TiddlyWiki*/
 /*Design and CSS by Saq Imtiaz*/
@@ -3095,7 +4444,7 @@ h1 {font-size:18px;}
 h2 {font-size:16px;}
 h3 {font-size: 14px;}</pre>
 </div>
-<div title="Rin" creator="nagase" modifier="nagase" created="201205170107" tags="StyleSheet" changecount="1">
+<div title="Rin" creator="nagase" modifier="nagase" created="201205170107" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
@@ -3115,14 +4464,14 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="SaveMyEmptyMacro" creator="氏名" modifier="nagase" created="201205160011" modified="201205160107" tags="systemConfig myEmpty" changecount="2">
+<div title="SaveMyEmptyMacro" creator="氏名" modifier="nagase" created="201205160011" modified="201205230110" tags="systemConfig myEmpty hide" changecount="6">
 <pre>//{{{
 config.macros.saveMyEmpty = {
 	tag: &quot;myEmpty&quot;,
 	filename: &quot;myempty.html&quot;,
-	label: &quot;設定済み空ﾌｧｲﾙ保存&quot;,
-	prompt: &quot;設定済み空ﾌｧｲﾙを保存する&quot;,
-	message: &quot;設定済み空ﾌｧｲﾙを保存しました&quot;
+	label: &quot;Save my Empty File.&quot;,
+	prompt: &quot;設定済み空ファイルを保存する&quot;,
+	message: &quot;設定済み空ファイルを保存しました&quot;
 };
 
 config.macros.saveMyEmpty.handler = function(place)
@@ -3207,7 +4556,79 @@ function saveMyEmpty()
 //}}}
 </pre>
 </div>
-<div title="SelectThemePlugin" creator="氏名" modifier="氏名" created="201205170009" tags="systemConfig Plugins" changecount="1">
+<div title="SaveOnExitPlugin" creator="nagase" modifier="nagase" created="201205222359" tags="systemConfig hide TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name|SaveOnExitPlugin|
+|Source|http://www.TiddlyTools.com/#SaveOnExitPlugin|
+|Version|2.0.0|
+|Author|Eric Shulman - ELS Design Studios|
+|License|http://www.TiddlyTools.com/#LegalStatements &lt;br&gt;and [[Creative Commons Attribution-ShareAlike 2.5 License|http://creativecommons.org/licenses/by-sa/2.5/]]|
+|~CoreVersion|2.1|
+|Type|plugin|
+|Requires||
+|Overrides|window.confirmExit|
+|Options|##Configuration|
+|Description|extra safety when exiting with unsaved changes|
+For extra &quot;data safety&quot; when exiting from a TiddlyWiki document, this plugin prompts you to ''//save any tiddlers that are still being actively edited//''.  The plugin then provides an additional option to ''//save the entire TiddlyWiki document//'' before continuing.  Finally, if you do not choose to save the file and there are still unsaved tiddler changes, the standard TiddlyWiki warning message is then displayed as usual, with options to ''//stay on the current page or exit and lose all changes.//''
+!!!!!Configuration
+&lt;&lt;&lt;
+&lt;&lt;option chkSaveOnExit&gt;&gt; Enable &quot;save-before-exiting&quot; confirmation messages
+&lt;&lt;&lt;
+!!!!!Revisions
+&lt;&lt;&lt;
+2008.04.03 2.0.0 completely re-written to provide checks for active tiddler editors and more consistent warning messages
+2007.03.01 1.0.2 use apply() to invoke hijacked core function
+2006.08.23 1.0.1 Re-released.  Note default is now to NOT enable second message. (i.e., standard behavior)
+2006.02.24 1.0.0 Initial release.  Replaces ConfirmExitPlugin, which is now included in the TW core functionality.
+&lt;&lt;&lt;
+!!!!!Code
+***/
+//{{{
+version.extensions.SaveOnExit = {major: 2, minor: 0, revision: 0, date: new Date(2008,4,3)};
+
+// do NOT enable safety checks by default (i.e., use standard behavior unless explicitly enabled)
+if (config.options.chkSaveOnExit===undefined) config.options.chkSaveOnExit=false;
+
+config.messages.activeEditorWarning=
+	&quot;Are you sure you want to navigate away from this page?&quot;
+	+&quot;\n\n--------------------------------\n\n&quot;
+	+&quot;'%0' is currently being edited.&quot;
+	+&quot;\n\n--------------------------------\n\n&quot;
+	+&quot;Press OK to save this tiddler, or Cancel to skip this tiddler and continue.&quot;;
+
+config.messages.unsavedChangesWarning=
+	&quot;Are you sure you want to navigate away from this page?&quot;
+	+&quot;\n\n--------------------------------\n\n&quot;
+	+&quot;There are unsaved changes in this TiddlyWiki document.&quot;
+	+&quot;\n\n--------------------------------\n\n&quot;
+	+&quot;Press OK to save the document, or Cancel to continue without saving.&quot;;
+
+// for browsers that support onBeforeUnload event handling
+window.saveOnExit_coreConfirmExit=window.confirmExit;
+window.confirmExit=function() {
+	// call core handler (to invoke other hijacked 'on exit' code, e.g., [[StorySaverPlugin]])
+	window.saveOnExit_coreConfirmExit.apply(this,arguments);
+	// check for tiddlers being edited and offer chance to save/close each
+	if (config.options.chkSaveOnExit) story.forEachTiddler(function(tid,elem) {
+		if (elem.getAttribute(&quot;dirty&quot;)!=&quot;true&quot;) return;
+		if (!confirm(config.messages.activeEditorWarning.format([tid]))) return;
+		story.saveTiddler(tid);
+		story.closeTiddler(tid);
+	});
+	// check for unsaved changes
+	if(store &amp;&amp; store.isDirty &amp;&amp; store.isDirty()) {
+		if (config.options.chkSaveOnExit &amp;&amp; confirm(config.messages.unsavedChangesWarning))
+			saveChanges(); // optionally, save the file before exiting
+		else
+			return config.messages.confirmExit; // otherwise, show standard warning message
+	}
+}
+
+// for older browsers that only support onUnload event handling
+window.checkUnsavedChanges=function() { if(window.hadConfirmExit === false) window.confirmExit(); }
+//}}}</pre>
+</div>
+<div title="SelectThemePlugin" creator="氏名" modifier="nagase" created="201205170009" modified="201205230054" tags="systemConfig Plugins hide myEmpty" changecount="2">
 <pre>/***
 
 ''This plugin was previously called StyleChooser.''
@@ -3497,7 +4918,7 @@ config.paramifiers.theme = {
 
 </pre>
 </div>
-<div title="ShowClockMacro" creator="nagase" modifier="nagase" created="201205172325" tags="systemConfig Plugins" changecount="1">
+<div title="ShowClockMacro" creator="nagase" modifier="nagase" created="201205172325" modified="201205230056" tags="systemConfig Plugins hide" changecount="2">
 <pre>/***
 !Example Usage
 &lt;&lt;eg
@@ -3581,6 +5002,239 @@ setStylesheet(config.macros.showClock.styles,&quot;showClockStyles&quot;);
 
 //}}}
 </pre>
+</div>
+<div title="SinglePageModePlugin" creator="nagase" modifier="nagase" created="201205230000" tags="NavigationPackage systemConfig hide TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name|SinglePageModePlugin|
+|Source|http://www.TiddlyTools.com/#SinglePageModePlugin|
+|Documentation|http://www.TiddlyTools.com/#SinglePageModePluginInfo|
+|Version|2.9.5|
+|Author|Eric Shulman - ELS Design Studios|
+|License|http://www.TiddlyTools.com/#LegalStatements &lt;br&gt;and [[Creative Commons Attribution-ShareAlike 2.5 License|http://creativecommons.org/licenses/by-sa/2.5/]]|
+|~CoreVersion|2.1|
+|Type|plugin|
+|Requires||
+|Overrides|Story.prototype.displayTiddler(), Story.prototype.displayTiddlers()|
+|Options|##Configuration|
+|Description|Show tiddlers one at a time with automatic permalink, or always open tiddlers at top/bottom of page.|
+This plugin allows you to configure TiddlyWiki to navigate more like a traditional multipage web site with only one tiddler displayed at a time.
+!!!!!Documentation
+&gt;see [[SinglePageModePluginInfo]]
+!!!!!Configuration
+&lt;&lt;&lt;
+&lt;&lt;option chkSinglePageMode&gt;&gt; Display one tiddler at a time
+&gt;&lt;&lt;option chkSinglePagePermalink&gt;&gt; Automatically permalink current tiddler
+&gt;&lt;&lt;option chkSinglePageKeepFoldedTiddlers&gt;&gt; Don't close tiddlers that are folded
+&gt;&lt;&lt;option chkSinglePageKeepEditedTiddlers&gt;&gt; Don't close tiddlers that are being edited
+&lt;&lt;option chkTopOfPageMode&gt;&gt; Open tiddlers at the top of the page
+&lt;&lt;option chkBottomOfPageMode&gt;&gt; Open tiddlers at the bottom of the page
+&lt;&lt;option chkSinglePageAutoScroll&gt;&gt; Automatically scroll tiddler into view (if needed)
+
+Notes:
+* The &quot;display one tiddler at a time&quot; option can also be //temporarily// set/reset by including a 'paramifier' in the document URL: {{{#SPM:true}}} or {{{#SPM:false}}}.
+* If more than one display mode is selected, 'one at a time' display takes precedence over both 'top' and 'bottom' settings, and if 'one at a time' setting is not used, 'top of page' takes precedence over 'bottom of page'.
+* When using Apple's Safari browser, automatically setting the permalink causes an error and is disabled.
+&lt;&lt;&lt;
+!!!!!Revisions
+&lt;&lt;&lt;
+2008.06.12 [2.9.5] corrected 'scroll to top of page' logic in auto-scroll handling
+| Please see [[SinglePageModePluginInfo]] for previous revision details |
+2005.08.15 [1.0.0] Initial Release.  Support for BACK/FORWARD buttons adapted from code developed by Clint Checketts.
+&lt;&lt;&lt;
+!!!!!Code
+***/
+//{{{
+version.extensions.SinglePageMode= {major: 2, minor: 9, revision: 5, date: new Date(2008,6,12)};
+//}}}
+//{{{
+config.paramifiers.SPM = { onstart: function(v) {
+	config.options.chkSinglePageMode=eval(v);
+	if (config.options.chkSinglePageMode &amp;&amp; config.options.chkSinglePagePermalink &amp;&amp; !config.browser.isSafari) {
+		config.lastURL = window.location.hash;
+		if (!config.SPMTimer) config.SPMTimer=window.setInterval(function() {checkLastURL();},1000);
+	}
+} };
+//}}}
+//{{{
+if (config.options.chkSinglePageMode==undefined)
+	config.options.chkSinglePageMode=false;
+if (config.options.chkSinglePagePermalink==undefined)
+	config.options.chkSinglePagePermalink=true;
+if (config.options.chkSinglePageKeepFoldedTiddlers==undefined)
+	config.options.chkSinglePageKeepFoldedTiddlers=false;
+if (config.options.chkSinglePageKeepEditedTiddlers==undefined)
+	config.options.chkSinglePageKeepEditedTiddlers=false;
+if (config.options.chkTopOfPageMode==undefined)
+	config.options.chkTopOfPageMode=false;
+if (config.options.chkBottomOfPageMode==undefined)
+	config.options.chkBottomOfPageMode=false;
+if (config.options.chkSinglePageAutoScroll==undefined)
+	config.options.chkSinglePageAutoScroll=true;
+//}}}
+//{{{
+config.SPMTimer = 0;
+config.lastURL = window.location.hash;
+function checkLastURL()
+{
+	if (!config.options.chkSinglePageMode)
+		{ window.clearInterval(config.SPMTimer); config.SPMTimer=0; return; }
+	if (config.lastURL == window.location.hash) return; // no change in hash
+	var tids=decodeURIComponent(window.location.hash.substr(1)).readBracketedList();
+	if (tids.length==1) // permalink (single tiddler in URL)
+		story.displayTiddler(null,tids[0]);
+	else { // restore permaview or default view
+		config.lastURL = window.location.hash;
+		if (!tids.length) tids=store.getTiddlerText(&quot;DefaultTiddlers&quot;).readBracketedList();
+		story.closeAllTiddlers();
+		story.displayTiddlers(null,tids);
+	}
+}
+
+if (Story.prototype.SPM_coreDisplayTiddler==undefined)
+	Story.prototype.SPM_coreDisplayTiddler=Story.prototype.displayTiddler;
+Story.prototype.displayTiddler = function(srcElement,tiddler,template,animate,slowly)
+{
+	var title=(tiddler instanceof Tiddler)?tiddler.title:tiddler;
+	var tiddlerElem=document.getElementById(story.idPrefix+title); // ==null unless tiddler is already displayed
+	var opt=config.options;
+	var single=opt.chkSinglePageMode &amp;&amp; !startingUp;
+	var top=opt.chkTopOfPageMode &amp;&amp; !startingUp;
+	var bottom=opt.chkBottomOfPageMode &amp;&amp; !startingUp;
+	if (single) {
+		story.forEachTiddler(function(tid,elem) {
+			// skip current tiddler and, optionally, tiddlers that are folded.
+			if (	tid==title
+				|| (opt.chkSinglePageKeepFoldedTiddlers &amp;&amp; elem.getAttribute(&quot;folded&quot;)==&quot;true&quot;))
+				return;
+			// if a tiddler is being edited, ask before closing
+			if (elem.getAttribute(&quot;dirty&quot;)==&quot;true&quot;) {
+				if (opt.chkSinglePageKeepEditedTiddlers) return;
+				// if tiddler to be displayed is already shown, then leave active tiddler editor as is
+				// (occurs when switching between view and edit modes)
+				if (tiddlerElem) return;
+				// otherwise, ask for permission
+				var msg=&quot;'&quot;+tid+&quot;' is currently being edited.\n\n&quot;;
+				msg+=&quot;Press OK to save and close this tiddler\nor press Cancel to leave it opened&quot;;
+				if (!confirm(msg)) return; else story.saveTiddler(tid);
+			}
+			story.closeTiddler(tid);
+		});
+	}
+	else if (top)
+		arguments[0]=null;
+	else if (bottom)
+		arguments[0]=&quot;bottom&quot;;
+	if (single &amp;&amp; opt.chkSinglePagePermalink &amp;&amp; !config.browser.isSafari) {
+		window.location.hash = encodeURIComponent(String.encodeTiddlyLink(title));
+		config.lastURL = window.location.hash;
+		document.title = wikifyPlain(&quot;SiteTitle&quot;) + &quot; - &quot; + title;
+		if (!config.SPMTimer) config.SPMTimer=window.setInterval(function() {checkLastURL();},1000);
+	}
+	if (tiddlerElem &amp;&amp; tiddlerElem.getAttribute(&quot;dirty&quot;)==&quot;true&quot;) { // editing... move tiddler without re-rendering
+		var isTopTiddler=(tiddlerElem.previousSibling==null);
+		if (!isTopTiddler &amp;&amp; (single || top))
+			tiddlerElem.parentNode.insertBefore(tiddlerElem,tiddlerElem.parentNode.firstChild);
+		else if (bottom)
+			tiddlerElem.parentNode.insertBefore(tiddlerElem,null);
+		else this.SPM_coreDisplayTiddler.apply(this,arguments); // let CORE render tiddler
+	} else
+		this.SPM_coreDisplayTiddler.apply(this,arguments); // let CORE render tiddler
+	var tiddlerElem=document.getElementById(story.idPrefix+title);
+	if (tiddlerElem&amp;&amp;opt.chkSinglePageAutoScroll) {
+		// scroll to top of page or top of tiddler
+		var isTopTiddler=(tiddlerElem.previousSibling==null);
+		var yPos=isTopTiddler?0:ensureVisible(tiddlerElem);
+		// if animating, defer scroll until 200ms after animation completes
+		var delay=opt.chkAnimate?config.animDuration+200:0;
+		setTimeout(&quot;window.scrollTo(0,&quot;+yPos+&quot;)&quot;,delay); 
+	}
+}
+
+if (Story.prototype.SPM_coreDisplayTiddlers==undefined)
+	Story.prototype.SPM_coreDisplayTiddlers=Story.prototype.displayTiddlers;
+Story.prototype.displayTiddlers = function() {
+	// suspend single/top/bottom modes when showing multiple tiddlers
+	var opt=config.options;
+	var saveSPM=opt.chkSinglePageMode; opt.chkSinglePageMode=false;
+	var saveTPM=opt.chkTopOfPageMode; opt.chkTopOfPageMode=false;
+	var saveBPM=opt.chkBottomOfPageMode; opt.chkBottomOfPageMode=false;
+	this.SPM_coreDisplayTiddlers.apply(this,arguments);
+	opt.chkBottomOfPageMode=saveBPM;
+	opt.chkTopOfPageMode=saveTPM;
+	opt.chkSinglePageMode=saveSPM;
+}
+//}}}</pre>
+</div>
+<div title="SinglePageModePluginInfo" creator="nagase" modifier="nagase" created="201205230001" tags="pluginInfo hide TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name|SinglePageModePluginInfo|
+|Source|http://www.TiddlyTools.com/#SinglePageModePlugin|
+|Documentation|http://www.TiddlyTools.com/#SinglePageModePluginInfo|
+|Version|2.9.5|
+|Author|Eric Shulman - ELS Design Studios|
+|License|http://www.TiddlyTools.com/#LegalStatements &lt;br&gt;and [[Creative Commons Attribution-ShareAlike 2.5 License|http://creativecommons.org/licenses/by-sa/2.5/]]|
+|~CoreVersion|2.1|
+|Type|documentation|
+|Requires||
+|Overrides||
+|Description|Documentation for SinglePageModePlugin|
+Normally, as you click on the links in TiddlyWiki, more and more tiddlers are displayed on the page. The order of this tiddler display depends upon when and where you have clicked. Some people like this non-linear method of reading the document, while others have reported that when many tiddlers have been opened, it can get somewhat confusing.  SinglePageModePlugin allows you to configure TiddlyWiki to navigate more like a traditional multipage web site with only one item displayed at a time.
+!!!!!Usage
+&lt;&lt;&lt;
+When the plugin is enabled, only one tiddler will be displayed at a time and the browser window's titlebar is updated to include the current tiddler title.  The browser's location URL is also updated with a 'permalink' for the current tiddler so that it is easier to create a browser 'bookmark' for the current tiddler.  Alternatively, even when displaying multiple tiddlers //is// permitted, you can still reduce the potential for confusion by forcing  tiddlers to always open at the top (or bottom) of the page instead of being displayed following the tiddler containing the link that was clicked.
+&lt;&lt;&lt;
+!!!!!Configuration
+&lt;&lt;&lt;
+&lt;&lt;option chkSinglePageMode&gt;&gt; Display one tiddler at a time
+&gt;&lt;&lt;option chkSinglePagePermalink&gt;&gt; Automatically permalink current tiddler
+&gt;&lt;&lt;option chkSinglePageKeepFoldedTiddlers&gt;&gt; Don't close tiddlers that are folded
+&gt;&lt;&lt;option chkSinglePageKeepEditedTiddlers&gt;&gt; Don't close tiddlers that are being edited
+&lt;&lt;option chkTopOfPageMode&gt;&gt; Open tiddlers at the top of the page
+&lt;&lt;option chkBottomOfPageMode&gt;&gt; Open tiddlers at the bottom of the page
+&lt;&lt;option chkSinglePageAutoScroll&gt;&gt; Automatically scroll tiddler into view (if needed)
+
+Notes:
+* {{block{
+The &quot;display one tiddler at a time&quot; option can also be //temporarily// set/reset by including a 'paramifier' in the document URL: {{{#SPM:true}}} or {{{#SPM:false}}}. You can also use {{{SPM:expression}}}, where 'expression' is any javascript statement that evaluates to true or false.  This allows you to create hard-coded links in other documents that can selectively enable/disable the use of this option based on various programmatic conditions, such as the current username. For example, using
+&amp;nbsp;&amp;nbsp;&amp;nbsp;{{{#SPM:config.options.txtUserName!=&quot;SomeName&quot;}}}
+enables 'one tiddler at a time' display for all users //other than// &quot;~SomeName&quot;)}}}
+* If more than one display mode is selected, 'one at a time' display takes precedence over both 'top' and 'bottom' settings, and if 'one at a time' setting is not used, 'top of page' takes precedence over 'bottom of page'.
+* When using Apple's Safari browser, automatically setting the permalink causes an error and is disabled.
+&lt;&lt;&lt;
+!!!!!Revisions
+&lt;&lt;&lt;
+2008.06.12 [2.9.5] corrected 'scroll to top of page' logic in auto-scroll handling
+2008.06.11 [2.9.4] added chkSinglePageKeepEditedTiddlers option
+2008.06.05 [2.9.3] in displayTiddler(), bypass single/top/bottom mode handling if startingUp.  Allows multiple tiddlers to be displayed during startup processing (e.g., #story:DefaultTiddlers), even if single/top/bottom mode is enabled.
+2008.04.18 [2.9.2] in displayTiddler() and checkLastURL(), handling for Unicode in tiddler titles (remove explicit conversion between Unicode and UTF, as this is apparently done automatically by encode/decodeURIComponent, resulting in double-encoding!
+2008.04.08 [2.9.1] don't automatically add options to AdvancedOptions shadow tiddler
+2008.04.02 [2.9.0] in displayTiddler(), when single-page mode is in use and a tiddler is being edited, ask for permission to save-and-close that tiddler, instead of just leaving it open.
+2008.03.29 [2.8.3] in displayTiddler(), get title from tiddler object (if needed).  Fixes errors caused when calling function passes a tiddler *object* instead of a tiddler *title*
+2008.03.14 [2.8.2] in displayTiddler(), if editing specified tiddler, just move it to top/bottom of story *without* re-rendering (prevents discard of partial edits).
+2008.03.06 [2.8.1] in paramifier handler, start 'checkURL' timer if chkSinglePageMode is enabled
+2008.03.06 [2.8.0] added option, {{{config.options.chkSinglePageKeepFoldedTiddlers}}}, so folded tiddlers won't be closed when using single-page mode.  Also, in checkURL(), if hash is a ''permaview'' (e.g., &quot;#foo bar baz&quot;), then display multiple tiddlers rather than attempting to display &quot;foo bar baz&quot; as a single tiddler
+2008.03.05 [2.7.0] added support for &quot;SPM:&quot; URL paramifier
+2008.03.01 [2.6.0] in hijack of displayTiddler(), added 'title' argument to closeAllTiddlers() so that target tiddler isn't closed-and-reopened if it was already displayed.  Also, added config.options.chkSinglePageAutoScrolloption to bypass automatic 'scroll into view' logic (note: core still does it's own ensureVisible() handling)
+2007.12.22 [2.5.3] in checkLastURL(), use decodeURIComponent() instead of decodeURI so that tiddler titles with commas (and/or other punctuation) are correctly handled.
+2007.10.26 [2.5.2] documentation cleanup
+2007.10.08 [2.5.1] in displayTiddler(), when using single-page or top-of-page mode, scrollTo(0,0) to ensure that page header is in view.
+2007.09.13 [2.5.0] for TPM/BPM modes, don't force tiddler to redisplay if already shown.  Allows transition between view/edit or collapsed/view templates, without repositioning displayed tiddler.
+2007.09.12 [2.4.0] added option to disable automatic permalink feature.  Also, Safari is now excluded from permalinking action to avoid bug where tiddlers don't display after hash is updated.
+2007.03.03 [2.3.1] fix typo when adding BPM option to AdvancedOptions (prevented checkbox from appearing)
+2007.03.03 [2.3.0] added support for BottomOfPageMode (BPM) based on request from DaveGarbutt
+2007.02.06 [2.2.3] in Story.prototype.displayTiddler(), use convertUnicodeToUTF8() for correct I18N string handling when creating URL hash string from tiddler title (based on bug report from BidiX)
+2007.01.08 [2.2.2] use apply() to invoke hijacked core functions
+2006.07.04 [2.2.1] in hijack for displayTiddlers(), suspend TPM as well as SPM so that DefaultTiddlers displays in the correct order.
+2006.06.01 [2.2.0] added chkTopOfPageMode (TPM) handling
+2006.02.04 [2.1.1] moved global variable declarations to config.* to avoid FireFox 1.5.0.1 crash bug when assigning to globals
+2005.12.27 [2.1.0] hijack displayTiddlers() so that SPM can be suspended during startup while displaying the DefaultTiddlers (or #hash list).  Also, corrected initialization for undefined SPM flag to &quot;false&quot;, so default behavior is to display multiple tiddlers
+2005.12.27 [2.0.0] Update for TW2.0
+2005.11.24 [1.1.2] When the back and forward buttons are used, the page now changes to match the URL.  Based on code added by Clint Checketts
+2005.10.14 [1.1.1] permalink creation now calls encodeTiddlyLink() to handle tiddler titles with spaces in them
+2005.10.14 [1.1.0] added automatic setting of window title and location bar ('auto-permalink').  feature suggestion by David Dickens.
+2005.10.09 [1.0.1] combined documentation and code in a single tiddler
+2005.08.15 [1.0.0] Initial Release
+&lt;&lt;&lt;</pre>
 </div>
 <div title="SiteMap" creator="nagase" modifier="nagase" created="201205212325" modified="201205220723" tags="myEmpty" changecount="17">
 <pre>(See also SliderSiteMap)
@@ -3744,7 +5398,10 @@ config.macros.siteMap = {
 <div title="StyleSheet" creator="nagase" modifier="nagase" created="201205170112" modified="201205220342" tags="StyleSheet myEmpty" changecount="2">
 <pre></pre>
 </div>
-<div title="TagCloudPlugin" creator="nagase" modifier="nagase" created="201205160348" tags="NavigationPackage systemConfig DiscoveryPackage" changecount="1">
+<div title="TabTimeline" creator="nagase" modifier="nagase" created="201205230002" tags="hide TimeJournal myEmpty" changecount="1">
+<pre>&lt;&lt;timeline better:true excludeTag:hide sortBy:modified&gt;&gt;</pre>
+</div>
+<div title="TagCloudPlugin" creator="nagase" modifier="nagase" created="201205160348" modified="201205230055" tags="NavigationPackage systemConfig DiscoveryPackage hide myEmpty" changecount="2">
 <pre>/***
 |Name|TagCloudPlugin|
 |Source|http://www.TiddlyTools.com/#TagCloudPlugin|
@@ -3947,6 +5604,341 @@ config.macros.cloud = {
 };
 //}}}</pre>
 </div>
+<div title="TaskPackage" creator="nagase" modifier="nagase" created="201205230003" tags="package TaskPackage story hide TimeJournal myEmpty" changecount="1">
+<pre>Tiddlers that are tagged with&lt;&lt;tag task&gt;&gt;can be used to ''describe specific tasks'' and ''assign'' them to individuals, ''track'' the status (e.g., &quot;not started&quot;, &quot;in progress&quot;, &quot;done&quot;, etc.), and ''record elapsed time'' of specific activities connected to a given task.
+
+Task tiddlers are displayed using a custom [[TaskViewTemplate]], which automatically embeds extra task-related controls directly in the tiddler //view//, allowing you to quickly ''assign and track task progress, without needing to edit the tiddler content.''
+
+''To start a new task, simply create a tiddler, enter some text (e.g., notes about the task), add tag&lt;&lt;tag task&gt;&gt;, and then press 'done' to start viewing the tiddler.''  Alternatively, you can add the following &quot;&quot;&quot;&lt;&lt;newTiddler&gt;&gt;&quot;&quot;&quot; macro in your SideBarOptions (or any other tiddler) to insert a&lt;&lt;newTiddler label:'new task' title:'NewTask' tag:'task' prompt:'create a task tiddler'&gt;&gt;command into your document:
+{{{
+&lt;&lt;newTiddler label:'new task' title:'NewTask' tag:'task' prompt:'create a task tiddler'&gt;&gt;
+}}}</pre>
+</div>
+<div title="TaskTimerPlugin" creator="nagase" modifier="nagase" created="201205230003" tags="TaskPackage systemConfig hide TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name|TaskTimerPlugin|
+|Source|http://www.TiddlyTools.com/#TaskTimerPlugin|
+|Documentation|http://www.TiddlyTools.com/#TaskTimerPluginInfo|
+|Version|1.3.0|
+|Author|Eric Shulman - ELS Design Studios|
+|License|http://www.TiddlyTools.com/#LegalStatements &lt;br&gt;and [[Creative Commons Attribution-ShareAlike 2.5 License|http://creativecommons.org/licenses/by-sa/2.5/]]|
+|~CoreVersion|2.1|
+|Type|plugin|
+|Requires||
+|Overrides||
+|Options|##Configuration|
+|Description|'timer' button automatically writes start/end/elapsed time into tiddler content|
+Quickly generate 'timed task' logs that can be used for status reports, billing purposes, etc.  
+!!!!!Documentation
+&gt; see [[TaskTimerPluginInfo]]
+!!!!!Configuration
+&gt; see [[TaskTimerPluginConfig]]
+!!!!!Revisions
+&lt;&lt;&lt;
+2008.03.12 [1.3.0] added 'datestampFormat' for including date in standard output.&lt;br&gt;Also, for clarity, renamed 'getDateFormat()' to 'getJournalFormat()'.
+2008.03.10 [*.*.*] plugin size reduction - documentation moved to [[TaskTimerPluginInfo]]
+2007.12.13 [1.2.2] in getDateFormat(), cleanup fallback logic 
+|please see [[TaskTimerPluginInfo]] for additional revision details|
+2007.03.14 [0.5.0] converted from inline script
+&lt;&lt;&lt;
+!!!!!Code
+***/
+//{{{
+version.extensions.taskTimer= {major: 1, minor:3, revision: 0, date: new Date(2008,3,12)};
+
+config.macros.taskTimer = {
+	label: &quot;start timer&quot;,
+	title: &quot;press to start the task timer&quot;,
+	format: &quot;|%4|%0|%1|%2|%3|\\n&quot;, // note: double-backslash-en, also date is %4 (for backward compatibility)
+	defText: &quot; &quot;, // default description text
+	todayKeyword: &quot;today&quot;,
+	todayFormat: &quot;0MM/0DD/YYYY&quot;, // default format - superceded by CalendarPlugin, DatePlugin, or DatePluginConfig
+	datestampFormat: &quot;YYYY-0MM-0DD&quot;, // date stamp format
+	defHeader: &quot;|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|\n&quot;,
+	defTarget: &quot;ActivityReport&quot;,
+	prompt: &quot;Enter a short description for this activity.  Press [cancel] to continue timer.&quot;,
+	askMsg: &quot;Enter the title of a tiddler in which to record this activity.  Press [cancel] to continue timer.&quot;,
+	createdMsg: &quot;'%0' has been created&quot;,
+	updatedMsg: &quot;'%0' has been updated&quot;,
+	marker: &quot;/%&quot;+&quot;tasktimer&quot;+&quot;%/&quot;,
+	tag: &quot;task&quot;,
+	handler: function(place,macroName,params,wikifier,paramString,tiddler) {
+		var target=params.shift(); // get optional target tiddler title
+		if (!target) target=&quot;&quot;;
+		var format=this.format; if (params[0]) format=params.shift(); // get optional output format
+		var prompt=this.prompt; if (params[0]) prompt=params.shift(); // get optional prompt text
+		var defText=this.defText; if (params[0]) defText=params.shift(); // get optional default text
+		var onclick=&quot;config.macros.taskTimer.toggle(this,'&quot;+target+&quot;','&quot;+format+&quot;','&quot;+prompt+&quot;','&quot;+defText+&quot;')&quot;;
+		createTiddlyElement(place,&quot;span&quot;).innerHTML =
+			'&lt;input type=&quot;button&quot; value=&quot;start timer&quot; title=&quot;'+this.title+'&quot; onclick=&quot;'+onclick+'&quot;&gt;';
+	},
+	toggle: function(here,target,format,msg,defText) {
+		if (!target || !target.length || target==&quot;here&quot;) {
+			var  tid=story.findContainingTiddler(here);
+			target=tid?tid.getAttribute(&quot;tiddler&quot;):&quot;ask&quot;;
+		}
+		if (!here.running) { // not running... start timer...
+			var now=new Date();
+			here.startTime=now;
+			here.title=(here.target?here.target:target)+&quot; - &quot;+now.formatString(&quot;started at 0hh:0mm:0ss&quot;);
+			here.value=now.formatString(&quot;0hh:0mm:0ss - 00:00:00&quot;);
+			here.id=(new Date()).convertToYYYYMMDDHHMMSSMMM()+Math.random().toString(); // unique ID
+			here.ticker=setTimeout(&quot;config.macros.taskTimer.tick('&quot;+here.id+&quot;')&quot;,500);
+			here.running=true;
+		} else {
+			if (target==&quot;ask&quot;) {
+				target=prompt(this.askMsg,here.target?here.target:this.defTarget);
+				if (!target) return; // user cancelled input...  continue timer
+			}
+			var txt=prompt(msg,defText); // get description from user
+			if (!txt) return; // user cancelled input...  continue timer
+			if (target==this.todayKeyword || target.substr(0,this.todayKeyword.length+1)==this.todayKeyword+&quot;:&quot;)
+				target=(new Date()).formatString(this.getJournalFormat(target));
+			here=document.getElementById(here.id); // RE-get button element after timer has stopped...
+			clearTimeout(here.ticker);
+			here.target=target;
+			var before=this.defHeader;
+			var after=this.marker+&quot;\n&quot;;
+			var tiddler=store.getTiddler(here.target);
+			if (tiddler &amp;&amp; tiddler.text.length) {
+				var pos=tiddler.text.indexOf(this.marker);
+				if (pos==-1) pos=tiddler.text.length; // no marker, append content to end
+				var before=tiddler.text.substr(0,pos); // everything up to marker
+				if (before.length&amp;&amp;before.substr(before.length-1)!=&quot;\n&quot;) before+=&quot;\n&quot;; // start on a new line
+				var after=tiddler.text.substr(pos); // marker+everything else
+			}
+			var start=here.startTime.formatString(&quot;0hh:0mm:0ss&quot;);
+			var now=new Date();
+			var stop=now.formatString(&quot;0hh:0mm:0ss&quot;);
+			var diff=new Date(now-here.startTime);
+			var s=diff.getUTCSeconds(); if (s&lt;10) s=&quot;0&quot;+s;
+			var m=diff.getUTCMinutes();  if (m&lt;10) m=&quot;0&quot;+m;
+			var h=diff.getUTCHours();  if (h&lt;10) h=&quot;0&quot;+h;
+			var elapsed=h+&quot;:&quot;+m+&quot;:&quot;+s;
+			var dateStamp=now.formatString(config.macros.taskTimer.datestampFormat);
+			var newtxt=before+format.format([txt,start,stop,elapsed,dateStamp])+after;
+			var newtags=(tiddler?tiddler.tags:['task']); // include 'task' tag when creating new tiddlers
+			store.saveTiddler(here.target,here.target,newtxt,config.options.txtUserName,new Date(),newtags,tiddler?tiddler.fields:null);
+			if (!tiddler) displayMessage(this.createdMsg.format([here.target]));
+			else displayMessage(this.updatedMsg.format([here.target]));
+			here.running=false;
+			here.value=this.label;
+			here.title=this.title;
+			var  tid=story.findContainingTiddler(here);
+			if (!tid || tid.getAttribute(&quot;tiddler&quot;)!=target) // display target tiddler, but only when button is not IN the target tiddler
+				{ story.displayTiddler(story.findContainingTiddler(here),here.target); story.refreshTiddler(here.target,1,true); }
+		}
+	},
+	tick: function(id) {
+		var here=document.getElementById(id); if (!here) return;
+		var now=new Date();
+		var diff=new Date(now-here.startTime);
+		var s=diff.getUTCSeconds(); if (s&lt;10) s=&quot;0&quot;+s;
+		var m=diff.getUTCMinutes();  if (m&lt;10) m=&quot;0&quot;+m;
+		var h=diff.getUTCHours();  if (h&lt;10) h=&quot;0&quot;+h;
+		var elapsed=h+&quot;:&quot;+m+&quot;:&quot;+s;
+		here.value=now.formatString(&quot;0hh:0mm:0ss&quot;)+&quot; - &quot;+elapsed;
+		here.ticker=setTimeout(&quot;config.macros.taskTimer.tick('&quot;+id+&quot;')&quot;,500);
+	},
+	getJournalFormat: function(target) {
+		var fmt=target.split(&quot;:&quot;); fmt.shift(); fmt=fmt.join(&quot;:&quot;);
+		if (!fmt || !fmt.length) { // if date format was not specified
+			if (config.macros.date)  // if installed, use default from DatePlugin
+				fmt=config.macros.date.linkformat;
+			if (config.macros.calendar) { // if installed, use default from CalendarPlugin
+				if (!config.macros.date) // hard-coded calendar fallback if no DatePlugin
+					fmt=config.macros.calendar.tiddlerformat;
+				else // journalDateFmt is set when calendar is rendered with DatePlugin
+					fmt=config.macros.calendar.journalDateFmt;
+			}
+		}
+		if (!fmt) { // if not specified and no DatePlugin/CalendarPlugin
+			// get format from &lt;&lt;newJournal&gt;&gt; in SideBarOptions
+			var text = store.getTiddlerText(&quot;SideBarOptions&quot;);
+			var re=new RegExp(&quot;&lt;&lt;(?:newJournal)([^&gt;]*)&gt;&gt;&quot;,&quot;mg&quot;); var fm=re.exec(text);
+			if (fm &amp;&amp; fm[1]!=null) { var pa=fm[1].readMacroParams(); if (pa[0]) fmt = pa[0]; }
+		}
+		if (!fmt) var fmt=this.todayFormat; // no &quot;newJournal&quot;... final fallback.
+		return fmt;
+	}
+}
+//}}}</pre>
+</div>
+<div title="TaskTimerPluginConfig" creator="nagase" modifier="nagase" created="201205230004" tags="systemConfig settings TaskPackage hide TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name|TaskTimerPluginConfig|
+|Source|http://www.TiddlyTools.com/#TaskTimerPluginConfig|
+|Documentation|http://www.TiddlyTools.com/#TaskTimerPluginInfo|
+|Version|1.3.0|
+|Author|Eric Shulman - ELS Design Studios|
+|License|http://www.TiddlyTools.com/#LegalStatements &lt;br&gt;and [[Creative Commons Attribution-ShareAlike 2.5 License|http://creativecommons.org/licenses/by-sa/2.5/]]|
+|~CoreVersion|2.1|
+|Type|plugin|
+|Requires||
+|Overrides||
+|Description|formats other optional settings for TaskTimerPlugin|
+***/
+//{{{
+// default target tiddler title (when 'ask' option is used)
+config.macros.taskTimer.defTarget=&quot;ActivityReport&quot;;
+
+// table heading (when creating **new** target tiddlers only)
+config.macros.taskTimer.defHeader=&quot;|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|\n&quot;;
+
+// note: double-backslash-en, also datestamp is %4 (for backward compatibility)
+config.macros.taskTimer.format=&quot;|%4|%0|%1|%2|%3|\\n&quot;;
+
+// date stamp format (used with %4, above)
+config.macros.taskTimer.datestampFormat=&quot;YYYY-0MM-0DD&quot;;
+
+// default description text - note: do not use empty string (e.g., &quot;&quot;)
+config.macros.taskTimer.defText=&quot; &quot;;
+
+// format for target tiddler title (when &quot;today&quot; option is used)
+// otherwise, value is superceded by CalendarPlugin, DatePlugin, DatePluginConfig,
+// or format from &lt;&lt;newJournal&gt;&gt; macro embedded in SideBarOptions
+config.macros.taskTimer.todayFormat=&quot;0MM/0DD/YYYY&quot;;
+
+// marker for locating 'insertion point' in target tiddler
+config.macros.taskTimer.marker=&quot;/%&quot;+&quot;tasktimer&quot;+&quot;%/&quot;; //
+
+// default tag (when creating **new** target tiddlers only)
+config.macros.taskTimer.tag=&quot;task&quot;;
+//}}}</pre>
+</div>
+<div title="TaskTimerPluginInfo" creator="nagase" modifier="nagase" created="201205230005" tags="pluginInfo hide TimeJournal myEmpty" changecount="1">
+<pre>/***
+|Name|TaskTimerPlugin|
+|Source|http://www.TiddlyTools.com/#TaskTimerPlugin|
+|Documentation|http://www.TiddlyTools.com/#TaskTimerPluginInfo|
+|Version|1.3.0|
+|Author|Eric Shulman - ELS Design Studios|
+|License|http://www.TiddlyTools.com/#LegalStatements &lt;br&gt;and [[Creative Commons Attribution-ShareAlike 2.5 License|http://creativecommons.org/licenses/by-sa/2.5/]]|
+|~CoreVersion|2.1|
+|Type|docmentation|
+|Requires||
+|Overrides||
+|Description|documentation for TaskTimerPlugin|
+Quickly generate 'timed task' logs that can be used for status reports, billing purposes, etc.  
+!!!!!Usage
+&lt;&lt;&lt;
+{{{&lt;&lt;taskTimer TiddlerName &quot;output format&quot; &quot;prompt text&quot; &quot;default description&quot;&gt;&gt;}}}
+
+displays a pushbutton that, when pressed, prompts for a 'target tiddler', and then displays the current time and elapsed time on the button, updated automatically each second.  Pressing the button again will stop the timer, prompt for a 'task description' and then write the description, starttime, endtime, and elapsed time into the target tiddler content.
+
+''~TiddlerName'' //or// ''ask'' //or// ''here'' //or// ''today'' //or// ''&quot;&quot;&quot;today:YYYY0MM0DD&quot;&quot;&quot;''
+&gt;If you omit the ''~TiddlerName'' parameter or use the keyword, ''here'', the output is inserted into the current tiddler.  If you use the keyword, ''ask'', then you will be prompted for a ~TiddlerName each time you press the button to start the timer.  If you use the keyword, ''today'', then the current date is used as the ~TiddlerName.  You can specify any date format you like by appending it to the &quot;today:&quot; keyword.  By default, if the format is omitted from the paramter, the date format will match that used by {{{&lt;&lt;newJournal&gt;&gt;}}} macro or the {{{&lt;&lt;date&gt;&gt;}}} and {{{&lt;&lt;calendar&gt;&gt;}}} macros (if [[DatePlugin]] and/or [[CalendarPlugin]] are installed).
+&gt;
+&gt;If the target tiddler does not yet exist, it will be automatically created when a timer activity is recorded for the first time.  Note: When used in a non-tiddler area (such as MainMenu), you should either provide a specific ~TiddlerName value (e.g., {{{&lt;&lt;taskTimer MainMenu&gt;&gt;}}} or use the ''ask'' or '''today'' keywords.
+''output format''
+&gt;The default output format is: {{{|%4|%0|%1|%2|%3|}}} where %0, %1, %2, %3 and %4 are automatically replaced with the description, starttime, stoptime, elapsed time and current date values, respectively.  This format generates a single row using TiddlyWiki table format, allowing each subsequent timed task to add another row to an existing table of recorded activities.  If this table format is not appropriate for your needs, you can provide an alternative formatting string, using the %n substitution markers to place those values where you want.
+&gt;
+&gt;//Please note: ''Do not use either single-quotes or double-quotes within the format string, as this interferes with the plugin's button generating code.  Also, for backward-compatibility with previous versions of this plugin, the date value is indicated using the %4 'substitution marker', even though it is displayed as the first item in the table row.''//
+''insertion point marker''
+&gt;The task timer output is usually appended to the end of the target tiddler content.  However, you may choose to insert the output //anywhere// within the tiddler content simply by embedding an 'insertion point marker', consisting of the keyword &quot;tasktimer&quot;, enclosed in TW style comments, like this: ''{{{/%}}}{{{tasktimer}}}{{{%/}}}''.  When the marker is present in the tiddler source, the timed task report output is placed immediately //before// that marker, instead of at the end of the tiddler.
+&lt;&lt;&lt;
+!!!!!Configuration
+&lt;&lt;&lt;
+You can further customize the formats used by creating a separate tiddler, e.g. [[TaskTimerPluginConfig]], tagged with&lt;&lt;tag systemConfig&gt;&gt;, that contains any combination of the following javascript statements:
+{{{
+// default target tiddler title (when 'ask' option is used)
+config.macros.taskTimer.defTarget=&quot;ActivityReport&quot;;
+
+// table heading (when creating **new** target tiddlers only)
+config.macros.taskTimer.defHeader=&quot;|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|\n&quot;;
+
+// note: double-backslash-en, also datestamp is %4 (for backward compatibility)
+config.macros.taskTimer.format=&quot;|%4|%0|%1|%2|%3|\\n&quot;;
+
+// date stamp format (used with %4, above)
+config.macros.taskTimer.datestampFormat=&quot;YYYY-0MM-0DD&quot;;
+
+// default description text - note: do not use empty string (e.g., &quot;&quot;)
+config.macros.taskTimer.defText=&quot; &quot;;
+
+// format for target tiddler title (when &quot;today&quot; option is used)
+// otherwise, value is superceded by superceded by CalendarPlugin, DatePlugin, DatePluginConfig,
+// or format from &lt;&lt;newJournal&gt;&gt; macro embedded in SideBarOptions
+config.macros.taskTimer.todayFormat=&quot;0MM/0DD/YYYY&quot;;
+
+// marker for locating 'insertion point' in target tiddler
+config.macros.taskTimer.marker=&quot;/%tasktimer%/&quot;;
+
+// default tag (when creating **new** target tiddlers only)
+config.macros.taskTimer.tag=&quot;task&quot;;
+}}}
+&lt;&lt;&lt;
+!!!!!Examples
+&lt;&lt;&lt;
+{{{&lt;&lt;taskTimer&gt;&gt;}}}
+&lt;&lt;taskTimer&gt;&gt;
+|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|
+/%tasktimer%/
+{{{&lt;&lt;taskTimer ask&gt;&gt;}}}
+&lt;&lt;taskTimer ask&gt;&gt;
+&lt;&lt;&lt;
+!!!!!Revisions
+&lt;&lt;&lt;
+2008.03.12 [1.3.0] added 'datestampFormat' for including date in standard output.  Also, for clarity, renamed 'getDateFormat()' to 'getJournalFormat()'.
+2008.03.10 [*.*.*] plugin size reduction - documentation moved to [[TaskTimerPluginInfo]]
+2007.12.13 [1.2.2] in getDateFormat(), cleanup fallback logic 
+2007.06.28 [1.2.1] pass current tiddler.fields to saveTiddler(), so updates to existing tiddler won't lose custom fields
+2007.06.25 [1.2.0] added optional &quot;default text&quot; param for specifying the default description for new activity log entries
+2007.06.22 [1.1.0] added &quot;today&quot; and &quot;today:MMDDYYYY&quot; as special keywords.  Generates tiddlername from current date, and uses date format defined in CalendarPlugin, DatePlugin, or DatePluginConfig if any of those tiddlers is installed.  Also, don't stop timer until user completes entering of prompted inputs (e.g., after asking for a target tiddler and activity description)
+2007.05.22 [1.0.0] target tiddler created when stopping timer button (i.e., second button press) instead of when starting timer.  Default header content includes comment marker.  Target tiddler is tagged with &quot;task&quot;.
+2007.04.04 [0.8.2] moved handling for 'here' param into toggle().  In toggle(), only render target tiddler if button is not in that tiddler... fixes problem where starting timer with target=here was re-rendering (and thus re-initializing) the timer button (immediately stopping the timer)
+2007.03.21 [0.8.1] handle case where target tiddler is deleted while timer is running.
+2007.03.21 [0.8.0] use UTC time functions to calculate elapsed time in hours, minutes, and seconds
+2007.03.20 [0.7.0] added lots of cool features, like automatically creating tiddlers, with prompting, etc.
+2007.03.14 [0.5.0] converted from inline script
+&lt;&lt;&lt;</pre>
+</div>
+<div title="TaskViewTemplate" creator="nagase" modifier="nagase" created="201205230005" tags="TaskPackage template hide TimeJournal myEmpty" changecount="1">
+<pre>&lt;!--{{{--&gt;
+&lt;!--
+|Name|TaskViewTemplate|
+|Source|http://www.TiddlyTools.com/#TaskViewTemplate|
+|Version||
+|Author|Eric Shulman - ELS Design Studios|
+|License|http://www.TiddlyTools.com/#LegalStatements &lt;br&gt;and [[Creative Commons Attribution-ShareAlike 2.5 License|http://creativecommons.org/licenses/by-sa/2.5/]]|
+|~CoreVersion|2.1|
+|Type|template|
+|Requires|ToolbarCommands, TaggedTemplateTweak, ListboxPlugin, CheckboxPlugin, TaskTimerPlugin, WikifyPlugin, NestedSlidersPlugin, MoveablePanelPlugin, CommentPlugin, ExpandSlidersScript |
+|Overrides||
+|Description|custom version of view template used when tiddler is tagged with &quot;task&quot;|
+--&gt;
+&lt;span class='toolbar' macro='toolbar [[ToolbarCommands::ViewToolbar]]'&gt;&lt;/span&gt;
+&lt;span class='title'&gt;
+	&lt;span class='floatleft' macro='tiddlerIcons' style='cursor:auto !important;'&gt;&lt;/span&gt;
+	&lt;span macro='view title'&gt;&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class='subtitle'&gt;
+	&lt;span style='white-space:nowrap' macro='view modified date [[DDD, MMM DDth YYYY]]'&gt;&lt;/span&gt;
+&lt;/span&gt;
+&lt;div class='tagClear'&gt;&lt;/div&gt;
+&lt;div class='tagging' macro='tagging'&gt;&lt;/div&gt;
+&lt;div class='tagged' macro='tags'&gt;&lt;/div&gt;
+&lt;!-- TASK CONTROLS one line hanging &quot;bubble&quot; (bottom right) --&gt;
+&lt;div class='viewer'&gt;
+	&lt;div macro='view text wikified'&gt;&lt;/div&gt;
+	&lt;div class=&quot;floatright block&quot; style=&quot;height:2em;padding-top:2px;&quot;&gt;
+		&lt;div class=&quot;center viewer smallform&quot; style=&quot;padding:.5em 1em&quot;&gt;
+			&lt;span class='fine subtitle'&gt;task status:&lt;/span&gt;
+			&lt;span macro='select status rows:1 allowOther &quot;not started&quot; &quot;in progress&quot; &quot;on hold&quot; &quot;completed&quot;'&gt;&lt;/span&gt;
+			&lt;span class='fine subtitle'&gt;assigned to:&lt;/span&gt;
+			&lt;span macro='select assigned rows:1 allowBlank allowOther +TaskAssignmentList allowEdit'&gt;&lt;/span&gt;
+			&lt;span macro='checkbox urgent@'&gt;&lt;/span&gt;
+			&lt;span class='fine subtitle'&gt;urgent&lt;/span&gt;
+			&lt;span macro='taskTimer'&gt;&lt;/span&gt;
+			&lt;span class='fine subtitle' style='padding-left:1em'
+				macro='wikify [[+++^40em^{{small{[add a note]}}}...&lt;&lt;moveablePanel&gt;&gt;add a note&lt;html&gt;&lt;hr&gt;&lt;/html&gt;&lt;&lt;comment here &quot;&quot; &quot;+++!!!!![%when% (%who%): %subject%]&gt;...\n%message%\n===\n&quot;&gt;&gt;=== | &lt;&lt;tiddler ExpandSlidersScript with: here &quot;view all&quot; &quot;close all&quot;&gt;&gt;]]'&gt;&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='tagClear'&gt;&lt;/div&gt;
+&lt;!--}}}--&gt;
+</pre>
+</div>
 <div title="TiddlerListMacro" creator="nagase" modifier="nagase" created="201205220344" modified="201205220505" changecount="10">
 <pre>&lt;&lt;tabs txtPluginsTa
 'bake' &quot;Plugins I've created&quot; Mine
@@ -3954,7 +5946,7 @@ config.macros.cloud = {
 &gt;&gt;
 </pre>
 </div>
-<div title="TiddlyLightBoxPlugin" creator="氏名" modifier="氏名" created="201205162323" tags="TiddlyLightBox lewcidExtension systemConfig" changecount="1">
+<div title="TiddlyLightBoxPlugin" creator="氏名" modifier="nagase" created="201205162323" modified="201205230055" tags="TiddlyLightBox lewcidExtension systemConfig hide myEmpty" changecount="2">
 <pre>/***
 |''Name:''|TiddlyLightBox|
 |''Date:''|Jan 1, 2006|
@@ -4161,7 +6153,170 @@ config.shadowTiddlers.TiddlyLightBoxStyles=&quot;/*{{{*/\n#lightBoxOverlay {\n p
 //}}}
 </pre>
 </div>
-<div title="berry2" creator="nagase" modifier="nagase" created="201205170102" modified="201205170103" tags="StyleSheet" changecount="2">
+<div title="TiddlyTimeJournal" creator="nagase" modifier="nagase" created="201205230006" tags="TimeJournal myEmpty" changecount="1">
+<pre>&lt;&lt;clock2 chunkySwiss&gt;&gt; &lt;html&gt;&lt;font size=4&gt;&lt;b&gt;W&lt;/b&gt;&lt;/font&gt;&lt;/html&gt;elcome.  Ever heard the saying ''//You can't manage what you can't measure//''?
+
+Managing your __time__ (actually managing //yourself//) matters because, as [[Randy Pausch|http://en.wikipedia.org/wiki/Randy_Pausch]] put it: 
+
+&gt;''//Managing your time well makes you successful.//'' You don't become successful, //then// find time manage to your time well.
+But how?
+&lt;&lt;&lt;
+//...all effective people work on their time management perpetually.  They... ''keep a continuing log and analyze it periodically''...// Peter Drucker.
+&lt;&lt;&lt;
+Do you log your time now? Do you ''know'' where it goes (or do you just //think// you do)? If you haven't done so, you should keep a @@time journal@@, at least for a while; then you will __know__. ''~TiddlyTimeJournal'' (TTJ) is a small, intentionally simple but adequate, application to help you do this. It's contained in a single HTML document and is an example of a ''[[TiddlyWiki|http://www.tiddlywiki.com]]'' -- a file you can conveniently keep on a USB memory stick on your key ring. All you need to run this application is a web browser. You are welcome to copy it and share it.
+
+Start here: [[GettingStarted]], [[Instructions]] and, //fyi//, [[Background]]. 
+
+Right click &lt;&lt;linkToMe 'here'&gt;&gt; and select @@color(blue):Save Link As@@ to download your own copy of TTJ.
+
+----</pre>
+</div>
+<div title="TimeJournal" creator="nagase" modifier="nagase" created="201205230006" modified="201205230046" tags="TimeJournal myEmpty" changecount="2">
+<pre>This ~TimeJournal lists the contents of all tiddlers tagged with the word &quot;task&quot; (//i.e.//,those created by the task timer). To have another report included in this listing, //e.g.//, the contents of a tiddler named EventLog, just tag it with the word ''task''. 
+
+Click [[here|TimeJournalExport]] to generate a TimeJournal report file (''D:\nagase\document\tiddly_wiki\TimeJournal.txt'' will be created; you must be able to write to this location). Otherwise print or cut and paste from this screen.
+
+
+&lt;&lt;forEachTiddler
+ where
+ 'tiddler.tags.contains(&quot;task&quot;)'
+ write
+'&quot;&lt;html&gt;&lt;B&gt;&lt;font size =3&gt;&quot;+ tiddler.title+ &quot;&lt;/b&gt;&lt;/font&gt;&lt;/html&gt;&quot; + &quot;----\n&lt;&lt;tiddler [[&quot;+tiddler.title+&quot;]]$))\n&quot;'
+&gt;&gt;</pre>
+</div>
+<div title="TimeJournalExport" creator="nagase" modifier="nagase" created="201205230007" tags="ForEachTiddlerMacro hide" changecount="1">
+<pre>The following macro call exports all tiddlers tagged with ''task'' to a text file &quot;c:/TimeJournal.txt&quot;, using a customized format.
+
+Source: http://tiddlywiki.abego-software.de/#ForEachTiddlerExamples
+
+{{{
+&lt;&lt;forEachTiddler
+ script 'function getSortedTagsText(tiddler) {var tags = tiddler.tags; if (!tags) return &quot;&quot;; tags.sort(); var result = &quot;&quot;; for (var i = 0; i &lt; tags.length;i++) {result += tags[i]+ &quot; &quot;;} return result;} function writeTiddler(tiddler) {return &quot;==== &quot;+tiddler.title+&quot;=========================\nTags: &quot;+ getSortedTagsText(tiddler)+&quot;\nModified: &quot;+tiddler.modified.convertToYYYYMMDDHHMM()+&quot;\nModifier: &quot;+tiddler.modifier+&quot;\n--------------------------------------------------\n&quot;+tiddler.text+&quot;\n--------------------------------------------------\n(End of &quot;+tiddler.title+&quot;)\n\n\n\n&quot;}'
+ write 
+ 'writeTiddler(tiddler)' 
+ toFile 'file:///c:/mywallet.txt' withLineSeparator '\r\n'
+&gt;&gt;
+}}}
+For better readablility here the script text in a nicer layout:
+{{{
+function getSortedTagsText(tiddler) {
+ var tags = tiddler.tags; 
+ if (!tags) 
+ return &quot;&quot;; 
+ tags.sort(); 
+ var result = &quot;&quot;; 
+ for (var i = 0; i &lt; tags.length;i++) {
+ result += tags[i]+ &quot; &quot;;
+ } 
+ return result;
+} 
+
+function writeTiddler(tiddler) {
+ return &quot;====[ &quot;+tiddler.title+&quot; ]=========================\n&quot;+
+ &quot;Tags: &quot;+ getSortedTagsText(tiddler)+&quot;\n&quot;+
+ &quot;Modified: &quot;+tiddler.modified.convertToYYYYMMDDHHMM()+&quot;\n&quot;+
+ &quot;Modifier: &quot;+tiddler.modifier+&quot;\n&quot;+
+ &quot;--------------------------------------------------\n&quot;+
+ tiddler.text+&quot;\n&quot;+
+ &quot;--------------------------------------------------\n&quot;
+ &quot;(End of &quot;+tiddler.title+&quot;)\n\n\n\n&quot;
+}
+}}}
+
+&lt;&lt;forEachTiddler
+ where
+ 'tiddler.tags.contains(&quot;task&quot;)'
+ script 'function getSortedTagsText(tiddler) {var tags = tiddler.tags; if (!tags) return &quot;&quot;; tags.sort(); var result = &quot;&quot;; for (var i = 0; i &lt; tags.length;i++) {result += tags[i]+ &quot; &quot;;} return result;} function writeTiddler(tiddler) {return &quot;====[ &quot;+tiddler.title+&quot; ]=========================\nTags: &quot;+ getSortedTagsText(tiddler)+&quot;\nModified: &quot;+tiddler.modified.convertToYYYYMMDDHHMM()+&quot;\nModifier: &quot;+tiddler.modifier+&quot;\n--------------------------------------------------\n&quot;+tiddler.text+&quot;\n--------------------------------------------------\n(End of &quot;+tiddler.title+&quot;)\n\n\n\n&quot;}'
+ write 
+ 'writeTiddler(tiddler)' 
+ toFile 'file:///c:/TimeJournal.txt' withLineSeparator '\r\n'
+&gt;&gt;
+
+
+</pre>
+</div>
+<div title="ToggleSideBarMacro" creator="nagase" modifier="nagase" created="201205230018" tags="Plugins excludeLists hide lewcidExtension systemConfig TimeJournal myEmpty" changecount="1">
+<pre>/***
+
+|Name|ToggleSideBarMacro|
+|Created by|SaqImtiaz|
+|Location|http://tw.lewcid.org/#ToggleSideBarMacro|
+|Version|1.0|
+|Requires|~TW2.x|
+!Description:
+Provides a button for toggling visibility of the SideBar. You can choose whether the SideBar should initially be hidden or displayed.
+
+!Demo
+&lt;&lt;toggleSideBar &quot;Toggle Sidebar&quot;&gt;&gt;
+
+!Usage:
+{{{&lt;&lt;toggleSideBar&gt;&gt;}}} &lt;&lt;toggleSideBar&gt;&gt;
+additional options:
+{{{&lt;&lt;toggleSideBar label tooltip show/hide&gt;&gt;}}} where:
+label = custom label for the button,
+tooltip = custom tooltip for the button,
+show/hide = use one or the other, determines whether the sidebar is shown at first or not.
+(default is to show the sidebar)
+
+You can add it to your tiddler toolbar, your MainMenu, or where you like really.
+If you are using a horizontal MainMenu and want the button to be right aligned, put the following in your StyleSheet:
+{{{ .HideSideBarButton {float:right;} }}}
+
+!History
+*23-07-06: version 1.0: completely rewritten, now works with custom stylesheets too, and easier to customize start behaviour. 
+*20-07-06: version 0.11
+*27-04-06: version 0.1: working.
+
+!Code
+***/
+//{{{
+config.macros.toggleSideBar={};
+
+config.macros.toggleSideBar.settings={
+         styleHide :  &quot;#sidebar { display: none;}\n&quot;+&quot;#contentWrapper #displayArea { margin-right: 1em;}\n&quot;+&quot;&quot;,
+         styleShow : &quot; &quot;,
+         arrow1: &quot;«&quot;,
+         arrow2: &quot;»&quot;
+};
+
+config.macros.toggleSideBar.handler=function (place,macroName,params,wikifier,paramString,tiddler)
+{
+          var tooltip= params[1]||'toggle sidebar';
+          var mode = (params[2] &amp;&amp; params[2]==&quot;hide&quot;)? &quot;hide&quot;:&quot;show&quot;;
+          var arrow = (mode == &quot;hide&quot;)? this.settings.arrow1:this.settings.arrow2;
+          var label= (params[0]&amp;&amp;params[0]!='.')?params[0]+&quot; &quot;+arrow:arrow;
+          var theBtn = createTiddlyButton(place,label,tooltip,this.onToggleSideBar,&quot;button HideSideBarButton&quot;);
+          if (mode == &quot;hide&quot;)
+             { 
+             (document.getElementById(&quot;sidebar&quot;)).setAttribute(&quot;toggle&quot;,&quot;hide&quot;);
+              setStylesheet(this.settings.styleHide,&quot;ToggleSideBarStyles&quot;);
+             }
+};
+
+config.macros.toggleSideBar.onToggleSideBar = function(){
+          var sidebar = document.getElementById(&quot;sidebar&quot;);
+          var settings = config.macros.toggleSideBar.settings;
+          if (sidebar.getAttribute(&quot;toggle&quot;)=='hide')
+             {
+              setStylesheet(settings.styleShow,&quot;ToggleSideBarStyles&quot;);
+              sidebar.setAttribute(&quot;toggle&quot;,&quot;show&quot;);
+              this.firstChild.data= (this.firstChild.data).replace(settings.arrow1,settings.arrow2);
+              }
+          else
+              {    
+               setStylesheet(settings.styleHide,&quot;ToggleSideBarStyles&quot;);
+               sidebar.setAttribute(&quot;toggle&quot;,&quot;hide&quot;);
+               this.firstChild.data= (this.firstChild.data).replace(settings.arrow2,settings.arrow1);
+              }
+
+     return false;
+}
+
+setStylesheet(&quot;.HideSideBarButton .button {font-weight:bold; padding: 0 5px;}\n&quot;,&quot;ToggleSideBarButtonStyles&quot;);
+
+//}}}</pre>
+</div>
+<div title="berry2" creator="nagase" modifier="nagase" created="201205170102" modified="201205230053" tags="StyleSheet hide" changecount="3">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
 !heading 1
 !!heading 2
