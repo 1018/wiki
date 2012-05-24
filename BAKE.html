@@ -886,22 +886,44 @@ void BAKE::adjust(BYTE *pPresetTemp, BYTE *pOffsetTemp, BYTE *pReturnTemp)
 * オーバーヒート検出ってなんだ？&lt;br&gt;&gt;&gt;温度ヒューズ断 ハードＩ／Ｏで入ってくる&lt;br&gt;&gt;&gt;通常ＯＮ&lt;br&gt;&gt;&gt;ヒューズ切れたらＯＦＦ&lt;br&gt;オーバーヒートを検出したら、温度が設定範囲内に入っても、温調未完了ALMを収束したらだめ？&lt;br&gt;&gt;&gt;よいと思う&lt;br&gt;&gt;&gt;温度ヒューズ断のほうが重篤なアラーム温度範囲内でもヒューズだけ切れてしまうトラブルもあると想定されるただ温度ヒューズ断で温長期の電源切るんじゃなかったかな
 </pre>
 </div>
-<div title="2012年5月23日" creator="nagase" modifier="nagase" created="201205222340" modified="201205230802" tags="ジャーナル bake" changecount="3">
+<div title="2012年5月23日" creator="nagase" modifier="nagase" created="201205222340" modified="201205230809" tags="ジャーナル bake" changecount="5">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 * 玉置さんお休みです。。。
 [_] g変数をﾒﾝﾊﾞ変数へ
 [_] テスト用メッセージ及びﾂｰﾙの作成
-
 !!!@@color(RoyalBlue): 報告内容 @@
 * TODO1&lt;br&gt; →
 * TODO2&lt;br&gt; →
-
 !!!@@color(RoyalBlue): TODO1 @@
-*
-*
+* まだおわってない
 !!!@@color(RoyalBlue): TODO2 @@
 * BAD_test002のCPのBAKE01がまだ。
 * 明日、作ったデータが正しいか検証する
+</pre>
+</div>
+<div title="2012年5月24日" modifier="nagase" created="201205232343" modified="201205240151" tags="ジャーナル bake" changecount="8">
+<pre>!!!@@color(RoyalBlue): 本日のTODO @@
+玉置さんはお休みです。。。
+[_] ツール類を充実させましょう
+[_] テスト用データの作成続き
+
+!!!@@color(RoyalBlue): 報告内容 @@
+* ツール類を充実させましょう&lt;br&gt; →
+* テスト用データの作成続き&lt;br&gt; →
+
+!!!@@color(RoyalBlue): ツール類を充実させましょう @@
+*
+*
+!!!@@color(RoyalBlue): テスト用データの作成続き @@
+* CPのBCC計算マクロ仕様
+| 識別子 | WM | RM | RR | RX | WB | RB | WS | RS | W% | R% | WP | RP |
+| recv計算範囲 | 3 - 9 | 3 - 5 | 3 - 5 | 3 -5 | 3 - 57| 3 - 5 | 3 - 17 | 3 - 5 | 3 - 29 | 3 - 5 | 3 - 17 | 3 - 5 |
+|send計算範囲|15 - 16|11 - 17| 11 - 29 | 11 - 37 | 63 - 64 | 11 - 65| 23 - 24 | 11 - 25 | 35 - 36 | 11 - 37 | 23 -24 | 11 - 25 |
+| recv行番号 | 6 | 10 | 14 | 18 | 22 | 26 | 30 | 34 | 38 | 42 | 46 | 50 |
+| send行番号 | 7 | 11 | 15 | 19 | 23 | 27 | 31 | 35 | 39 | 43 | 47 | 51 |
+BCC入れるところ
+hi == END_POSI + 2
+low == END_POSI + 3
 </pre>
 </div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="ジャーナル bake" changecount="20">
@@ -988,7 +1010,7 @@ ToggleSideBarMacro 1.0 by Saq Imtiaz
 0.9 beta 1; TW 2.4.1 {{ds{2008-08-18}}}
 </pre>
 </div>
-<div title="ActivityReport" creator="nagase" modifier="nagase" created="201205222352" tags="TimeJournal myEmpty log task" changecount="1">
+<div title="ActivityReport" creator="nagase" modifier="nagase" created="201205222352" tags="TimeJournal log myEmpty task" changecount="1">
 <pre>|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|
 |2008-08-18|First|02:47:04|02:47:10|00:00:06|
 /%tasktimer%/
@@ -1268,6 +1290,67 @@ This is a link to a [[StyleSheet]] tiddler.
 |row2| row2 |row2|
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
+</div>
+<div title="BlogTemplate" modifier="nagase" created="201205240328" modified="201205240329" tags="FormTiddlerProject myEmpty" changecount="2">
+<pre>&lt;html&gt;
+&lt;style&gt;
+.rolodex table {
+border: 0px solid;
+background-color:#FFFF99;
+}
+
+.rolodex tr, .rolodex td {
+border: 0px solid;
+}
+&lt;/style&gt;
+&lt;span class=&quot;rolodex&quot;&gt;
+ &lt;table&gt;
+ &lt;tr&gt;
+ &lt;td colspan=&quot;6&quot;&gt;&lt;sub&gt;&lt;b&gt;Content:&lt;/b&gt;&lt;/sub&gt;&lt;br&gt;
+ &lt;textarea name=contentrows=&quot;8&quot; cols=&quot;40&quot; style=&quot;width:100%&quot; &gt;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td colspan=&quot;6&quot;&gt;&lt;sub&gt;&lt;b&gt;Comments:&lt;/b&gt;&lt;/sub&gt;&lt;br&gt;
+ &lt;textarea name=comments rows=&quot;6&quot; cols=&quot;40&quot; style=&quot;width:100%&quot; &gt;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/span&gt;
+&lt;/html&gt;</pre>
+</div>
+<div title="BugReportTemplate" modifier="nagase" created="201205240328" tags="FormTiddlerProject formTemplate myEmpty" changecount="1">
+<pre>&lt;html&gt;
+&lt;style&gt;
+.rolodex table {
+border: 0px solid;
+background-color:#FFFF99;
+}
+
+.rolodex tr, .rolodex td {
+border: 0px solid;
+}
+&lt;/style&gt;
+&lt;span class=&quot;rolodex&quot;&gt;
+ &lt;table&gt;
+ &lt;tr&gt;
+ &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Project:&lt;/b&gt;&lt;/td&gt;
+ &lt;td &gt;&lt;select name=project &gt;&lt;option&gt;&lt;option&gt;DataTiddlerProject&lt;option&gt;ForEachTiddlerProject&lt;option&gt;FormTiddlerProject&lt;/select &gt;&lt;/td&gt;
+ &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Reported By:&lt;/b&gt;&lt;/td&gt;
+ &lt;td &gt;&lt;input name=reportedBy type=text style=&quot;width:100%&quot; /&gt;&lt;/td&gt;
+ &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Date:&lt;/b&gt;&lt;/td&gt;
+ &lt;td &gt;&lt;input name=reportDate type=text style=&quot;width:100%&quot; /&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td colspan=&quot;6&quot;&gt;&lt;sub&gt;&lt;b&gt;Description:&lt;/b&gt;&lt;/sub&gt;&lt;br&gt;
+ &lt;textarea name=description rows=&quot;8&quot; cols=&quot;40&quot; style=&quot;width:100%&quot; &gt;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td colspan=&quot;6&quot;&gt;&lt;sub&gt;&lt;b&gt;Cause:&lt;/b&gt;&lt;/sub&gt;&lt;br&gt;
+ &lt;textarea name=cause rows=&quot;6&quot; cols=&quot;40&quot; style=&quot;width:100%&quot; &gt;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td align=&quot;right&quot;&gt;&lt;b&gt;State:&lt;/b&gt;&lt;/td&gt;
+ &lt;td &gt;&lt;select name=state &gt;&lt;option&gt;new&lt;option&gt;in progress&lt;option&gt;info pending&lt;option&gt;fixed&lt;option&gt;closed&lt;/select &gt;&lt;/td&gt;
+ &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Fixed in:&lt;/b&gt;&lt;/td&gt;
+ &lt;td colspan = &quot;4&quot;&gt;&lt;input name=fixedIn type=text style=&quot;width:100%&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/span&gt;
+&lt;/html&gt;</pre>
 </div>
 <div title="CalendarPlugin" creator="氏名" modifier="nagase" created="201205160007" modified="201205230056" tags="systemConfig myEmpty hide" changecount="5">
 <pre>/***
@@ -2548,6 +2631,284 @@ config.macros.selectUniqueTag.handler =
 <pre>{{ts{2008-08-18 10:13}}} First event
 </pre>
 </div>
+<div title="FileDropPlugin" modifier="nagase" created="201205232329" tags="AttachFilePackage systemConfig myEmpty" changecount="1">
+<pre>/***
+|Name|FileDropPlugin|
+|Source|http://www.TiddlyTools.com/#FileDropPlugin|
+|Version|2.1.4|
+|Author|BradleyMeck and Eric Shulman|
+|License|http://www.TiddlyTools.com/#LegalStatements|
+|~CoreVersion|2.1|
+|Type|plugin|
+|Description|drag-and-drop files/directories to create tiddlers|
+''requires FireFox or another Mozilla-compatible browser.''
+!!!!!Usage
+&lt;&lt;&lt;
+This plugin automatically creates tiddlers from files that are dropped onto an open TiddlyWiki document.  You can drop multiple selected files and/or folders to create many tiddlers at once.  New tiddler titles are created using the filename of each dropped file (i.e., omitting the path).  If a title is already in use, you are prompted to enter a new title for that file.  If you drop a folder, you will be asked if you want to create a simple 'directory list' of files in a single tiddler or create one tiddler for each file in that folder.  
+
+By default, it is assumed that all dropped files contain text.  However, if [[AttachFilePlugin]], [[AttachFilePluginFormatters]] and [[AttachFileMIMETypes]] are installed, then you can drop ''//binary data files//'' as well as text files.  If the MIME type of a dropped file is not &quot;text/plain&quot;, then AttachFilePlugin is used to create an 'attachment' tiddler, rather than creating a simple text tiddler.
+
+When creating text tiddlers, you can embed a //link// to the original external file at the top of the new tiddler, in addition to (or instead of) the text content itself.  The format for this link (see Configuration, below) uses embedded ''//replacement markers//'' that allow you to generate a variety of wiki-formatted output, where:
+*%0 = filename (without path)
+*%1 = local &quot;&quot;&quot;file://...&quot;&quot;&quot; URL
+*%2 = local path and filename (OS-native format)
+*%3 = relative path (if subdirectory of current document directory)
+*%4 = file size
+*%5 = file date
+*%6 = current date
+*%7 = current ~TiddlyWiki username
+*\n = newline
+By default, the link format uses the filename (%0) and local URL (%1), enclosed within a //hidden section// syntax, like this:
+{{{
+/%
+!link
+[[%0|%1]]
+!end
+%/
+}}}
+This permits the link to be embedded along with the text content, without changing the appearance of that content when the tiddler is viewed.  To display the link in your tiddler content, use:
+{{{
+&lt;&lt;tiddler TiddlerName##link&gt;&gt;
+}}}
+&lt;&lt;&lt;
+!!!!!Configuration
+&lt;&lt;&lt;
+__FileDropPlugin options:__
+&lt;&lt;option chkFileDropContent&gt;&gt;Copy file content into tiddlers if smaller than: &lt;&lt;option txtFileDropDataLimit&gt;&gt; bytes
+&amp;nbsp; //(note: excess text content will be truncated, oversized binary files will skipped, 0=no limit)//
+&lt;&lt;option chkFileDropLink&gt;&gt;Generate external links to files, using this format:{{editor{&lt;html&gt;&lt;nowiki&gt;&lt;textarea rows=&quot;4&quot; onchange=&quot;
+config.macros.option.propagateOption('txtFileDropLinkFormat','value',this.value.escapeLineBreaks(),'input');
+&quot;&gt;&lt;/textarea&gt;&lt;/html&gt;&lt;&lt;tiddler {{
+	var ta=place.lastChild.getElementsByTagName('textarea')[0];
+	var v=config.options.txtFileDropLinkFormat.unescapeLineBreaks();
+	ta.value=v;
+&quot;&quot;;}}&gt;&gt;}}}&lt;&lt;option chkFileDropTrimFilename&gt;&gt;Omit file extensions from tiddler titles
+&lt;&lt;option chkFileDropDisplay&gt;&gt;Automatically display newly created tiddlers
+Tag newly created tiddlers with: &lt;&lt;option txtFileDropTags&gt;&gt;
+
+__FileDropPlugin+AttachFilePlugin options:__ //(binary file data as encoded 'base64' text)//
+&lt;&lt;option chkFileDropAttachLocalLink&gt;&gt; attachment includes reference to local path/filename
+&gt;Note: if the plugin does not seem to work, enter ''about:config'' in the Firefox address bar, and make sure that {{{signed.applets.codebase_principal_support}}} is set to ''true''
+&lt;&lt;&lt;
+!!!!!Examples (custom handler functions)
+&lt;&lt;&lt;
+Adds a single file with confirmation and prompting for title:
+{{{
+config.macros.fileDrop.addEventListener('application/x-moz-file',
+	function(nsiFile) {
+		var msg='You have dropped the file:\n'
+			+nsiFile.path+'\n'
+			+'onto the page, it will be imported as a tiddler. Is that ok?'
+		if(confirm(msg)) {
+			var newDate = new Date();
+			var title = prompt('what would you like to name the tiddler?');
+			store.saveTiddler(title,title,loadFile(nsiFile.path),config.options.txtUserName,newDate,[]);
+		}
+		return true;
+	});
+}}}
+Adds a single file without confirmation, using path/filename as tiddler title:
+{{{
+config.macros.fileDrop.addEventListener('application/x-moz-file',
+	function(nsiFile) {
+		var newDate = new Date();
+		store.saveTiddler(nsiFile.path,nsiFile.path,loadFile(nsiFile.path),config.options.txtUserName,newDate,[]);
+		story.displayTiddler(null,nsiFile.path)
+		return true;
+	});
+}}}
+&lt;&lt;&lt;
+!!!!!Revisions
+&lt;&lt;&lt;
+2010.03.06 2.1.4 added event listener for 'dragover' (for FireFox 3.6+)
+2009.10.10 2.1.3 fixed IE code error
+2009.10.08 2.1.2 fixed chkFileDropContent bypass handling for binary attachments
+2009.10.07 2.1.0 added chkFileDropContent and chkFileDropLink/txtFileDropLinkFormat
+2009.08.19 2.0.0 fixed event listener registration for FireFox 3.5+.  Also, merged with FileDropPluginConfig, with code cleanup/reduction
+2008.08.11 1.5.1 added chkFileDropAttachLocalLink option to allow suppression of local path/file link
+2007.xx.xx *.*.* add suspend/resume of notifications to improve performance when multiple files are handled
+2007.01.01 0.9.9 extensions for AttachFilePlugin
+2006.11.04 0.1.1 initial release by Bradley Meck
+&lt;&lt;&lt;
+!!!!!Code
+***/
+//{{{
+version.extensions.FileDropPlugin={major:2, minor:1, revision:4, date: new Date(2010,3,6)};
+
+config.macros.fileDrop = {
+	customDropHandlers: [],
+	addEventListener: function(paramflavor,func,inFront) {
+		var obj={}; obj.flavor=paramflavor; obj.handler=func;
+		if (!inFront) this.customDropHandlers.push(obj);
+		else this.customDropHandlers.shift(obj);
+	},
+	dragDropHandler: function(evt) {
+		netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect');
+		var dragService = Components.classes['@mozilla.org/widget/dragservice;1'].getService(Components.interfaces.nsIDragService);
+		var dragSession = dragService.getCurrentSession();
+		var transferObject = Components.classes['@mozilla.org/widget/transferable;1'].createInstance();
+		transferObject = transferObject.QueryInterface(Components.interfaces.nsITransferable);
+		transferObject.addDataFlavor('application/x-moz-file');
+		var numItems = dragSession.numDropItems;
+		if (numItems&gt;1) {
+			clearMessage();
+			displayMessage('Reading '+numItems+' files...');
+			store.suspendNotifications();
+		}
+		for (var i = 0; i &lt; numItems; i++) {
+			dragSession.getData(transferObject, i);
+			var dataObj = {};
+			var dropSizeObj = {};
+			for(var ind=0; ind&lt;config.macros.fileDrop.customDropHandlers.length; ind++) {
+				var item = config.macros.fileDrop.customDropHandlers[ind];
+				if(dragSession.isDataFlavorSupported(item.flavor)) {
+					transferObject.getTransferData(item.flavor, dataObj, dropSizeObj);
+					var droppedFile = dataObj.value.QueryInterface(Components.interfaces.nsIFile);
+					var result = item.handler.call(item,droppedFile);
+					evt.stopPropagation();
+					evt.preventDefault();
+					if (result) break;
+				}
+			}
+		}
+		if (numItems&gt;1) {
+			store.resumeNotifications();
+			store.notifyAll();
+			displayMessage(numItems+' files have been processed');
+		}
+	}
+}
+//}}}
+/***
+!!!!!window event handlers
+***/
+//{{{
+if(!window.event) {
+	window.addEventListener('dragdrop',	// FireFox3.1-
+		config.macros.fileDrop.dragDropHandler, true);
+	window.addEventListener('drop',		// FireFox3.5+
+		config.macros.fileDrop.dragDropHandler, true);
+	window.addEventListener('dragover',	// FireFox3.6+
+		function(e){e.stopPropagation();e.preventDefault();}, true); 
+}
+//}}}
+/***
+!!!!!handler for files, directories and binary attachments (see [[AttachFilePlugin]])
+***/
+//{{{
+var defaults={
+	chkFileDropDisplay:		true,
+	chkFileDropTrimFilename:	false,
+	chkFileDropContent:		true,
+	chkFileDropLink:		true,
+	txtFileDropLinkFormat:		'/%\\n!link\\n[[%0|%1]]\\n!end\\n%/',
+	txtFileDropDataLimit:		'32768',
+	chkFileDropAttachLocalLink:	true,
+	txtFileDropTags:		''
+};
+for (var id in defaults) if (config.options[id]===undefined)
+	config.options[id]=defaults[id];
+
+config.macros.fileDrop.addEventListener('application/x-moz-file',function(nsiFile) {
+	var co=config.options; // abbrev
+	var header='Index of %0\n^^(as of %1)^^\n|!filename| !size | !modified |\n';
+	var item='|[[%0|%1]]| %2|%3|\n';
+	var footer='Total of %0 bytes in %1 files\n';
+	var now=new Date();
+	var files=[nsiFile];
+	if (nsiFile.isDirectory()) {
+		var folder=nsiFile.directoryEntries;
+		var files=[];
+		while (folder.hasMoreElements()) {
+			var f=folder.getNext().QueryInterface(Components.interfaces.nsILocalFile);
+			if (f instanceof Components.interfaces.nsILocalFile &amp;&amp; !f.isDirectory()) files.push(f);
+		}
+		var msg=nsiFile.path.replace(/\\/g,'/')+'\n\n';
+		msg+='contains '+files.length+' files... ';
+		msg+='select OK to attach all files or CANCEL to create a list...';
+		if (!confirm(msg)) { // create a list in a tiddler
+			var title=nsiFile.leafName; // tiddler name is last directory name in path
+			while (title &amp;&amp; title.length &amp;&amp; store.tiddlerExists(title)) {
+				if (confirm(config.messages.overwriteWarning.format([title]))) break;
+				title=prompt('Enter a new tiddler title',nsiFile.path.replace(/\\/g,'/'));
+			}
+			if (!title || !title.length) return true; // cancelled
+			var text=header.format([nsiFile.path.replace(/\\/g,'/'),now.toLocaleString()]);
+			var total=0;
+			for (var i=0; i&lt;files.length; i++) { var f=files[i];
+				var name=f.leafName;
+				if (co.chkFileDropTrimFilename)
+					{ var p=name.split('.'); if (p.length&gt;1) p.pop(); name=p.join('.'); }
+				var path='file:///'+f.path.replace(/\\/g,'/');
+				var size=f.fileSize; total+=size;
+				var when=new Date(f.lastModifiedTime).formatString('YYYY.0MM.0DD 0hh:0mm:0ss');
+				text+=item.format([name,path,size,when]);
+			}
+			text+=footer.format([total,files.length]);
+			var newtags=co.txtFileDropTags?co.txtFileDropTags.readBracketedList():[];
+			store.saveTiddler(null,title,text,co.txtUserName,now,newtags);
+			if (co.chkFileDropDisplay) story.displayTiddler(null,title);
+			return true;
+		}
+	}
+	if (files.length&gt;1) store.suspendNotifications();
+	for (i=0; i&lt;files.length; i++) {
+		var file=files[i];
+		if (file.isDirectory()) continue; // skip over nested directories
+		var type='text/plain';
+		var title=file.leafName; // tiddler name is file name
+		if (co.chkFileDropTrimFilename)
+			{ var p=title.split('.'); if (p.length&gt;1) p.pop(); title=p.join('.'); }
+		var name=file.leafName;
+		var path=file.path;
+		var url='file:///'+path.replace(/\\/g,'/');
+		var size=file.fileSize;
+		var when=new Date(file.lastModifiedTime);
+		var now=new Date();
+		var who=config.options.txtUserName;
+		var h=document.location.href;
+		var cwd=getLocalPath(decodeURIComponent(h.substr(0,h.lastIndexOf('/')+1)));
+		var relpath=path.startsWith(cwd)?'./'+path.substr(cwd.length):path;
+		while (title &amp;&amp; title.length &amp;&amp; store.tiddlerExists(title)) {
+			if (confirm(config.messages.overwriteWarning.format([title]))) break;
+			title=prompt('Enter a new tiddler title',path.replace(/\\/g,'/'));
+		}
+		if (!title || !title.length) continue; // cancelled
+		if (config.macros.attach) {
+			type=config.macros.attach.getMIMEType(name,'');
+			if (!type.length)
+				type=prompt('Unknown file type.  Enter a MIME type','text/plain');
+			if (!type||!type.length) continue; // cancelled
+		}
+		var newtags=co.txtFileDropTags?co.txtFileDropTags.readBracketedList():[];
+		if (type=='text/plain' || !co.chkFileDropContent) {
+			var txt=''; var fmt=co.txtFileDropLinkFormat.unescapeLineBreaks();
+			if (co.chkFileDropLink) txt+=fmt.format([name,url,path,relpath,size,when,now,who]);
+			if (co.chkFileDropContent) {
+				var out=loadFile(path); var lim=co.txtFileDropDataLimit;
+				txt+=co.txtFileDropDataLimit?out.substr(0,lim):out;
+				if (size&gt;lim) txt+='\n----\nfilesize ('+size+')'
+					+' is larger than FileDrop limit ('+lim+')...\n'
+					+'additional content has been omitted';
+			}
+			store.saveTiddler(null,title,txt,co.txtUserName,now,newtags);
+		} else {
+			var embed=co.chkFileDropContent
+				&amp;&amp; (!co.txtFileDropDataLimit||size&lt;co.txtFileDropDataLimit);
+			newtags.push('attachment'); newtags.push('excludeMissing');
+			config.macros.attach.createAttachmentTiddler(path,
+				now.formatString(config.macros.timeline.dateFormat),
+				'attached by FileDropPlugin', newtags, title,
+				embed, co.chkFileDropAttachLocalLink, false,
+				relpath, '', type,!co.chkFileDropDisplay);
+		}
+		if (co.chkFileDropDisplay) story.displayTiddler(null,title);
+	}
+	if (files.length&gt;1) { store.resumeNotifications(); store.notifyAll(); }
+	return true;
+})
+//}}}</pre>
+</div>
 <div title="ForEachTiddlerMacro" creator="nagase" modifier="nagase" created="201205230020" tags="ForEachTiddlerMacro Macro excludeLists hide TimeJournal myEmpty" changecount="1">
 <pre>//~~(Part of the [[ForEachTiddlerPlugin]])~~//
 
@@ -3586,13 +3947,42 @@ To review your activities at any time, including how much time has been lost to 
 !Note
 You may keep a simple manual record of events, milestones //etc.// by editing a tiddler (''new tiddler'' on the menu on the right) and entering ''{/%%/ds}'' or ''&amp;#123;ts&amp;#125;'' to record a date or timestamp when the tiddler is saved. See EventLog, //e.g.//, and InstantTimestamp for date formatting options. To have it included in your TimeJournal report just tag it with the word ''task''.</pre>
 </div>
+<div title="IntelliTaggerPlugin" modifier="nagase" created="201205232341" tags="systemConfig myEmpty" changecount="1">
+<pre>/***
+|''Name:''|IntelliTaggerPlugin|
+|''Version:''|1.0.2 (2007-07-25)|
+|''Type:''|plugin|
+|''Source:''|http://tiddlywiki.abego-software.de/#IntelliTaggerPlugin|
+|''Author:''|Udo Borkowski (ub [at] abego-software [dot] de)|
+|''Documentation:''|[[IntelliTaggerPlugin Documentation]]|
+|''~SourceCode:''|[[IntelliTaggerPlugin SourceCode]]|
+|''Licence:''|[[BSD open source license (abego Software)]]|
+|''~CoreVersion:''|2.0.8|
+|''Browser:''|Firefox 1.5.0.2 or better|
+***/
+/***
+!Version History
+* 1.0.2 (2007-07-25): 
+** Feature: &quot;Return&quot; key may be used to accept first tag suggestion (beside &quot;Alt-1&quot;)
+** Bugfix: Keyboard shortcuts (Alt+3 etc.) shifted
+* 1.0.1 (2007-05-18): 
+** Improvement: Speedup when using TiddlyWikis with many tags
+* 1.0.0 (2006-04-26): 
+** Initial release
+!Source Code
+***/
+// /%
+if(!version.extensions.IntelliTaggerPlugin){if(!window.abego){window.abego={};}if(!abego.internal){abego.internal={};}abego.alertAndThrow=function(s){alert(s);throw s;};if(version.major&lt;2){abego.alertAndThrow(&quot;Use TiddlyWiki 2.0.8 or better to run the IntelliTagger Plugin.&quot;);}version.extensions.IntelliTaggerPlugin={major:1,minor:0,revision:2,date:new Date(2007,6,25),type:&quot;plugin&quot;,source:&quot;http://tiddlywiki.abego-software.de/#IntelliTaggerPlugin&quot;,documentation:&quot;[[IntelliTaggerPlugin Documentation]]&quot;,sourcecode:&quot;[[IntelliTaggerPlugin SourceCode]]&quot;,author:&quot;Udo Borkowski (ub [at] abego-software [dot] de)&quot;,licence:&quot;[[BSD open source license (abego Software)]]&quot;,tiddlywiki:&quot;Version 2.0.8 or better&quot;,browser:&quot;Firefox 1.5.0.2 or better&quot;};abego.createEllipsis=function(_2){var e=createTiddlyElement(_2,&quot;span&quot;);e.innerHTML=&quot;&amp;hellip;&quot;;};abego.isPopupOpen=function(_4){return _4&amp;&amp;_4.parentNode==document.body;};abego.openAsPopup=function(_5){if(_5.parentNode!=document.body){document.body.appendChild(_5);}};abego.closePopup=function(_6){if(abego.isPopupOpen(_6)){document.body.removeChild(_6);}};abego.getWindowRect=function(){return {left:findScrollX(),top:findScrollY(),height:findWindowHeight(),width:findWindowWidth()};};abego.moveElement=function(_7,_8,_9){_7.style.left=_8+&quot;px&quot;;_7.style.top=_9+&quot;px&quot;;};abego.centerOnWindow=function(_a){if(_a.style.position!=&quot;absolute&quot;){throw &quot;abego.centerOnWindow: element must have absolute position&quot;;}var _b=abego.getWindowRect();abego.moveElement(_a,_b.left+(_b.width-_a.offsetWidth)/2,_b.top+(_b.height-_a.offsetHeight)/2);};abego.isDescendantOrSelf=function(_c,e){while(e){if(_c==e){return true;}e=e.parentNode;}return false;};abego.toSet=function(_e){var _f={};for(var i=0;i&lt;_e.length;i++){_f[_e[i]]=true;}return _f;};abego.filterStrings=function(_11,_12,_13){var _14=[];for(var i=0;i&lt;_11.length&amp;&amp;(_13===undefined||_14.length&lt;_13);i++){var s=_11[i];if(s.match(_12)){_14.push(s);}}return _14;};abego.arraysAreEqual=function(a,b){if(!a){return !b;}if(!b){return false;}var n=a.length;if(n!=b.length){return false;}for(var i=0;i&lt;n;i++){if(a[i]!=b[i]){return false;}}return true;};abego.moveBelowAndClip=function(_1b,_1c){if(!_1c){return;}var _1d=findPosX(_1c);var _1e=findPosY(_1c);var _1f=_1c.offsetHeight;var _20=_1d;var _21=_1e+_1f;var _22=findWindowWidth();if(_22&lt;_1b.offsetWidth){_1b.style.width=(_22-100)+&quot;px&quot;;}var _23=_1b.offsetWidth;if(_20+_23&gt;_22){_20=_22-_23-30;}if(_20&lt;0){_20=0;}_1b.style.left=_20+&quot;px&quot;;_1b.style.top=_21+&quot;px&quot;;_1b.style.display=&quot;block&quot;;};abego.compareStrings=function(a,b){return (a==b)?0:(a&lt;b)?-1:1;};abego.sortIgnoreCase=function(arr){var _27=[];var n=arr.length;for(var i=0;i&lt;n;i++){var s=arr[i];_27.push([s.toString().toLowerCase(),s]);}_27.sort(function(a,b){return (a[0]==b[0])?0:(a[0]&lt;b[0])?-1:1;});for(i=0;i&lt;n;i++){arr[i]=_27[i][1];}};abego.getTiddlerField=function(_2d,_2e,_2f){var _30=document.getElementById(_2d.idPrefix+_2e);var e=null;if(_30!=null){var _32=_30.getElementsByTagName(&quot;*&quot;);for(var t=0;t&lt;_32.length;t++){var c=_32[t];if(c.tagName.toLowerCase()==&quot;input&quot;||c.tagName.toLowerCase()==&quot;textarea&quot;){if(!e){e=c;}if(c.getAttribute(&quot;edit&quot;)==_2f){e=c;}}}}return e;};abego.setRange=function(_35,_36,end){if(_35.setSelectionRange){_35.setSelectionRange(_36,end);var max=0+_35.scrollHeight;var len=_35.textLength;var top=max*_36/len,bot=max*end/len;_35.scrollTop=Math.min(top,(bot+top-_35.clientHeight)/2);}else{if(_35.createTextRange!=undefined){var _3b=_35.createTextRange();_3b.collapse();_3b.moveEnd(&quot;character&quot;,end);_3b.moveStart(&quot;character&quot;,_36);_3b.select();}else{_35.select();}}};abego.internal.TagManager=function(){var _3c=null;var _3d=function(){if(_3c){return;}_3c={};store.forEachTiddler(function(_3e,_3f){for(var i=0;i&lt;_3f.tags.length;i++){var tag=_3f.tags[i];var _42=_3c[tag];if(!_42){_42=_3c[tag]={count:0,tiddlers:{}};}_42.tiddlers[_3f.title]=true;_42.count+=1;}});};var _43=TiddlyWiki.prototype.saveTiddler;TiddlyWiki.prototype.saveTiddler=function(_44,_45,_46,_47,_48,_49){var _4a=this.fetchTiddler(_44);var _4b=_4a?_4a.tags:[];var _4c=(typeof _49==&quot;string&quot;)?_49.readBracketedList():_49;_43.apply(this,arguments);if(!abego.arraysAreEqual(_4b,_4c)){abego.internal.getTagManager().reset();}};var _4d=TiddlyWiki.prototype.removeTiddler;TiddlyWiki.prototype.removeTiddler=function(_4e){var _4f=this.fetchTiddler(_4e);var _50=_4f&amp;&amp;_4f.tags.length&gt;0;_4d.apply(this,arguments);if(_50){abego.internal.getTagManager().reset();}};this.reset=function(){_3c=null;};this.getTiddlersWithTag=function(tag){_3d();var _52=_3c[tag];return _52?_52.tiddlers:null;};this.getAllTags=function(_53){_3d();var _54=[];for(var i in _3c){_54.push(i);}for(i=0;_53&amp;&amp;i&lt;_53.length;i++){_54.pushUnique(_53[i],true);}abego.sortIgnoreCase(_54);return _54;};this.getTagInfos=function(){_3d();var _56=[];for(var _57 in _3c){_56.push([_57,_3c[_57]]);}return _56;};var _58=function(a,b){var a1=a[1];var b1=b[1];var d=b[1].count-a[1].count;return d!=0?d:abego.compareStrings(a[0].toLowerCase(),b[0].toLowerCase());};this.getSortedTagInfos=function(){_3d();var _5e=this.getTagInfos();_5e.sort(_58);return _5e;};this.getPartnerRankedTags=function(_5f){var _60={};for(var i=0;i&lt;_5f.length;i++){var _62=this.getTiddlersWithTag(_5f[i]);for(var _63 in _62){var _64=store.getTiddler(_63);if(!(_64 instanceof Tiddler)){continue;}for(var j=0;j&lt;_64.tags.length;j++){var tag=_64.tags[j];var c=_60[tag];_60[tag]=c?c+1:1;}}}var _68=abego.toSet(_5f);var _69=[];for(var n in _60){if(!_68[n]){_69.push(n);}}_69.sort(function(a,b){var d=_60[b]-_60[a];return d!=0?d:abego.compareStrings(a.toLowerCase(),b.toLowerCase());});return _69;};};abego.internal.getTagManager=function(){if(!abego.internal.gTagManager){abego.internal.gTagManager=new abego.internal.TagManager();}return abego.internal.gTagManager;};(function(){var _6e=2;var _6f=1;var _70=30;var _71;var _72;var _73;var _74;var _75;var _76;if(!abego.IntelliTagger){abego.IntelliTagger={};}var _77=function(){return _72;};var _78=function(tag){return _75[tag];};var _7a=function(s){var i=s.lastIndexOf(&quot; &quot;);return (i&gt;=0)?s.substr(0,i):&quot;&quot;;};var _7d=function(_7e){var s=_7e.value;var len=s.length;return (len&gt;0&amp;&amp;s[len-1]!=&quot; &quot;);};var _81=function(_82){var s=_82.value;var len=s.length;if(len&gt;0&amp;&amp;s[len-1]!=&quot; &quot;){_82.value+=&quot; &quot;;}};var _85=function(tag,_87,_88){if(_7d(_87)){_87.value=_7a(_87.value);}story.setTiddlerTag(_88.title,tag,0);_81(_87);abego.IntelliTagger.assistTagging(_87,_88);};var _89=function(n){if(_76&amp;&amp;_76.length&gt;n){return _76[n];}return (_74&amp;&amp;_74.length&gt;n)?_74[n]:null;};var _8b=function(n,_8d,_8e){var _8f=_89(n);if(_8f){_85(_8f,_8d,_8e);}};var _90=function(_91){var pos=_91.value.lastIndexOf(&quot; &quot;);var _93=(pos&gt;=0)?_91.value.substr(++pos,_91.value.length):_91.value;return new RegExp(_93.escapeRegExp(),&quot;i&quot;);};var _94=function(_95,_96){var _97=0;for(var i=0;i&lt;_95.length;i++){if(_96[_95[i]]){_97++;}}return _97;};var _99=function(_9a,_9b,_9c){var _9d=1;var c=_9a[_9b];for(var i=_9b+1;i&lt;_9a.length;i++){if(_9a[i][1].count==c){if(_9a[i][0].match(_9c)){_9d++;}}else{break;}}return _9d;};var _a0=function(_a1,_a2){var _a3=abego.internal.getTagManager().getSortedTagInfos();var _a4=[];var _a5=0;for(var i=0;i&lt;_a3.length;i++){var c=_a3[i][1].count;if(c!=_a5){if(_a2&amp;&amp;(_a4.length+_99(_a3,i,_a1)&gt;_a2)){break;}_a5=c;}if(c==1){break;}var s=_a3[i][0];if(s.match(_a1)){_a4.push(s);}}return _a4;};var _a9=function(_aa,_ab){return abego.filterStrings(abego.internal.getTagManager().getAllTags(_ab),_aa);};var _ac=function(){if(!_71){return;}var _ad=store.getTiddlerText(&quot;IntelliTaggerMainTemplate&quot;);if(!_ad){_ad=&quot;&lt;b&gt;Tiddler IntelliTaggerMainTemplate not found&lt;/b&gt;&quot;;}_71.innerHTML=_ad;applyHtmlMacros(_71,null);refreshElements(_71,null);};var _ae=function(e){if(!e){var e=window.event;}var tag=this.getAttribute(&quot;tag&quot;);if(_73){_73.call(this,tag,e);}return false;};var _b2=function(_b3){createTiddlyElement(_b3,&quot;span&quot;,null,&quot;tagSeparator&quot;,&quot; | &quot;);};var _b4=function(_b5,_b6,_b7,_b8,_b9){if(!_b6){return;}var _ba=_b8?abego.toSet(_b8):{};var n=_b6.length;var c=0;for(var i=0;i&lt;n;i++){var tag=_b6[i];if(_ba[tag]){continue;}if(c&gt;0){_b2(_b5);}if(_b9&amp;&amp;c&gt;=_b9){abego.createEllipsis(_b5);break;}c++;var _bf=&quot;&quot;;var _c0=_b5;if(_b7&lt;10){_c0=createTiddlyElement(_b5,&quot;span&quot;,null,&quot;numberedSuggestion&quot;);_b7++;var key=_b7&lt;10?&quot;&quot;+(_b7):&quot;0&quot;;createTiddlyElement(_c0,&quot;span&quot;,null,&quot;suggestionNumber&quot;,key+&quot;) &quot;);var _c2=_b7==1?&quot;Return or &quot;:&quot;&quot;;_bf=&quot; (Shortcut: %1Alt-%0)&quot;.format([key,_c2]);}var _c3=config.views.wikified.tag.tooltip.format([tag]);var _c4=(_78(tag)?&quot;Remove tag '%0'%1&quot;:&quot;Add tag '%0'%1&quot;).format([tag,_bf]);var _c5=&quot;%0; Shift-Click: %1&quot;.format([_c4,_c3]);var btn=createTiddlyButton(_c0,tag,_c5,_ae,_78(tag)?&quot;currentTag&quot;:null);btn.setAttribute(&quot;tag&quot;,tag);}};var _c7=function(){if(_71){window.scrollTo(0,ensureVisible(_71));}if(_77()){window.scrollTo(0,ensureVisible(_77()));}};var _c8=function(e){if(!e){var e=window.event;}if(!_71){return;}var _cb=resolveTarget(e);if(_cb==_77()){return;}if(abego.isDescendantOrSelf(_71,_cb)){return;}abego.IntelliTagger.close();};addEvent(document,&quot;click&quot;,_c8);var _cc=Story.prototype.gatherSaveFields;Story.prototype.gatherSaveFields=function(e,_ce){_cc.apply(this,arguments);var _cf=_ce.tags;if(_cf){_ce.tags=_cf.trim();}};var _d0=function(_d1){story.focusTiddler(_d1,&quot;tags&quot;);var _d2=abego.getTiddlerField(story,_d1,&quot;tags&quot;);if(_d2){var len=_d2.value.length;abego.setRange(_d2,len,len);window.scrollTo(0,ensureVisible(_d2));}};var _d4=config.macros.edit.handler;config.macros.edit.handler=function(_d5,_d6,_d7,_d8,_d9,_da){_d4.apply(this,arguments);var _db=_d7[0];if((_da instanceof Tiddler)&amp;&amp;_db==&quot;tags&quot;){var _dc=_d5.lastChild;_dc.onfocus=function(e){abego.IntelliTagger.assistTagging(_dc,_da);setTimeout(function(){_d0(_da.title);},100);};_dc.onkeyup=function(e){if(!e){var e=window.event;}if(e.altKey&amp;&amp;!e.ctrlKey&amp;&amp;!e.metaKey&amp;&amp;(e.keyCode&gt;=48&amp;&amp;e.keyCode&lt;=57)){_8b(e.keyCode==48?9:e.keyCode-49,_dc,_da);}else{if(e.ctrlKey&amp;&amp;e.keyCode==32){_8b(0,_dc,_da);}}if(!e.ctrlKey&amp;&amp;(e.keyCode==13||e.keyCode==10)){_8b(0,_dc,_da);}setTimeout(function(){abego.IntelliTagger.assistTagging(_dc,_da);},100);return false;};_81(_dc);}};var _e0=function(e){if(!e){var e=window.event;}var _e3=resolveTarget(e);var _e4=_e3.getAttribute(&quot;tiddler&quot;);if(_e4){story.displayTiddler(_e3,_e4,&quot;IntelliTaggerEditTagsTemplate&quot;,false);_d0(_e4);}return false;};var _e5=config.macros.tags.handler;config.macros.tags.handler=function(_e6,_e7,_e8,_e9,_ea,_eb){_e5.apply(this,arguments);abego.IntelliTagger.createEditTagsButton(_eb,createTiddlyElement(_e6.lastChild,&quot;li&quot;));};var _ec=function(){if(_71&amp;&amp;_72&amp;&amp;!abego.isDescendantOrSelf(document,_72)){abego.IntelliTagger.close();}};setInterval(_ec,100);abego.IntelliTagger.displayTagSuggestions=function(_ed,_ee,_ef,_f0,_f1){_74=_ed;_75=abego.toSet(_ee);_76=_ef;_72=_f0;_73=_f1;if(!_71){_71=createTiddlyElement(document.body,&quot;div&quot;,null,&quot;intelliTaggerSuggestions&quot;);_71.style.position=&quot;absolute&quot;;}_ac();abego.openAsPopup(_71);if(_77()){var w=_77().offsetWidth;if(_71.offsetWidth&lt;w){_71.style.width=(w-2*(_6e+_6f))+&quot;px&quot;;}abego.moveBelowAndClip(_71,_77());}else{abego.centerOnWindow(_71);}_c7();};abego.IntelliTagger.assistTagging=function(_f3,_f4){var _f5=_90(_f3);var s=_f3.value;if(_7d(_f3)){s=_7a(s);}var _f7=s.readBracketedList();var _f8=_f7.length&gt;0?abego.filterStrings(abego.internal.getTagManager().getPartnerRankedTags(_f7),_f5,_70):_a0(_f5,_70);abego.IntelliTagger.displayTagSuggestions(_a9(_f5,_f7),_f7,_f8,_f3,function(tag,e){if(e.shiftKey){onClickTag.call(this,e);}else{_85(tag,_f3,_f4);}});};abego.IntelliTagger.close=function(){abego.closePopup(_71);_71=null;return false;};abego.IntelliTagger.createEditTagsButton=function(_fb,_fc,_fd,_fe,_ff,id,_101){if(!_fd){_fd=&quot;[edit]&quot;;}if(!_fe){_fe=&quot;Edit the tags&quot;;}if(!_ff){_ff=&quot;editTags&quot;;}var _102=createTiddlyButton(_fc,_fd,_fe,_e0,_ff,id,_101);_102.setAttribute(&quot;tiddler&quot;,(_fb instanceof Tiddler)?_fb.title:String(_fb));return _102;};abego.IntelliTagger.getSuggestionTagsMaxCount=function(){return 100;};config.macros.intelliTagger={label:&quot;intelliTagger&quot;,handler:function(_103,_104,_105,_106,_107,_108){var _109=_107.parseParams(&quot;list&quot;,null,true);var _10a=_109[0][&quot;action&quot;];for(var i=0;_10a&amp;&amp;i&lt;_10a.length;i++){var _10c=_10a[i];var _10d=config.macros.intelliTagger.subhandlers[_10c];if(!_10d){abego.alertAndThrow(&quot;Unsupported action '%0'&quot;.format([_10c]));}_10d(_103,_104,_105,_106,_107,_108);}},subhandlers:{showTags:function(_10e,_10f,_110,_111,_112,_113){_b4(_10e,_74,_76?_76.length:0,_76,abego.IntelliTagger.getSuggestionTagsMaxCount());},showFavorites:function(_114,_115,_116,_117,_118,_119){_b4(_114,_76,0);},closeButton:function(_11a,_11b,_11c,_11d,_11e,_11f){var _120=createTiddlyButton(_11a,&quot;close&quot;,&quot;Close the suggestions&quot;,abego.IntelliTagger.close);},version:function(_121){var t=&quot;IntelliTagger %0.%1.%2&quot;.format([version.extensions.IntelliTaggerPlugin.major,version.extensions.IntelliTaggerPlugin.minor,version.extensions.IntelliTaggerPlugin.revision]);var e=createTiddlyElement(_121,&quot;a&quot;);e.setAttribute(&quot;href&quot;,&quot;http://tiddlywiki.abego-software.de/#IntelliTaggerPlugin&quot;);e.innerHTML=&quot;&lt;font color=\&quot;black\&quot; face=\&quot;Arial, Helvetica, sans-serif\&quot;&gt;&quot;+t+&quot;&lt;font&gt;&quot;;},copyright:function(_124){var e=createTiddlyElement(_124,&quot;a&quot;);e.setAttribute(&quot;href&quot;,&quot;http://tiddlywiki.abego-software.de&quot;);e.innerHTML=&quot;&lt;font color=\&quot;black\&quot; face=\&quot;Arial, Helvetica, sans-serif\&quot;&gt;&amp;copy; 2006-2007 &lt;b&gt;&lt;font color=\&quot;red\&quot;&gt;abego&lt;/font&gt;&lt;/b&gt; Software&lt;font&gt;&quot;;}}};})();config.shadowTiddlers[&quot;IntelliTaggerStyleSheet&quot;]=&quot;/***\n&quot;+&quot;!~IntelliTagger Stylesheet\n&quot;+&quot;***/\n&quot;+&quot;/*{{{*/\n&quot;+&quot;.intelliTaggerSuggestions {\n&quot;+&quot;\tposition: absolute;\n&quot;+&quot;\twidth: 600px;\n&quot;+&quot;\n&quot;+&quot;\tpadding: 2px;\n&quot;+&quot;\tlist-style: none;\n&quot;+&quot;\tmargin: 0;\n&quot;+&quot;\n&quot;+&quot;\tbackground: #eeeeee;\n&quot;+&quot;\tborder: 1px solid DarkGray;\n&quot;+&quot;}\n&quot;+&quot;\n&quot;+&quot;.intelliTaggerSuggestions .currentTag   {\n&quot;+&quot;\tfont-weight: bold;\n&quot;+&quot;}\n&quot;+&quot;\n&quot;+&quot;.intelliTaggerSuggestions .suggestionNumber {\n&quot;+&quot;\tcolor: #808080;\n&quot;+&quot;}\n&quot;+&quot;\n&quot;+&quot;.intelliTaggerSuggestions .numberedSuggestion{\n&quot;+&quot;\twhite-space: nowrap;\n&quot;+&quot;}\n&quot;+&quot;\n&quot;+&quot;.intelliTaggerSuggestions .intelliTaggerFooter {\n&quot;+&quot;\tmargin-top: 4px;\n&quot;+&quot;\tborder-top-width: thin;\n&quot;+&quot;\tborder-top-style: solid;\n&quot;+&quot;\tborder-top-color: #999999;\n&quot;+&quot;}\n&quot;+&quot;.intelliTaggerSuggestions .favorites {\n&quot;+&quot;\tborder-bottom-width: thin;\n&quot;+&quot;\tborder-bottom-style: solid;\n&quot;+&quot;\tborder-bottom-color: #999999;\n&quot;+&quot;\tpadding-bottom: 2px;\n&quot;+&quot;}\n&quot;+&quot;\n&quot;+&quot;.intelliTaggerSuggestions .normalTags {\n&quot;+&quot;\tpadding-top: 2px;\n&quot;+&quot;}\n&quot;+&quot;\n&quot;+&quot;.intelliTaggerSuggestions .intelliTaggerFooter .button {\n&quot;+&quot;\tfont-size: 10px;\n&quot;+&quot;\n&quot;+&quot;\tpadding-left: 0.3em;\n&quot;+&quot;\tpadding-right: 0.3em;\n&quot;+&quot;}\n&quot;+&quot;\n&quot;+&quot;/*}}}*/\n&quot;;config.shadowTiddlers[&quot;IntelliTaggerMainTemplate&quot;]=&quot;&lt;!--\n&quot;+&quot;{{{\n&quot;+&quot;--&gt;\n&quot;+&quot;&lt;div class=\&quot;favorites\&quot; macro=\&quot;intelliTagger action: showFavorites\&quot;&gt;&lt;/div&gt;\n&quot;+&quot;&lt;div class=\&quot;normalTags\&quot; macro=\&quot;intelliTagger action: showTags\&quot;&gt;&lt;/div&gt;\n&quot;+&quot;&lt;!-- The Footer (with the Navigation) ============================================ --&gt;\n&quot;+&quot;&lt;table class=\&quot;intelliTaggerFooter\&quot; border=\&quot;0\&quot; width=\&quot;100%\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;0\&quot;&gt;&lt;tbody&gt;\n&quot;+&quot;  &lt;tr&gt;\n&quot;+&quot;\t&lt;td align=\&quot;left\&quot;&gt;\n&quot;+&quot;\t\t&lt;span macro=\&quot;intelliTagger action: closeButton\&quot;&gt;&lt;/span&gt;\n&quot;+&quot;\t&lt;/td&gt;\n&quot;+&quot;\t&lt;td align=\&quot;right\&quot;&gt;\n&quot;+&quot;\t\t&lt;span macro=\&quot;intelliTagger action: version\&quot;&gt;&lt;/span&gt;, &lt;span macro=\&quot;intelliTagger action: copyright \&quot;&gt;&lt;/span&gt;\n&quot;+&quot;\t&lt;/td&gt;\n&quot;+&quot;  &lt;/tr&gt;\n&quot;+&quot;&lt;/tbody&gt;&lt;/table&gt;\n&quot;+&quot;&lt;!--\n&quot;+&quot;}}}\n&quot;+&quot;--&gt;\n&quot;;config.shadowTiddlers[&quot;IntelliTaggerEditTagsTemplate&quot;]=&quot;&lt;!--\n&quot;+&quot;{{{\n&quot;+&quot;--&gt;\n&quot;+&quot;&lt;div class='toolbar' macro='toolbar +saveTiddler -cancelTiddler'&gt;&lt;/div&gt;\n&quot;+&quot;&lt;div class='title' macro='view title'&gt;&lt;/div&gt;\n&quot;+&quot;&lt;div class='tagged' macro='tags'&gt;&lt;/div&gt;\n&quot;+&quot;&lt;div class='viewer' macro='view text wikified'&gt;&lt;/div&gt;\n&quot;+&quot;&lt;div class='toolbar' macro='toolbar +saveTiddler -cancelTiddler'&gt;&lt;/div&gt;\n&quot;+&quot;&lt;div class='editor' macro='edit tags'&gt;&lt;/div&gt;&lt;div class='editorFooter'&gt;&lt;span macro='message views.editor.tagPrompt'&gt;&lt;/span&gt;&lt;span macro='tagChooser'&gt;&lt;/span&gt;&lt;/div&gt;\n&quot;+&quot;&lt;!--\n&quot;+&quot;}}}\n&quot;+&quot;--&gt;\n&quot;;config.shadowTiddlers[&quot;BSD open source license (abego Software)&quot;]=&quot;See [[Licence|http://tiddlywiki.abego-software.de/#%5B%5BBSD%20open%20source%20license%5D%5D]].&quot;;config.shadowTiddlers[&quot;IntelliTaggerPlugin Documentation&quot;]=&quot;[[Documentation on abego Software website|http://tiddlywiki.abego-software.de/doc/IntelliTagger.pdf]].&quot;;config.shadowTiddlers[&quot;IntelliTaggerPlugin SourceCode&quot;]=&quot;[[Plugin source code on abego Software website|http://tiddlywiki.abego-software.de/archive/IntelliTaggerPlugin/Plugin-IntelliTagger-src.1.0.2.js]]\n&quot;;(function(){var _126=restart;restart=function(){setStylesheet(store.getTiddlerText(&quot;IntelliTaggerStyleSheet&quot;),&quot;IntelliTaggerStyleSheet&quot;);_126.apply(this,arguments);};})();}
+// %/
+</pre>
+</div>
 <div title="Interruptions" creator="nagase" modifier="nagase" created="201205222357" tags="TimeJournal myEmpty" changecount="1">
 <pre>|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|
 |2008-08-17|Phone CSL|18:39:46|18:40:17|00:00:30|
 /%tasktimer%/
 </pre>
 </div>
-<div title="JapaneseTranslationPlugin" creator="nagase" modifier="nagase" created="201204200033" modified="201205160104" tags="systemConfig myEmpty" changecount="2">
+<div title="JapaneseTranslationPlugin" creator="nagase" modifier="nagase" created="201204200033" modified="201205240345" tags="systemConfig myEmpty" changecount="4">
 <pre>/***
 |''Name:''|JapaneseTranslationPlugin |
 |''Description:''|Translation of TiddlyWiki into Japanese |
@@ -3809,13 +4199,13 @@ merge(config.macros.saveChanges,{
 	accessKey: &quot;S&quot;});
 
 merge(config.macros.newTiddler,{
-	label: &quot;新規作成&quot;,
+	label: &quot;New Tiddler&quot;,
 	prompt: &quot;新しいtiddlerを作成します&quot;,
 	title: &quot;新規作成&quot;,
 	accessKey: &quot;N&quot;});
 
 merge(config.macros.newJournal,{
-	label: &quot;新規ジャーナル&quot;,
+	label: &quot;New Journal&quot;,
 	prompt: &quot;現在日時がタイトルの新しいtiddlerを作成します&quot;,
 	accessKey: &quot;J&quot;});
 
@@ -4274,7 +4664,7 @@ merge(config.macros,{
 });
 //}}}</pre>
 </div>
-<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205230105" tags="myEmpty" changecount="42">
+<div title="MainMenu" creator="nagase" modifier="nagase" created="201205160044" modified="201205240339" tags="myEmpty" changecount="46">
 <pre>[[TranslatedGettingStarted]]
 
 &lt;&lt;calendar thismonth&gt;&gt;
@@ -4302,6 +4692,8 @@ SiteMap
 
 ^^~TiddlyWiki version &lt;&lt;version&gt;&gt;
 (c) 2010 [[UnaMesa|http://www.unamesa.org/]]^^
+
+&lt;&lt;cloud type action:... limit:... hide systemConfig myEmpty TimeJournal ...&gt;&gt;
 
 </pre>
 </div>
@@ -4596,6 +4988,39 @@ TertiaryMid: #999
 TertiaryDark: #666
 Error: #f88
 
+</pre>
+</div>
+<div title="MptwCollapsePlugin" modifier="nagase" created="201205232321" tags="systemConfig myEmpty" changecount="1">
+<pre>//{{{
+// Pretty sure this is incomplete and experimental
+// TODO: Fix it or remove it.
+
+(function($){
+
+merge(config.macros,{
+  mptwCollapse: {
+    handler: function(place,macroName,params) {
+      createTiddlyButton(place, params[0] == '+' ? '\u25AD' : '\u25AC', 'collapse/uncollapse', function(){
+        $(story.findContainingTiddler(place)).toggleClass('collapsed');
+      });
+    }
+  }
+});
+
+/* this doesn't work unless you have a modified ViewTempate */
+config.shadowTiddlers[&quot;MptwCollapsePluginStyles&quot;] = &quot;&quot;
+  +&quot;.collapsed .uncollapsedView { display:none;       }&quot;
+  +&quot;.collapsedView              { display:none;       }&quot;
+  +&quot;.collapsed .collapsedView   { display:block;      }&quot;
+  +&quot;.tiddler.collapsed          { padding-bottom:1em; }&quot;
+  +&quot;.tiddler.collapsed .title   { font-size:100%;     }&quot;
+;
+
+store.addNotification(&quot;MptwCollapsePluginStyles&quot;,refreshStyles);
+
+})(jQuery);
+
+//}}}
 </pre>
 </div>
 <div title="MptwGreen" modifier="nagase" created="201205230544" tags="systemPalette myEmpty" changecount="1">
@@ -4980,6 +5405,212 @@ h1,h2,h3,h4,h5,h6 {
 /*}}}*/
 
 </pre>
+</div>
+<div title="NewHerePlugin" modifier="nagase" created="201205232322" tags="systemConfig myEmpty" changecount="1">
+<pre>/***
+|Name:|NewHerePlugin|
+|Description:|Creates the new here and new journal macros|
+|Version:|3.0a|
+|Date:|27-Jun-2011|
+|Source:|http://mptw.tiddlyspot.com/#NewHerePlugin|
+|Author:|Simon Baird &lt;simon.baird@gmail.com&gt;|
+|License|http://mptw.tiddlyspot.com/#TheBSDLicense|
+***/
+//{{{
+merge(config.macros, {
+  newHere: {
+    handler: function(place,macroName,params,wikifier,paramString,tiddler) {
+      wikify(&quot;&lt;&lt;newTiddler &quot;+paramString+&quot; tag:[[&quot;+tiddler.title+&quot;]]&gt;&gt;&quot;,place,null,tiddler);
+    }
+  },
+  newJournalHere: {
+    handler: function(place,macroName,params,wikifier,paramString,tiddler) {
+      wikify(&quot;&lt;&lt;newJournal &quot;+paramString+&quot; tag:[[&quot;+tiddler.title+&quot;]]&gt;&gt;&quot;,place,null,tiddler);
+    }
+  }
+});
+
+//}}}
+</pre>
+</div>
+<div title="RearrangeTiddlersPlugin" modifier="nagase" created="201205232327" modified="201205232328" tags="myEmpty systemConfig NavigationPackage" changecount="2">
+<pre>/***
+|Name|RearrangeTiddlersPlugin|
+|Source|http://www.TiddlyTools.com/#RearrangeTiddlersPlugin|
+|Version|2.0.0|
+|Author|Eric Shulman|
+|OriginalAuthor|Joe Raii|
+|License|http://www.TiddlyTools.com/#LegalStatements|
+|~CoreVersion|2.1|
+|Type|plugin|
+|Description|drag tiddlers by title to re-order story column display|
+
+adapted from: http://www.cs.utexas.edu/~joeraii/dragn/#Draggable
+changes by ELS:
+* hijack refreshTiddler() instead of overridding createTiddler()
+* find title element by className instead of elementID
+* set cursor style via code instead of stylesheet
+* set tooltip help text
+* set tiddler &quot;position:relative&quot; when starting drag event, restore saved value when drag ends
+* update 2006.08.07: use getElementsByTagName(&quot;*&quot;) to find title element, even when it is 'buried' deep in tiddler DOM elements (due to custom template usage)
+* update 2007.03.01: use apply() to invoke hijacked core function
+* update 2008.01.13: only hijack core function once.  (allows for dynamic loading of plugin via bookmarklet)
+* update 2008.10.19: added onclick popup menu with 'move to top' and 'move to bottom' commands
+* update 2010.11.30: use story.getTiddler()
+***/
+//{{{
+
+if (Story.prototype.rearrangeTiddlersHijack_refreshTiddler===undefined) {
+Story.prototype.rearrangeTiddlersHijack_refreshTiddler = Story.prototype.refreshTiddler;
+Story.prototype.refreshTiddler = function(title,template)
+{
+	this.rearrangeTiddlersHijack_refreshTiddler.apply(this,arguments);
+	var theTiddler = this.getTiddler(title); if (!theTiddler) return;
+	var theHandle;
+	var children=theTiddler.getElementsByTagName(&quot;*&quot;);
+	for (var i=0; i&lt;children.length; i++) if (hasClass(children[i],&quot;title&quot;)) { theHandle=children[i]; break; }
+	if (!theHandle) return theTiddler;
+
+	Drag.init(theHandle, theTiddler, 0, 0, null, null);
+	theHandle.style.cursor=&quot;move&quot;;
+	theHandle.title=&quot;drag title to re-arrange tiddlers, click for more options...&quot;
+	theTiddler.onDrag = function(x,y,myElem) {
+		if (this.style.position!=&quot;relative&quot;)
+			{ this.savedstyle=this.style.position; this.style.position=&quot;relative&quot;; }
+		y = myElem.offsetTop;
+		var next = myElem.nextSibling;
+		var prev = myElem.previousSibling;
+		if (next &amp;&amp; y + myElem.offsetHeight &gt; next.offsetTop + next.offsetHeight/2) { 
+			myElem.parentNode.removeChild(myElem);
+			next.parentNode.insertBefore(myElem, next.nextSibling);//elems[pos+1]);
+			myElem.style[&quot;top&quot;] = -next.offsetHeight/2+&quot;px&quot;;
+		}
+		if (prev &amp;&amp; y &lt; prev.offsetTop + prev.offsetHeight/2) { 
+			myElem.parentNode.removeChild(myElem);
+			prev.parentNode.insertBefore(myElem, prev);
+			myElem.style[&quot;top&quot;] = prev.offsetHeight/2+&quot;px&quot;;
+		}
+	};
+	theTiddler.onDragEnd = function(x,y,myElem) {
+		myElem.style[&quot;top&quot;] = &quot;0px&quot;;
+		if (this.savedstyle!=undefined)
+			this.style.position=this.savedstyle;
+	};
+	theHandle.onclick=function(ev) {
+		ev=ev||window.event;
+		var p=Popup.create(this); if (!p) return;
+		var b=createTiddlyButton(createTiddlyElement(p,&quot;li&quot;),
+			&quot;\u25B2 move to top of column &quot;,&quot;move this tiddler to the top of the story column&quot;,
+			function() {
+				var t=story.getTiddler(this.getAttribute(&quot;tid&quot;));
+				t.parentNode.insertBefore(t,t.parentNode.firstChild); // move to top of column
+				window.scrollTo(0,ensureVisible(t));
+				return false;
+			});
+		b.setAttribute(&quot;tid&quot;,title);
+		var b=createTiddlyButton(createTiddlyElement(p,&quot;li&quot;),
+			&quot;\u25BC move to bottom of column &quot;,&quot;move this tiddler to the bottom of the story column&quot;,
+			function() {
+				var t=story.getTiddler(this.getAttribute(&quot;tid&quot;));
+				t.parentNode.insertBefore(t,null); // move to bottom of column
+				window.scrollTo(0,ensureVisible(t));
+				return false;
+			});
+		b.setAttribute(&quot;tid&quot;,title);
+		Popup.show();
+		ev.cancelBubble=true; if (ev.stopPropagation) ev.stopPropagation(); return(false);
+	};
+	return theTiddler;
+}
+}
+
+/**************************************************
+ * dom-drag.js
+ * 09.25.2001
+ * www.youngpup.net
+ **************************************************
+ * 10.28.2001 - fixed minor bug where events
+ * sometimes fired off the handle, not the root.
+ **************************************************/
+
+var Drag = {
+	obj:null,
+
+	init:
+	function(o, oRoot, minX, maxX, minY, maxY) {
+		o.onmousedown = Drag.start;
+		o.root = oRoot &amp;&amp; oRoot != null ? oRoot : o ;
+		if (isNaN(parseInt(o.root.style.left))) o.root.style.left=&quot;0px&quot;;
+		if (isNaN(parseInt(o.root.style.top))) o.root.style.top=&quot;0px&quot;;
+		o.minX = typeof minX != 'undefined' ? minX : null;
+		o.minY = typeof minY != 'undefined' ? minY : null;
+		o.maxX = typeof maxX != 'undefined' ? maxX : null;
+		o.maxY = typeof maxY != 'undefined' ? maxY : null;
+		o.root.onDragStart = new Function();
+		o.root.onDragEnd = new Function();
+		o.root.onDrag = new Function();
+	},
+
+	start:
+	function(e) {
+		var o = Drag.obj = this;
+		e = Drag.fixE(e);
+		var y = parseInt(o.root.style.top);
+		var x = parseInt(o.root.style.left);
+		o.root.onDragStart(x, y, Drag.obj.root);
+		o.lastMouseX = e.clientX;
+		o.lastMouseY = e.clientY;
+		if (o.minX != null) o.minMouseX = e.clientX - x + o.minX;
+		if (o.maxX != null) o.maxMouseX = o.minMouseX + o.maxX - o.minX;
+		if (o.minY != null) o.minMouseY = e.clientY - y + o.minY;
+		if (o.maxY != null) o.maxMouseY = o.minMouseY + o.maxY - o.minY;
+		document.onmousemove = Drag.drag;
+		document.onmouseup = Drag.end;
+		Drag.obj.root.style[&quot;z-index&quot;] = &quot;10&quot;;
+		return false;
+	},
+
+	drag:
+	function(e) {
+		e = Drag.fixE(e);
+		var o = Drag.obj;
+		var ey = e.clientY;
+		var ex = e.clientX;
+		var y = parseInt(o.root.style.top);
+		var x = parseInt(o.root.style.left);
+		var nx, ny;
+		if (o.minX != null) ex = Math.max(ex, o.minMouseX);
+		if (o.maxX != null) ex = Math.min(ex, o.maxMouseX);
+		if (o.minY != null) ey = Math.max(ey, o.minMouseY);
+		if (o.maxY != null) ey = Math.min(ey, o.maxMouseY);
+		nx = x + (ex - o.lastMouseX);
+		ny = y + (ey - o.lastMouseY);
+		Drag.obj.root.style[&quot;left&quot;] = nx + &quot;px&quot;;
+		Drag.obj.root.style[&quot;top&quot;] = ny + &quot;px&quot;;
+		Drag.obj.lastMouseX = ex;
+		Drag.obj.lastMouseY = ey;
+		Drag.obj.root.onDrag(nx, ny, Drag.obj.root);
+		return false;
+	},
+
+	end:
+	function() {
+		document.onmousemove = null;
+		document.onmouseup = null;
+		Drag.obj.root.style[&quot;z-index&quot;] = &quot;0&quot;;
+		Drag.obj.root.onDragEnd(parseInt(Drag.obj.root.style[&quot;left&quot;]), parseInt(Drag.obj.root.style[&quot;top&quot;]), Drag.obj.root);
+		Drag.obj = null;
+	},
+
+	fixE:
+	function(e) {
+		if (typeof e == 'undefined') e = window.event;
+		if (typeof e.layerX == 'undefined') e.layerX = e.offsetX;
+		if (typeof e.layerY == 'undefined') e.layerY = e.offsetY;
+		return e;
+	}
+};
+//}}}</pre>
 </div>
 <div title="Rin" creator="nagase" modifier="nagase" created="201205170107" modified="201205230053" tags="StyleSheet hide" changecount="2">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
@@ -6062,7 +6693,7 @@ config.macros.siteMap = {
 <div title="TabTimeline" creator="nagase" modifier="nagase" created="201205230002" tags="hide TimeJournal myEmpty" changecount="1">
 <pre>&lt;&lt;timeline better:true excludeTag:hide sortBy:modified&gt;&gt;</pre>
 </div>
-<div title="TagCloudPlugin" creator="nagase" modifier="nagase" created="201205160348" modified="201205230055" tags="NavigationPackage systemConfig DiscoveryPackage hide myEmpty" changecount="2">
+<div title="TagCloudPlugin" creator="nagase" modifier="nagase" created="201205160348" modified="201205232330" tags="NavigationPackage systemConfig DiscoveryPackage myEmpty" changecount="3">
 <pre>/***
 |Name|TagCloudPlugin|
 |Source|http://www.TiddlyTools.com/#TagCloudPlugin|
@@ -6976,6 +7607,80 @@ config.macros.toggleSideBar.onToggleSideBar = function(){
 setStylesheet(&quot;.HideSideBarButton .button {font-weight:bold; padding: 0 5px;}\n&quot;,&quot;ToggleSideBarButtonStyles&quot;);
 
 //}}}</pre>
+</div>
+<div title="ToggleTagPlugin" modifier="nagase" created="201205230813" tags="systemConfig myEmpty" changecount="1">
+<pre>/***
+|Name:|ToggleTagPlugin|
+|Description:|Makes a checkbox which toggles a tag in a tiddler|
+|Version:|3.1.0a|
+|Date:|27-Jun-2011|
+|Source:|http://mptw.tiddlyspot.com/#ToggleTagPlugin|
+|Author:|Simon Baird &lt;simon.baird@gmail.com&gt;|
+|License:|http://mptw.tiddlyspot.com/#TheBSDLicense|
+!!Usage
+{{{&lt;&lt;toggleTag }}}//{{{TagName TiddlerName LabelText}}}//{{{&gt;&gt;}}}
+* TagName - the tag to be toggled, default value &quot;checked&quot;
+* TiddlerName - the tiddler to toggle the tag in, default value the current tiddler
+* LabelText - the text (gets wikified) to put next to the check box, default value is '{{{[[TagName]]}}}' or '{{{[[TagName]] [[TiddlerName]]}}}'
+(If a parameter is '.' then the default will be used)
+* TouchMod flag - if non empty then touch the tiddlers mod date. Note, can set config.toggleTagAlwaysTouchModDate to always touch mod date
+!!Examples
+|Code|Description|Example|h
+|{{{&lt;&lt;toggleTag&gt;&gt;}}}|Toggles the default tag (checked) in this tiddler|&lt;&lt;toggleTag&gt;&gt;|
+|{{{&lt;&lt;toggleTag TagName&gt;&gt;}}}|Toggles the TagName tag in this tiddler|&lt;&lt;toggleTag TagName&gt;&gt;|
+|{{{&lt;&lt;toggleTag TagName TiddlerName&gt;&gt;}}}|Toggles the TagName tag in the TiddlerName tiddler|&lt;&lt;toggleTag TagName TiddlerName&gt;&gt;|
+|{{{&lt;&lt;toggleTag TagName TiddlerName 'click me'&gt;&gt;}}}|Same but with custom label|&lt;&lt;toggleTag TagName TiddlerName 'click me'&gt;&gt;|
+|{{{&lt;&lt;toggleTag . . 'click me'&gt;&gt;}}}|dot means use default value|&lt;&lt;toggleTag . . 'click me'&gt;&gt;|
+!!Notes
+* If TiddlerName doesn't exist it will be silently created
+* Set label to '-' to specify no label
+* See also http://mgtd-alpha.tiddlyspot.com/#ToggleTag2
+!!Known issues
+* Doesn't smoothly handle the case where you toggle a tag in a tiddler that is current open for editing
+* Should convert to use named params
+***/
+//{{{
+
+if (config.toggleTagAlwaysTouchModDate == undefined) config.toggleTagAlwaysTouchModDate = false;
+
+merge(config.macros,{
+
+  toggleTag: {
+
+    createIfRequired: true,
+    shortLabel: &quot;[[%0]]&quot;,
+    longLabel: &quot;[[%0]] [[%1]]&quot;,
+
+    handler: function(place,macroName,params,wikifier,paramString,tiddler) {
+      var tiddlerTitle = tiddler ? tiddler.title : '';
+      var tag   = (params[0] &amp;&amp; params[0] != '.') ? params[0] : &quot;checked&quot;;
+      var title = (params[1] &amp;&amp; params[1] != '.') ? params[1] : tiddlerTitle;
+      var defaultLabel = (title == tiddlerTitle ? this.shortLabel : this.longLabel);
+      var label = (params[2] &amp;&amp; params[2] != '.') ? params[2] : defaultLabel;
+      var touchMod = (params[3] &amp;&amp; params[3] != '.') ? params[3] : &quot;&quot;;
+      label = (label == '-' ? '' : label); // dash means no label
+      var theTiddler = (title == tiddlerTitle ? tiddler : store.getTiddler(title));
+      var cb = createTiddlyCheckbox(place, label.format([tag,title]), theTiddler &amp;&amp; theTiddler.isTagged(tag), function(e) {
+        if (!store.tiddlerExists(title)) {
+          if (config.macros.toggleTag.createIfRequired) {
+            var content = store.getTiddlerText(title); // just in case it's a shadow
+            store.saveTiddler(title,title,content?content:&quot;&quot;,config.options.txtUserName,new Date(),null);
+          }
+          else
+            return false;
+        }
+        if ((touchMod != &quot;&quot; || config.toggleTagAlwaysTouchModDate) &amp;&amp; theTiddler)
+            theTiddler.modified = new Date();
+        store.setTiddlerTag(title,this.checked,tag);
+        return true;
+      });
+    }
+  }
+});
+
+//}}}
+
+</pre>
 </div>
 <div title="berry2" creator="nagase" modifier="nagase" created="201205170102" modified="201205230053" tags="StyleSheet hide" changecount="3">
 <pre>Aenean eros arcu, condimentum nec, dapibus ut, tincidunt sit amet, urna. Quisque viverra, eros sed imperdiet iaculis, est risus facilisis quam, id malesuada arcu nulla luctus urna. Nullam et est. Vestibulum velit sem, faucibus cursus, dapibus vestibulum, pellentesque et, urna. Donec luctus. Donec lectus. Aliquam eget eros facilisis tortor feugiat sollicitudin. Integer lobortis vulputate sapien. Sed iaculis erat ac nunc. Etiam eu enim. Mauris ipsum urna, rhoncus at, bibendum sit amet, euismod eget, dolor. Mauris fermentum quam vitae ligula. Vestibulum in libero feugiat justo dictum consectetuer. Vestibulum euismod purus eget elit. Nunc sed massa porta elit bibendum posuere. Nunc pulvinar justo sit amet odio. In sed est. Phasellus ornare elementum nulla. Nulla ipsum neque, cursus a, viverra a, imperdiet at, enim. Quisque facilisis, diam sed accumsan suscipit, odio arcu hendrerit dolor, quis aliquet massa nulla nec sem.
