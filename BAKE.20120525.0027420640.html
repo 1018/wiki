@@ -1006,33 +1006,22 @@ low == END_POSI + 3
 !!!@@color(RoyalBlue): テスト用データの作成続き @@
 * 特に言うことはありません</pre>
 </div>
-<div title="2012年5月25日" modifier="nagase" created="201205242338" modified="201205250725" tags="journal bake" changecount="16">
+<div title="2012年5月25日" modifier="nagase" created="201205242338" tags="journal bake" changecount="1">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
-[_] HPとCP両方、2ｽﾚｰﾌﾞでの通信確認
-[_] 予定おぼえとく
+[_] TODO1
+[_] TODO2
 
 !!!@@color(RoyalBlue): 報告内容 @@
-* HPとCP両方、2ｽﾚｰﾌﾞでの通信確認&lt;br&gt; →
+* TODO1&lt;br&gt; →
+* TODO2&lt;br&gt; →
 
-!!!@@color(RoyalBlue): HPとCP両方、2ｽﾚｰﾌﾞでの通信確認 @@
-* 重篤なバグがあればすぐ報告する
-## comCoolerController( );の164行目あたりに以下を追加した。&lt;br&gt;{{{//}}} 20120525追加開始 ﾊﾟﾜｰｵﾝﾚｼﾋﾟを受けてない場合関数終了&lt;br&gt;if((SNDCC &amp; 0x0F) == 0x00)&lt;br&gt;{&lt;br&gt;　　　　return;&lt;br&gt;}&lt;br&gt;{{{//}}} 20120525追加終了&lt;br&gt;これではだめだった。ﾛｯﾄｸﾘｱはﾊﾟﾜｰｵﾝﾚｼﾋﾟの前だから。。。&lt;br&gt;やはり、ﾊﾟﾜｰｵﾝﾚｼﾋﾟを受信した後で通信開始のようにする。但し@@color(red): 存在する全ﾕﾆｯﾄのﾊﾟﾜｰｵﾝﾚｼﾋﾟを受信したら @@というようにする。
-* 確認結果
-| ﾚｼﾋﾟ名称 | BAD_test |
-| CP(BAKE01) | OK |
-| HP(BAKE01) | OK |
-| CP&amp;HP(BAKE01) | OK |
-| CP(2slave) | OK |
-| HP(2slave) | OK |
-| CP&amp;HP(2slave) ||
-
+!!!@@color(RoyalBlue): TODO1 @@
 *
-!!!@@color(RoyalBlue): 予定おぼえとく @@
-* 月曜日に玉置さんがソフトをもっていくらしい
-* HDMSやらを玉置さんがつくるらしい
-* それを火曜日とかに入れるらしい
-* ほんでもって、水曜日以降にそのソフトをマージする
+*
+!!!@@color(RoyalBlue): TODO2 @@
+*
+*
 </pre>
 </div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="journal bake" changecount="20">
@@ -8889,7 +8878,7 @@ BADのパワーオンレシピが受信できるようになったので、ス�
 * 温調機の温度がBADで受信した値の範囲内であればALMはでない。
 * とDのﾃﾞｰﾀ桁数を4桁→7桁(符号、小数点なし)に変更</pre>
 </div>
-<div title="覚書など" creator="氏名" modifier="nagase" created="201204300230" modified="201205250728" tags="bake" changecount="19">
+<div title="覚書など" creator="氏名" modifier="nagase" created="201204300230" modified="201205240751" tags="bake" changecount="18">
 <pre>!!@@color(RoyalBlue): 備忘録 @@
 [ｽﾚｰﾌﾞ二つ以上起動すると通信ｴﾗｰ]
 共通部分が占有権の取得を待つタイマが50msecで、BAKEのスレーブ切り替えのタイマが10msecだったのでおかしかった。&lt;br&gt;共通部分はそのままで、BAKE側のタイマを200msecに変更してとりあえず対処。&lt;br&gt;→　g変数をﾒﾝﾊﾞ変数にして対処。HPだけで確認した範囲では動作OK
@@ -8911,10 +8900,6 @@ RBで温調機から帰ってくる値 == 1100
 
 [BADの符号の取り扱い]
 BADのﾏｲﾅｽ記号は1にしてﾒｲﾝから飛んでくるらしい。
-
-[複数ｽﾚｰﾌﾞ起動するには]
-ﾌﾛｰﾃﾞｰﾀ編集で起動するｽﾚｰﾌﾞを登録しないといけない。
-温度とかの設定だけじゃだめ！！
 !!@@color(RoyalBlue): 用語集 TODO@@
 ソレノイドバルブ
 I/Oの出力でエアのON/OFFする
