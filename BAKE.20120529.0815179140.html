@@ -1064,7 +1064,7 @@ void BAKE::cntPresentUnitNum(void)
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
 [X] CPちゃんと動くように
-[X] 温調との通信
+[_] 温調との通信
 
 !!!@@color(RoyalBlue): 報告内容 @@
 * CPちゃんと動くように&lt;br&gt; → 温調との通信ﾀｲﾐﾝｸﾞ
@@ -1098,61 +1098,6 @@ void BAKE::cntPresentUnitNum(void)
 |05月28日|h:m:s.ms|RCV|BAD|08&lt;-F0|N:9|L:39|M:|08|00|07|00|00|00|00|00|10|00|00|00|00|00|00|01|23|00|10|11|00|00|22|00|33|01|00|00|40|00|50|00|20|00|30|50|
 | CP |1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|&gt;| WS/RS |&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;| WB/RB |33|34|&gt;|&gt;|&gt;| W%/R% |39|40|41|42|43|
 | HP |1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|&gt;| S1 |25|26|&gt;| P |&gt;| I |&gt;| D |33|34|&gt;|&gt;|&gt;| A1/A2 |39|40|41|42|43|
-</pre>
-</div>
-<div title="2012年5月29日" modifier="nagase" created="201205282338" modified="201205290220" tags="journal bake" changecount="17">
-<pre>!!!@@color(RoyalBlue): 本日のTODO @@
-
-[_] sleep(??);でずっと回り続けているところがある。玉置さんが修正してもらっているとのこと。
-[_] 現状はHPだけで通信しているらしい。
-[_] Socket.logで吐き出したBADﾃﾞｰﾀからCP/HPのﾃｽﾄ用ﾃﾞｰﾀを作る
-
-!!!@@color(RoyalBlue): 報告内容 @@
-* TODO1&lt;br&gt; →
-* TODO2&lt;br&gt; →
-
-!!!@@color(RoyalBlue): TODO1 @@
-*
-*
-!!!@@color(RoyalBlue): Socket.logで吐き出したBADﾃﾞｰﾀからCP/HPのﾃｽﾄ用ﾃﾞｰﾀを作る @@
-* 処理の流れ
-## 前準備
-*** Socket.logからとりだしたいBADﾃﾞｰﾀを抜き取って&quot;BAD.txt&quot;の名前で保存
-## 準備したLogファイルを読取で開く
-## EOFまで読み捨て。&quot;BAD&quot;を含む行を配列に格納する。
-## 格納したﾃﾞｰﾀを加工
-*** 必要なのはdata[23];から。
-## 加工したデータをCSVファイルに吐き出す
-## Logファイルを閉じる
-* 環境
-## 言語：perlを予定
-## BAD資料
-|0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|
-| date | time || com |||||UN|GN|RN|&gt;|&gt;| WT |&gt;|&gt;| BT |&gt;|&gt;| T1 |&gt;|&gt;| T2 |&gt;| TM |&gt;| AD |&gt;| P |&gt;| I |&gt;| D |&gt;|ARW|&gt;| UP |&gt;| LW |&gt;| up |&gt;| low | RF |
-|05月28日|h:m:s.ms|RCV|BAD|08&lt;-F0|N:9|L:39|M:|08|00|07|00|00|00|00|00|10|00|00|00|00|00|00|01|23|00|10|11|00|00|22|00|33|01|00|00|40|00|50|00|20|00|30|50|
-| CP |1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|&gt;| WS/RS |&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;| WB/RB |33|34|&gt;|&gt;|&gt;| W%/R% |39|40|41|42|43|
-| HP |1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|&gt;| S1 |25|26|&gt;| P |&gt;| I |&gt;| D |33|34|&gt;|&gt;|&gt;| A1/A2 |39|40|41|42|43|
-
-
-						
-| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 |
-| 0 | 1 | UN | N1 | N2 |&gt;|&gt;| CH0 |&gt;|&gt;| CH1 |&gt;|&gt;| CH2 |&gt;|&gt;| CH3 | ETX | Hi | Lo | 0D | 02 | UN | STX | ETX | Hi | Lo | 0D |
-|recv|02|19|57|53|32|30|30|32|31|30|32|32|30|30|30|30| 03 |30|43|0D| | | | | | | |
-|send|02|19|57|53|32|30|30|32|31|30|32|32|30|30|30|30|03|30|43|0D|02|19|06|03|31|46|0D|</pre>
-</div>
-<div title="2012年5月30日" modifier="nagase" created="201205292353" modified="201205312344" tags="bake journal" changecount="5">
-<pre>!!!@@color(RoyalBlue): 本日のTODO @@
-玉置さんはお休みです。
-[X] 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている
-[X] ピン上昇不良のALMがでている
-
-!!!@@color(RoyalBlue): 報告内容 @@
-* 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている&lt;br&gt; →野々村さんの指示でCPの場合、シャッタがないので、shutterProc();自体を動作させにないようにした
-
-!!!@@color(RoyalBlue): 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている @@
-* CPで処理有りPSRをするとｼｬｯﾀまで開閉してしまった。&lt;br&gt;--XPSR74 - チャンバー下降　指令でｼｬｯﾀのplateModeみてなかった。見る処理追加。--
-* 5秒以内にﾁｬﾝﾊﾞが上昇しなかったのが問題ではないかと思う。&lt;br&gt;→ハードの問題だったみたい。野々村さんが教えてくれた。とりあえず、解決
-*
 </pre>
 </div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="journal bake" changecount="20">
@@ -1203,66 +1148,6 @@ void BAKE::cntPresentUnitNum(void)
 * CVPのﾛｸﾞｲﾝの概念が違ってた。即時停止ﾌｧｲﾙの部分を書き換える
 * BAKEﾃﾞｨﾚｸﾄﾘの.bakﾌｧｲﾙを削除</pre>
 </div>
-<div title="2012年6月1日" modifier="nagase" created="201205312337" modified="201206010705" tags="bake journal" changecount="23">
-<pre>!!!@@color(RoyalBlue): 本日のTODO @@
-
-[X] 玉置さんソースとマージ
-[X] マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする
-[_] 自動処理できるシミュレータ用のﾃﾞｰﾀ作成
-[_] BAKEのソフトいじるのは今週まで。来週からC#でｼﾐｭﾚｰﾀの編集とか
-[_] HPのﾕﾆｯﾄで不具合あり。玉置さんが見てこられるらしい。それをシミュレータで再現できたらいいなって感じみたい。
-
-!!!@@color(RoyalBlue): 報告内容 @@
-* 玉置さんソースとマージ →　済み
-* マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする →　データができればOK
-* 自動処理できるシミュレータ用のﾃﾞｰﾀ作成 →
-* 
-!!!@@color(RoyalBlue): 玉置さんソースとマージ @@
-* 温調機ヒーターで&quot;SR&quot;というmsg追加になった(ACK返すだけ)　→　BakeComHeaterController.cppの247行目あたり。int　　sendRunStop[2];
-* 編集したファイル↓
-## BakeChangeMode.cpp
-## BakeComCoolerController.cpp
-## BakeComHeaterController.cpp　→　”ER”のデータ桁数が43桁から7桁に戻っている。データ作成時注意する
-## BakeDef.h
-## BakeExecuteManualOperation.cpp
-## BakeExecuteStopProcess.cpp
-## BakeExternalAlarm.cpp
-## BakeGetCpTemp.cpp
-## BakeGetHpTemp.cpp
-## BakeHeaterRelayOut.cpp
-## BakeMain.cpp
-## BakeMain.h
-## BakeMessageExpand.cpp
-## BakeSetAddress.cpp
-## BakeTaskBakeClose.cpp
-## BakeTaskBakeOpen.cpp
-## BakeTaskBakeProcess.cpp
-## BakeTaskChangeModeOrigin.cpp
-## BakeTaskControlTask.cpp
-## BakeTaskMainControl.cpp
-*** shutterProc( );をプレートﾓｰﾄﾞが10以下のときだけ動作させるようにした箇所が、玉置さんのｺｰﾄﾞにはない。なのでそこだけは残した。
-*** ALMﾘｽﾀｰﾄ時のﾕﾆｯﾄ番号をBCD変換かけたものを送信するように変更されている。
-## BakeTaskMessageProc.cpp
-## BakeTaskMessageProc.h
-## BakeTaskN2Hmds.cpp
-## BakeTaskN2Hmds.h
-## BakeTaskTempControl.cpp
-## BakeTrInterlockSub.cpp
-!!!@@color(RoyalBlue): マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする @@
-* 温調機との通信殺した状態で、原点復帰　→　OK
-* もしかするとBADを受信した後に通信開始するところ消しちゃったかも。CPだけで通信して確認する。　→　2012/05/11変更部分を戻して対応した
-!!!@@color(RoyalBlue): 自動処理できるシミュレータ用のﾃﾞｰﾀ作成 @@
-* 処理有りPSRで一連の動きが出来るデータと未完了のデータと二つ作る
-* 新たに追加されたmsg、&quot;SR&quot;も対応したもの
-* CPの場合の注意事項
-## 送信msgのﾕﾆｯﾄ番号がBCDからasciiに変更になっている。ex)0x02　→　'2'　つまり　02　→　32に変更&lt;br&gt;BAKE01 == 2 、 BAKE02 == 5
-## 存在しないﾕﾆｯﾄは全て&quot;46”をつめる。今までは”30”をつめていたような。。。
-* HPの場合の注意事項
-|| Poling | Selecting |
-| CHK0( ); | ER,C1,S1,G1,M1,AJ | SR |
-| ts100( ); || C1,S1,A1,A2,W1,J1,P1,I1,D1 |
-</pre>
-</div>
 <div title="About TimeJournal" creator="nagase" modifier="nagase" created="201205222350" tags="TimeJournal myEmpty" changecount="1">
 <pre>|Name|~TiddlyTimeJournal|
 | Description|A simple tool to help you keep a journal of where your time goes|
@@ -1299,12 +1184,10 @@ ToggleSideBarMacro 1.0 by Saq Imtiaz
 0.9 beta 1; TW 2.4.1 {{ds{2008-08-18}}}
 </pre>
 </div>
-<div title="ActivityReport" creator="nagase" modifier="nagase" created="201205222352" modified="201205290221" tags="TimeJournal log myEmpty task" changecount="5">
+<div title="ActivityReport" creator="nagase" modifier="nagase" created="201205222352" modified="201205280131" tags="TimeJournal log myEmpty task" changecount="2">
 <pre>|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|
 |2008-08-18|First|02:47:04|02:47:10|00:00:06|
 |2012-05-28|温調との通信が始まらない原因追究|10:29:38|10:31:36|00:01:57|
-|2012-05-29|ﾃｽﾄ用ﾃﾞｰﾀ作成ﾂｰﾙ概要設計|10:17:36|10:24:05|00:06:29|
-|2012-05-29|詳細設計|10:26:06|11:21:51|00:55:45|
 /%tasktimer%/
 </pre>
 </div>
@@ -2863,7 +2746,7 @@ function addRemindersToPopup(p,when,format)
 }
 //}}}</pre>
 </div>
-<div title="DefaultTiddlers" creator="nagase" modifier="nagase" created="201204200711" modified="201205282336" tags="hide" changecount="3">
+<div title="DefaultTiddlers" creator="nagase" modifier="nagase" created="201204200711" modified="201205282327" changecount="2">
 <pre>HelloThere</pre>
 </div>
 <div title="DropDownTagChooser" modifier="nagase" created="201205230525" tags="systemConfig Plugins myEmpty" changecount="1">
@@ -4193,7 +4076,7 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
-<div title="HelloThere" modifier="nagase" created="201205282326" modified="201205282336" tags="gettingstarted welcome hide" changecount="2">
+<div title="HelloThere" modifier="nagase" created="201205282326" tags="gettingstarted welcome" changecount="1">
 <pre>Welcome to TiddlyWiki, a reusable non-linear personal web notebook.  It's a unique [[wiki|WikiWikiWeb]] that people [[love using|Raves]] to keep ideas and information organised. It was originally created by JeremyRuston and is now a thriving [[open source|OpenSourceLicense]] project with a busy [[Community]] of independent developers.
 
 TiddlyWiki is written in [[HTML]], [[CSS]] and JavaScript to run on any reasonably modern [[browser|Browsers]] without needing any ServerSide logic. It allows anyone to create personal SelfContained hypertext documents that can be published to a WebServer, sent by email, stored in a DropBox or kept on a USB thumb drive to make a WikiOnAStick. Because it doesn't need to be installed and configured it makes a great GuerillaWiki. This is revision &lt;&lt;version&gt;&gt; of TiddlyWiki, and is published under an OpenSourceLicense.
@@ -4400,11 +4283,9 @@ if(!version.extensions.IntelliTaggerPlugin){if(!window.abego){window.abego={};}i
 // %/
 </pre>
 </div>
-<div title="Interruptions" creator="nagase" modifier="nagase" created="201205222357" modified="201205290221" tags="TimeJournal myEmpty" changecount="3">
+<div title="Interruptions" creator="nagase" modifier="nagase" created="201205222357" tags="TimeJournal myEmpty" changecount="1">
 <pre>|//Date//|//Description//|//Started//|//Stopped//|//Elapsed//|
 |2008-08-17|Phone CSL|18:39:46|18:40:17|00:00:30|
-|2012-05-29|mail|10:21:48|10:22:56|00:01:07|
-|2012-05-29|詳細設計|10:32:40|11:21:39|00:48:58|
 /%tasktimer%/
 </pre>
 </div>
@@ -9101,13 +8982,6 @@ This is a link to a [[StyleSheet]] tiddler.
 *
 *
 </pre>
-</div>
-<div title="いろいろさんこう" modifier="nagase" created="201205290815" changecount="1">
-<pre>http://mptw2.tiddlyspot.com/
-http://mptw.tiddlyspot.com/#BigThemePack
-http://www.geocities.jp/wikistyle/
-http://d.hatena.ne.jp/aramakie/
-http://tiddlywiki.abego-software.de/#IntelliTaggerPlugin</pre>
 </div>
 <div title="未完のもの" modifier="nagase" created="201205280601" modified="201205280640" tags="bake" changecount="4">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@

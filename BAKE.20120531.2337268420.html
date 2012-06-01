@@ -1140,19 +1140,19 @@ void BAKE::cntPresentUnitNum(void)
 |recv|02|19|57|53|32|30|30|32|31|30|32|32|30|30|30|30| 03 |30|43|0D| | | | | | | |
 |send|02|19|57|53|32|30|30|32|31|30|32|32|30|30|30|30|03|30|43|0D|02|19|06|03|31|46|0D|</pre>
 </div>
-<div title="2012年5月30日" modifier="nagase" created="201205292353" modified="201205312344" tags="bake journal" changecount="5">
+<div title="2012年5月30日" modifier="nagase" created="201205292353" modified="201205300326" tags="bake journal" changecount="4">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 玉置さんはお休みです。
-[X] 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている
-[X] ピン上昇不良のALMがでている
+[_] 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている
 
 !!!@@color(RoyalBlue): 報告内容 @@
-* 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている&lt;br&gt; →野々村さんの指示でCPの場合、シャッタがないので、shutterProc();自体を動作させにないようにした
+* 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている&lt;br&gt; →
 
 !!!@@color(RoyalBlue): 自動処理で、(物理的にない)CPのｼｬｯﾀが開閉しようとして、ALMがでている @@
-* CPで処理有りPSRをするとｼｬｯﾀまで開閉してしまった。&lt;br&gt;--XPSR74 - チャンバー下降　指令でｼｬｯﾀのplateModeみてなかった。見る処理追加。--
-* 5秒以内にﾁｬﾝﾊﾞが上昇しなかったのが問題ではないかと思う。&lt;br&gt;→ハードの問題だったみたい。野々村さんが教えてくれた。とりあえず、解決
+* CPで処理有りPSRをするとｼｬｯﾀまで開閉してしまった。&lt;br&gt;XPSR74 - チャンバー下降　指令でｼｬｯﾀのplateModeみてなかった。見る処理追加。
+* 5秒以内にﾁｬﾝﾊﾞが上昇しなかったのが問題ではないかと思う
 *
+* 
 </pre>
 </div>
 <div title="2012年5月7日" creator="nagase" modifier="nagase" created="201205070048" modified="201205070834" tags="journal bake" changecount="20">
@@ -1202,66 +1202,6 @@ void BAKE::cntPresentUnitNum(void)
 <pre>!!!@@color(RoyalBlue): TODO@@
 * CVPのﾛｸﾞｲﾝの概念が違ってた。即時停止ﾌｧｲﾙの部分を書き換える
 * BAKEﾃﾞｨﾚｸﾄﾘの.bakﾌｧｲﾙを削除</pre>
-</div>
-<div title="2012年6月1日" modifier="nagase" created="201205312337" modified="201206010705" tags="bake journal" changecount="23">
-<pre>!!!@@color(RoyalBlue): 本日のTODO @@
-
-[X] 玉置さんソースとマージ
-[X] マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする
-[_] 自動処理できるシミュレータ用のﾃﾞｰﾀ作成
-[_] BAKEのソフトいじるのは今週まで。来週からC#でｼﾐｭﾚｰﾀの編集とか
-[_] HPのﾕﾆｯﾄで不具合あり。玉置さんが見てこられるらしい。それをシミュレータで再現できたらいいなって感じみたい。
-
-!!!@@color(RoyalBlue): 報告内容 @@
-* 玉置さんソースとマージ →　済み
-* マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする →　データができればOK
-* 自動処理できるシミュレータ用のﾃﾞｰﾀ作成 →
-* 
-!!!@@color(RoyalBlue): 玉置さんソースとマージ @@
-* 温調機ヒーターで&quot;SR&quot;というmsg追加になった(ACK返すだけ)　→　BakeComHeaterController.cppの247行目あたり。int　　sendRunStop[2];
-* 編集したファイル↓
-## BakeChangeMode.cpp
-## BakeComCoolerController.cpp
-## BakeComHeaterController.cpp　→　”ER”のデータ桁数が43桁から7桁に戻っている。データ作成時注意する
-## BakeDef.h
-## BakeExecuteManualOperation.cpp
-## BakeExecuteStopProcess.cpp
-## BakeExternalAlarm.cpp
-## BakeGetCpTemp.cpp
-## BakeGetHpTemp.cpp
-## BakeHeaterRelayOut.cpp
-## BakeMain.cpp
-## BakeMain.h
-## BakeMessageExpand.cpp
-## BakeSetAddress.cpp
-## BakeTaskBakeClose.cpp
-## BakeTaskBakeOpen.cpp
-## BakeTaskBakeProcess.cpp
-## BakeTaskChangeModeOrigin.cpp
-## BakeTaskControlTask.cpp
-## BakeTaskMainControl.cpp
-*** shutterProc( );をプレートﾓｰﾄﾞが10以下のときだけ動作させるようにした箇所が、玉置さんのｺｰﾄﾞにはない。なのでそこだけは残した。
-*** ALMﾘｽﾀｰﾄ時のﾕﾆｯﾄ番号をBCD変換かけたものを送信するように変更されている。
-## BakeTaskMessageProc.cpp
-## BakeTaskMessageProc.h
-## BakeTaskN2Hmds.cpp
-## BakeTaskN2Hmds.h
-## BakeTaskTempControl.cpp
-## BakeTrInterlockSub.cpp
-!!!@@color(RoyalBlue): マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする @@
-* 温調機との通信殺した状態で、原点復帰　→　OK
-* もしかするとBADを受信した後に通信開始するところ消しちゃったかも。CPだけで通信して確認する。　→　2012/05/11変更部分を戻して対応した
-!!!@@color(RoyalBlue): 自動処理できるシミュレータ用のﾃﾞｰﾀ作成 @@
-* 処理有りPSRで一連の動きが出来るデータと未完了のデータと二つ作る
-* 新たに追加されたmsg、&quot;SR&quot;も対応したもの
-* CPの場合の注意事項
-## 送信msgのﾕﾆｯﾄ番号がBCDからasciiに変更になっている。ex)0x02　→　'2'　つまり　02　→　32に変更&lt;br&gt;BAKE01 == 2 、 BAKE02 == 5
-## 存在しないﾕﾆｯﾄは全て&quot;46”をつめる。今までは”30”をつめていたような。。。
-* HPの場合の注意事項
-|| Poling | Selecting |
-| CHK0( ); | ER,C1,S1,G1,M1,AJ | SR |
-| ts100( ); || C1,S1,A1,A2,W1,J1,P1,I1,D1 |
-</pre>
 </div>
 <div title="About TimeJournal" creator="nagase" modifier="nagase" created="201205222350" tags="TimeJournal myEmpty" changecount="1">
 <pre>|Name|~TiddlyTimeJournal|

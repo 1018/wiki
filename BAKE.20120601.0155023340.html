@@ -1203,19 +1203,19 @@ void BAKE::cntPresentUnitNum(void)
 * CVPのﾛｸﾞｲﾝの概念が違ってた。即時停止ﾌｧｲﾙの部分を書き換える
 * BAKEﾃﾞｨﾚｸﾄﾘの.bakﾌｧｲﾙを削除</pre>
 </div>
-<div title="2012年6月1日" modifier="nagase" created="201205312337" modified="201206010705" tags="bake journal" changecount="23">
+<div title="2012年6月1日" modifier="nagase" created="201205312337" modified="201206010145" tags="bake journal" changecount="13">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
-[X] 玉置さんソースとマージ
-[X] マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする
+[_] 玉置さんソースとマージ
+[_] マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする
 [_] 自動処理できるシミュレータ用のﾃﾞｰﾀ作成
 [_] BAKEのソフトいじるのは今週まで。来週からC#でｼﾐｭﾚｰﾀの編集とか
 [_] HPのﾕﾆｯﾄで不具合あり。玉置さんが見てこられるらしい。それをシミュレータで再現できたらいいなって感じみたい。
 
 !!!@@color(RoyalBlue): 報告内容 @@
-* 玉置さんソースとマージ →　済み
-* マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする →　データができればOK
-* 自動処理できるシミュレータ用のﾃﾞｰﾀ作成 →
+* 玉置さんソースとマージ&lt;br&gt; →
+* マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする&lt;br&gt; →
+* 自動処理できるシミュレータ用のﾃﾞｰﾀ作成&lt;br&gt; →
 * 
 !!!@@color(RoyalBlue): 玉置さんソースとマージ @@
 * 温調機ヒーターで&quot;SR&quot;というmsg追加になった(ACK返すだけ)　→　BakeComHeaterController.cppの247行目あたり。int　　sendRunStop[2];
@@ -1249,19 +1249,11 @@ void BAKE::cntPresentUnitNum(void)
 ## BakeTaskTempControl.cpp
 ## BakeTrInterlockSub.cpp
 !!!@@color(RoyalBlue): マージしたソース、ｼﾐｭﾚｰﾀ上で動くようにする @@
-* 温調機との通信殺した状態で、原点復帰　→　OK
-* もしかするとBADを受信した後に通信開始するところ消しちゃったかも。CPだけで通信して確認する。　→　2012/05/11変更部分を戻して対応した
+*
+*
 !!!@@color(RoyalBlue): 自動処理できるシミュレータ用のﾃﾞｰﾀ作成 @@
 * 処理有りPSRで一連の動きが出来るデータと未完了のデータと二つ作る
-* 新たに追加されたmsg、&quot;SR&quot;も対応したもの
-* CPの場合の注意事項
-## 送信msgのﾕﾆｯﾄ番号がBCDからasciiに変更になっている。ex)0x02　→　'2'　つまり　02　→　32に変更&lt;br&gt;BAKE01 == 2 、 BAKE02 == 5
-## 存在しないﾕﾆｯﾄは全て&quot;46”をつめる。今までは”30”をつめていたような。。。
-* HPの場合の注意事項
-|| Poling | Selecting |
-| CHK0( ); | ER,C1,S1,G1,M1,AJ | SR |
-| ts100( ); || C1,S1,A1,A2,W1,J1,P1,I1,D1 |
-</pre>
+* 新たに追加されたmsg、&quot;SR&quot;も対応したもの</pre>
 </div>
 <div title="About TimeJournal" creator="nagase" modifier="nagase" created="201205222350" tags="TimeJournal myEmpty" changecount="1">
 <pre>|Name|~TiddlyTimeJournal|
