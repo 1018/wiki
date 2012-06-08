@@ -1323,6 +1323,77 @@ void BAKE::cntPresentUnitNum(void)
 |#I1：積分時間(I1)|ｾﾚｸﾃｨﾝｸﾞ|
 |#D1：微分時間(D1)|ｾﾚｸﾃｨﾝｸﾞ|</pre>
 </div>
+<div title="2012年6月7日" modifier="nagase" created="201206062358" modified="201206070651" tags="bake journal C#" changecount="16">
+<pre>!!!@@color(RoyalBlue): 本日のTODO @@
+[X] ﾒｯｾｰｼﾞに応じた処理部分作成
+!!!@@color(RoyalBlue): 報告内容 @@
+* TODO1&lt;br&gt; →
+!!!@@color(RoyalBlue): ﾒｯｾｰｼﾞに応じた処理部分作成 @@
+* 作成状況↓
+| RecvS1_sl(msg) | OK ||
+| RecvSr_sl(msg) | OK ||
+| --RecvC1_sl(msg)-- | --OK-- | --但し、処理内容が不明-- |
+| --RecvA1_sl(msg)-- | --OK-- | --但し、処理部分が未完-- |
+| --RecvA2_sl(msg)-- | --OK-- | --但し、処理部分が未完-- |
+| --RecvW1_sl(msg)-- |&gt;|--実装保留だからやってない-- |
+| --RecvJ1_sl(msg)-- | --OK-- | --但し、処理部分が未完-- |
+| --RecvP1_sl(msg)-- | --OK-- | --但し、処理部分が未完-- |
+| --RecvI1_sl(msg)-- | --OK-- | --但し、処理部分が未完-- |
+| --RecvD1_sl(msg)-- | --OK-- | --但し、処理部分が未完-- |
+| RecvM1_pl(msg) | OK ||
+| RecvS1_pl(msg) | OK ||
+| RecvER_pl(msg) | もとからのを流用||
+| --RecvC1_pl(msg)-- | --OK-- | --msg内容が不明-- |
+| --RecvG1_pl(msg)-- | --OK-- | --msg内容が不明-- |
+| --RecvAJ_pl(msg)-- | --OK-- | --msg内容が不明-- |
+* 温度が知りたいだけだし、S1とM1だけでいいと思う。
+* 温度はKMとかいう共有ﾒﾓﾘに入ってるから、そこにはいってるデータをどうするかということだけ考えます
+</pre>
+</div>
+<div title="2012年6月8日" modifier="氏名" created="201206072343" modified="201206080716" tags="bake journal C#" changecount="12">
+<pre>!!!@@color(RoyalBlue): 本日のTODO @@
+
+[_] ｼﾐｭﾚｰﾀ続き
+!!!@@color(RoyalBlue): 報告内容 @@
+* ｼﾐｭﾚｰﾀ続き&lt;br&gt; →
+!!!@@color(RoyalBlue): ｼﾐｭﾚｰﾀ続き @@
+* SPINと違って、BAKEは4CH分のデータが来るので、データを4分割して表示しないとだめなのだ
+* 
+!!!@@color(RoyalBlue): いろいろぎもん @@
+[_] DeviceFormatってなんでしょう？SPINのを流用していいのかな？
+[_] ここでのデータの形はどんなんでしょうね？&lt;br&gt;
+{{{
+//現在温度
+private int _nowTemperature;
+public int _NowTemperature
+{
+　　get
+　　{
+　　　　return _nowTemperature;
+　　}
+　　set
+　　{
+　　　　_nowTemperature = value;
+　　　　base.SetDeviceData(this.NowTemperature.Address, (ushort)_nowTemperature);
+　　}
+}
+}}}
+
+!!!@@color(RoyalBlue): 仕様 @@
+* BAKEソフトから温度やｽﾃｰﾀｽを読み出して、画面上で変更ができる
+* 自動処理ができるのが目標
+* HP：4node、16CH対応
+* CP：2node、8CH対応
+* 画面のプロトタイプを玉置さんに提出する
+* 温度だけじゃないよ。PIDもひょうじするよ。
+* 共有ﾒﾓﾘがどこにあって、どんな形式で値がはいっているのか確認する
+　
+ 
+
+
+
+</pre>
+</div>
 <div title="About TimeJournal" creator="nagase" modifier="nagase" created="201205222350" tags="TimeJournal myEmpty" changecount="1">
 <pre>|Name|~TiddlyTimeJournal|
 | Description|A simple tool to help you keep a journal of where your time goes|
@@ -7690,8 +7761,10 @@ config.macros.siteMap = {
 そうはいってもこのグラフ&lt;&lt;sparkline 10 5 8 12 7 9 12 17 20 16 10 12 14 17 12&gt;&gt; はどういったシチュエーションで使えばよいのだろうか？
 </pre>
 </div>
-<div title="StyleSheet" creator="nagase" modifier="nagase" created="201205170112" modified="201205220342" tags="StyleSheet myEmpty" changecount="2">
-<pre></pre>
+<div title="StyleSheet" creator="nagase" modifier="氏名" created="201205170112" modified="201206072329" tags="StyleSheet myEmpty" changecount="8">
+<pre>div[tags~=&quot;welcome&quot;].tiddler .viewer {
+background-color: gainsboro;
+}</pre>
 </div>
 <div title="TabTimeline" creator="nagase" modifier="nagase" created="201205230002" tags="hide TimeJournal myEmpty" changecount="1">
 <pre>&lt;&lt;timeline better:true excludeTag:hide sortBy:modified&gt;&gt;</pre>
