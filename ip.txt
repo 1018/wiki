@@ -1,0 +1,24 @@
+
+Windows IP Configuration
+
+        Host Name . . . . . . . . . . . . : 共有端末
+        Primary Dns Suffix  . . . . . . . : ksskyt.local
+        Node Type . . . . . . . . . . . . : Hybrid
+        IP Routing Enabled. . . . . . . . : No
+        WINS Proxy Enabled. . . . . . . . : No
+        DNS Suffix Search List. . . . . . : ksskyt.local
+
+Ethernet adapter ローカル エリア接続:
+
+        Connection-specific DNS Suffix  . : 
+        Description . . . . . . . . . . . : Broadcom NetXtreme 57xx Gigabit Controller
+        Physical Address. . . . . . . . . : 00-19-B9-1C-12-2A
+        Dhcp Enabled. . . . . . . . . . . : Yes
+        Autoconfiguration Enabled . . . . : Yes
+        IP Address. . . . . . . . . . . . : 172.28.121.7
+        Subnet Mask . . . . . . . . . . . : 255.255.255.0
+        Default Gateway . . . . . . . . . : 172.28.121.5
+        DHCP Server . . . . . . . . . . . : 172.28.121.5
+        DNS Servers . . . . . . . . . . . : 172.28.121.5
+        Lease Obtained. . . . . . . . . . : 2012年6月6日 8:10:39
+        Lease Expires . . . . . . . . . . : 2012年6月13日 8:10:39

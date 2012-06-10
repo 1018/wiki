@@ -44,7 +44,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> My TiddlyWiki - template </title>
+<title> BakeTaskBakeProcess.cpp - 熱処理(process)タスク（TASK0DH） </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -507,1167 +507,83 @@ Also see [[AdvancedOptions]]</pre>
 </div>
 <!--POST-SHADOWAREA-->
 <div id="storeArea">
-<div title="CalendarPlugin" creator="氏名" modifier="氏名" created="201205160335" tags="systemConfig systemConfigForce myEmpty" changecount="1">
-<pre>/***
-|Name|CalendarPlugin|
-|Source|http://www.TiddlyTools.com/#CalendarPlugin|
-|Version|1.5.1|
-|Author|Eric Shulman|
-|Original Author|SteveRumsby|
-|License|unknown|
-|~CoreVersion|2.1|
-|Type|plugin|
-|Description|display monthly and yearly calendars|
-NOTE: For //enhanced// date popup display, optionally install:
-*[[DatePlugin]]
-*[[ReminderMacros|http://remindermacros.tiddlyspot.com/]]
-!!!Usage:
-&lt;&lt;&lt;
-|{{{&lt;&lt;calendar&gt;&gt;}}}|full-year calendar for the current year|
-|{{{&lt;&lt;calendar year&gt;&gt;}}}|full-year calendar for the specified year|
-|{{{&lt;&lt;calendar year month&gt;&gt;}}}|one month calendar for the specified month and year|
-|{{{&lt;&lt;calendar thismonth&gt;&gt;}}}|one month calendar for the current month|
-|{{{&lt;&lt;calendar lastmonth&gt;&gt;}}}|one month calendar for last month|
-|{{{&lt;&lt;calendar nextmonth&gt;&gt;}}}|one month calendar for next month|
-|{{{&lt;&lt;calendar +n&gt;&gt;}}}&lt;br&gt;{{{&lt;&lt;calendar -n&gt;&gt;}}}|one month calendar for a month +/- 'n' months from now|
-&lt;&lt;&lt;
-!!!Configuration:
-&lt;&lt;&lt;
-|''First day of week:''&lt;br&gt;{{{config.options.txtCalFirstDay}}}|&lt;&lt;option txtCalFirstDay&gt;&gt;|(Monday = 0, Sunday = 6)|
-|''First day of weekend:''&lt;br&gt;{{{config.options.txtCalStartOfWeekend}}}|&lt;&lt;option txtCalStartOfWeekend&gt;&gt;|(Monday = 0, Sunday = 6)|
-
-&lt;&lt;option chkDisplayWeekNumbers&gt;&gt; Display week numbers //(note: Monday will be used as the start of the week)//
-|''Week number display format:''&lt;br&gt;{{{config.options.txtWeekNumberDisplayFormat }}}|&lt;&lt;option txtWeekNumberDisplayFormat &gt;&gt;|
-|''Week number link format:''&lt;br&gt;{{{config.options.txtWeekNumberLinkFormat }}}|&lt;&lt;option txtWeekNumberLinkFormat &gt;&gt;|
-&lt;&lt;&lt;
-!!!Revisions
-&lt;&lt;&lt;
-2011.01.04 1.5.1 corrected parameter handling for {{{&lt;&lt;calendar year&gt;&gt;}}} to show entire year instead of just first month.  In createCalendarMonthHeader(), fixed next/previous month year calculation (use parseInt() to convert to numeric value).  Code reduction (setting options).
-2009.04.31 1.5.0 rewrote onClickCalendarDate() (popup handler) and added config.options.txtCalendarReminderTags.  Partial code reduction/cleanup.  Assigned true version number (1.5.0)
-2008.09.10 added '+n' (and '-n') param to permit display of relative months (e.g., '+6' means 'six months from now', '-3' means 'three months ago'.  Based on suggestion from Jean.
-2008.06.17 added support for config.macros.calendar.todaybg
-2008.02.27 in handler(), DON'T set hard-coded default date format, so that *customized* value (pre-defined in config.macros.calendar.journalDateFmt is used.
-2008.02.17 in createCalendarYear(), fix next/previous year calculation (use parseInt() to convert to numeric value).  Also, use journalDateFmt for date linking when NOT using [[DatePlugin]].
-2008.02.16 in createCalendarDay(), week numbers now created as TiddlyLinks, allowing quick creation/navigation to 'weekly' journals (based on request from Kashgarinn)
-2008.01.08 in createCalendarMonthHeader(), 'month year' heading is now created as TiddlyLink, allowing quick creation/navigation to 'month-at-a-time' journals
-2007.11.30 added 'return false' to onclick handlers (prevent IE from opening blank pages)
-2006.08.23 added handling for weeknumbers (code supplied by Martin Budden (see 'wn**' comment marks).  Also, incorporated updated by Jeremy Sheeley to add caching for reminders (see [[ReminderMacros]], if installed)
-2005.10.30 in config.macros.calendar.handler(), use 'tbody' element for IE compatibility.  Also, fix year calculation for IE's getYear() function (which returns '2005' instead of '105'). Also, in createCalendarDays(), use showDate() function (see [[DatePlugin]], if installed) to render autostyled date with linked popup.  Updated calendar stylesheet definition: use .calendar class-specific selectors, add text centering and margin settings
-2006.05.29 added journalDateFmt handling
-&lt;&lt;&lt;
-!!!Code
-***/
-//{{{
-version.extensions.CalendarPlugin= { major: 1, minor: 5, revision: 1, date: new Date(2011,1,4)};
-
-// COOKIE OPTIONS
-var opts={
-	txtCalFirstDay:				0,
-	txtCalStartOfWeekend:		5,
-	chkDisplayWeekNumbers:		false,
-	txtCalFirstDay:				0,
-	txtWeekNumberDisplayFormat:	'w0WW',
-	txtWeekNumberLinkFormat:	'YYYY-w0WW',
-	txtCalendarReminderTags:		'reminder'
-};
-for (var id in opts) if (config.options[id]===undefined) config.options[id]=opts[id];
-
-// INTERNAL CONFIGURATION
-config.macros.calendar = {
-	monthnames:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-	daynames:['M','T','W','T','F','S','S'],
-	todaybg:'#ccccff',
-	weekendbg:'#c0c0c0',
-	monthbg:'#e0e0e0',
-	holidaybg:'#ffc0c0',
-	journalDateFmt:'DD MMM YYYY',
-	monthdays:[31,28,31,30,31,30,31,31,30,31,30,31],
-	holidays:[ ] // for customization see [[CalendarPluginConfig]]
-};
-//}}}
-//{{{
-function calendarIsHoliday(date)
+<div title="BAKE::taskBakeProcess() - 熱処理(process)メイン" creator="nagase" modifier="nagase" created="201204230129" modified="201204230203" changecount="12">
+<pre>&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;呼出元&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* BAKE::BAKE(int slaveNum)
+コメント： メイン関数
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* [BakeTaskBakeProcess.h]にて定義
+* 熱処理(process)メイン
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;引数&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* int dummyTmp：
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;戻り値&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* なし
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;実装&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+void BAKE::taskBakeProcess(int dummyTmp)
 {
-	var longHoliday = date.formatString('0DD/0MM/YYYY');
-	var shortHoliday = date.formatString('0DD/0MM');
-	for(var i = 0; i &lt; config.macros.calendar.holidays.length; i++) {
-		if(   config.macros.calendar.holidays[i]==longHoliday
-		   || config.macros.calendar.holidays[i]==shortHoliday)
-			return true;
-	}
-	return false;
-}
-//}}}
-//{{{
-config.macros.calendar.handler = function(place,macroName,params) {
-	var calendar = createTiddlyElement(place, 'table', null, 'calendar', null);
-	var tbody = createTiddlyElement(calendar, 'tbody');
-	var today = new Date();
-	var year = today.getYear();
-	if (year&lt;1900) year+=1900;
+　　pLog-&gt;write(&quot;【TASK起動】taskBakeProcess()\n&quot;);
 
- 	// get journal format from SideBarOptions (ELS 5/29/06 - suggested by MartinBudden)
-	var text = store.getTiddlerText('SideBarOptions');
-	var re = new RegExp('&lt;&lt;(?:newJournal)([^&gt;]*)&gt;&gt;','mg'); var fm = re.exec(text);
-	if (fm &amp;&amp; fm[1]!=null) { var pa=fm[1].readMacroParams(); if (pa[0]) this.journalDateFmt = pa[0]; }
+　　for(WORD cnt=0; cnt&lt; PLATE_CNT; cnt++)
+　　{
+　　　　bakeProcOn[cnt] = FALSE;
+　　　　bakeProcess.jumpAddress[cnt] = 0;
+     }
 
-	var month=-1;
-	if (params[0] == 'thismonth') {
-		var month=today.getMonth();
-	} else if (params[0] == 'lastmonth') {
-		var month = today.getMonth()-1; if (month==-1) { month=11; year--; }
-	} else if (params[0] == 'nextmonth') {
-		var month = today.getMonth()+1; if (month&gt;11) { month=0; year++; }
-	} else if (params[0]&amp;&amp;'+-'.indexOf(params[0].substr(0,1))!=-1) {
-		var month = today.getMonth()+parseInt(params[0]);
-		if (month&gt;11) { year+=Math.floor(month/12); month%=12; };
-		if (month&lt;0)  { year+=Math.floor(month/12); month=12+month%12; }
-	} else if (params[0]) {
-		year = params[0];
-		if(params[1]) {
-			month=parseInt(params[1])-1;
-			if (month&gt;11) month=11; if (month&lt;0) month=0;
-		}
-	}
+　　/* システムイニシャルフラグ(SYSINI)の該当BITをOn（初回のみ）*/
+　　if(!BIT_CHK(flagInitSystem, 4))	
+　　{
+　　　　BIT_SET(flagInitSystem, 4);	
+　　　　bakeProcess.plateIndex = 0;
+　　}
 
-	if (month!=-1) {
-		cacheReminders(new Date(year, month, 1, 0, 0), 31);
-		createCalendarOneMonth(tbody, year, month);
-	} else {
-		cacheReminders(new Date(year, 0, 1, 0, 0), 366);
-		createCalendarYear(tbody, year);
-	}
-	window.reminderCacheForCalendar = null;
-}
-//}}}
-//{{{
-// cache used to store reminders while the calendar is being rendered
-// it will be renulled after the calendar is fully rendered.
-window.reminderCacheForCalendar = null;
-//}}}
-//{{{
-function cacheReminders(date, leadtime)
-{
-	if (window.findTiddlersWithReminders == null) return;
-	window.reminderCacheForCalendar = {};
-	var leadtimeHash = [];
-	leadtimeHash [0] = 0;
-	leadtimeHash [1] = leadtime;
-	var t = findTiddlersWithReminders(date, leadtimeHash, null, 1);
-	for(var i = 0; i &lt; t.length; i++) {
-		//just tag it in the cache, so that when we're drawing days, we can bold this one.
-		window.reminderCacheForCalendar[t[i]['matchedDate']] = 'reminder:' + t[i]['params']['title']; 
-	}
-}
-//}}}
-//{{{
-function createCalendarOneMonth(calendar, year, mon)
-{
-	var row = createTiddlyElement(calendar, 'tr');
-	createCalendarMonthHeader(calendar, row, config.macros.calendar.monthnames[mon]+' '+year, true, year, mon);
-	row = createTiddlyElement(calendar, 'tr');
-	createCalendarDayHeader(row, 1);
-	createCalendarDayRowsSingle(calendar, year, mon);
-}
-//}}}
-//{{{
-function createCalendarMonth(calendar, year, mon)
-{
-	var row = createTiddlyElement(calendar, 'tr');
-	createCalendarMonthHeader(calendar, row, config.macros.calendar.monthnames[mon]+' '+ year, false, year, mon);
-	row = createTiddlyElement(calendar, 'tr');
-	createCalendarDayHeader(row, 1);
-	createCalendarDayRowsSingle(calendar, year, mon);
-}
-//}}}
-//{{{
-function createCalendarYear(calendar, year)
-{
-	var row;
-	row = createTiddlyElement(calendar, 'tr');
-	var back = createTiddlyElement(row, 'td');
-	var backHandler = function() {
-		removeChildren(calendar);
-		createCalendarYear(calendar, parseInt(year)-1);
-		return false; // consume click
-	};
-	createTiddlyButton(back, '&lt;', 'Previous year', backHandler);
-	back.align = 'center';
-	var yearHeader = createTiddlyElement(row, 'td', null, 'calendarYear', year);
-	yearHeader.align = 'center';
-	yearHeader.setAttribute('colSpan',config.options.chkDisplayWeekNumbers?22:19);//wn**
-	var fwd = createTiddlyElement(row, 'td');
-	var fwdHandler = function() {
-		removeChildren(calendar);
-		createCalendarYear(calendar, parseInt(year)+1);
-		return false; // consume click
-	};
-	createTiddlyButton(fwd, '&gt;', 'Next year', fwdHandler);
-	fwd.align = 'center';
-	createCalendarMonthRow(calendar, year, 0);
-	createCalendarMonthRow(calendar, year, 3);
-	createCalendarMonthRow(calendar, year, 6);
-	createCalendarMonthRow(calendar, year, 9);
-}
-//}}}
-//{{{
-function createCalendarMonthRow(cal, year, mon)
-{
-	var row = createTiddlyElement(cal, 'tr');
-	createCalendarMonthHeader(cal, row, config.macros.calendar.monthnames[mon], false, year, mon);
-	createCalendarMonthHeader(cal, row, config.macros.calendar.monthnames[mon+1], false, year, mon);
-	createCalendarMonthHeader(cal, row, config.macros.calendar.monthnames[mon+2], false, year, mon);
-	row = createTiddlyElement(cal, 'tr');
-	createCalendarDayHeader(row, 3);
-	createCalendarDayRows(cal, year, mon);
-}
-//}}}
-//{{{
-function createCalendarMonthHeader(cal, row, name, nav, year, mon)
-{
-	var month;
-	if (nav) {
-		var back = createTiddlyElement(row, 'td');
-		back.align = 'center';
-		back.style.background = config.macros.calendar.monthbg;
+　　while(TRUE)
+　　{
+　　　　/* [PSR]処理開始指令　受信確認 */
+　　　　if(recv.flagPsr &amp;&amp; recv.bufPsr[PSR_BYTE_WAFER_FLAG] == PSR_WAFER_ARI)
+　　　　{
+　　　　　　/* [PSR]処理開始指令　トリガ */
+　　　　　　TriggerPsr();		
+　　　　}
 
-		var backMonHandler = function() {
-			var newyear = year;
-			var newmon = mon-1;
-			if(newmon == -1) { newmon = 11; newyear = parseInt(newyear)-1;}
-			removeChildren(cal);
-			cacheReminders(new Date(newyear, newmon , 1, 0, 0), 31);
-			createCalendarOneMonth(cal, newyear, newmon);
-			return false; // consume click
-		};
-		createTiddlyButton(back, '&lt;', 'Previous month', backMonHandler);
-		month = createTiddlyElement(row, 'td', null, 'calendarMonthname')
-		createTiddlyLink(month,name,true);
-		month.setAttribute('colSpan', config.options.chkDisplayWeekNumbers?6:5);//wn**
-		var fwd = createTiddlyElement(row, 'td');
-		fwd.align = 'center';
-		fwd.style.background = config.macros.calendar.monthbg; 
+　　　　/* 起動待ち */
+　　　　ssosTaskWait(TASK_BAKE_PROCESS);
 
-		var fwdMonHandler = function() {
-			var newyear = year;
-			var newmon = mon+1;
-			if(newmon == 12) { newmon = 0; newyear = parseInt(newyear)+1;}
-			removeChildren(cal);
-			cacheReminders(new Date(newyear, newmon , 1, 0, 0), 31);
-			createCalendarOneMonth(cal, newyear, newmon);
-			return false; // consume click
-		};
-		createTiddlyButton(fwd, '&gt;', 'Next month', fwdMonHandler);
-	} else {
-		month = createTiddlyElement(row, 'td', null, 'calendarMonthname', name)
-		month.setAttribute('colSpan',config.options.chkDisplayWeekNumbers?8:7);//wn**
-	}
-	month.align = 'center';
-	month.style.background = config.macros.calendar.monthbg;
-}
-//}}}
-//{{{
-function createCalendarDayHeader(row, num)
-{
-	var cell;
-	for(var i = 0; i &lt; num; i++) {
-		if (config.options.chkDisplayWeekNumbers) createTiddlyElement(row, 'td');//wn**
-		for(var j = 0; j &lt; 7; j++) {
-			var d = j + (config.options.txtCalFirstDay - 0);
-			if(d &gt; 6) d = d - 7;
-			cell = createTiddlyElement(row, 'td', null, null, config.macros.calendar.daynames[d]);
-			if(d == (config.options.txtCalStartOfWeekend-0) || d == (config.options.txtCalStartOfWeekend-0+1))
-				cell.style.background = config.macros.calendar.weekendbg;
-		}
-	}
-}
-//}}}
-//{{{
-function createCalendarDays(row, col, first, max, year, mon) {
-	var i;
-	if (config.options.chkDisplayWeekNumbers){
-		if (first&lt;=max) {
-			var ww = new Date(year,mon,first);
-			var td=createTiddlyElement(row, 'td');//wn**
-			var link=createTiddlyLink(td,ww.formatString(config.options.txtWeekNumberLinkFormat),false);
-			link.appendChild(document.createTextNode(
-				ww.formatString(config.options.txtWeekNumberDisplayFormat)));
-		}
-		else createTiddlyElement(row, 'td');//wn**
-	}
-	for(i = 0; i &lt; col; i++)
-		createTiddlyElement(row, 'td');
-	var day = first;
-	for(i = col; i &lt; 7; i++) {
-		var d = i + (config.options.txtCalFirstDay - 0);
-		if(d &gt; 6) d = d - 7;
-		var daycell = createTiddlyElement(row, 'td');
-		var isaWeekend=((d==(config.options.txtCalStartOfWeekend-0)
-			|| d==(config.options.txtCalStartOfWeekend-0+1))?true:false);
-		if(day &gt; 0 &amp;&amp; day &lt;= max) {
-			var celldate = new Date(year, mon, day);
-			// ELS 10/30/05 - use &lt;&lt;date&gt;&gt; macro's showDate() function to create popup
-			// ELS 05/29/06 - use journalDateFmt 
-			if (window.showDate) showDate(daycell,celldate,'popup','DD',
-				config.macros.calendar.journalDateFmt,true, isaWeekend);
-			else {
-				if(isaWeekend) daycell.style.background = config.macros.calendar.weekendbg;
-				var title = celldate.formatString(config.macros.calendar.journalDateFmt);
-				if(calendarIsHoliday(celldate))
-					daycell.style.background = config.macros.calendar.holidaybg;
-				var now=new Date();
-				if ((now-celldate&gt;=0) &amp;&amp; (now-celldate&lt;86400000)) // is today?
-					daycell.style.background = config.macros.calendar.todaybg;
-				if(window.findTiddlersWithReminders == null) {
-					var link = createTiddlyLink(daycell, title, false);
-					link.appendChild(document.createTextNode(day));
-				} else
-					var button = createTiddlyButton(daycell, day, title, onClickCalendarDate);
-			}
-		}
-		day++;
-	}
-}
-//}}}
-//{{{
-// Create a pop-up containing:
-// * a link to a tiddler for this date
-// * a 'new tiddler' link to add a reminder for this date
-// * links to current reminders for this date
-// NOTE: this code is only used if [[ReminderMacros]] is installed AND [[DatePlugin]] is //not// installed.
-function onClickCalendarDate(ev) { ev=ev||window.event;
-	var d=new Date(this.getAttribute('title')); var date=d.formatString(config.macros.calendar.journalDateFmt);
-	var p=Popup.create(this);  if (!p) return;
-	createTiddlyLink(createTiddlyElement(p,'li'),date,true);
-	var rem='\\n\\&lt;\\&lt;reminder day:%0 month:%1 year:%2 title: \\&gt;\\&gt;';
-	rem=rem.format([d.getDate(),d.getMonth()+1,d.getYear()+1900]);
-	var cmd=&quot;&lt;&lt;newTiddler label:[[new reminder...]] prompt:[[add a new reminder to '%0']]&quot;
-		+&quot; title:[[%0]] text:{{store.getTiddlerText('%0','')+'%1'}} tag:%2&gt;&gt;&quot;;
-	wikify(cmd.format([date,rem,config.options.txtCalendarReminderTags]),p);
-	createTiddlyElement(p,'hr');
-	var t=findTiddlersWithReminders(d,[0,31],null,1);
-	for(var i=0; i&lt;t.length; i++) {
-		var link=createTiddlyLink(createTiddlyElement(p,'li'), t[i].tiddler, false);
-		link.appendChild(document.createTextNode(t[i]['params']['title']));
-	}
-	Popup.show(); ev.cancelBubble=true; if (ev.stopPropagation) ev.stopPropagation(); return false;
-}
-//}}}
-//{{{
-function calendarMaxDays(year, mon)
-{
-	var max = config.macros.calendar.monthdays[mon];
-	if(mon == 1 &amp;&amp; (year % 4) == 0 &amp;&amp; ((year % 100) != 0 || (year % 400) == 0)) max++;
-	return max;
-}
-//}}}
-//{{{
-function createCalendarDayRows(cal, year, mon)
-{
-	var row = createTiddlyElement(cal, 'tr');
-	var first1 = (new Date(year, mon, 1)).getDay() -1 - (config.options.txtCalFirstDay-0);
-	if(first1 &lt; 0) first1 = first1 + 7;
-	var day1 = -first1 + 1;
-	var first2 = (new Date(year, mon+1, 1)).getDay() -1 - (config.options.txtCalFirstDay-0);
-	if(first2 &lt; 0) first2 = first2 + 7;
-	var day2 = -first2 + 1;
-	var first3 = (new Date(year, mon+2, 1)).getDay() -1 - (config.options.txtCalFirstDay-0);
-	if(first3 &lt; 0) first3 = first3 + 7;
-	var day3 = -first3 + 1;
-
-	var max1 = calendarMaxDays(year, mon);
-	var max2 = calendarMaxDays(year, mon+1);
-	var max3 = calendarMaxDays(year, mon+2);
-
-	while(day1 &lt;= max1 || day2 &lt;= max2 || day3 &lt;= max3) {
-		row = createTiddlyElement(cal, 'tr');
-		createCalendarDays(row, 0, day1, max1, year, mon); day1 += 7;
-		createCalendarDays(row, 0, day2, max2, year, mon+1); day2 += 7;
-		createCalendarDays(row, 0, day3, max3, year, mon+2); day3 += 7;
-	}
-}
-//}}}
-//{{{
-function createCalendarDayRowsSingle(cal, year, mon)
-{
-	var row = createTiddlyElement(cal, 'tr');
-	var first1 = (new Date(year, mon, 1)).getDay() -1 - (config.options.txtCalFirstDay-0);
-	if(first1 &lt; 0) first1 = first1+ 7;
-	var day1 = -first1 + 1;
-	var max1 = calendarMaxDays(year, mon);
-	while(day1 &lt;= max1) {
-		row = createTiddlyElement(cal, 'tr');
-		createCalendarDays(row, 0, day1, max1, year, mon); day1 += 7;
-	}
-}
-//}}}
-//{{{
-setStylesheet('.calendar, .calendar table, .calendar th, .calendar tr, .calendar td { text-align:center; } .calendar, .calendar a { margin:0px !important; padding:0px !important; }', 'calendarStyles');
-//}}}</pre>
-</div>
-<div title="CheckboxPlugin" creator="氏名" modifier="氏名" created="201205160336" tags="MediaPackage TaskPackage systemConfig InputPackage myEmpty" changecount="1">
-<pre>/***
-|Name|CheckboxPlugin|
-|Source|http://www.TiddlyTools.com/#CheckboxPlugin|
-|Documentation|http://www.TiddlyTools.com/#CheckboxPluginInfo|
-|Version|2.4.0|
-|Author|Eric Shulman|
-|License|http://www.TiddlyTools.com/#LegalStatements|
-|~CoreVersion|2.1|
-|Type|plugin|
-|Description|Add checkboxes to your tiddler content|
-This plugin extends the TiddlyWiki syntax to allow definition of checkboxes that can be embedded directly in tiddler content.  Checkbox states are preserved by:
-* by setting/removing tags on specified tiddlers,
-* or, by setting custom field values on specified tiddlers,
-* or, by saving to a locally-stored cookie ID,
-* or, automatically modifying the tiddler content (deprecated)
-When an ID is assigned to the checkbox, it enables direct programmatic access to the checkbox DOM element, as well as creating an entry in TiddlyWiki's config.options[ID] internal data.  In addition to tracking the checkbox state, you can also specify custom javascript for programmatic initialization and onClick event handling for any checkbox, so you can provide specialized side-effects in response to state changes.
-!!!!!Documentation
-&gt;see [[CheckboxPluginInfo]]
-!!!!!Revisions
-&lt;&lt;&lt;
-2008.01.08 [*.*.*] plugin size reduction: documentation moved to [[CheckboxPluginInfo]]
-2008.01.05 [2.4.0] set global &quot;window.place&quot; to current checkbox element when processing checkbox clicks.  This allows init/beforeClick/afterClick handlers to reference RELATIVE elements, including using &quot;story.findContainingTiddler(place)&quot;.  Also, wrap handlers in &quot;function()&quot; so &quot;return&quot; can be used within handler code.
-|please see [[CheckboxPluginInfo]] for additional revision details|
-2005.12.07 [0.9.0] initial BETA release
-&lt;&lt;&lt;
-!!!!!Code
-***/
-//{{{
-version.extensions.CheckboxPlugin = {major: 2, minor: 4, revision:0 , date: new Date(2008,1,5)};
-//}}}
-//{{{
-config.checkbox = { refresh: { tagged:true, tagging:true, container:true } };
-config.formatters.push( {
-	name: &quot;checkbox&quot;,
-	match: &quot;\\[[xX_ ][\\]\\=\\(\\{]&quot;,
-	lookahead: &quot;\\[([xX_ ])(=[^\\s\\(\\]{]+)?(\\([^\\)]*\\))?({[^}]*})?({[^}]*})?({[^}]*})?\\]&quot;,
-	handler: function(w) {
-		var lookaheadRegExp = new RegExp(this.lookahead,&quot;mg&quot;);
-		lookaheadRegExp.lastIndex = w.matchStart;
-		var lookaheadMatch = lookaheadRegExp.exec(w.source)
-		if(lookaheadMatch &amp;&amp; lookaheadMatch.index == w.matchStart) {
-			// get params
-			var checked=(lookaheadMatch[1].toUpperCase()==&quot;X&quot;);
-			var id=lookaheadMatch[2];
-			var target=lookaheadMatch[3];
-			if (target) target=target.substr(1,target.length-2).trim(); // trim off parentheses
-			var fn_init=lookaheadMatch[4];
-			var fn_clickBefore=lookaheadMatch[5];
-			var fn_clickAfter=lookaheadMatch[6];
-			var tid=story.findContainingTiddler(w.output);  if (tid) tid=tid.getAttribute(&quot;tiddler&quot;);
-			var srctid=w.tiddler?w.tiddler.title:null;
-			config.macros.checkbox.create(w.output,tid,srctid,w.matchStart+1,checked,id,target,config.checkbox.refresh,fn_init,fn_clickBefore,fn_clickAfter);
-			w.nextMatch = lookaheadMatch.index + lookaheadMatch[0].length;
-		}
-	}
-} );
-config.macros.checkbox = {
-	handler: function(place,macroName,params,wikifier,paramString,tiddler) {
-		if(!(tiddler instanceof Tiddler)) { // if no tiddler passed in try to find one
-			var here=story.findContainingTiddler(place);
-			if (here) tiddler=store.getTiddler(here.getAttribute(&quot;tiddler&quot;))
-		}
-		var srcpos=0; // &quot;inline X&quot; not applicable to macro syntax
-		var target=params.shift(); if (!target) target=&quot;&quot;;
-		var defaultState=params[0]==&quot;checked&quot;; if (defaultState) params.shift();
-		var id=params.shift(); if (id &amp;&amp; !id.length) id=null;
-		var fn_init=params.shift(); if (fn_init &amp;&amp; !fn_init.length) fn_init=null;
-		var fn_clickBefore=params.shift();
-		if (fn_clickBefore &amp;&amp; !fn_clickBefore.length) fn_clickBefore=null;
-		var fn_clickAfter=params.shift();
-		if (fn_clickAfter &amp;&amp; !fn_clickAfter.length) fn_clickAfter=null;
-		var refresh={ tagged:true, tagging:true, container:false };
-		this.create(place,tiddler.title,tiddler.title,0,defaultState,id,target,refresh,fn_init,fn_clickBefore,fn_clickAfter);
-	},
-	create: function(place,tid,srctid,srcpos,defaultState,id,target,refresh,fn_init,fn_clickBefore,fn_clickAfter) {
-		// create checkbox element
-		var c = document.createElement(&quot;input&quot;);
-		c.setAttribute(&quot;type&quot;,&quot;checkbox&quot;);
-		c.onclick=this.onClickCheckbox;
-		c.srctid=srctid; // remember source tiddler
-		c.srcpos=srcpos; // remember location of &quot;X&quot;
-		c.container=tid; // containing tiddler (may be null if not in a tiddler)
-		c.tiddler=tid; // default target tiddler 
-		c.refresh = {};
-		c.refresh.container = refresh.container;
-		c.refresh.tagged = refresh.tagged;
-		c.refresh.tagging = refresh.tagging;
-		place.appendChild(c);
-		// set default state
-		c.checked=defaultState;
-		// track state in config.options.ID
-		if (id) {
-			c.id=id.substr(1); // trim off leading &quot;=&quot;
-			if (config.options[c.id]!=undefined)
-				c.checked=config.options[c.id];
-			else
-				config.options[c.id]=c.checked;
-		}
-		// track state in (tiddlername|tagname) or (fieldname@tiddlername)
-		if (target) {
-			var pos=target.indexOf(&quot;@&quot;);
-			if (pos!=-1) {
-				c.field=pos?target.substr(0,pos):&quot;checked&quot;; // get fieldname (or use default &quot;checked&quot;)
-				c.tiddler=target.substr(pos+1); // get specified tiddler name (if any)
-				if (!c.tiddler || !c.tiddler.length) c.tiddler=tid; // if tiddler not specified, default == container
-				if (store.getValue(c.tiddler,c.field)!=undefined)
-					c.checked=(store.getValue(c.tiddler,c.field)==&quot;true&quot;); // set checkbox from saved state
-			} else {
-				var pos=target.indexOf(&quot;|&quot;); if (pos==-1) var pos=target.indexOf(&quot;:&quot;);
-				c.tag=target;
-				if (pos==0) c.tag=target.substr(1); // trim leading &quot;|&quot; or &quot;:&quot;
-				if (pos&gt;0) { c.tiddler=target.substr(0,pos); c.tag=target.substr(pos+1); }
-				if (!c.tag.length) c.tag=&quot;checked&quot;;
-				var t=store.getTiddler(c.tiddler);
-				if (t &amp;&amp; t.tags)
-					c.checked=t.isTagged(c.tag); // set checkbox from saved state
-			}
-		}
-		// trim off surrounding { and } delimiters from init/click handlers
-		if (fn_init) c.fn_init=&quot;(function(){&quot;+fn_init.trim().substr(1,fn_init.length-2)+&quot;})()&quot;;
-		if (fn_clickBefore) c.fn_clickBefore=&quot;(function(){&quot;+fn_clickBefore.trim().substr(1,fn_clickBefore.length-2)+&quot;})()&quot;;
-		if (fn_clickAfter) c.fn_clickAfter=&quot;(function(){&quot;+fn_clickAfter.trim().substr(1,fn_clickAfter.length-2)+&quot;})()&quot;;
-		c.init=true; c.onclick(); c.init=false; // compute initial state and save in tiddler/config/cookie
-	},
-	onClickCheckbox: function(event) {
-		window.place=this;
-		if (this.init &amp;&amp; this.fn_init) // custom function hook to set initial state (run only once)
-			{ try { eval(this.fn_init); } catch(e) { displayMessage(&quot;Checkbox init error: &quot;+e.toString()); } }
-		if (!this.init &amp;&amp; this.fn_clickBefore) // custom function hook to override changes in checkbox state
-			{ try { eval(this.fn_clickBefore) } catch(e) { displayMessage(&quot;Checkbox onClickBefore error: &quot;+e.toString()); } }
-		if (this.id)
-			// save state in config AND cookie (only when ID starts with 'chk')
-			{ config.options[this.id]=this.checked; if (this.id.substr(0,3)==&quot;chk&quot;) saveOptionCookie(this.id); }
-		if (this.srctid &amp;&amp; this.srcpos&gt;0 &amp;&amp; (!this.id || this.id.substr(0,3)!=&quot;chk&quot;) &amp;&amp; !this.tag &amp;&amp; !this.field) {
-			// save state in tiddler content only if not using cookie, tag or field tracking
-			var t=store.getTiddler(this.srctid); // put X in original source tiddler (if any)
-			if (t &amp;&amp; this.checked!=(t.text.substr(this.srcpos,1).toUpperCase()==&quot;X&quot;)) { // if changed
-				t.set(null,t.text.substr(0,this.srcpos)+(this.checked?&quot;X&quot;:&quot;_&quot;)+t.text.substr(this.srcpos+1),null,null,t.tags);
-				if (!story.isDirty(t.title)) story.refreshTiddler(t.title,null,true);
-				store.setDirty(true);
-			}
-		}
-		if (this.field) {
-			if (this.checked &amp;&amp; !store.tiddlerExists(this.tiddler))
-				store.saveTiddler(this.tiddler,this.tiddler,&quot;&quot;,config.options.txtUserName,new Date());
-			// set the field value in the target tiddler
-			store.setValue(this.tiddler,this.field,this.checked?&quot;true&quot;:&quot;false&quot;);
-			// DEBUG: displayMessage(this.field+&quot;@&quot;+this.tiddler+&quot; is &quot;+this.checked);
-		}
-		if (this.tag) {
-			if (this.checked &amp;&amp; !store.tiddlerExists(this.tiddler))
-				store.saveTiddler(this.tiddler,this.tiddler,&quot;&quot;,config.options.txtUserName,new Date());
-			var t=store.getTiddler(this.tiddler);
-			if (t) {
-				var tagged=(t.tags &amp;&amp; t.tags.indexOf(this.tag)!=-1);
-				if (this.checked &amp;&amp; !tagged) { t.tags.push(this.tag); store.setDirty(true); }
-				if (!this.checked &amp;&amp; tagged) { t.tags.splice(t.tags.indexOf(this.tag),1); store.setDirty(true); }
-			}
-			// if tag state has been changed, update display of corresponding tiddlers (unless they are in edit mode...)
-			if (this.checked!=tagged) {
-				if (this.refresh.tagged) {
-					if (!story.isDirty(this.tiddler)) // the TAGGED tiddler in view mode
-						story.refreshTiddler(this.tiddler,null,true); 
-					else // the TAGGED tiddler in edit mode (with tags field)
-						config.macros.checkbox.refreshEditorTagField(this.tiddler,this.tag,this.checked);
-				}
-				if (this.refresh.tagging)
-					if (!story.isDirty(this.tag)) story.refreshTiddler(this.tag,null,true); // the TAGGING tiddler
-			}
-		}
-		if (!this.init &amp;&amp; this.fn_clickAfter) // custom function hook to react to changes in checkbox state
-			{ try { eval(this.fn_clickAfter) } catch(e) { displayMessage(&quot;Checkbox onClickAfter error: &quot;+e.toString()); } }
-		// refresh containing tiddler (but not during initial rendering, or we get an infinite loop!) (and not when editing container)
-		if (!this.init &amp;&amp; this.refresh.container &amp;&amp; this.container!=this.tiddler)
-			if (!story.isDirty(this.container)) story.refreshTiddler(this.container,null,true); // the tiddler CONTAINING the checkbox
-		return true;
-	},
-	refreshEditorTagField: function(title,tag,set) {
-		var tagfield=story.getTiddlerField(title,&quot;tags&quot;);
-		if (!tagfield||tagfield.getAttribute(&quot;edit&quot;)!=&quot;tags&quot;) return; // if no tags field in editor (i.e., custom template)
-		var tags=tagfield.value.readBracketedList();
-		if (tags.contains(tag)==set) return; // if no change needed
-		if (set) tags.push(tag); // add tag
-		else tags.splice(tags.indexOf(tag),1); // remove tag
-		for (var t=0;t&lt;tags.length;t++) tags[t]=String.encodeTiddlyLink(tags[t]);
-		tagfield.value=tags.join(&quot; &quot;); // reassemble tag string (with brackets as needed)
-		return;
-	}
-}
-//}}}</pre>
-</div>
-<div title="Clock2" creator="氏名" modifier="氏名" created="201205160402" tags="systemConfig Plugins WhatsNew" changecount="1">
-<pre>/***
-| Name:|Clock2|
-| Author:|Simon Baird|
-| Description:|A skinnable, sizeable analog clock|
-| Source:|http://tiddlyspot.com/mptw/#Clock2|
-| Requires:|Firefox 1.5.x or maybe Safari|
-| Version:|1.0.6|
-| Date:|8-Jul-2008|
-!!Note
-* Does not work in IE or Opera due to lack of canvas support.
-* If you make a nice skin send it to me and I will include it here.
-*I'm not actively maintaining this plugin
-* See also http://randomibis.com/coolclock/
-!!Ideas
-* Can we support IE with this? http://sourceforge.net/projects/excanvas
-* Skin should specify order of drawing so things can be on top of other things
-* Fix it so we can have filled and/or stroked elements
-* Skin should allow any number of moving and static elements
-* Make download and example for non-TW use
-* Make floating draggable?
-!!Examples
-{{{
-&lt;&lt;clock2 fancy&gt;&gt;&lt;&lt;clock2 120&gt;&gt;
-&lt;&lt;clock2 chunkySwiss&gt;&gt; &lt;&lt;clock2 60 chunkySwiss noSeconds&gt;&gt;&lt;&lt;clock2 '{
-	outerBorder: { lineWidth: 60, radius:55, color: &quot;#dd8877&quot;, alpha: 1 },
-	smallIndicator: { lineWidth: 4, startAt: 80, endAt: 95, color: &quot;white&quot;, alpha: 1 },
-	largeIndicator: { lineWidth: 12, startAt: 77, endAt: 89, color: &quot;#dd8877&quot;, alpha: 1 },
-	hourHand: { lineWidth: 15, startAt: -15, endAt: 50, color: &quot;white&quot;, alpha: 1 },
-	minuteHand: { lineWidth: 10, startAt: 24, endAt: 200, color: &quot;#771100&quot;, alpha: 0.6 },
-	secondHand: { lineWidth: 3, startAt: 22, endAt: 83, color: &quot;green&quot;, alpha: 0 },
-	secondDecoration: { lineWidth: 1, startAt: 52, radius: 26, fillColor: &quot;white&quot;, color: &quot;red&quot;, alpha: 0.2 }
-}'&gt;&gt;
-
-}}}
-&lt;&lt;clock2 fancy&gt;&gt;&lt;&lt;clock2 120&gt;&gt;
-&lt;&lt;clock2 chunkySwiss&gt;&gt; &lt;&lt;clock2 60 chunkySwiss noSeconds&gt;&gt;&lt;&lt;clock2 '{
-	outerBorder: { lineWidth: 60, radius:55, color: &quot;#dd8877&quot;, alpha: 1 },
-	smallIndicator: { lineWidth: 4, startAt: 80, endAt: 95, color: &quot;white&quot;, alpha: 1 },
-	largeIndicator: { lineWidth: 12, startAt: 77, endAt: 89, color: &quot;#dd8877&quot;, alpha: 1 },
-	hourHand: { lineWidth: 15, startAt: -15, endAt: 50, color: &quot;white&quot;, alpha: 1 },
-	minuteHand: { lineWidth: 10, startAt: 24, endAt: 200, color: &quot;#771100&quot;, alpha: 0.6 },
-	secondHand: { lineWidth: 3, startAt: 22, endAt: 83, color: &quot;green&quot;, alpha: 0 },
-	secondDecoration: { lineWidth: 1, startAt: 52, radius: 26, fillColor: &quot;white&quot;, color: &quot;red&quot;, alpha: 0.2 }
-}'&gt;&gt;
-
-See also BigClock.
-!!Code
-***/
-//{{{
-
-window.CoolClock = function(canvasId,displayRadius,skinId,showSecondHand) {
-	return this.init(canvasId,displayRadius,skinId,showSecondHand);
-}
-
-CoolClock.config = {
-	clockTracker: {},
-	tickDelay: 1000,
-	longTickDelay: 15000,
-	defaultRadius: 85,
-	renderRadius: 100,
-	defaultSkin: &quot;swissRail&quot;,
-	skins:	{
-		// try making your own...
-		swissRail: {
-			outerBorder: { lineWidth: 1, radius:95, color: &quot;black&quot;, alpha: 1 },
-			smallIndicator: { lineWidth: 2, startAt: 89, endAt: 93, color: &quot;black&quot;, alpha: 1 },
-			largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: &quot;black&quot;, alpha: 1 },
-			hourHand: { lineWidth: 8, startAt: -15, endAt: 50, color: &quot;black&quot;, alpha: 1 },
-			minuteHand: { lineWidth: 7, startAt: -15, endAt: 75, color: &quot;black&quot;, alpha: 1 },
-			secondHand: { lineWidth: 1, startAt: -20, endAt: 85, color: &quot;red&quot;, alpha: 1 },
-			secondDecoration: { lineWidth: 1, startAt: 70, radius: 4, fillColor: &quot;red&quot;, color: &quot;red&quot;, alpha: 1 }
-		},
-		chunkySwiss: {
-			outerBorder: { lineWidth: 5, radius:97, color: &quot;black&quot;, alpha: 1 },
-			smallIndicator: { lineWidth: 4, startAt: 89, endAt: 93, color: &quot;black&quot;, alpha: 1 },
-			largeIndicator: { lineWidth: 8, startAt: 80, endAt: 93, color: &quot;black&quot;, alpha: 1 },
-			hourHand: { lineWidth: 12, startAt: -15, endAt: 60, color: &quot;black&quot;, alpha: 1 },
-			minuteHand: { lineWidth: 10, startAt: -15, endAt: 85, color: &quot;black&quot;, alpha: 1 },
-			secondHand: { lineWidth: 4, startAt: -20, endAt: 85, color: &quot;red&quot;, alpha: 1 },
-			secondDecoration: { lineWidth: 2, startAt: 70, radius: 8, fillColor: &quot;red&quot;, color: &quot;red&quot;, alpha: 1 }
-		},
-		fancy: {
-			outerBorder: { lineWidth: 5, radius:95, color: &quot;green&quot;, alpha: 0.7 },
-			smallIndicator: { lineWidth: 1, startAt: 80, endAt: 93, color: &quot;black&quot;, alpha: 0.4 },
-			largeIndicator: { lineWidth: 1, startAt: 30, endAt: 93, color: &quot;black&quot;, alpha: 0.5 },
-			hourHand: { lineWidth: 8, startAt: -15, endAt: 50, color: &quot;blue&quot;, alpha: 0.7 },
-			minuteHand: { lineWidth: 7, startAt: -15, endAt: 92, color: &quot;red&quot;, alpha: 0.7 },
-			secondHand: { lineWidth: 10, startAt: 80, endAt: 85, color: &quot;blue&quot;, alpha: 0.3 },
-			secondDecoration: { lineWidth: 1, startAt: 30, radius: 50, fillColor: &quot;blue&quot;, color: &quot;red&quot;, alpha: 0.15 }
-		}
-	}
-};
-
-CoolClock.prototype = {
-	init: function(canvasId,displayRadius,skinId,showSecondHand) {
-		this.canvasId = canvasId;
-		this.displayRadius = displayRadius || CoolClock.config.defaultRadius;
-		this.skinId = skinId || CoolClock.config.defaultSkin;
-		this.showSecondHand = typeof showSecondHand == &quot;boolean&quot; ? showSecondHand : true;
-		this.tickDelay = CoolClock.config[ this.showSecondHand ? &quot;tickDelay&quot; : &quot;longTickDelay&quot;];
-
-		this.canvas = document.getElementById(canvasId);
-		this.canvas.setAttribute(&quot;width&quot;,this.displayRadius*2);
-		this.canvas.setAttribute(&quot;height&quot;,this.displayRadius*2);
-
-		this.renderRadius = CoolClock.config.renderRadius; 
-
-		var scale = this.displayRadius / this.renderRadius;
-		this.ctx = this.canvas.getContext(&quot;2d&quot;);
-		this.ctx.scale(scale,scale);
-
-		CoolClock.config.clockTracker[canvasId] = this;
-		this.tick();
-		return this;
-	},
-
-	fullCircle: function(skin) {
-		this.fullCircleAt(this.renderRadius,this.renderRadius,skin);
-	},
-
-	fullCircleAt: function(x,y,skin) {
-		with (this.ctx) {
-			save();
-			globalAlpha = skin.alpha;
-			lineWidth = skin.lineWidth;
-			if (!document.all)
-				beginPath();
-			arc(x, y, skin.radius, 0, 2*Math.PI, false);
-			if (skin.fillColor) {
-				fillStyle = skin.fillColor
-				fill();
-			}
-			else {
-				// XXX why not stroke and fill
-				strokeStyle = skin.color;
-				stroke();
-			}
-			restore();
-		}
-	},
-
-	radialLineAtAngle: function(angleFraction,skin) {
-		with (this.ctx) {
-			save();
-			translate(this.renderRadius,this.renderRadius);
-			rotate(Math.PI * (2 * angleFraction - 0.5));
-			globalAlpha = skin.alpha;
-			strokeStyle = skin.color;
-			lineWidth = skin.lineWidth;
-			if (skin.radius) {
-				this.fullCircleAt(skin.startAt,0,skin)
-			}
-			else {
-				beginPath();
-				moveTo(skin.startAt,0)
-				lineTo(skin.endAt,0);
-				stroke();
-			}
-			restore();
-		}
-	},
-
-	render: function(hour,min,sec) {
-		var skin = CoolClock.config.skins[this.skinId];
-		this.ctx.clearRect(0,0,this.renderRadius*2,this.renderRadius*2);
-
-		this.fullCircle(skin.outerBorder);
-
-		for (var i=0;i&lt;60;i++)
-			this.radialLineAtAngle(i/60,skin[ i%5 ? &quot;smallIndicator&quot; : &quot;largeIndicator&quot;]);
-				
-		this.radialLineAtAngle((hour+min/60)/12,skin.hourHand);
-		this.radialLineAtAngle((min+sec/60)/60,skin.minuteHand);
-		if (this.showSecondHand) {
-			this.radialLineAtAngle(sec/60,skin.secondHand);
-			this.radialLineAtAngle(sec/60,skin.secondDecoration);
-		}
-	},
-
-
-	nextTick: function() {
-		setTimeout(&quot;CoolClock.config.clockTracker['&quot;+this.canvasId+&quot;'].tick()&quot;,this.tickDelay);
-	},
-
-	stillHere: function() {
-		return document.getElementById(this.canvasId) != null;
-	},
-
-	refreshDisplay: function() {
-		var now = new Date();
-		this.render(now.getHours(),now.getMinutes(),now.getSeconds());
-	},
-
-	tick: function() {
-		if (this.stillHere()) {
-			this.refreshDisplay()
-			this.nextTick();
-		}
-	}
-}
-
-
-
-config.macros.clock2 = {
-	counter: 0,
-	handler: function (place,macroName,params,wikifier,paramString,tiddler) {
-		var size,skin,seconds,skinData;
-		for (var i=0;i&lt;params.length;i++)
-			if (/^\d+$/.exec(params[i]))
-				size = params[i];
-			else if (params[i] == &quot;noSeconds&quot;)
-				seconds = false;
-			else if (/^\{/.exec(params[i]))
-				eval(&quot;skinData = &quot; + params[i]);
-			else
-				skin = params[i];
-		if (skinData) {
-			CoolClock.config.skins.customSkin = skinData;
-			skin = &quot;customSkin&quot;;
-		}
-		var canvas = createTiddlyElement(place,&quot;canvas&quot;,&quot;clockcanvas&quot;+this.counter);
-		var clock = new CoolClock(&quot;clockcanvas&quot;+this.counter,size,skin,seconds);
-		this.counter++;
-	}
-}
-
-//}}}
-</pre>
-</div>
-<div title="DatePlugin" creator="氏名" modifier="氏名" created="201205160337" tags="systemConfig systemConfigForce myEmpty" changecount="1">
-<pre>/***
-|Name|[[DatePlugin]]|
-|Source|http://www.TiddlyTools.com/#DatePlugin|
-|Documentation|http://www.TiddlyTools.com/#DatePluginInfo|
-|Version|2.7.3|
-|Author|Eric Shulman|
-|License|http://www.TiddlyTools.com/#LegalStatements|
-|~CoreVersion|2.1|
-|Type|plugin|
-|Description|formatted dates plus popup menu with 'journal' link, changes and (optional) reminders|
-This plugin provides a general approach to displaying formatted dates and/or links and popups that permit easy navigation and management of tiddlers based on their creation/modification dates.
-!!!!!Documentation
-&gt;see [[DatePluginInfo]]
-!!!!!Configuration
-&lt;&lt;&lt;
-&lt;&lt;option chkDatePopupHideCreated&gt;&gt; omit 'created' section from date popups
-&lt;&lt;option chkDatePopupHideChanged&gt;&gt; omit 'changed' section from date popups
-&lt;&lt;option chkDatePopupHideTagged&gt;&gt; omit 'tagged' section from date popups
-&lt;&lt;option chkDatePopupHideReminders&gt;&gt; omit 'reminders' section from date popups
-&lt;&lt;option chkShowJulianDate&gt;&gt; display Julian day number (1-365) below current date
-
-see [[DatePluginConfig]] for additional configuration settings, for use in calendar displays, including:
-*date formats
-*color-coded backgrounds
-*annual fixed-date holidays
-*weekends
-&lt;&lt;&lt;
-!!!!!Revisions
-&lt;&lt;&lt;
-2011.04.23 2.7.3 added config.macros.date.tipformat for custom mouseover tooltip and config.macros.date.leadtime for custom reminder leadtime (default=90 days)
-2010.12.15 2.7.2 omit date highlighting when hiding popup items (created/changed/tagged/reminders)
-|please see [[DatePluginInfo]] for additional revision details|
-2005.10.30 0.9.0 pre-release
-&lt;&lt;&lt;
-!!!!!Code
-***/
-//{{{
-version.extensions.DatePlugin= {major: 2, minor: 7, revision: 3, date: new Date(2011,4,23)};
-
-config.macros.date = {
-	format: 'YYYY.0MM.0DD', // default date display format
-	linkformat: 'YYYY.0MM.0DD', // 'dated tiddler' link format
-	tipformat: 'YYYY.0MM.0DD', // 'dated tiddler' link tooltip format
-	leadtime: 31, // find reminders up to 31 days from now
-	linkedbg: '#babb1e',
-	todaybg: '#ffab1e',
-	weekendbg: '#c0c0c0',
-	holidaybg: '#ffaace',
-	createdbg: '#bbeeff',
-	modifiedsbg: '#bbeeff',
-	remindersbg: '#c0ffee',
-	weekend: [ 1,0,0,0,0,0,1 ], // [ day index values: sun=0, mon=1, tue=2, wed=3, thu=4, fri=5, sat=6 ],
-	holidays: [ '01/01', '07/04', '07/24', '11/24' ]
-		// NewYearsDay, IndependenceDay(US), Eric's Birthday (hooray!), Thanksgiving(US)
-};
-
-config.macros.date.handler = function(place,macroName,params)
-{
-	// default: display current date
-	var now =new Date();
-	var date=now;
-	var mode='display';
-	if (params[0]&amp;&amp;['display','popup','link'].contains(params[0].toLowerCase()))
-		{ mode=params[0]; params.shift(); }
-
-	if (!params[0] || params[0]=='today')
-		{ params.shift(); }
-	else if (params[0]=='filedate')
-		{ date=new Date(document.lastModified); params.shift(); }
-	else if (params[0]=='tiddler')
-		{ date=store.getTiddler(story.findContainingTiddler(place).id.substr(7)).modified; params.shift(); }
-	else if (params[0].substr(0,8)=='tiddler:')
-		{ var t; if ((t=store.getTiddler(params[0].substr(8)))) date=t.modified; params.shift(); }
-	else {
-		var y = eval(params.shift().replace(/Y/ig,(now.getYear()&lt;1900)?now.getYear()+1900:now.getYear()));
-		var m = eval(params.shift().replace(/M/ig,now.getMonth()+1));
-		var d = eval(params.shift().replace(/D/ig,now.getDate()+0));
-		date = new Date(y,m-1,d);
-	}
-	// date format with optional custom override
-	var format=this.format; if (params[0]) format=params.shift();
-	var linkformat=this.linkformat; if (params[0]) linkformat=params.shift();
-	showDate(place,date,mode,format,linkformat);
-}
-
-window.showDate=showDate;
-function showDate(place,date,mode,format,linkformat,autostyle,weekend)
-{
-	mode	  =mode||'display';
-	format	  =format||config.macros.date.format;
-	linkformat=linkformat||config.macros.date.linkformat;
-
-	// format the date output
-	var title=date.formatString(format);
-	var linkto=date.formatString(linkformat);
-	var tip=date.formatString(config.macros.date.tipformat);
-
-	// just show the formatted output
-	if (mode=='display') { place.appendChild(document.createTextNode(title)); return; }
-
-	// link to a 'dated tiddler'
-	var link = createTiddlyLink(place, linkto, false);
-	link.appendChild(document.createTextNode(title));
-	link.title = tip;
-	link.date = date;
-	link.format = format;
-	link.linkformat = linkformat;
-
-	// if using a popup menu, replace click handler for dated tiddler link
-	// with handler for popup and make link text non-italic (i.e., an 'existing link' look)
-	if (mode=='popup') {
-		link.onclick = onClickDatePopup;
-		link.style.fontStyle='normal';
-	}
-	// format the popup link to show what kind of info it contains (for use with calendar generators)
-	if (autostyle) setDateStyle(place,link,weekend);
-}
-//}}}
-//{{{
-// NOTE: This function provides default logic for setting the date style when displayed in a calendar
-// To customize the date style logic, please see[[DatePluginConfig]]
-function setDateStyle(place,link,weekend) {
-	// alias variable names for code readability
-	var date=link.date;
-	var fmt=link.linkformat;
-	var linkto=date.formatString(fmt);
-	var cmd=config.macros.date;
-
-	var co=config.options; // abbrev
-
-	if ((weekend!==undefined?weekend:isWeekend(date))&amp;&amp;(cmd.weekendbg!=''))
-		{ place.style.background = cmd.weekendbg; }
-	if (hasModifieds(date)||hasCreateds(date)||hasTagged(date,fmt))
-		{ link.style.fontStyle='normal'; link.style.fontWeight='bold'; }
-	if (hasReminders(date))
-		{ link.style.textDecoration='underline'; }
-	if (isToday(date))
-		{ link.style.border='1px solid black'; }
-	if (isHoliday(date)&amp;&amp;(cmd.holidaybg!=''))
-		{ place.style.background = cmd.holidaybg; }
-	if (hasCreateds(date)&amp;&amp;(cmd.createdbg!=''))
-		{ place.style.background = cmd.createdbg; }
-	if (hasModifieds(date)&amp;&amp;(cmd.modifiedsbg!=''))
-		{ place.style.background = cmd.modifiedsbg; }
-	if ((hasTagged(date,fmt)||store.tiddlerExists(linkto))&amp;&amp;(cmd.linkedbg!=''))
-		{ place.style.background = cmd.linkedbg; }
-	if (hasReminders(date)&amp;&amp;(cmd.remindersbg!=''))
-		{ place.style.background = cmd.remindersbg; }
-	if (isToday(date)&amp;&amp;(cmd.todaybg!=''))
-		{ place.style.background = cmd.todaybg; }
-	if (config.options.chkShowJulianDate) { // optional display of Julian date numbers
-		var m=[0,31,59,90,120,151,181,212,243,273,304,334];
-		var d=date.getDate()+m[date.getMonth()];
-		var y=date.getFullYear();
-		if (date.getMonth()&gt;1 &amp;&amp; (y%4==0 &amp;&amp; y%100!=0) || y%400==0)
-			d++; // after February in a leap year
-		wikify('@@font-size:80%;&lt;br&gt;'+d+'@@',place);
-	}
+　　　　for(WORD plateIndex=0; plateIndex&lt; PLATE_CNT; plateIndex++)
+　　　　{				
+　　　　　　/* 熱処理コマンド実行 */
+　　　　　　XPSR00(plateIndex);
+　　　　}
+　　}
 
 }
-//}}}
-//{{{
-function isToday(date) // returns true if date is today
-	{ var now=new Date(); return ((now-date&gt;=0) &amp;&amp; (now-date&lt;86400000)); }
-function isWeekend(date) // returns true if date is a weekend
-	{ return (config.macros.date.weekend[date.getDay()]); }
-function isHoliday(date) // returns true if date is a holiday
-{
-	var longHoliday = date.formatString('0MM/0DD/YYYY');
-	var shortHoliday = date.formatString('0MM/0DD');
-	for(var i = 0; i &lt; config.macros.date.holidays.length; i++) {
-		var holiday=config.macros.date.holidays[i];
-		if (holiday==longHoliday||holiday==shortHoliday) return true;
-	}
-	return false;
-}
-//}}}
-//{{{
-// Event handler for clicking on a day popup
-function onClickDatePopup(e) { e=e||window.event;
-	var p=Popup.create(this); if (!p) return false;
-	// always show dated tiddler link (or just date, if readOnly) at the top...
-	if (!readOnly || store.tiddlerExists(this.date.formatString(this.linkformat)))
-		createTiddlyLink(createTiddlyElement(p,'li'),this.date.formatString(this.linkformat),true);
-	else
-		createTiddlyText(createTiddlyElement(p,'li'),this.date.formatString(this.linkformat));
-	addCreatedsToPopup(p,this.date,this.format);
-	addModifiedsToPopup(p,this.date,this.format);
-	addTaggedToPopup(p,this.date,this.linkformat);
-	addRemindersToPopup(p,this.date,this.linkformat);
-	Popup.show(); e.cancelBubble=true; if(e.stopPropagation)e.stopPropagation(); return false;
-}
-//}}}
-//{{{
-function indexCreateds() // build list of tiddlers, hash indexed by creation date
-{
-	var createds= { };
-	var tiddlers = store.getTiddlers('title','excludeLists');
-	for (var t = 0; t &lt; tiddlers.length; t++) {
-		var date = tiddlers[t].created.formatString('YYYY0MM0DD')
-		if (!createds[date])
-			createds[date]=new Array();
-		createds[date].push(tiddlers[t].title);
-	}
-	return createds;
-}
-function hasCreateds(date) // returns true if date has created tiddlers
-{
-	if (config.options.chkDatePopupHideCreated) return false;
-	if (!config.macros.date.createds) config.macros.date.createds=indexCreateds();
-	return (config.macros.date.createds[date.formatString('YYYY0MM0DD')]!=undefined);
-}
-
-function addCreatedsToPopup(p,when,format)
-{
-	if (config.options.chkDatePopupHideCreated) return false;
-	var force=(store.isDirty() &amp;&amp; when.formatString('YYYY0MM0DD')==new Date().formatString('YYYY0MM0DD'));
-	if (force || !config.macros.date.createds) config.macros.date.createds=indexCreateds();
-	var indent=String.fromCharCode(160)+String.fromCharCode(160);
-	var createds = config.macros.date.createds[when.formatString('YYYY0MM0DD')];
-	if (createds) {
-		createds.sort();
-		var e=createTiddlyElement(p,'div',null,null,'created ('+createds.length+')');
-		for(var t=0; t&lt;createds.length; t++) {
-			var link=createTiddlyLink(createTiddlyElement(p,'li'),createds[t],false);
-			link.appendChild(document.createTextNode(indent+createds[t]));
-		}
-	}
-}
-//}}}
-//{{{
-function indexModifieds() // build list of tiddlers, hash indexed by modification date
-{
-	var modifieds= { };
-	var tiddlers = store.getTiddlers('title','excludeLists');
-	for (var t = 0; t &lt; tiddlers.length; t++) {
-		var date = tiddlers[t].modified.formatString('YYYY0MM0DD')
-		if (!modifieds[date])
-			modifieds[date]=new Array();
-		modifieds[date].push(tiddlers[t].title);
-	}
-	return modifieds;
-}
-function hasModifieds(date) // returns true if date has modified tiddlers
-{
-	if (config.options.chkDatePopupHideChanged) return false;
-	if (!config.macros.date.modifieds) config.macros.date.modifieds = indexModifieds();
-	return (config.macros.date.modifieds[date.formatString('YYYY0MM0DD')]!=undefined);
-}
-
-function addModifiedsToPopup(p,when,format)
-{
-	if (config.options.chkDatePopupHideChanged) return false;
-	var date=when.formatString('YYYY0MM0DD');
-	var force=(store.isDirty() &amp;&amp; date==new Date().formatString('YYYY0MM0DD'));
-	if (force || !config.macros.date.modifieds) config.macros.date.modifieds=indexModifieds();
-	var indent=String.fromCharCode(160)+String.fromCharCode(160);
-	var mods = config.macros.date.modifieds[date];
-	if (mods) {
-		// if a tiddler was created on this date, don't list it in the 'changed' section
-		if (config.macros.date.createds &amp;&amp; config.macros.date.createds[date]) {
-			var temp=[];
-			for(var t=0; t&lt;mods.length; t++)
-				if (!config.macros.date.createds[date].contains(mods[t]))
-					temp.push(mods[t]);
-			mods=temp;
-		}
-		mods.sort();
-		var e=createTiddlyElement(p,'div',null,null,'changed ('+mods.length+')');
-		for(var t=0; t&lt;mods.length; t++) {
-			var link=createTiddlyLink(createTiddlyElement(p,'li'),mods[t],false);
-			link.appendChild(document.createTextNode(indent+mods[t]));
-		}
-	}
-}
-//}}}
-//{{{
-function hasTagged(date,format) // returns true if date is tagging other tiddlers
-{
-	if (config.options.chkDatePopupHideTagged) return false;
-	return store.getTaggedTiddlers(date.formatString(format)).length&gt;0;
-}
-
-function addTaggedToPopup(p,when,format)
-{
-	if (config.options.chkDatePopupHideTagged) return false;
-	var indent=String.fromCharCode(160)+String.fromCharCode(160);
-	var tagged=store.getTaggedTiddlers(when.formatString(format));
-	if (tagged.length) var e=createTiddlyElement(p,'div',null,null,'tagged ('+tagged.length+')');
-	for(var t=0; t&lt;tagged.length; t++) {
-		var link=createTiddlyLink(createTiddlyElement(p,'li'),tagged[t].title,false);
-		link.appendChild(document.createTextNode(indent+tagged[t].title));
-	}
-}
-//}}}
-//{{{
-function indexReminders(date,leadtime) // build list of tiddlers with reminders, hash indexed by reminder date
-{
-	var reminders = { };
-	if(window.findTiddlersWithReminders!=undefined) { // reminder plugin is installed
-		var t = findTiddlersWithReminders(date, [0,leadtime], null, null, 1);
-		for(var i=0; i&lt;t.length; i++) reminders[t[i].matchedDate]=true;
-	}
-	return reminders;
-}
-
-function hasReminders(date) // returns true if date has reminders
-{
-	if (config.options.chkDatePopupHideReminders) return false;
-	if (window.reminderCacheForCalendar)
-		return window.reminderCacheForCalendar[date]; // use calendar cache
-	if (!config.macros.date.reminders)
-		config.macros.date.reminders = indexReminders(date,config.macros.date.leadtime); // create a reminder cache
-	return (config.macros.date.reminders[date]);
-}
-
-function addRemindersToPopup(p,when,format)
-{
-	if (config.options.chkDatePopupHideReminders) return false;
-	if(window.findTiddlersWithReminders==undefined) return; // reminder plugin not installed
-
-	var indent = String.fromCharCode(160)+String.fromCharCode(160);
-	var reminders=findTiddlersWithReminders(when, [0,config.macros.date.leadtime],null,null,1);
-	createTiddlyElement(p,'div',null,null,'reminders ('+(reminders.length||'none')+')');
-	for(var t=0; t&lt;reminders.length; t++) {
-		link = createTiddlyLink(createTiddlyElement(p,'li'),reminders[t].tiddler,false);
-		var diff=reminders[t].diff;
-		diff=(diff&lt;1)?'Today':((diff==1)?'Tomorrow':diff+' days');
-		var txt=(reminders[t].params['title'])?reminders[t].params['title']:reminders[t].tiddler;
-		link.appendChild(document.createTextNode(indent+diff+' - '+txt));
-	}
-	if (readOnly) return;	// readonly... omit 'new reminder...' command
-	var rem='\\&lt;\\&lt;reminder day:%0 month:%1 year:%2 title:&quot;Enter a reminder title here&quot;\\&gt;\\&gt;';
-	rem=rem.format([when.getDate(),when.getMonth()+1,when.getYear()+1900]);
-	var cmd=&quot;&lt;&lt;newTiddler label:[[&quot;+indent+&quot;new reminder...]] prompt:[[add a reminder to '%0']]&quot;
-		+&quot; title:[[%0]] text:{{var t=store.getTiddlerText('%0','');t+(t.length?'\\n':'')+'%1'}} tag:%2&gt;&gt;&quot;;
-	wikify(cmd.format([when.formatString(format),rem,config.options.txtCalendarReminderTags||'']),
-		createTiddlyElement(p,'li'));
-}
-//}}}</pre>
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* 作成者：nagase
+|更新日|更新者|更新内容|
+||||</pre>
 </div>
 <div title="JapaneseTranslationPlugin" creator="nagase" modifier="nagase" created="201204200643" tags="systemConfig" changecount="1">
 <pre>//--
@@ -2151,218 +1067,390 @@ merge(config.annotations,{
 	ViewTemplate: &quot;この隠しtiddlerにあるHTMLテンプレートは、各tiddlerの表示方法を決定します。&quot;
 	});</pre>
 </div>
-<div title="MainMenu" creator="氏名" modifier="氏名" created="201205160339" changecount="1">
-<pre>[[TranslatedGettingStarted]]
-&lt;&lt;newTiddler text:{{store.getTiddlerText(&quot;ひらメソッド関数テンプレート&quot;)}}&gt;&gt;
+<div title="SiteSubtitle" creator="nagase" modifier="nagase" created="201204200644" modified="201204230130" changecount="2">
+<pre>熱処理(process)タスク（TASK0DH）</pre>
+</div>
+<div title="SiteTitle" creator="nagase" modifier="nagase" created="201204230131" changecount="1">
+<pre>BakeTaskBakeProcess.cpp</pre>
+</div>
+<div title="XPSR00" creator="nagase" modifier="nagase" created="201204230149" modified="201204240231" changecount="5">
+<pre>&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;呼出元&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* taskBakeProcess(WORD plateIndex)
+コメント： 熱処理(process)メイン
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* [BakeTaskBakeProcess.h]にて定義
+* 熱処理 コマンド 実行
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;引数&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* WORD plateIndex : 今から処理するﾌﾟﾚｰﾄのindex
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;戻り値&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* なし
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;実装&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+void BAKE::XPSR00(WORD plateIndex)
+{	
+　　switch(bakeProcess.jumpAddress[plateIndex])
+　　{
+　　　　case 10:
+　　　　　　XPSR10(plateIndex);　　/* STT送信(XPSR10) */
+　　　　　　break;
+　　　　case 20:
+　　　　　　XPSR20(plateIndex);　　/* 待ち時間有りの確認(XPSR20) */
+　　　　　　break;
+　　　　case 30:　　　　　　　　　　　　/* 即時停止中 */
+　　　　　　XPSR30(plateIndex);　　/* ベークステータス処理停止の確認(XPSR30) */
+　　　　　　break;
+　　　　case 35:　　　　　　　　　　　　/* カバー開アラーム発報中 */
+　　　　　　XPSR35(plateIndex);　　/* カバー開アラームと熱処理時間の確認(XPSR35) */
+　　　　　　break;
+　　　　case 72:		
+　　　　　　XPSR72(plateIndex);　　/* 真空排気停止　完了　確認(XPSR72) */
+　　　　　　break;
+　　　　case 80:
+　　　　　　XPSR80(plateIndex);　　/* チャンバー下降確認(XPSR80) */
+　　　　　　break;
+　　　　case 130:
+　　　　　　XPSR130(plateIndex);　/* 熱処理終了確認(XPSR130) */
+　　　　　　break;
+　　　　case 170:
+　　　　　　XPSR170(plateIndex);　/* (XPSR170) */
+　　　　　　break;
+　　　　case 210:
+　　　　　　XPSR210(plateIndex);　/* LPAH処理有無確認(XPSR210) */
+　　　　　　break;
+　　　　case 220:
+　　　　　　XPSR220(plateIndex);　/* (XPSR220) */
+　　　　　　break;
+　　　　case 310:
+　　　　　　XPSR310(plateIndex);/* (XPSR310) */
+　　　　　　break;
+　　　　case 315:
+　　　　　　XPSR315(plateIndex);	/* [OPN]プロセスユニット開要求受信確認(XPSR315) */
+　　　　　　break;
+　　　　case 320:
+　　　　　　XPSR320(plateIndex);　/* チャンバー上昇確認(XPSR320) */
+　　　　　　break;
+　　　　case 322:
+　　　　　　XPSR322(plateIndex);　/* LPAH状態確認（チャンバー上昇時） */
+　　　　　　break;
+　　　　case 0:
+　　　　　　default:
+　　　　　　break;		
+　　}
+}
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* 作成者：R
+|更新日|更新者|更新内容|
+||||</pre>
+</div>
+<div title="XPSR10" creator="nagase" modifier="nagase" created="201204230203" modified="201204240231" changecount="3">
+<pre>&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;呼出元&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* XPSR00(WORD plateIndex)
+コメント： 熱処理 コマンド 実行
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* [BakeTaskBakeProcess.h]にて定義
+* 処理準備
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;引数&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* WORD plateIndex : 今から処理するﾌﾟﾚｰﾄのindex
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;戻り値&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* なし
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;実装&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+void BAKE::XPSR10(WORD plateIndex)
+{	
+　　WORD plateMode = getPlateMode(plateIndex);
+　　if(plateMode == 0)
+　　{
+　　　　bakeProcess.jumpAddress[plateIndex] = 0;	
+　　　　return;
+　　}
 
-^^~TiddlyWiki version &lt;&lt;version&gt;&gt;
-(c) 2010 [[UnaMesa|http://www.unamesa.org/]]^^</pre>
+　　/* シーケンスNoに0x01をセット */
+　　sequenceNum[plateIndex] = 0x01;　　/* チャンバ下降待ち(SEQNA) */
+
+　　/* 温調チェック要求コード（CKCTCD1-4、CKHTCD1-8）の設定 */
+　　/* 07：処理開始前の温調アラームのクリア */
+　　setCheckTempCode(plateIndex, CHECK_TEMP_BEFORE_CLEAR);
+
+　　if((plateMode &lt; 10) &amp;&amp; (trStatus[plateIndex] != TR_STATUS_BIT_PIN_DOWN))
+　　{
+　　　　shutterCommand[plateIndex] = SHUTTER_COMMAND_CLOSE;
+　　}
+
+　　/* [STT]ステータストリガ送信（準備OK） */
+　　XPSR18(plateIndex);
+　
+　　return;
+}
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* 作成者：nagase
+|更新日|更新者|更新内容|
+||||</pre>
 </div>
-<div title="SiteSubtitle" creator="nagase" modifier="nagase" created="201204200644" changecount="1">
-<pre>template</pre>
+<div title="XPSR130" creator="nagase" modifier="nagase" created="201204230228" modified="201204240230" changecount="4">
+<pre>&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;呼出元&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* XPSR00(WORD plateIndex)
+コメント： 熱処理 コマンド 実行
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* [BakeTaskBakeProcess.h]にて定義
+* 熱処理終了確認
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;引数&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* WORD plateIndex : 今から処理するﾌﾟﾚｰﾄのindex
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;戻り値&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* なし
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;実装&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+void BAKE::XPSR130(WORD plateIndex)
+{
+　　/* 熱処理停止コマンドが投げられた場合 
+　　　 BKSTA01-12	BIT 0:即時停止中
+　　　　　　　　　　　　　　BIT 4:ピン下降、処理待機中
+　　　　　　　　　　　　　　BIT 5:アラームによる即時停止中
+　　*/
+　　if((bakeStatus[plateIndex] &amp; 0x31) != 0)
+　　{
+　　　　/* 熱処理停止へ */
+　　　　XPSR150(plateIndex);
+　　　　return;
+　　}
+
+　　/* カバー開アラームが発生した場合 */
+　　if(coverOpenData.coverAlarm &gt; 0)
+　　{
+　　　　/* 熱処理停止へ */
+　　　　XPSR150(plateIndex);
+　　　　return;
+　　}
+
+　　/* タイマーを確認 */
+　　WORD timer = softTimer[BAKE_TIMER_HMDS_PLATE01 + plateIndex];
+	
+　　DTIndex ++;
+　　switch(DTIndex)
+　　{
+　　case 0:
+　　　　bakeProcessTimer[plateIndex].set.startWaitTime = timer;
+　　　　break;
+　　case 1:
+　　　　bakeProcessTimer[plateIndex].set.bakeTime = timer;
+　　　　break;
+　　case 2:
+　　　　bakeProcessTimer[plateIndex].set.inciNonProcTime = timer;
+　　　　break;
+　　case 3:
+　　　　bakeProcessTimer[plateIndex].set.inciProcTime = timer;
+　　　　break;
+　　}
+
+　　if(TFBF[BAKE_TIMER_HMDS_PLATE01 + plateIndex] == ON)
+　　{
+　　　　/* 熱処理時間がタイムアップしていない場合、終了 */
+　　　　return;
+　　}
+
+　　/* HMDS 確認 */
+　　WORD hmdsNum = BCD_TO_DECIMAL(recv.bufSos70[plateIndex][SOS70_BYTE_HMDS_NUM] &amp; 0x0F);
+　　if (hmdsNum &gt; 0)
+　　{
+　　　　/* HMDS吐出停止 */
+　　　　hmdsCommand[hmdsNum - 1] = HMDS_COMMAND_STOP;
+　　}
+　　/* 熱処理終了へ */
+　　XPSR300(plateIndex);
+　　
+　　return;
+	
+}
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* 作成者：nagase
+|更新日|更新者|更新内容|
+||||</pre>
 </div>
-<div title="TagCloudPlugin" creator="氏名" modifier="氏名" created="201205160347" tags="NavigationPackage systemConfig DiscoveryPackage" changecount="1">
-<pre>/***
-|Name|TagCloudPlugin|
-|Source|http://www.TiddlyTools.com/#TagCloudPlugin|
-|Version|1.7.0|
-|Author|Eric Shulman|
-|Original Author|Clint Checketts|
-|License|http://www.TiddlyTools.com/#LegalStatements|
-|~CoreVersion|2.1|
-|Type|plugin|
-|Description|present a 'cloud' of tags (or links) using proportional font display|
-!Usage
-&lt;&lt;&lt;
-{{{
-&lt;&lt;cloud type action:... limit:... tag tag tag ...&gt;&gt;
-&lt;&lt;cloud type action:... limit:... +TiddlerName&gt;&gt;
-&lt;&lt;cloud type action:... limit:... -TiddlerName&gt;&gt;
-&lt;&lt;cloud type action:... limit:... =tagvalue&gt;&gt;
-}}}
-where:
-* //type// is a keyword, one of:
-** ''tags'' (default) - displays a cloud of tags, based on frequency of use
-** ''links'' - displays a cloud of tiddlers, based on number of links //from// each tiddler
-** ''references'' - displays a cloud of tiddlers, based on number of links //to// each tiddler
-* ''action:popup'' (default) - clicking a cloud item shows a popup with links to related tiddlers&lt;br&gt;//or//&lt;br&gt; ''action:goto'' - clicking a cloud item immediately opens the tiddler corresponding to that item
-* ''limit:N'' (optional) - restricts the cloud display to only show the N most popular tags/links
-* ''tag tag tag...'' (or ''title title title'' if ''links''/''references'' is used)&lt;br&gt;shows all tags/links in the document //except// for those listed as macro parameters
-* ''+TiddlerName''&lt;br&gt;show only tags/links read from a space-separated, bracketed list stored in a separate tiddler.
-* ''-TiddlerName''&lt;br&gt;show all tags/links //except// those read from a space-separated, bracketed list stored in a separate tiddler.
-* ''=tagvalue'' (//only if type=''tags''//)&lt;br&gt;shows only tags that are themselves tagged with the indicated tag value (i.e., ~TagglyTagging usage)
-//note: for backward-compatibility, you can also use the macro {{{&lt;&lt;tagCloud ...&gt;&gt;}}} in place of {{{&lt;&lt;cloud ...&gt;&gt;}}}//
-&lt;&lt;&lt;
-!Examples
-&lt;&lt;&lt;
-//all tags excluding&lt;&lt;tag systemConfig&gt;&gt;, &lt;&lt;tag excludeMissing&gt;&gt; and &lt;&lt;tag script&gt;&gt;//
-{{{&lt;&lt;cloud systemConfig excludeMissing script&gt;&gt;}}}
-{{groupbox{&lt;&lt;cloud systemConfig excludeMissing script&gt;&gt;}}}
-//top 10 tags excluding&lt;&lt;tag systemConfig&gt;&gt;, &lt;&lt;tag excludeMissing&gt;&gt; and &lt;&lt;tag script&gt;&gt;//
-{{{&lt;&lt;cloud limit:10 systemConfig excludeMissing script&gt;&gt;}}}
-{{groupbox{&lt;&lt;cloud limit:10 systemConfig excludeMissing script&gt;&gt;}}}
-//tags listed in// [[FavoriteTags]]
-{{{&lt;&lt;cloud +FavoriteTags&gt;&gt;}}}
-{{groupbox{&lt;&lt;cloud +FavoriteTags&gt;&gt;}}}
-//tags NOT listed in// [[FavoriteTags]]
-{{{&lt;&lt;cloud -FavoriteTags&gt;&gt;}}}
-{{groupbox{&lt;&lt;cloud -FavoriteTags&gt;&gt;}}}
-//links to tiddlers tagged with 'package'//
-{{{&lt;&lt;cloud action:goto =package&gt;&gt;}}}
-{{groupbox{&lt;&lt;cloud action:goto =package&gt;&gt;}}}
-//top 20 most referenced tiddlers//
-{{{&lt;&lt;cloud references limit:20&gt;&gt;}}}
-{{groupbox{&lt;&lt;cloud references limit:20&gt;&gt;}}}
-//top 20 tiddlers that contain the most links//
-{{{&lt;&lt;cloud links limit:20&gt;&gt;}}}
-{{groupbox{&lt;&lt;cloud links limit:20&gt;&gt;}}}
-&lt;&lt;&lt;
-!Revisions
-&lt;&lt;&lt;
-2009.07.17 [1.7.0] added {{{-TiddlerName}}} parameter to exclude tags that are listed in the indicated tiddler
-2009.02.26 [1.6.0] added {{{action:...}}} parameter to apply popup vs. goto action when clicking cloud items
-2009.02.05 [1.5.0] added ability to show links or back-links (references) instead of tags and renamed macro to {{{&lt;&lt;cloud&gt;&gt;}}} to reflect more generalized usage.
-2008.12.16 [1.4.2] corrected group calculation to prevent 'group=0' error
-2008.12.16 [1.4.1] revised tag filtering so excluded tags don't affect calculations
-2008.12.15 [1.4.0] added {{{limit:...}}} parameter to restrict the number of tags displayed to the top N most popular
-2008.11.15 [1.3.0] added {{{+TiddlerName}}} parameter to include only tags that are listed in the indicated tiddler
-2008.09.05 [1.2.0] added '=tagname' parameter to include only tags that are themselves tagged with the specified value (i.e., ~TagglyTagging usage)
-2008.07.03 [1.1.0] added 'segments' property to macro object.  Extensive code cleanup
-&lt;&lt;&lt;
-!Code
-***/
-//{{{
-version.extensions.TagCloudPlugin= {major: 1, minor: 7 , revision: 0, date: new Date(2009,7,17)};
-//Originally created by Clint Checketts, contributions by Jonny Leroy and Eric Shulman
-//Currently maintained and enhanced by Eric Shulman
-//}}}
-//{{{
-config.macros.cloud = {
-	tagstip: &quot;%1 tiddlers tagged with '%0'&quot;,
-	refslabel: &quot; (%0 references)&quot;,
-	refstip: &quot;%1 tiddlers have links to '%0'&quot;,
-	linkslabel: &quot; (%0 links)&quot;,
-	linkstip: &quot;'%0' has links to %1 other tiddlers&quot;,
-	groups: 9,
-	init: function() {
-		config.macros.tagCloud=config.macros.cloud; // for backward-compatibility
-		config.shadowTiddlers.TagCloud='&lt;&lt;cloud&gt;&gt;';
-		config.shadowTiddlers.StyleSheetTagCloud=
-			'/*{{{*/\n'
-			+'.tagCloud span {line-height: 3.5em; margin:3px;}\n'
-			+'.tagCloud1{font-size: 80%;}\n'
-			+'.tagCloud2{font-size: 100%;}\n'
-			+'.tagCloud3{font-size: 120%;}\n'
-			+'.tagCloud4{font-size: 140%;}\n'
-			+'.tagCloud5{font-size: 160%;}\n'
-			+'.tagCloud6{font-size: 180%;}\n'
-			+'.tagCloud7{font-size: 200%;}\n'
-			+'.tagCloud8{font-size: 220%;}\n'
-			+'.tagCloud9{font-size: 240%;}\n'
-			+'/*}}}*/\n';
-		setStylesheet(store.getTiddlerText('StyleSheetTagCloud'),'tagCloudsStyles');
-	},
-	getLinks: function(tiddler) { // get list of links to existing tiddlers and shadows
-		if (!tiddler.linksUpdated) tiddler.changed();
-		var list=[]; for (var i=0; i&lt;tiddler.links.length; i++) {
-			var title=tiddler.links[i];
-			if (store.isShadowTiddler(title)||store.tiddlerExists(title))
-				list.push(title);
-		}
-		return list;
-	},
-	handler: function(place,macroName,params) {
-		// unpack params
-		var inc=[]; var ex=[]; var limit=0; var action='popup';
-		var links=(params[0]&amp;&amp;params[0].toLowerCase()=='links'); if (links) params.shift();
-		var refs=(params[0]&amp;&amp;params[0].toLowerCase()=='references'); if (refs) params.shift();
-		if (params[0]&amp;&amp;params[0].substr(0,7).toLowerCase()=='action:')
-			action=params.shift().substr(7).toLowerCase();
-		if (params[0]&amp;&amp;params[0].substr(0,6).toLowerCase()=='limit:')
-			limit=parseInt(params.shift().substr(6));
-		while (params.length) {
-			if (params[0].substr(0,1)=='+') { // read taglist from tiddler
-				inc=inc.concat(store.getTiddlerText(params[0].substr(1),'').readBracketedList());
-			} else if (params[0].substr(0,1)=='-') { // exclude taglist from tiddler
-				ex=ex.concat(store.getTiddlerText(params[0].substr(1),'').readBracketedList());
-			} else if (params[0].substr(0,1)=='=') { // get tag list using tagged tags
-				var tagged=store.getTaggedTiddlers(params[0].substr(1));
-				for (var t=0; t&lt;tagged.length; t++) inc.push(tagged[t].title);
-			} else ex.push(params[0]); // exclude params
-			params.shift();
-		}
-		// get all items, include/exclude specific items
-		var items=[];
-		var list=(links||refs)?store.getTiddlers('title','excludeLists'):store.getTags();
-		for (var t=0; t&lt;list.length; t++) {
-			var title=(links||refs)?list[t].title:list[t][0];
-			if (links)	var count=this.getLinks(list[t]).length;
-			else if (refs)	var count=store.getReferringTiddlers(title).length;
-			else 		var count=list[t][1];
-			if ((!inc.length||inc.contains(title))&amp;&amp;(!ex.length||!ex.contains(title)))
-				items.push({ title:title, count:count });
-		}
-		if(!items.length) return;
-		// sort by decending count, limit results (optional)
-		items=items.sort(function(a,b){return(a.count==b.count)?0:(a.count&gt;b.count?-1:1);});
-		while (limit &amp;&amp; items.length&gt;limit) items.pop();
-		// find min/max and group size
-		var most=items[0].count;
-		var least=items[items.length-1].count;
-		var groupSize=(most-least+1)/this.groups;
-		// sort by title and draw the cloud of items
-		items=items.sort(function(a,b){return(a.title==b.title)?0:(a.title&gt;b.title?1:-1);});
-		var cloudWrapper = createTiddlyElement(place,'div',null,'tagCloud',null);
-		for (var t=0; t&lt;items.length; t++) {
-			cloudWrapper.appendChild(document.createTextNode(' '));
-			var group=Math.ceil((items[t].count-least)/groupSize)||1;
-			var className='tagCloudtag tagCloud'+group;
-			var tip=refs?this.refstip:links?this.linkstip:this.tagstip;
-			tip=tip.format([items[t].title,items[t].count]);
-			if (action=='goto') { // TAG/LINK/REFERENCES GOTO
-				var btn=createTiddlyLink(cloudWrapper,items[t].title,true,className);
-				btn.title=tip;
-				btn.style.fontWeight='normal';
-			} else if (!links&amp;&amp;!refs) { // TAG POPUP
-				var btn=createTiddlyButton(cloudWrapper,items[t].title,tip,onClickTag,className);
-				btn.setAttribute('tag',items[t].title);
-			} else { // LINK/REFERENCES POPUP
-				var btn=createTiddlyButton(cloudWrapper,items[t].title,tip,
-					function(ev) { var e=ev||window.event; var cmt=config.macros.cloud;
-						var popup = Popup.create(this);
-						var title = this.getAttribute('tiddler');
-						var count = this.getAttribute('count');
-						var refs  = this.getAttribute('refs')=='T';
-						var links = this.getAttribute('links')=='T';
-						var label = (refs?cmt.refslabel:cmt.linkslabel).format([count]);
-						createTiddlyLink(popup,title,true);
-						createTiddlyText(popup,label);
-						createTiddlyElement(popup,'hr');
-						if (refs) {
-							popup.setAttribute('tiddler',title);
-							config.commands.references.handlePopup(popup,title);
-						}
-						if (links) {
-							var tiddler = store.fetchTiddler(title);
-							var links=config.macros.cloud.getLinks(tiddler);
-							for(var i=0;i&lt;links.length;i++)
-								createTiddlyLink(createTiddlyElement(popup,'li'),
-									links[i],true);
-						}
-						Popup.show();
-						e.cancelBubble=true; if(e.stopPropagation) e.stopPropagation();
-						return false;
-					}, className);
-				btn.setAttribute('tiddler',items[t].title);
-				btn.setAttribute('count',items[t].count);
-				btn.setAttribute('refs',refs?'T':'F');
-				btn.setAttribute('links',links?'T':'F');
-				btn.title=tip;
-			}
-		}
-	}
-};
-//}}}</pre>
+<div title="XPSR18" creator="nagase" modifier="nagase" created="201204230210" modified="201204240231" changecount="6">
+<pre>&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;呼出元&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* XPSR00(WORD plateIndex)
+コメント： 熱処理 コマンド 実行
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* [BakeTaskBakeProcess.h]にて定義
+* BUSY処理（待ち時間スタートタイマーの設定）
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;引数&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* WORD plateIndex : 今から処理するﾌﾟﾚｰﾄのindex
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;戻り値&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* なし
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;実装&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+void BAKE::XPSR18(WORD plateIndex)
+{
+　　/* [STT]ステータストリガ　データ送信（ポート：使用中） */
+　　writeSttData(recv.bufSos70[plateIndex][SOS70_BYTE_UNIT_NUM], STT_STATUS_PORT, STT_PORT_USED, waferID[plateIndex]);
+　　/* [STT]ステータストリガ　データ送信（プロセス：BUSY）*/
+　　writeSttData(recv.bufSos70[plateIndex][SOS70_BYTE_UNIT_NUM], STT_STATUS_PROCESS, STT_PROCESS_BUSY, waferID[plateIndex]);
+
+　　WORD lpahNum = getLpahNum(plateIndex);	
+　　if(lpahNum &gt; 0)
+　　{
+　　　　/* LPAH有り */
+　　　　&lt;html&gt;lpahNum--;&lt;/html&gt;
+　　　　memcpy(RNLPD[lpahNum], recv.bufLpd[lpahNum], 484);
+　　}
+　　/* BUSY処理 */
+　　/* チャンバー下降待ち時間(ソフトウェアタイマーのTM18～）を確認(WTTMA) */
+　　/* チャンバー下降待ち時間を確認(WTTMA) */
+　　/* （ベーキングタイム情報(BKTTB1-12)の待ち時間） */
+　　if(bakeTimeTable[plateIndex].waitTime == 0)
+　　{
+　　　　/* ベークステータス処理停止の確認 */
+　　　　XPSR30(plateIndex);
+　　　　return;	
+　　}
+	
+　　/* 待ち時間の設定 */
+　　softTimer[BAKE_TIMER_HMDS_PLATE01 + plateIndex] = bakeTimeTable[plateIndex].waitTime*10;
+	
+　　/* 待ち時間スタートタイマーの設定 */
+　　TFBF[BAKE_TIMER_HMDS_PLATE01 + plateIndex] = ON;
+
+　　/* 待ち時間有りの確認 */
+　　bakeProcess.jumpAddress[plateIndex] = 20;
+　　
+　　return;	
+}
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* 作成者：nagase
+|更新日|更新者|更新内容|
+||||</pre>
+</div>
+<div title="template" creator="nagase" modifier="nagase" created="201204230201" modified="201204230208" changecount="2">
+<pre>&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;呼出元&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* taskBakeProcess(WORD plateIndex)
+コメント： 熱処理(process)メイン
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* [BakeTaskBakeProcess.h]にて定義
+* 熱処理 コマンド 実行
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;引数&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* WORD plateIndex : 今から処理するﾌﾟﾚｰﾄのindex
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;戻り値&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* なし
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;実装&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+&lt;html&gt;
+&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/html&gt;
+* 作成者：nagase
+|更新日|更新者|更新内容|
+||||</pre>
 </div>
 <div title="tiddly wiki文法" creator="nagase" modifier="nagase" created="201204200647" tags="tips" changecount="1">
 <pre>改行してただ打っているだけでも十分メモ帳として機能するわけですが、''強調したい！''とか''表組みにしたい！''とか色々表現したいこともあると思います。
@@ -2481,53 +1569,70 @@ A TiddlyWiki is like a blog because it's divided up into neat little chunks, but
 &lt;div style=&quot;border:1px White; padding:5px;background-color: #D3D3D3;&quot;&gt;
 タイトル
 &lt;/div&gt;
-&lt;/html&gt;
-</pre>
+&lt;/html&gt;</pre>
 </div>
-<div title="ひらメソッド関数テンプレート" creator="R" modifier="R" created="201204211242" modified="201204211257" tags="template" changecount="7">
+<div title="処理の流れ" creator="nagase" modifier="nagase" created="201204240215" modified="201204250007" changecount="27">
 <pre>&lt;html&gt;
 &lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
-&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;呼出元&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;処理の流れ&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
 &lt;/div&gt;
 &lt;/html&gt;
-* hoge()
-コメント：
+!!!@@color(RoyalBlue): LPAHとかは無しの場合@@
+
+* jumpAddress = 0;
+　　　　　　　↓
+* PSRを受信
+　　　　　　　↓
+* TriggerPsr( );
+** jumpAddress = 10;
+　　　　　　　↓
+* XPSR10();　/* STT送信 */
+　　　　　　　↓
+* XPSR18();　/* BUSY処理（待ち時間スタートタイマーの設定）　待ち時間有の場合、XPSR20()；を経由してXPS30()；へ */
+　　　　　　　↓
+* XPSR30();　/* ベークステータス処理停止の確認(XPSR30)　即時停止中 */　
+　　　　　　　↓
+* XPSR35();　/* カバー開アラームと熱処理時間の確認(XPSR35) */
+　　　　　　　↓
+* XPSR74();　/* チャンバー下降指令(XPSR74) */
+　　　　　　　↓
+* XPSR80();　/* チャンバー下降　確認 */
+　　　　　　　↓
+* XPSR100()；　/* 熱処理開始 */
+** ここでBADの熱処理時間などをbakeTimeTable[ ]に代入している
+*** pBadData　-&gt; bakeTimeTable[ ] -&gt; softTimer[ ] -&gt; bakeProcessTimer[ ]
+　　bakeTimeTable[ ]まで...BakeTaskTempControl.cpp : recvBad( );
+　　softTimer[ ] ... BakeTaskBakeProcess.cpp : XPSR18() - BUSY処理（待ち時間スタートタイマーの設定）
+　　bakeProcessTimer[ ] ... akeTaskStatusTracking.cpp : USA1000()　　
+|recv.bufBad[ ]|bakeTimeTable[ ]|softTimer[ ]|bakeProcessTimer[ ]|
+| 受信OK | 受信OK | 受信OK | 現状NG |
+| 値OK | 値OK | 値OK | 値OK多分... |
+*** softTimer[BAKE_TIMER_HMDS_PLATE01 + plateIndex] = bakeTimeTable[plateIndex].bakeTime*100;
+*** WORD timer = softTimer[BAKE_TIMER_HMDS_PLATE01 + plateIndex];
+*** bakeProcessTimer[plateIndex].set.bakeTime = timer;
+*** BAKE_PROC_TIMER_TABLE_ITEM *pTable = &amp;(bakeProcessTimer[USAPNO].set); /* BakeTaskStatusTracking.cpp内のはなし */
+** タイマの減算処理はなし
+　　　　　　　↓
+* XPSR130()；　/* 熱処理終了確認 */
+** ここでもタイマの減算処理はなし
+　　　　　　　↓
+* XPSR300()；　/* 熱処理終了 */
+　　　　　　　↓
+* XPSR310()；　/* chamber上昇確認への準備 */
+　　　　　　　↓
+* XPSR320()；　/* chamber上昇確認 */
+　　　　　　　↓
+* XPSR390();　/* ステータストリガ(使用不可)送信 */
+** jumpAddress = 0;
+
 &lt;html&gt;
 &lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
-&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
+&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=2&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
 &lt;/div&gt;
 &lt;/html&gt;
-* [XXX.h]にて定義
-* 概要を書く
-&lt;html&gt;
-&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
-&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;引数&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/html&gt;
-* int n:説明を書く
-* cahr c:説明を書く
-&lt;html&gt;
-&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
-&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;戻り値&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/html&gt;
-* 説明を書く
-&lt;html&gt;
-&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
-&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;実装&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/html&gt;
-* hoge1(){
-             }
-&lt;html&gt;
-&lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
-&lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;履歴&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/html&gt;
-* 作成者：R
+* 作成者：nagase
 |更新日|更新者|更新内容|
-||||
-</pre>
+||||</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
