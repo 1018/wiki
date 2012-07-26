@@ -511,13 +511,13 @@ Also see [[AdvancedOptions]]</pre>
 </div>
 <!--POST-SHADOWAREA-->
 <div id="storeArea">
-<div title="&quot;BAKEめも書き&quot;について" creator="nagase" modifier="nagase" created="201204200708" modified="201205220716" changecount="5">
+<div title="&quot;おぼえがき&quot;について" creator="nagase" modifier="氏名" created="201204200708" modified="201207230005" changecount="6">
 <pre>&lt;html&gt;
 &lt;div style=&quot;border:1px White; padding:5px;background-color: #DCDCDC;&quot;&gt;
 &lt;span style=&quot;color:#000000&quot;&gt;&lt;font size=3&gt;&lt;b&gt;概要&lt;/b&gt;&lt;/fontsize&gt;&lt;/span&gt;
 &lt;/div&gt;
 &lt;/html&gt;
-このwikiはBAKEに関する覚書きです。。。</pre>
+このwikiはC#に関する覚書きです。。。</pre>
 </div>
 <div title="'Pagewise' list all Tiddlers (10 Tiddlers per page, with page up/down buttons)" modifier="nagase" created="201205240710" tags="ForEachTiddlerMacro beginEndNoneExample contextVariableExample countVariableExample indexVariableExample scriptClauseExample writeActionExample myEmpty" changecount="1">
 <pre>With a little scripting you can use the ForEachTiddlerPlugin to display the result &quot;by pages&quot;. I.e. you don't display the full result list, but (e.g.) 10 at a time. 
@@ -5504,6 +5504,11 @@ merge(config.macros, {
 //}}}
 </pre>
 </div>
+<div title="QA" modifier="nagase" created="201206190022" modified="201206190023" tags="C#" changecount="3">
+<pre>!!!@@color(RoyalBlue): エラー CS5001 @@
+* エラー CS5001: プログラム 'D:\LocalSimulatorApp_4.04β\Source\Symbol\SRZ_Z_TIO_2\obj\Debug\SRZ_Z_TIO_2.exe' は、エントリ ポイントに適切な静的 'Main' メソッドを含んでいません
+** プロパティ→出力の種類がクラスライブラリになってなかった</pre>
+</div>
 <div title="QuickOpenTagPlugin" modifier="nagase" created="201205242351" tags="systemConfig TagglyTagging Plugins myEmpty" changecount="1">
 <pre>/***
 | Name:|QuickOpenTagPlugin|
@@ -8895,6 +8900,244 @@ http://tiddlywiki.abego-software.de/#IntelliTaggerPlugin</pre>
 |wiz|wizard|
 |wnd, win|window|
 </pre>
+</div>
+<div title="先頭から指定した要素分をスキップし、残りの部分を取り出す - Skip" modifier="氏名" created="201207230017" tags="C#" changecount="1">
+<pre>703:  先頭から指定した要素分をスキップし、残りの部分を取り出す - Skip
+{{{
+/* 2008年　日本代表メンバー */
+public class JapanTeam {
+     public  string 名前 { get; set; }
+     public int 身長 { get; set; }
+     public int 体重 { get; set; }
+     public  override int GetHashCode() {
+         int _HashCode = this.名前.GetHashCode() ^
+             this.身長.GetHashCode() ^
+             this.体重.GetHashCode() ;
+         return _HashCode;
+     }
+     public  override bool Equals(object obj) {
+         return  this.GetHashCode().Equals(obj.GetHashCode());
+     }
+     public  override string ToString() {
+         return &quot;名前:&quot; + this.名前 + &quot; 身長:&quot; +  this.身長 + &quot; 体重:&quot; + 体重;
+     }
+ }
+  
+private void button1_Click(object sender, EventArgs e) {
+     JapanTeam[] _JapanTeam = {
+                             new JapanTeam{名前=&quot;楢崎　正剛&quot;, 身長=187 , 体重=77},
+                             new JapanTeam{名前=&quot;中沢　佑二&quot;, 身長=187 , 体重=78},
+                             new JapanTeam{名前=&quot;阿部　勇樹&quot;, 身長=177 , 体重=77},
+                             new JapanTeam{名前=&quot;中村 俊輔&quot;, 身長=178 , 体重=70},
+                             new JapanTeam{名前=&quot;田中　達也&quot;, 身長=167 , 体重=63},
+                         };
+  
+     Console.WriteLine(&quot;先頭か2人分をスキップする -----------------------------&quot;);
+     var q = _JapanTeam.Skip(2);
+     foreach (var item in q) {
+         Console.WriteLine(item.ToString());
+     }
+ }
+
+ 先頭か2人分をスキップする -----------------------------
+ 名前:阿部　勇樹 身長:177 体重:77
+ 名前:中村 俊輔 身長:178 体重:70
+ 名前:田中　達也 身長:167 体重:63
+}}}</pre>
+</div>
+<div title="名前に関するガイドライン" modifier="氏名" created="201207230009" modified="201207230031" tags="C#" changecount="12">
+<pre>URL:http://msdn.microsoft.com/ja-jp/library/ms229002(VS.80).aspx
+!!!@@color(RoyalBlue): 名前に関するガイドライン @@
+# 大文字の使用規則&lt;br&gt;さまざまな大文字と小文字の規則を紹介し、それぞれをどのような状況で使用するかについて説明します。
+# 一般的な名前付け規則&lt;br&gt;明確でわかりやすい名前を選択するための一般的な規則について説明します。
+# アセンブリと DLL の名前&lt;br&gt;マネージ アセンブリの名前付け規則について説明します。
+# 名前空間の名前&lt;br&gt;名前空間の名前に適用する規則、および名前空間の競合を最小限に抑える方法について説明します。 
+# クラス、構造体、およびインターフェイスの名前&lt;br&gt;型に名前を付けるときに従うべき規則と避けるべき事項について説明します。
+# 型のメンバの名前&lt;br&gt;メソッド、プロパティ、フィールド、およびイベントの名前を選択する際の推奨事項について説明します。
+# パラメータの名前&lt;br&gt;わかりやすいパラメータ名を選択するための推奨事項について説明します。
+# リソースの名前&lt;br&gt;ローカライズ可能なリソースの名前を選択する際の推奨事項について説明します。
+
+!!!@@color(RoyalBlue): 2.一般的な名前付け規則 @@
+# 単語の選択
+必ずわかりやすい識別名を選択してください。たとえば、プロパティの名前としてわかりやすいのは、英語では AlignmentHorizontal よりも HorizontalAlignment です。
+簡潔さよりもわかりやすさを優先します。プロパティ名としては、ScrollableX よりも CanScrollHorizontally の方がより適切です。ScrollableX では、&quot;X&quot; が X 軸を意味しているのかどうかがあいまいだからです。
+アンダースコア (_) やハイフン (-) など、英数字以外の文字は使用しないでください。
+ハンガリー表記法は使用しないでください。
+
+ハンガリー表記法では、識別子のデータ型など、パラメータに関するメタデータをエンコードするために、識別子にプレフィックスを含めます。 
+広く使用されているプログラミング言語のキーワードと競合する識別子は使用しないでください。
+
+CLS 準拠の言語では、キーワードを通常の単語として使用できる手段を提供する必要がありますが、推奨事項としては開発者がこの方法を知らなくても済むようにすることが必要です。大部分のプログラミング言語の言語リファレンス ドキュメントには、その言語で使用されるキーワードの一覧が記載されています。
+# 省略形および頭字語
+
+通常、省略形や頭字語は使用しません。これらを使用すると、名前がわかりにくくなります。また、その頭字語が広く認識されるようになったと見なすことができる時期を特定することも困難です。 
+
+省略形の大文字小文字の使用規則については、「頭字語に適用される大文字の使用規則」を参照してください。
+識別子名の一部には省略形または短縮形を使用しないでください。
+
+たとえば、OnBtnClick ではなく OnButtonClick を使用します。
+広く受け入れられていない頭字語は使用しないでください。また、必要な場合に限って使用するようにしてください。
+
+!!!@@color(RoyalBlue): 4.名前空間の名前 @@
+# 名前空間の名前
+名前空間用に選択した名前で、名前空間内の型によって使用できる機能を示す必要があります。たとえば、System.Net.Sockets 名前空間に含まれる型を使用すると、開発者がソケットを使用してネットワーク経由で通信できます。 
+
+名前空間の名前の一般的な形式は次のとおりです。
+
+&lt;Company&gt;.(&lt;Product&gt;|&lt;Technology&gt;)[.&lt;Feature&gt;][.&lt;Subnamespace&gt;] 
+
+たとえば、Microsoft.WindowsMobile.DirectX などです。
+名前空間名には、プリフィックスとして企業名を付け、各企業の名前空間の名前とプリフィックスが重複しないようにしてください。
+名前空間の第 2 レベルには、バージョンに依存しない、安定した製品名を使用してください。
+企業内のグループ名は変更されることが多いため、名前空間の階層構造での命名基準として組織の階層構造を使用することは避けてください。
+
+名前空間名は長期的に使用する、不変の識別子です。組織が発展する中で、組織にさまざまな変更があっても名前空間名が廃止されることはないようにしてください。
+Microsoft.Office.PowerPoint のように Pascal 形式を使用し、名前空間の構成要素をピリオドで区切ってください。ブランド名で通常とは異なる形で大文字と小文字を混在させている場合は、ブランド名の形式に従い、標準の名前空間の形式から外れてもかまいません。
+適切な場合には、複数形の名前空間名を使用することを検討してください。たとえば、System.Collection ではなく System.Collections を使用します。ただし、ブランド名や頭字語はこの規則の例外であり、System.IOs ではなく System.IO などとします。
+名前空間とその名前空間に含まれる型には、同じ名前を使用しないでください。たとえば、名前空間名として Debug を使用しているときに、同じ名前空間内で Debug という名前のクラスを定義しないでください。コンパイラによっては、このような型は完全修飾する必要があります。
+# 名前空間名および型名の競合
+
+既存の名前と競合する名前空間名や型名を選択した場合、ライブラリ ユーザーは、影響を受ける項目への参照を修飾しなければならなくなります。大部分の開発シナリオでは、このような事態は避けてください。
+
+このセクションに示すガイドラインのいくつかは、次のカテゴリの名前空間に関連します。
+** アプリケーション モデル名前空間
+** インフラストラクチャ名前空間
+** コア名前空間
+** テクノロジ名前空間グループ
+アプリケーション モデルの名前空間は、アプリケーションのクラスに固有の機能セットを提供します。たとえば、System.Windows.Forms 名前空間の型は、Windows フォーム クライアント アプリケーションの作成に必要な機能を提供します。System.Web 名前空間の型は、Web ベースのサーバー アプリケーションの作成をサポートします。一般に、同じ 1 つのアプリケーションで、異なるアプリケーション モデルに属する名前空間を使用することはないため、ライブラリを使用する開発者が名前の衝突の影響を受けることはあまりありません。
+
+インフラストラクチャ アプリケーションは特化されたサポートを提供するため、プログラム コードで参照されることはめったにありません。たとえば、*.Designer 名前空間の型は、プログラム開発ツールによって使用されます。*.Permissions 名前空間もインフラストラクチャ名前空間の 1 つです。インフラストラクチャ名前空間の型では、名前の衝突が、ライブラリを使用する開発者に影響する可能性はありません。
+
+コア名前空間は、アプリケーション名前空間とインフラストラクチャ名前空間を除く System.* 名前空間です。System と System.Text は、コア名前空間の例です。コア名前空間の型では、名前の衝突を必ず避ける必要があります。
+
+特定のテクノロジに属する名前空間では、第 1 レベルと第 2 レベルの識別子が同じになります (Company.technology.*)。テクノロジ内での名前の衝突を避ける必要があります。 
+一般的な名前空間のガイドライン
+Element、Node、Log、Message などのジェネリック型の名前を使用しないでください。一般的なシナリオで型名の競合が発生する可能性がきわめて高くなります。ジェネリック型の名前は、FormElement、XmlNode EventLog、SoapMessage のように修飾する必要があります。
+アプリケーション名前空間のガイドライン
+単一のアプリケーション モデル内の名前空間の型に同じ名前を割り当てないでください。
+
+たとえば、Windows フォーム アプリケーションの開発者が使用する特別なコントロールのライブラリを作成する場合、Checkbox という名前の型を導入しないでください。アプリケーション モデルには、この名前を持つ型 (CheckBox) が既に存在するからです。
+コア名前空間のガイドライン
+コア名前空間の型と競合する型の名前を割り当てないでください。
+
+たとえば、Directory を型名として使用しないでください。この名前を型名として使用すると、Directory 型と競合するからです。
+テクノロジ名前空間のガイドライン
+1 つのテクノロジ内で他の型と競合する型名を割り当てないでください。
+テクノロジ名前空間とアプリケーションモデル名前空間に含まれる型の間では型名の競合が起こらないようにしてください。ただし、そのテクノロジをアプリケーション モデルで使用しない場合は除きます。
+
+Portions Copyright 2005 Microsoft Corporation.All rights reserved. 
+
+Portions Copyright Addison-Wesley Corporation.All rights reserved. 
+
+デザイン ガイドラインの詳細については、2005 年に Addison-Wesley から出版されている Krzysztof Cwalina、Brad Abrams 共著の『Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries』を参照してください。
+!!!@@color(RoyalBlue): 5.クラス、構造体、およびインターフェイスの名前 @@
+# クラス、構造体、およびインターフェイスの名前
+一般に、型名は名詞句にする必要があります。使用する名詞は、その型によって表されるエンティティです。たとえば、Button、Stack、File には、それぞれその型によって表されるエンティティを識別する名前があります。開発者の観点から、エンティティを識別する名前を選択します。名前は、使用シナリオを反映する必要があります。
+
+型名を選択する際に適用されるガイドラインを次に示します。 
+Pascal 形式を使用して、名詞、名詞句、または場合によっては形容詞句で、クラス、インターフェイス、および値型に名前を付けます。
+クラス名には、プリフィックス (C など) を使用しないでください。
+
+I で始まる必要のあるインターフェイスは、この規則の例外です。
+派生クラスの名前は、末尾に基本クラスの名前を付けるよう考慮します。
+
+たとえば、Stream から継承した .NET Framework の型は名前の末尾を Stream にし、Exception から継承した型は Exception にします。
+インターフェイス名には、その型がインターフェイスであることを示すために、プリフィックス I を付けます。
+クラス/インターフェイスのペアを定義するときに、そのクラスがインターフェイスの標準実装である場合、名前はインターフェイス名のプリフィックス I の部分だけが異なるようにします。
+
+たとえば、.NET Framework には、IAsyncResult インターフェイスと AsyncResult クラスが用意されています。
+# ジェネリック型パラメータの名前
+ジェネリックは、.NET Framework Version 2.0 の主要な新機能です。ジェネリック型パラメータの適切な名前の選択方法に関するガイドラインを次に示します。
+1 文字の名前がそのパラメータ自体を完全に説明するものであり、説明的な名前によって付加価値を付けない場合を除き、ジェネリック型パラメータには説明的な名前を付けます。
+
+IDictionary は、このガイドラインに従ったインターフェイスの一例です。
+1 文字の型パラメータを 1 つ持つ型の型パラメータ名として、T を使用するよう考慮します。
+説明的な型パラメータ名には、プリフィックス T を付けます。
+パラメータの名前で型パラメータの制約を示すよう考慮します。たとえば、ISession に制約されたパラメータに TSession という名前を付けます。
+# 一般的な型の名前
+次のガイドラインでは、開発者が特定のクラスについて意図された使用シナリオを認識するうえで役立つ、名前付け規則について説明します。このガイドラインで、他の型から継承した型について述べている場合、これは直接継承した型だけでなく、すべての継承側に適用されます。たとえば、ガイドラインに「Exception から継承した型には、サフィックス Exception を追加します。」と記載されている場合、継承階層内に Exception が含まれるすべての型が、末尾に Exception の付いた名前を持つ必要があるということです。 
+
+これらの各ガイドラインは、指定したサフィックスを予約する場合にも役立ちます。型がガイドラインで設定された基準を満たしていない場合、その型ではサフィックスを使用しないでください。たとえば、型が Exception から直接または間接的に継承していない場合、名前の末尾に Exception を付けることはできません。
+カスタム属性クラスには、サフィックス Attribute を追加します。
+
+ObsoleteAttribute と AttributeUsageAttribute は、このガイドラインに従った型名です。
+イベントで使用する型 (C# のイベントの戻り値の型など) の名前には、サフィックス EventHandler を追加します。
+
+AssemblyLoadEventHandler は、このガイドラインに従ったデリゲート名です。
+イベント ハンドラではないデリゲートの名前には、サフィックス Callback を追加します。
+サフィックス Delegate は、デリゲートに追加しないでください。
+System.EventArgs を拡張するクラスには、サフィックス EventArgs を追加します。
+System.Enum クラスから派生しないでください。代わりに、使用している言語でサポートされているキーワードを使用します。たとえば、C# の場合、Enum キーワードを使用します。
+System.Exception から継承した型には、サフィックス Exception を追加します。
+System.Collections.IDictionary または System.Collections.Generic.IDictionary&lt;TKey, TValue&gt; を実装する型には、サフィックス Dictionary を追加します。System.Collections.IDictionary はコレクションの特定の型ですが、このガイドラインは下記の一般的なコレクションのガイドラインより優先されます。
+System.Collections.IEnumerable、System.Collections.ICollection、System.Collections.IList、System.Collections.Generic.IEnumerable&lt;T&gt;、System.Collections.Generic.ICollection&lt;T&gt;、または System.Collections.Generic.IList&lt;T&gt; を実装する型には、サフィックス Collection を追加します。
+System.IO.Stream から継承した型には、サフィックス Stream を追加します。
+System.Security.CodeAccessPermission から継承した型、または System.Security.IPermission を実装する型には、サフィックス Permission を追加します。
+# 列挙値の名前
+列挙値名にプリフィックスを使用しないでください。たとえば、ADO 列挙値にプリフィックス ad を使用したり、リッチ テキスト列挙値にプリフィックス rtf を使用したりしないでください。
+
+これは、列挙値名に列挙型名を含めることはできないことも意味します。列挙値に不正な名前を付けたコード例を次に示します。
+{{{
+public  enum Teams
+{
+    TeamsAlpha,
+    TeamsBeta,
+    TeamsDelta
+}
+}}}
+列挙型にサフィックスとして Enum を使用しないでください。
+flags 列挙体の名前にサフィックスとして Flags を追加しないでください。
+列挙体の値がビット フィールドでない場合は、列挙体には単数形の名前を使用します。
+値としてビット フィールドを持つ列挙体 (flags 列挙体とも呼ばれます) には、複数形の名前を使用します。
+
+Portions Copyright 2005 Microsoft Corporation.All rights reserved. 
+
+Portions Copyright Addison-Wesley Corporation.All rights reserved. 
+
+デザイン ガイドラインの詳細については、2005 年に Addison-Wesley から出版されている Krzysztof Cwalina、Brad Abrams 共著の『Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries』を参照してください。
+!!!@@color(RoyalBlue): 6.型のメンバの名前 @@
+# 型のメンバの名前 
+型には、次の種類のメンバが含まれます。
+** メソッド 
+** プロパティ
+** フィールド
+** イベント
+以下のガイドラインに従うと、クラス ライブラリのデザイン時に .NET Framework に適合するメンバの名前を選択できます。
+# メソッドの名前
+メソッド名には、動詞または動詞句を割り当ててください。
+
+通常、メソッドはデータを操作するため、メソッドのアクションを表す動詞を使用すると、開発者にはメソッドの機能がよりわかりやすくなります。メソッドが実行するアクションを定義するときは、開発者から見てわかりやすい名前を選択するように注意してください。メソッドがアクションを実行する方法を表す動詞は使用しないでください。言い換えると、メソッド名には実装の詳細を使用しないでください。
+# プロパティの名前
+プロパティの名前には、名詞、名詞句、または形容詞を使用してください。
+
+プロパティはデータを保持するため、名詞句や形容詞が適切です。 
+Get メソッドと同じ名前のプロパティは使用しないでください。
+
+たとえば、プロパティに EmployeeRecord という名前を付け、またメソッドにも GetEmployeeRecord という名前を付けるということはしないでください。開発者が各自のプログラミング タスクを実行する際にどのメンバを使用したらいいかわからなくなるからです。
+ブール型のプロパティの名前には、肯定的なフレーズ (CantSeek ではなく CanSeek など) を使用してください。ブール型のプロパティには、Is、Can、Has などのプリフィックスを付けることもできますが、これは有益な場合に限定してください。
+プロパティには、その型と同じ名前を付けるようにしてください。
+
+列挙型に厳密に型指定されたプロパティを使用する場合は、プロパティの名前を列挙型の名前と同じにできます。たとえば、CacheLevel という名前の列挙型がある場合は、その値のいずれかを返すプロパティにも CacheLevel という名前を付けることができます。
+# イベントの名前
+イベントの名前には、動詞または動詞句を使用してください。
+イベント名には、現在形と過去形を使用して、前後の概念を与えてください。たとえば、ウィンドウを閉じる前に発生させるクローズ イベントには Closing という名前を付け、ウィンドウを閉じた後に発生させるクローズ イベントには Closed という名前を付けます。
+プレイベントやポストイベントを表すために、Before または After というプリフィックスやサフィックスを使用しないでください。
+イベント ハンドラ (イベントの型として使用されるデリゲート) の名前には、EventHandler というサフィックスを付けてください。
+イベント ハンドラ シグネチャでは、sender および e という名前の 2 つのパラメータを使用してください。
+
+sender パラメータは Object 型とし、e パラメータは、EventArgs のインスタンスとするか、またはこれを継承する必要があります。
+イベント引数クラスの名前には、EventArgs というサフィックスを付けてください。
+# フィールドの名前
+フィールドの名前付けガイドラインは、静的なパブリック フィールドとプロテクト フィールドに適用されます。パブリック インスタンス フィールドやプロテクト インスタンス フィールドは定義しないでください。詳細については、「フィールドのデザイン」を参照してください。
+フィールド名には Pascal 形式を使用してください。
+フィールドの名前には、名詞や名詞句を使用してください。
+フィールド名にはプリフィックスを使用しないでください。たとえば、静的フィールドと非静的フィールドを区別するために、g_ や s_ を使用しないでください。
+
+Portions Copyright 2005 Microsoft Corporation.All rights reserved. 
+
+Portions Copyright Addison-Wesley Corporation.All rights reserved. 
+
+デザイン ガイドラインの詳細については、2005 年に Addison-Wesley から出版されている Krzysztof Cwalina、Brad Abrams 共著の『Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries』を参照してください。</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->

@@ -1267,6 +1267,24 @@ void BAKE::cntPresentUnitNum(void)
 | ts100( ); || C1,S1,A1,A2,W1,J1,P1,I1,D1 |
 </pre>
 </div>
+<div title="2012年6月20日" modifier="氏名" created="201206200011" modified="201206200017" tags="bake" changecount="4">
+<pre>!!!@@color(RoyalBlue): インデクサインターロックALMについて @@
+* ALMでんように岡野さんにふたしてもらた
+*
+!!!@@color(RoyalBlue): 搬送インターロックALMについて@@
+* 自分で勝手にふたした
+{{{
+//インターロック確認タスク起動
+//sprintf(taskName, &quot;TRN%01d_IL&quot;, nodeNum);	
+//createThreadSlave((PFUNC)&amp;TRN::trnIL, (void*)this, taskName);
+}}}
+!!!@@color(RoyalBlue): 今日の環境 @@
+* ｻｰﾊﾞ上にあった&quot;0530&quot;を使用
+* BAKEを自分のと差替え
+* setting.iniを人見さんがくれたやつと差替え
+
+</pre>
+</div>
 <div title="2012年6月4日" modifier="nagase" created="201206032344" modified="201206040656" tags="bake journal" changecount="6">
 <pre>!!!@@color(RoyalBlue): 本日のTODO @@
 
@@ -6683,6 +6701,43 @@ This is a link to a [[StyleSheet]] tiddler.
 |column1|column2|column3|
 |row2| row2 |row2|</pre>
 </div>
+<div title="SIOﾛｸﾞ取込みﾂｰﾙについて" modifier="氏名" created="201207020616" modified="201207040808" tags="bake" changecount="13">
+<pre>!!!@@color(RoyalBlue): 概要 @@
+# SIO.logの各行の下に変換したものを追加して、SIO.txtに保存
+# 不要なものを表示しないゴミ箱ﾓｰﾄﾞを搭載
+** すてるもの&lt;br&gt;07月04日 13:38:09.034 [U0C P1]占有権解放 S09&lt;br&gt;07月04日 13:38:09.034 [U0C P1]占有権要求 S09&lt;br&gt;07月04日 13:38:09.034 [U0C P1]占有権取得 S08&lt;br&gt;07月04日 13:38:09.565 RCV U0C P1 -&gt; S08 04 30 31 4B 31 4D 31 05
+# 整形して表示する
+{{{
+07月03日 20:35:41.750 [U0C P1]SND S09 04 30 32 4B 31 4D 31 05
+　　CP:N1[RM]制御モード：XXXX
+　　HP:N2[RM]CH1 設定温度：XXX.XX
+
+　　HP:N2[RM]CH1 実温度：XXX.XX　CH2 実温度：XXX.XX　CH3 実温度：XXX.XX　CH3 実温度：XXX.XX
+　　　　　　 実温度：XXX.XX　CH2 実温度：XXX.XX　CH3 実温度：XXX.XX　CH3 実温度：XXX.XX
+}}}
+!!!@@color(RoyalBlue): 処理の流れ @@
+# click&amp;dragかselectﾎﾞﾀﾝで読込むﾌｧｲﾙを選択
+# convertﾎﾞﾀﾝで変換開始
+** ﾌｧｲﾙがSIO.logかSIO.oldであるか確認
+# 選択ﾌｧｲﾙを読取ﾓｰﾄﾞで開く
+** 開けない場合のｴﾗｰ処理
+# 開いたﾌｧｲﾙをSIO.txtとしてexeﾌｧｲﾙのｶﾚﾝﾄDirに複製する。複製ﾌｧｲﾙは上書きﾓｰﾄﾞにしておく。ｵﾘｼﾞﾅﾙﾌｧｲﾙ閉じる。
+# 一行ずつ処理していく
+** ﾁｪｯｸﾎﾞｯｸｽの状態を全体の処理前に確認する
+# 最終行まで行ったら保存して閉じる
+** &quot;処理終了後変換ﾌｧｲﾙ表示&quot;がﾁｪｯｸされていれば、SIO.txtを表示する
+# 処理終了のﾒｯｾｰｼﾞﾎﾞｯｸｽを表示する
+!!!@@color(RoyalBlue): 注意すること @@
+* tabｷｰの順番を整えておく
+!!!@@color(RoyalBlue): 各種条件 @@
+# ごみ箱もーど
+** 文字列に&quot;占有権&quot;を含む場合は削除
+** 文字列に&quot;-&gt;&quot;を含む場合は削除
+** ACKのみの場合も削除。→文字列の長さでも見ましょう
+# CPとHPの見分け方
+
+</pre>
+</div>
 <div title="SaveMyEmptyMacro" creator="氏名" modifier="nagase" created="201205160011" modified="201205230110" tags="systemConfig myEmpty hide" changecount="6">
 <pre>//{{{
 config.macros.saveMyEmpty = {
@@ -9481,6 +9536,55 @@ http://mptw.tiddlyspot.com/#BigThemePack
 http://www.geocities.jp/wikistyle/
 http://d.hatena.ne.jp/aramakie/
 http://tiddlywiki.abego-software.de/#IntelliTaggerPlugin</pre>
+</div>
+<div title="とりあえずの仕様やらめもやら" modifier="nagase" created="201206102335" modified="201206150410" tags="C#" changecount="7">
+<pre>!!!@@color(RoyalBlue): 仕様 @@
+* 一画面ですべての情報をみられること
+* 
+!!!@@color(RoyalBlue): 確認したいこと @@
+[_] --動かしてみたい(人見さん)--
+[X] 共有メモリの中に、どんな状態で入っているのかを確認したい
+[X] プログラムの流れを確認する 
+
+!!!@@color(RoyalBlue): やること @@
+# --SPINとはメッセージデータが違う--
+# --SPINとはユニット数が違う--
+# _Setting.TargetTempを確認&lt;br&gt;ｾﾚｸﾃｨﾝｸﾞのS1で値を設定。ﾕﾆｯﾄは12個あるから12個いるよ。
+# --this.NodeNumberに値をいれているのはだれだ--
+# 一回ﾒｯｾｰｼﾞ送信してから次のﾒｯｾｰｼﾞの送受信ができない
+!!!@@color(RoyalBlue): つかえそうなとこ @@
+# 通信開始時 初期処理
+# 描画をリフレッシュ
+# 切断終了処理
+# ログ表示 フォームイベント
+# 受信したメッセージ
+# ACK送信
+# NAK送信
+# メッセージを送信します
+# 次のメッセージを送信します
+# 数値を小数点符号付きテキストに変換
+# #region プロパティ
+# 
+!!!@@color(RoyalBlue): つかえなさそうなとこ @@
+# メッセージ受信処理
+
+!!!@@color(RoyalBlue): めも @@
+{{{
+public class MsgFormat
+{
+    public ControlCode ControlCode { get; set; }
+
+    public int NodeNumber { get; set; }
+
+    public bool Protocol { get; set; }      //通信プロトコル：false=ポーリング true=セレクティング
+
+    public int MsgNumber { get; set; }
+
+    public byte[] MsgData { get; set; }
+
+    public byte[] RawData { get; set; }
+}
+}}}</pre>
 </div>
 <div title="プログラミング用語省略形" modifier="nagase" created="201206050200" changecount="1">
 <pre>|省略形|原形、意味|
